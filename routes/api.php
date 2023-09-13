@@ -28,7 +28,7 @@ Route::post('register', [AuthController::class, 'signup']);
 Route::get('selectAgent', [MasterController::class, 'selectAgent']);
 
 Route::get('selectAsuransiMobil', [MasterController::class, 'selectAsuransiMobil']);
-Route::get('selectMerkMobil/{merk}', [MasterController::class, 'selectMerkMobil']);
+Route::get('selectMerkMobil', [MasterController::class, 'selectMerkMobil']);
 Route::get('selectTahunMobil/{seri_id}', [MasterController::class, 'selectTahunMobil']);
 Route::get('selectTipeMobil', [MasterController::class, 'selectTipeMobil']);
 Route::get('selectSeriMobil/{merk_id}', [MasterController::class, 'selectSeriMobil']);
@@ -73,7 +73,7 @@ Route::get('selectOkupasi/{okupasi}', [MasterController::class, 'selectOkupasi']
 
 // Motor
 Route::get('selectAsuransiMotor', [MasterMotorController::class, 'selectAsuransiMotor']);
-Route::get('selectMerkMotor/{merk}', [MasterMotorController::class, 'selectMerkMotor']);
+Route::get('selectMerkMotor', [MasterMotorController::class, 'selectMerkMotor']);
 Route::get('selectTahunMotor/{seri_id}', [MasterMotorController::class, 'selectTahunMotor']);
 Route::get('selectTipeMotor', [MasterMotorController::class, 'selectTipeMotor']);
 Route::get('selectSeriMotor/{merk_id}', [MasterMotorController::class, 'selectSeriMotor']);

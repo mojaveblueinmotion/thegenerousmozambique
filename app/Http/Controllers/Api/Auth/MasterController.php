@@ -70,9 +70,14 @@ class MasterController extends BaseController
         }
     }
 
-    public function selectMerkMobil($merk){
+    public function selectMerkMobil(Request $request){
         try{
-            $record =  Merk::where('name', 'like', '%' . $merk . '%')->get();
+            if(!empty($request->merk)){
+                $record =  Merk::where('name', 'like', '%' . $request->merk . '%')->get();
+
+            }else{
+                $record =  Merk::where('status', 'populer')->limit(5)->get();
+            }
 
             return response()->json([
                 'success' => true,

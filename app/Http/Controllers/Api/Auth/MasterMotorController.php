@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\Auth;
 
 use Exception;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Master\AsuransiMotor\Merk;
 use App\Models\Master\AsuransiMotor\Seri;
@@ -32,9 +33,14 @@ class MasterMotorController extends BaseController
         }
     }
 
-    public function selectMerkMotor($merk){
+    public function selectMerkMotor(Request $request){
         try{
-            $record =  Merk::where('name', 'like', '%' . $merk . '%')->get();
+            if(!empty($request->merk)){
+                $record =  Merk::where('name', 'like', '%' . $request->merk . '%')->get();
+
+            }else{
+                $record =  Merk::where('status', 'populer')->limit(5)->get();
+            }
 
             return response()->json([
                 'success' => true,
