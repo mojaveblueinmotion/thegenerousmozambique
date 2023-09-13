@@ -163,6 +163,26 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasMany(PolisPerjalanan::class, 'user_id');
     }
 
+    public function asuransiAgentMobil()
+    {
+        return $this->hasMany(PolisMobil::class, 'agent_id');
+    }
+
+    public function asuransiAgentMotor()
+    {
+        return $this->hasMany(PolisMotor::class, 'agent_id');
+    }
+
+    public function asuransiAgentProperti()
+    {
+        return $this->hasMany(PolisProperti::class, 'agent_id');
+    }
+    
+    public function asuransiAgentPerjalanan()
+    {
+        return $this->hasMany(PolisPerjalanan::class, 'agent_id');
+    }
+
     /** SCOPE **/
 
     public function scopeFilters($query)
