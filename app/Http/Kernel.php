@@ -70,7 +70,7 @@ class Kernel extends HttpKernel
         'ability' => \Laravel\Sanctum\Http\Middleware\CheckForAnyAbility::class,
 
         'jwt.verify' => \App\Http\Middleware\JwtMiddleware::class,
-        'jwt.auth' => \Tymon\JWTAuth\Middleware\GetUserFromToken::class,
-        'jwt.refresh' => \Tymon\JWTAuth\Middleware\RefreshToken::class,
+        // 'jwt.auth' => \Tymon\JWTAuth\Middleware\GetUserFromToken::class,
+        // 'jwt.refresh' => \Tymon\JWTAuth\Middleware\RefreshToken::class,
     ];
 }
