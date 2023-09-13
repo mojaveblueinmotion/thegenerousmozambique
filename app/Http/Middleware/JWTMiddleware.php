@@ -11,7 +11,7 @@ use Tymon\JWTAuth\Exceptions\TokenExpiredException;
 use Tymon\JWTAuth\Exceptions\TokenInvalidException;
 use Tymon\JWTAuth\Http\Middleware\BaseMiddleware;
 
-class JWTMiddleware extends BaseMiddleware
+class JWTMiddleware
 {
     /**
      * Handle an incoming request.
