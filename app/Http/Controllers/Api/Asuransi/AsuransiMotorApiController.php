@@ -35,11 +35,6 @@ class AsuransiMotorApiController extends BaseController
             $recordNilai->fill($request->only($recordNilai->fillable));
             $recordNilai->polis_id = $record->id;
             $recordNilai->save();
-
-            $recordClient = new PolisMotorClient;   
-            $recordClient->fill($request->only($recordClient->fillable));
-            $recordClient->polis_id = $record->id;
-            $recordClient->save();
             
             return response()->json([
                 'success' => true,
@@ -60,6 +55,11 @@ class AsuransiMotorApiController extends BaseController
                 'status' => 'pending'
             ]);
             $record->save();
+
+            $recordClient = new PolisMotorClient;   
+            $recordClient->fill($request->only($recordClient->fillable));
+            $recordClient->polis_id = $record->id;
+            $recordClient->save();
 
             $recordPayment = new PolisMotorPayment;   
             $recordPayment->fill($request->only($recordPayment->fillable));

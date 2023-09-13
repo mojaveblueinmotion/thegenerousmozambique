@@ -36,11 +36,6 @@ class AsuransiMobilApiController extends BaseController
             $recordNilai->polis_id = $record->id;
             $recordNilai->save();
 
-            $recordClient = new PolisMobilClient;   
-            $recordClient->fill($request->only($recordClient->fillable));
-            $recordClient->polis_id = $record->id;
-            $recordClient->save();
-
             return response()->json([
                 'success' => true,
                 'message' => "Data Asuransi Berhasil Ditambahkan | status = Penawaran",
@@ -60,6 +55,11 @@ class AsuransiMobilApiController extends BaseController
                 'status' => 'pending'
             ]);
             $record->save();
+
+            $recordClient = new PolisMobilClient;   
+            $recordClient->fill($request->only($recordClient->fillable));
+            $recordClient->polis_id = $record->id;
+            $recordClient->save();
 
             $recordPayment = new PolisMobilPayment;   
             $recordPayment->fill($request->only($recordPayment->fillable));
