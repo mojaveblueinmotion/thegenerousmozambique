@@ -28,7 +28,6 @@ class AuthController extends BaseController
             return response()->json([
                 'success' => true,
                 'tokens' => $token,
-                'getMe' => User::with(['asuransiMobil', 'asuransiMotor', 'asuransiProperti', 'asuransiPerjalanan'])->find(Auth::id()),
             ]);
         }
     }
