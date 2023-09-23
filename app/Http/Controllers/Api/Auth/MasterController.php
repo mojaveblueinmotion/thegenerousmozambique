@@ -17,15 +17,17 @@ use App\Models\Master\DatabaseMobil\Tahun;
 use App\Http\Controllers\Api\BaseController;
 use App\Models\Master\DatabaseMobil\KodePlat;
 use App\Models\Master\DatabaseMobil\TipeMobil;
+use App\Models\Master\AsuransiProperti\Okupasi;
 use App\Models\Master\AsuransiMobil\AsuransiMobil;
 use App\Models\Master\AsuransiMobil\TipePemakaian;
+use App\Models\Master\AsuransiMotor\AsuransiMotor;
 use App\Models\Master\DatabaseMobil\TipeKendaraan;
 use App\Models\Master\AsuransiMobil\KondisiKendaraan;
 use App\Models\Master\AsuransiMobil\LuasPertanggungan;
-use App\Models\Master\AsuransiMotor\AsuransiMotor;
-use App\Models\Master\AsuransiPerjalanan\AsuransiPerjalanan;
 use App\Models\Master\AsuransiProperti\AsuransiProperti;
-use App\Models\Master\AsuransiProperti\Okupasi;
+use App\Models\Master\AsuransiProperti\KonstruksiProperti;
+use App\Models\Master\AsuransiPerjalanan\AsuransiPerjalanan;
+use App\Models\Master\AsuransiProperti\PerlindunganProperti;
 
 class MasterController extends BaseController
 {
@@ -336,6 +338,42 @@ class MasterController extends BaseController
             return response()->json([
                 'success' => true,
                 'message' => "Data Okupasi",
+                'data' => $record
+
+            ]);
+        }catch(Exception $e){
+            return response()->json([
+                'success' => false,
+                'message' => $e
+            ]);
+        }
+    }
+
+    public function selectKonstruksiProperti($konstruksi){
+        try{
+            $record =  KonstruksiProperti::where('name', 'like', '%' . $konstruksi . '%')->get();
+
+            return response()->json([
+                'success' => true,
+                'message' => "Data Konstruksi Properti",
+                'data' => $record
+
+            ]);
+        }catch(Exception $e){
+            return response()->json([
+                'success' => false,
+                'message' => $e
+            ]);
+        }
+    }
+
+    public function selectPerlindunganProperti($perlindungan){
+        try{
+            $record =  PerlindunganProperti::where('name', 'like', '%' . $perlindungan . '%')->get();
+
+            return response()->json([
+                'success' => true,
+                'message' => "Data Perlindungan Properti",
                 'data' => $record
 
             ]);

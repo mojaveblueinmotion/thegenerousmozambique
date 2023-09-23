@@ -6,12 +6,18 @@ use Exception;
 use App\Models\Model;
 use App\Models\Auth\User;
 use Illuminate\Support\Carbon;
+use App\Models\Master\Geo\City;
 use App\Models\Traits\HasFiles;
+use App\Models\Master\Geo\District;
+use App\Models\Master\Geo\Province;
 use App\Models\Traits\HasApprovals;
+use App\Models\Master\AsuransiProperti\Okupasi;
 use App\Models\AsuransiProperti\PolisPropertiCek;
 use App\Models\AsuransiProperti\PolisPropertiNilai;
 use App\Models\AsuransiProperti\PolisPropertiPayment;
 use App\Models\Master\AsuransiProperti\AsuransiProperti;
+use App\Models\Master\AsuransiProperti\KonstruksiProperti;
+use App\Models\Master\AsuransiProperti\PerlindunganProperti;
 
 class PolisProperti extends Model
 {
@@ -30,6 +36,19 @@ class PolisProperti extends Model
         'name',
         'phone',
         'email',
+
+        'province_id',
+        'city_id',
+        'district_id',
+        'okupasi_id',
+        'village',
+        'alamat',
+        'tahun_bangunan',
+        'nilai_bangunan',
+        'nilai_isi',
+        'perlindungan_id',
+        'konstruksi_id',
+
         'status',
     ];
 
@@ -90,6 +109,35 @@ class PolisProperti extends Model
     /*******************************
      ** RELATION
      *******************************/
+    public function province()
+    {
+        return $this->belongsTo(Province::class, 'province_id');
+    }
+
+    public function okupasi()
+    {
+        return $this->belongsTo(Okupasi::class, 'okupasi_id');
+    }
+
+    public function perlindungan()
+    {
+        return $this->belongsTo(PerlindunganProperti::class, 'perlindungan_id');
+    }
+
+    public function konstruksi()
+    {
+        return $this->belongsTo(KonstruksiProperti::class, 'konstruksi_id');
+    }
+
+    public function city()
+    {
+        return $this->belongsTo(City::class, 'city_id');
+    }
+
+    public function district()
+    {
+        return $this->belongsTo(District::class, 'district_id');
+    }
     
     public function agent()
     {

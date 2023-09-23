@@ -2,6 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Master\AsuransiProperti\KonstruksiProperti;
+use App\Models\Master\AsuransiProperti\PerlindunganProperti;
+use App\Models\Master\DataAsuransi\IntervalPembayaran;
+use App\Models\Master\DataAsuransi\PerusahaanAsuransi;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -34,5 +38,15 @@ class DatabaseSeeder extends Seeder
         $this->call(TipePemakaianSeeder::class);
         $this->call(KondisiKendaraanSeeder::class);
         $this->call(LuasPertanggunganSeeder::class);
+
+        // Asuransi
+        $this->call(IntervalPembayaranSeeder::class);
+        $this->call(PerusahaanAsuransiSeeder::class);
+        $this->call(AsuransiMobilSeeder::class);
+
+        // Asuransi Properti
+        $this->call(OkupasiSeeder::class);
+        $this->call(PerlindunganPropertiSeeder::class);
+        $this->call(KonstruksiPropertiSeeder::class);
     }
 }

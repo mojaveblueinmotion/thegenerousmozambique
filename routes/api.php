@@ -63,13 +63,15 @@ Route::middleware(['jwt.verify'])->group( function () {
     Route::post('testFiles', [AsuransiMobilApiController::class, 'testFiles']);
     
     // Properti
-    Route::post('agentAsuransiProperti', [AsuransiPropertiApiController::class, 'agentAsuransiProperti']);
-    Route::post('agentPenawaranAsuransiProperti', [AsuransiPropertiApiController::class, 'agentPenawaranAsuransiProperti']);
 });
+Route::post('agentAsuransiProperti', [AsuransiPropertiApiController::class, 'agentAsuransiProperti']);
+Route::post('agentPenawaranAsuransiProperti', [AsuransiPropertiApiController::class, 'agentPenawaranAsuransiProperti']);
 
 // Properti
 Route::get('selectAsuransiProperti', [MasterController::class, 'selectAsuransiProperti']);
 Route::get('selectOkupasi/{okupasi}', [MasterController::class, 'selectOkupasi']);
+Route::get('selectKonstruksiProperti/{konstruksi}', [MasterController::class, 'selectKonstruksiProperti']);
+Route::get('selectPerlindunganProperti/{perlindungan}', [MasterController::class, 'selectPerlindunganProperti']);
 
 // Motor
 Route::get('selectAsuransiMotor', [MasterMotorController::class, 'selectAsuransiMotor']);

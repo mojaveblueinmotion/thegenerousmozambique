@@ -17,6 +17,7 @@ use App\Models\Incident\Incident;
 use App\Models\Master\Org\Struct;
 use App\Models\Master\AssetDetail;
 use App\Models\Knowledge\Knowledge;
+use App\Models\Master\Geo\District;
 use App\Models\Master\Geo\Province;
 use App\Models\Master\Org\Position;
 use App\Models\Master\Pegawai\Pegawai;
@@ -27,6 +28,7 @@ use App\Models\Master\DatabaseMobil\Tahun;
 use App\Models\Setting\Globals\Notification;
 use App\Models\Master\DatabaseMobil\KodePlat;
 use App\Models\Master\DatabaseMobil\TipeMobil;
+use App\Models\Master\AsuransiProperti\Okupasi;
 use App\Models\Master\DataAsuransi\FiturAsuransi;
 use App\Models\Master\AsuransiMobil\AsuransiMobil;
 use App\Models\Master\AsuransiMobil\TipePemakaian;
@@ -35,10 +37,10 @@ use App\Models\Master\AsuransiMobil\KondisiKendaraan;
 use App\Models\Master\AsuransiMobil\LuasPertanggungan;
 use App\Models\Master\DataAsuransi\IntervalPembayaran;
 use App\Models\Master\DataAsuransi\PerusahaanAsuransi;
-use App\Models\Master\AsuransiPerjalanan\AsuransiPerjalanan;
 use App\Models\Master\AsuransiProperti\AsuransiProperti;
-use App\Models\Master\AsuransiProperti\Okupasi;
-use App\Models\Master\Geo\District;
+use App\Models\Master\AsuransiProperti\KonstruksiProperti;
+use App\Models\Master\AsuransiPerjalanan\AsuransiPerjalanan;
+use App\Models\Master\AsuransiProperti\PerlindunganProperti;
 
 class AjaxController extends Controller
 {
@@ -750,6 +752,36 @@ class AjaxController extends Controller
     public function selectOkupasi($search, Request $request)
     {
         $items = Okupasi::keywordBy('name')->orderBy('name');
+        switch ($search) {
+            case 'all':
+                $items = $items;
+                break;
+            default:
+                $items = $items->whereNull('id');
+                break;
+        }
+        $items = $items->paginate();
+        return $this->responseSelect2($items, 'name', 'id');
+    }
+
+    public function selectPerlindunganProperti($search, Request $request)
+    {
+        $items = PerlindunganProperti::keywordBy('name')->orderBy('name');
+        switch ($search) {
+            case 'all':
+                $items = $items;
+                break;
+            default:
+                $items = $items->whereNull('id');
+                break;
+        }
+        $items = $items->paginate();
+        return $this->responseSelect2($items, 'name', 'id');
+    }
+
+    public function selectKonstruksiProperti($search, Request $request)
+    {
+        $items = KonstruksiProperti::keywordBy('name')->orderBy('name');
         switch ($search) {
             case 'all':
                 $items = $items;

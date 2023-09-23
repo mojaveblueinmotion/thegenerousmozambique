@@ -123,6 +123,8 @@ Route::middleware('auth')
                         // For Asuransi Properti
                         Route::post('{search}/selectAsuransiProperti', 'AjaxController@selectAsuransiProperti')->name('selectAsuransiProperti');
                         Route::post('{search}/selectOkupasi', 'AjaxController@selectOkupasi')->name('selectOkupasi');
+                        Route::post('{search}/selectKonstruksiProperti', 'AjaxController@selectKonstruksiProperti')->name('selectKonstruksiProperti');
+                        Route::post('{search}/selectPerlindunganProperti', 'AjaxController@selectPerlindunganProperti')->name('selectPerlindunganProperti');
                     }
                 );
 
@@ -329,6 +331,8 @@ Route::middleware('auth')
                             ->group(
                                 function () {
                                     Route::grid('okupasi', 'OkupasiController');
+                                    Route::grid('perlindungan-properti', 'PerlindunganPropertiController');
+                                    Route::grid('konstruksi-properti', 'KonstruksiPropertiController');
 
                                     Route::grid('asuransi-properti', 'AsuransiPropertiController');
                                 }

@@ -183,6 +183,16 @@ return [
                 'url' => '',
                 'submenu' => [
                     [
+                        'name' => 'perlindungan-properti',
+                        'title' => 'Perlindungan Properti',
+                        'url' => '/master/asuransi-properti/perlindungan-properti'
+                    ],
+                    [
+                        'name' => 'konstruksi-properti',
+                        'title' => 'Konstruksi Properti',
+                        'url' => '/master/asuransi-properti/konstruksi-properti'
+                    ],
+                    [
                         'name' => 'okupasi',
                         'title' => 'Okupasi',
                         'url' => '/master/asuransi-properti/okupasi'
