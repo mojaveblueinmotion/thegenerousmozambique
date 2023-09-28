@@ -41,6 +41,7 @@ class AuthController extends BaseController
                 'data' => User::with([
                     'asuransiMobil', 'asuransiMotor', 'asuransiProperti', 'asuransiPerjalanan',
                     'asuransiAgentMobil', 'asuransiAgentMotor', 'asuransiAgentProperti', 'asuransiAgentPerjalanan',
+                    'asuransiProperti.penutupanPolis',
                     ])->find(Auth::id()),
             ]);
         }else{

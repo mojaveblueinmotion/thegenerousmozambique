@@ -66,6 +66,7 @@ Route::middleware(['jwt.verify'])->group( function () {
 });
 Route::post('agentAsuransiProperti', [AsuransiPropertiApiController::class, 'agentAsuransiProperti']);
 Route::post('agentPenawaranAsuransiProperti', [AsuransiPropertiApiController::class, 'agentPenawaranAsuransiProperti']);
+Route::post('penutupanAsuransiProperti', [AsuransiPropertiApiController::class, 'penutupanAsuransiProperti']);
 
 // Properti
 Route::get('selectAsuransiProperti', [MasterController::class, 'selectAsuransiProperti']);

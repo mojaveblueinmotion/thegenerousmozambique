@@ -11,59 +11,69 @@ use App\Models\Traits\HasFiles;
 use App\Models\Master\Geo\District;
 use App\Models\Master\Geo\Province;
 use App\Models\Traits\HasApprovals;
+use App\Models\AsuransiProperti\PolisProperti;
 use App\Models\Master\AsuransiProperti\Okupasi;
 use App\Models\AsuransiProperti\PolisPropertiCek;
 use App\Models\AsuransiProperti\PolisPropertiNilai;
 use App\Models\AsuransiProperti\PolisPropertiPayment;
-use App\Models\AsuransiProperti\PolisPropertiPenutupan;
 use App\Models\Master\AsuransiProperti\AsuransiProperti;
 use App\Models\Master\AsuransiProperti\KonstruksiProperti;
 use App\Models\Master\AsuransiProperti\PerlindunganProperti;
 
-class PolisProperti extends Model
+class PolisPropertiPenutupan extends Model
 {
     use HasApprovals;
     use HasFiles;
 
-    protected $table = 'trans_polis_properti';
+    protected $table = 'trans_polis_properti_penutupan';
 
     protected $fillable = [
-        'no_asuransi',
-        'no_max',
-        'tanggal',
-        'agent_id',
-        'user_id',
-        'asuransi_id',
-        'name',
-        'phone',
-        'email',
-
+        'polis_id',
         'province_id',
         'city_id',
         'district_id',
         'okupasi_id',
         'village',
         'alamat',
+        'kode_pos',
         'tahun_bangunan',
         'nilai_bangunan',
         'nilai_isi',
         'perlindungan_id',
         'konstruksi_id',
-
+        'letak_resiko',
+        'tanggal_awal',
+        'tanggal_akhir',
+        'nilai_pondasi',
+        'nilai_galian',
+        'nilai_peralatan',
+        'nilai_stok',
+        'nilai_lainnya',
+        'tinggi_bangunan',
+        'tinggi_menara',
+        'tahun_pembuatan',
+        'pengajuan_tertolak',
+        'alasan_tertolak',
         'status',
     ];
 
     protected $dates = [
-        'tanggal',
+        'tanggal_awal',
+        'tanggal_akhir',
     ];
 
     /*******************************
      ** MUTATOR
      *******************************/
 
-    public function setTanggalAttribute($value)
+    public function setTanggalAwalAttribute($value)
     {
-        $this->attributes['tanggal'] = Carbon::createFromFormat('d/m/Y', $value);
+        $this->attributes['tanggal_awal'] = Carbon::createFromFormat('d/m/Y', $value);
+    }
+    
+    public function setTanggalAkhirAttribute($value)
+    {
+        $this->attributes['tanggal_akhir'] = Carbon::createFromFormat('d/m/Y', $value);
     }
 
     /*******************************
@@ -135,11 +145,6 @@ class PolisProperti extends Model
         return $this->belongsTo(City::class, 'city_id');
     }
 
-    public function penutupanPolis()
-    {
-        return $this->hasOne(PolisPropertiPenutupan::class, 'polis_id');
-    }
-
     public function district()
     {
         return $this->belongsTo(District::class, 'district_id');
@@ -155,24 +160,9 @@ class PolisProperti extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function detailCek()
+    public function polis()
     {
-        return $this->hasOne(PolisPropertiCek::class, 'polis_id');
-    }
-
-    public function detailNilai()
-    {
-        return $this->hasOne(PolisPropertiNilai::class, 'polis_id');
-    }
-
-    public function detailPayment()
-    {
-        return $this->hasOne(PolisPropertiPayment::class, 'polis_id');
-    }
-
-    public function asuransi()
-    {
-        return $this->belongsTo(AsuransiProperti::class, 'asuransi_id');
+        return $this->belongsTo(PolisProperti::class, 'polis_id');
     }
     /*******************************
      ** SCOPE
@@ -254,7 +244,7 @@ class PolisProperti extends Model
     {
         $this->beginTransaction();
         try {
-            $menu = \App\Models\Setting\Globals\Menu::where('module', 'asuransi.polis-properti')->first();
+            $menu = \App\Models\Setting\Globals\Menu::where('module', 'asuransi.polis-properti-penutupan')->first();
             
             if(!empty($this->status) && $this->status == 'pending'){
                 if ($request->is_submit == 1) {
