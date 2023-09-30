@@ -175,6 +175,16 @@ return [
                         'title' => 'Fitur Asuransi',
                         'url' => '/master/data-asuransi/fitur-asuransi',
                     ],
+                    [
+                        'name' => 'rider-kendaraan',
+                        'title' => 'Rider Kendaraan',
+                        'url' => '/master/data-asuransi/rider-kendaraan',
+                    ],
+                    // [
+                    //     'name' => 'rider-properti',
+                    //     'title' => 'Rider Properti',
+                    //     'url' => '/master/data-asuransi/rider-properti',
+                    // ],
                 ]
             ],
             [

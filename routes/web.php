@@ -90,7 +90,8 @@ Route::middleware('auth')
                         Route::post('{search}/selectIntervalPembayaran', 'AjaxController@selectIntervalPembayaran')->name('selectIntervalPembayaran');
                         Route::post('{search}/selectPerusahaanAsuransi', 'AjaxController@selectPerusahaanAsuransi')->name('selectPerusahaanAsuransi');
                         Route::post('{search}/selectFiturAsuransi', 'AjaxController@selectFiturAsuransi')->name('selectFiturAsuransi');
-
+                        Route::post('{search}/selectRiderKendaraan', 'AjaxController@selectRiderKendaraan')->name('selectRiderKendaraan');
+                        
                         // For Database Mobil
                         Route::post('{search}/selectMerk', 'AjaxController@selectMerk')->name('selectMerk');
                         Route::post('{search}/selectTahun', 'AjaxController@selectTahun')->name('selectTahun');
@@ -103,6 +104,7 @@ Route::middleware('auth')
                         Route::post('{search}/selectTipePemakaian', 'AjaxController@selectTipePemakaian')->name('selectTipePemakaian');
                         Route::post('{search}/selectLuasPertanggungan', 'AjaxController@selectLuasPertanggungan')->name('selectLuasPertanggungan');
                         Route::post('{search}/selectKondisiKendaraan', 'AjaxController@selectKondisiKendaraan')->name('selectKondisiKendaraan');
+                        Route::post('{search}/selectKategoriAsuransi', 'AjaxController@selectKategoriAsuransi')->name('selectKategoriAsuransi');
 
                         // For Polis Mobil
                         Route::post('{search}/selectAgent', 'AjaxController@selectAgent')->name('selectAgent');
@@ -374,6 +376,14 @@ Route::middleware('auth')
 
                                     Route::grid('workshop', 'WorkshopController');
 
+                                    Route::get('asuransi-mobil/{record}/rider', 'AsuransiMobilController@rider')->name('asuransi-mobil.rider');
+                                    Route::post('asuransi-mobil/{record}/riderGrid', 'AsuransiMobilController@riderGrid')->name('asuransi-mobil.riderGrid');
+                                    Route::get('asuransi-mobil/{record}/riderCreate', 'AsuransiMobilController@riderCreate')->name('asuransi-mobil.riderCreate');
+                                    Route::post('asuransi-mobil/{record}/riderStore', 'AsuransiMobilController@riderStore')->name('asuransi-mobil.riderStore');
+                                    Route::get('asuransi-mobil/{rider}/riderEdit', 'AsuransiMobilController@riderEdit')->name('asuransi-mobil.riderEdit');
+                                    Route::patch('asuransi-mobil/{rider}/riderUpdate', 'AsuransiMobilController@riderUpdate')->name('asuransi-mobil.riderUpdate');
+                                    Route::delete('asuransi-mobil/{rider}/riderDestroy', 'AsuransiMobilController@riderDestroy')->name('asuransi-mobil.riderDestroy');
+                                    Route::get('asuransi-mobil/{rider}/riderShow', 'AsuransiMobilController@riderShow')->name('asuransi-mobil.riderShow');
                                     Route::grid('asuransi-mobil', 'AsuransiMobilController');
 
                                     // Route::get('bod/import', 'BodController@import')->name('bod.import');
@@ -439,6 +449,8 @@ Route::middleware('auth')
                                     Route::grid('interval-pembayaran', 'IntervalPembayaranController');
 
                                     Route::grid('fitur-asuransi', 'FiturAsuransiController');
+
+                                    Route::grid('rider-kendaraan', 'RiderKendaraanController');
                                 }
                             );
                             

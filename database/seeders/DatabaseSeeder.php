@@ -20,7 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ProvinceTableSeeder::class);
         $this->call(CityTableSeeder::class);
         $this->call(DistrictTableSeeder::class);
-        // $this->call(VillageTableSeeder::class);
         $this->call(PermissionSeeder::class);
         $this->call(MenuFlowSeeder::class);
         $this->call(StructSeeder::class);
@@ -42,6 +41,7 @@ class DatabaseSeeder extends Seeder
         // Asuransi
         $this->call(IntervalPembayaranSeeder::class);
         $this->call(PerusahaanAsuransiSeeder::class);
+        $this->call(KategoriAsuransiSeeder::class);
         $this->call(AsuransiMobilSeeder::class);
 
         // Asuransi Properti

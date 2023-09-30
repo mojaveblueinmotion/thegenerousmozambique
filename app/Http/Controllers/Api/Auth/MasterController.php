@@ -28,6 +28,7 @@ use App\Models\Master\AsuransiProperti\AsuransiProperti;
 use App\Models\Master\AsuransiProperti\KonstruksiProperti;
 use App\Models\Master\AsuransiPerjalanan\AsuransiPerjalanan;
 use App\Models\Master\AsuransiProperti\PerlindunganProperti;
+use App\Models\Master\DataAsuransi\RiderKendaraan;
 
 class MasterController extends BaseController
 {
@@ -54,10 +55,13 @@ class MasterController extends BaseController
         }
     }
 
-    public function selectAsuransiMobil(){
+    public function selectAsuransiMobil(Request $request){
         try{
-            $record =  AsuransiMobil::all();
+            $record =  AsuransiMobil::with('rider')->get();
 
+            if(!empty($request->id)){
+                $record =  AsuransiMobil::with('rider')->find($request->id);
+            }
             return response()->json([
                 'success' => true,
                 'message' => "Data Asuransi Mobil",
@@ -374,6 +378,24 @@ class MasterController extends BaseController
             return response()->json([
                 'success' => true,
                 'message' => "Data Perlindungan Properti",
+                'data' => $record
+
+            ]);
+        }catch(Exception $e){
+            return response()->json([
+                'success' => false,
+                'message' => $e
+            ]);
+        }
+    }
+
+    public function selectRiderKendaraan($rider){
+        try{
+            $record =  RiderKendaraan::where('name', 'like', '%' . $rider . '%')->get();
+
+            return response()->json([
+                'success' => true,
+                'message' => "Data Rider Kendaraan",
                 'data' => $record
 
             ]);

@@ -13,6 +13,8 @@ use App\Models\Asuransi\PolisMobilNilai;
 use App\Models\Asuransi\PolisMobilClient;
 use App\Models\Asuransi\PolisMobilPayment;
 use App\Http\Controllers\Api\BaseController;
+use App\Models\Asuransi\PolisMobilRider;
+use App\Models\Master\AsuransiMobil\AsuransiRiderMobil;
 
 class AsuransiMobilApiController extends BaseController
 {
@@ -36,6 +38,17 @@ class AsuransiMobilApiController extends BaseController
             $recordNilai->polis_id = $record->id;
             $recordNilai->save();
 
+            if($request->rider){
+                foreach($request->rider as $rider){
+                    $dataRider = AsuransiRiderMobil::find($rider);
+                    $recordRider = new PolisMobilRider;   
+                    $recordRider->polis_id = $record->id;
+                    $recordRider->rider_kendaraan_id = $rider;
+                    $recordRider->persentasi_eksisting = $dataRider->pembayaran_persentasi;
+                    $recordRider->save();
+                }
+            }
+
             return response()->json([
                 'success' => true,
                 'message' => "Data Asuransi Berhasil Ditambahkan | status = Penawaran",
@@ -43,7 +56,7 @@ class AsuransiMobilApiController extends BaseController
         }catch(Exception $e){
             return response()->json([
                 'success' => false,
-                'message' => $e
+                'message' => AsuransiRiderMobil::find(3)
             ]);
         }
     }

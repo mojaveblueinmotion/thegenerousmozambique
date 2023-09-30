@@ -32,7 +32,9 @@ use App\Models\Master\AsuransiProperti\Okupasi;
 use App\Models\Master\DataAsuransi\FiturAsuransi;
 use App\Models\Master\AsuransiMobil\AsuransiMobil;
 use App\Models\Master\AsuransiMobil\TipePemakaian;
+use App\Models\Master\DataAsuransi\RiderKendaraan;
 use App\Models\Master\DatabaseMobil\TipeKendaraan;
+use App\Models\Master\DataAsuransi\KategoriAsuransi;
 use App\Models\Master\AsuransiMobil\KondisiKendaraan;
 use App\Models\Master\AsuransiMobil\LuasPertanggungan;
 use App\Models\Master\DataAsuransi\IntervalPembayaran;
@@ -364,6 +366,22 @@ class AjaxController extends Controller
         return $this->responseSelect2($items, 'name', 'id');
     }
 
+    public function selectRiderKendaraan($search, Request $request)
+    {
+        $items = RiderKendaraan::keywordBy('name')->orderBy('name');
+        switch ($search) {
+            case 'all':
+                $items = $items;
+                break;
+
+            default:
+                $items = $items->whereNull('id');
+                break;
+        }
+        $items = $items->paginate();
+        return $this->responseSelect2($items, 'name', 'id');
+    }
+
     public function selectRole($search, Request $request)
     {
         $items = Role::keywordBy('name')
@@ -574,6 +592,22 @@ class AjaxController extends Controller
     public function selectTipePemakaian($search, Request $request)
     {
         $items = TipePemakaian::keywordBy('name')->orderBy('name');
+        switch ($search) {
+            case 'all':
+                $items = $items;
+                break;
+
+            default:
+                $items = $items->whereNull('id');
+                break;
+        }
+        $items = $items->paginate();
+        return $this->responseSelect2($items, 'name', 'id');
+    }
+
+    public function selectKategoriAsuransi($search, Request $request)
+    {
+        $items = KategoriAsuransi::keywordBy('name')->orderBy('name');
         switch ($search) {
             case 'all':
                 $items = $items;
