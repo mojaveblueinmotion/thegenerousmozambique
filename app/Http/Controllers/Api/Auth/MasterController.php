@@ -57,7 +57,7 @@ class MasterController extends BaseController
 
     public function selectAsuransiMobil(Request $request){
         try{
-            $record =  AsuransiMobil::with('rider')->get();
+            $record =  AsuransiMobil::with(['rider.riderKendaraan'])->get();
 
             if(!empty($request->id)){
                 $record =  AsuransiMobil::with('rider')->find($request->id);
