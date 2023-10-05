@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api\Asuransi;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 use App\Models\Asuransi\PolisMobil;
 use App\Http\Controllers\Controller;
 use App\Models\Setting\Globals\Files;
@@ -80,26 +82,78 @@ class AsuransiMobilApiController extends BaseController
             $recordPayment->save();
 
             // if ($request->files) {
-                foreach($request->files as $nama_file => $arr){
+            //     foreach($request->files as $nama_file => $arr){
+            //         foreach ($request->file($nama_file) as $key => $file) {
+            //             // dd(53, $file->getClientOriginalName());
+            //             $file_path = Carbon::now()->format('Ymdhisu')
+            //                 . md5($file->getClientOriginalName())
+            //                 . '/' . $file->getClientOriginalName();
+        
+            //             $sys_file = new Files;
+            //             $sys_file->target_id    = $record->id;
+            //             $sys_file->target_type  = PolisMobil::class;
+            //             $sys_file->module       = 'asuransi.polis-mobil';
+            //             $sys_file->file_name    = $file->getClientOriginalName();
+            //             $sys_file->file_path    = $file->storeAs('files', $file_path, 'public');
+            //             // $temp->file_type = $file->extension();
+            //             $sys_file->file_size = $file->getSize();
+            //             $sys_file->flag = $nama_file;
+            //             $sys_file->save();
+            //         }
+            //     }
+            // }
+
+            if ($request->files) {
+                foreach ($request->files as $nama_file => $arr) {
                     foreach ($request->file($nama_file) as $key => $file) {
-                        // dd(53, $file->getClientOriginalName());
-                        $file_path = Carbon::now()->format('Ymdhisu')
+                        // Check if the file is a base64 encoded string
+                        if (Str::startsWith($file, 'data:image')) {
+                            // Get the base64 data portion of the string
+                            $base64Data = substr($file, strpos($file, ',') + 1);
+            
+                            // Decode the base64 data to binary
+                            $imageData = base64_decode($base64Data);
+            
+                            // Generate a unique file name
+                            $fileName = Carbon::now()->format('Ymdhisu')
+                                . md5($file->getClientOriginalName())
+                                . '.png'; // You can choose the appropriate file extension
+            
+                            // Specify the storage path where you want to store the image
+                            $storagePath = 'public/files/' . $fileName;
+            
+                            // Save the image to the storage path
+                            File::put(storage_path($storagePath), $imageData);
+            
+                            $sys_file = new Files;
+                            $sys_file->target_id    = $record->id;
+                            $sys_file->target_type  = PolisMobil::class;
+                            $sys_file->module       = 'asuransi.polis-mobil';
+                            $sys_file->file_name    = $fileName;
+                            $sys_file->file_path    = $storagePath;
+                            $sys_file->file_size    = strlen($imageData); // Get the size of the image data
+                            $sys_file->flag         = $nama_file;
+                            $sys_file->save();
+                        } else {
+                            // dd(53, $file->getClientOriginalName());
+                            $file_path = Carbon::now()->format('Ymdhisu')
                             . md5($file->getClientOriginalName())
                             . '/' . $file->getClientOriginalName();
         
-                        $sys_file = new Files;
-                        $sys_file->target_id    = $record->id;
-                        $sys_file->target_type  = PolisMobil::class;
-                        $sys_file->module       = 'asuransi.polis-mobil';
-                        $sys_file->file_name    = $file->getClientOriginalName();
-                        $sys_file->file_path    = $file->storeAs('files', $file_path, 'public');
-                        // $temp->file_type = $file->extension();
-                        $sys_file->file_size = $file->getSize();
-                        $sys_file->flag = $nama_file;
-                        $sys_file->save();
+                            $sys_file = new Files;
+                            $sys_file->target_id    = $record->id;
+                            $sys_file->target_type  = PolisMobil::class;
+                            $sys_file->module       = 'asuransi.polis-mobil';
+                            $sys_file->file_name    = $file->getClientOriginalName();
+                            $sys_file->file_path    = $file->storeAs('files', $file_path, 'public');
+                            // $temp->file_type = $file->extension();
+                            $sys_file->file_size = $file->getSize();
+                            $sys_file->flag = $nama_file;
+                            $sys_file->save();
+                        }
                     }
                 }
-            // }
+            }            
 
             return response()->json([
                 'success' => true,
