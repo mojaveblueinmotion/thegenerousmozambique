@@ -79,7 +79,7 @@ class AsuransiMobilApiController extends BaseController
             $recordPayment->polis_id = $record->id;
             $recordPayment->save();
 
-            if ($request->files) {
+            // if ($request->files) {
                 foreach($request->files as $nama_file => $arr){
                     foreach ($request->file($nama_file) as $key => $file) {
                         // dd(53, $file->getClientOriginalName());
@@ -99,7 +99,7 @@ class AsuransiMobilApiController extends BaseController
                         $sys_file->save();
                     }
                 }
-            }
+            // }
 
             return response()->json([
                 'success' => true,
