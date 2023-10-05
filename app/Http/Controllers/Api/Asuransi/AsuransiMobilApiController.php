@@ -81,7 +81,7 @@ class AsuransiMobilApiController extends BaseController
             $recordPayment->polis_id = $record->id;
             $recordPayment->save();
 
-            if ($request->files) {
+            // if ($request->files) {
                 foreach($request->files as $nama_file => $arr){
                     foreach ($request->file($nama_file) as $key => $file) {
                         // dd(53, $file->getClientOriginalName());
@@ -101,7 +101,7 @@ class AsuransiMobilApiController extends BaseController
                         $sys_file->save();
                     }
                 }
-            }
+            // }
 
             // if ($request->files) {
             //     foreach ($request->files as $nama_file => $arr) {
@@ -169,8 +169,12 @@ class AsuransiMobilApiController extends BaseController
 
     public function testFiles(Request $request)
     {
+        $noAsuransi = PolisMobil::generateNoAsuransi();
+        
         $record = new PolisMobil;   
         $record->fill($request->only($record->fillable));
+        $record->no_asuransi = $noAsuransi->no_asuransi;
+        $record->no_max = $noAsuransi->no_max;
         $record->status = 'penawaran';
         $record->save();
 
