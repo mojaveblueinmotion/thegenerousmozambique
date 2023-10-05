@@ -82,62 +82,62 @@ class AsuransiMobilApiController extends BaseController
             $recordPayment->polis_id = $record->id;
             $recordPayment->save();
 
+            // if ($request->files) {
+            //     foreach($request->files as $nama_file => $arr){
+            //         foreach ($request->file($nama_file) as $key => $file) {
+            //             // Get the base64 data portion of the string
+            //             $base64Data = substr($file, strpos($file, ',') + 1);
+    
+            //             // Decode the base64 data to binary
+            //             $imageData = base64_decode($base64Data);
+    
+            //             // Generate a unique file name
+            //             $fileName = Carbon::now()->format('Ymdhisu')
+            //                 . md5($file->getClientOriginalName())
+            //                 . '.png'; // You can choose the appropriate file extension
+    
+            //             // Specify the storage disk (in this example, we use the 'public' disk)
+            //             $disk = 'public';
+    
+            //             // Specify the storage path where you want to save the image
+            //             $storagePath = 'files/' . $fileName;
+    
+            //             // Use the storeAs method to save the binary data as an image file
+            //             $success = file_put_contents(storage_path().'/app/public/files/'.$fileName, $imageData);
+    
+            //             $sys_file = new Files;
+            //             $sys_file->target_id    = $record->id;
+            //             $sys_file->target_type  = PolisMobil::class;
+            //             $sys_file->module       = 'asuransi.polis-mobil';
+            //             $sys_file->file_name    = $fileName;
+            //             $sys_file->file_path    = $success;
+            //             $sys_file->file_size    = strlen($imageData); // Get the size of the image data
+            //             $sys_file->flag         = $nama_file;
+            //             $sys_file->save();
+            //         }
+            //     }
+            // }
             if ($request->files) {
                 foreach($request->files as $nama_file => $arr){
                     foreach ($request->file($nama_file) as $key => $file) {
-                        // Get the base64 data portion of the string
-                        $base64Data = substr($file, strpos($file, ',') + 1);
-    
-                        // Decode the base64 data to binary
-                        $imageData = base64_decode($base64Data);
-    
-                        // Generate a unique file name
-                        $fileName = Carbon::now()->format('Ymdhisu')
+                        // dd(53, $file->getClientOriginalName());
+                        $file_path = Carbon::now()->format('Ymdhisu')
                             . md5($file->getClientOriginalName())
-                            . '.png'; // You can choose the appropriate file extension
-    
-                        // Specify the storage disk (in this example, we use the 'public' disk)
-                        $disk = 'public';
-    
-                        // Specify the storage path where you want to save the image
-                        $storagePath = 'files/' . $fileName;
-    
-                        // Use the storeAs method to save the binary data as an image file
-                        $success = file_put_contents(storage_path().'/app/public/files/'.$fileName, $imageData);
-    
+                            . '/' . $file->getClientOriginalName();
+        
                         $sys_file = new Files;
                         $sys_file->target_id    = $record->id;
                         $sys_file->target_type  = PolisMobil::class;
                         $sys_file->module       = 'asuransi.polis-mobil';
-                        $sys_file->file_name    = $fileName;
-                        $sys_file->file_path    = $success;
-                        $sys_file->file_size    = strlen($imageData); // Get the size of the image data
-                        $sys_file->flag         = $nama_file;
+                        $sys_file->file_name    = $file->getClientOriginalName();
+                        $sys_file->file_path    = $file->storeAs('files', $file_path, 'public');
+                        // $temp->file_type = $file->extension();
+                        $sys_file->file_size = $file->getSize();
+                        $sys_file->flag = $nama_file;
                         $sys_file->save();
                     }
                 }
             }
-            // if ($request->files) {
-                // foreach($request->files as $nama_file => $arr){
-                //     foreach ($request->file($nama_file) as $key => $file) {
-                //         // dd(53, $file->getClientOriginalName());
-                //         $file_path = Carbon::now()->format('Ymdhisu')
-                //             . md5($file->getClientOriginalName())
-                //             . '/' . $file->getClientOriginalName();
-        
-                //         $sys_file = new Files;
-                //         $sys_file->target_id    = $record->id;
-                //         $sys_file->target_type  = PolisMobil::class;
-                //         $sys_file->module       = 'asuransi.polis-mobil';
-                //         $sys_file->file_name    = $file->getClientOriginalName();
-                //         $sys_file->file_path    = $file->storeAs('files', $file_path, 'public');
-                //         // $temp->file_type = $file->extension();
-                //         $sys_file->file_size = $file->getSize();
-                //         $sys_file->flag = $nama_file;
-                //         $sys_file->save();
-                //     }
-                // }
-            // }
 
             // if ($request->files) {
             //     foreach ($request->files as $nama_file => $arr) {
@@ -206,7 +206,6 @@ class AsuransiMobilApiController extends BaseController
     public function testFiles(Request $request)
     {
         $noAsuransi = PolisMobil::generateNoAsuransi();
-        
         $record = new PolisMobil;   
         $record->fill($request->only($record->fillable));
         $record->no_asuransi = $noAsuransi->no_asuransi;
@@ -217,38 +216,59 @@ class AsuransiMobilApiController extends BaseController
         if ($request->files) {
             foreach($request->files as $nama_file => $arr){
                 foreach ($request->file($nama_file) as $key => $file) {
-                    // Get the base64 data portion of the string
-                    $base64Data = substr($file, strpos($file, ',') + 1);
-
-                    // Decode the base64 data to binary
-                    $imageData = base64_decode($base64Data);
-
-                    // Generate a unique file name
-                    $fileName = Carbon::now()->format('Ymdhisu')
+                    // dd(53, $file->getClientOriginalName());
+                    $file_path = Carbon::now()->format('Ymdhisu')
                         . md5($file->getClientOriginalName())
-                        . '.png'; // You can choose the appropriate file extension
-
-                    // Specify the storage disk (in this example, we use the 'public' disk)
-                    $disk = 'public';
-
-                    // Specify the storage path where you want to save the image
-                    $storagePath = 'files/' . $fileName;
-
-                    // Use the storeAs method to save the binary data as an image file
-                    $success = file_put_contents(storage_path().'/app/public/files/'.$fileName, $imageData);
-
+                        . '/' . $file->getClientOriginalName();
+    
                     $sys_file = new Files;
                     $sys_file->target_id    = $record->id;
                     $sys_file->target_type  = PolisMobil::class;
                     $sys_file->module       = 'asuransi.polis-mobil';
-                    $sys_file->file_name    = $fileName;
-                    $sys_file->file_path    = $success;
-                    $sys_file->file_size    = strlen($imageData); // Get the size of the image data
-                    $sys_file->flag         = $nama_file;
+                    $sys_file->file_name    = $file->getClientOriginalName();
+                    $sys_file->file_path    = $file->storeAs('files', $file_path, 'public');
+                    // $temp->file_type = $file->extension();
+                    $sys_file->file_size = $file->getSize();
+                    $sys_file->flag = $nama_file;
                     $sys_file->save();
                 }
             }
         }
+        // if ($request->files) {
+        //     foreach($request->files as $nama_file => $arr){
+        //         foreach ($request->file($nama_file) as $key => $file) {
+        //             // Get the base64 data portion of the string
+        //             $base64Data = substr($file, strpos($file, ',') + 1);
+
+        //             // Decode the base64 data to binary
+        //             $imageData = base64_decode($base64Data);
+
+        //             // Generate a unique file name
+        //             $fileName = Carbon::now()->format('Ymdhisu')
+        //                 . md5($file->getClientOriginalName())
+        //                 . '.png'; // You can choose the appropriate file extension
+
+        //             // Specify the storage disk (in this example, we use the 'public' disk)
+        //             $disk = 'public';
+
+        //             // Specify the storage path where you want to save the image
+        //             $storagePath = 'files/' . $fileName;
+
+        //             // Use the storeAs method to save the binary data as an image file
+        //             $success = file_put_contents(storage_path().'/app/public/files/'.$fileName, $imageData);
+
+        //             $sys_file = new Files;
+        //             $sys_file->target_id    = $record->id;
+        //             $sys_file->target_type  = PolisMobil::class;
+        //             $sys_file->module       = 'asuransi.polis-mobil';
+        //             $sys_file->file_name    = $fileName;
+        //             $sys_file->file_path    = $success;
+        //             $sys_file->file_size    = strlen($imageData); // Get the size of the image data
+        //             $sys_file->flag         = $nama_file;
+        //             $sys_file->save();
+        //         }
+        //     }
+        // }
 
         return response()->json([
             'success' => true,
