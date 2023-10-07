@@ -21,14 +21,14 @@ class AuthController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => "Invalid Credentials"
-            ]);
+            ], 400);
         }else{
             $token = JWTAuth::attempt($credentials);
 
             return response()->json([
                 'success' => true,
                 'tokens' => $token,
-            ], 400);
+            ]);
         }
     }
 
