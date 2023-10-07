@@ -180,6 +180,11 @@ return [
                         'title' => 'Rider Kendaraan',
                         'url' => '/master/data-asuransi/rider-kendaraan',
                     ],
+                    [
+                        'name' => 'rider-kendaraan-lainnya',
+                        'title' => 'Rider Kendaraan Lainnya',
+                        'url' => '/master/data-asuransi/rider-kendaraan-lainnya',
+                    ],
                     // [
                     //     'name' => 'rider-properti',
                     //     'title' => 'Rider Properti',

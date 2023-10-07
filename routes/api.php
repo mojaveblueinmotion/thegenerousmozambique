@@ -10,6 +10,7 @@ use App\Http\Controllers\Api\Asuransi\AsuransiMobilApiController;
 use App\Http\Controllers\Api\Asuransi\AsuransiMotorApiController;
 use App\Http\Controllers\Api\Asuransi\AsuransiPropertiApiController;
 use App\Http\Controllers\Api\Asuransi\AsuransiPerjalananApiController;
+use App\Http\Controllers\Api\Asuransi\AsuransiKendaraanLainnyaApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,9 @@ Route::get('selectCity/{id}', [MasterController::class, 'selectCity']);
 Route::get('selectDistrict/{id}', [MasterController::class, 'selectDistrict']);
 Route::get('selectVillage/{id}', [MasterController::class, 'selectVillage']);
 
+Route::get('selectRiderLainnya', [MasterController::class, 'selectRiderLainnya']);
+
+
 Route::middleware(['jwt.verify'])->group( function () {
     Route::get('getMe', [AuthController::class, 'getMe']);
 
@@ -61,9 +65,16 @@ Route::middleware(['jwt.verify'])->group( function () {
     Route::post('agentAsuransiMobil', [AsuransiMobilApiController::class, 'agentAsuransiMobil']);
     Route::post('agentPenawaranAsuransiMobil', [AsuransiMobilApiController::class, 'agentPenawaranAsuransiMobil']);
     Route::post('testFiles', [AsuransiMobilApiController::class, 'testFiles']);
+
+    // Kendaraan Lainnya
+    Route::post('agentAsuransiKendaraanLainnya', [AsuransiKendaraanLainnyaApiController::class, 'agentAsuransiKendaraanLainnya']);
+    Route::post('agentPenawaranAsuransiKendaraanLainnya', [AsuransiKendaraanLainnyaApiController::class, 'agentPenawaranAsuransiKendaraanLainnya']);
+    Route::post('testFiles', [AsuransiKendaraanLainnyaApiController::class, 'testFiles']);
     
     // Properti
 });
+
+
 Route::post('agentAsuransiProperti', [AsuransiPropertiApiController::class, 'agentAsuransiProperti']);
 Route::post('agentPenawaranAsuransiProperti', [AsuransiPropertiApiController::class, 'agentPenawaranAsuransiProperti']);
 Route::post('penutupanAsuransiProperti', [AsuransiPropertiApiController::class, 'penutupanAsuransiProperti']);

@@ -5,14 +5,14 @@ namespace App\Http\Controllers\Master\DataAsuransi;
 use Illuminate\Http\Request;
 use App\Exports\GenerateExport;
 use App\Http\Controllers\Controller;
-use App\Models\Master\DataAsuransi\RiderKendaraan;
-use App\Http\Requests\Master\DataAsuransi\RiderKendaraanRequest;
+use App\Models\Master\DataAsuransi\RiderKendaraanLainnya;
+use App\Http\Requests\Master\DataAsuransi\RiderKendaraanLainnyaRequest;
 
-class RiderKendaraanController extends Controller
+class RiderKendaraanLainnyaController extends Controller
 {
-    protected $module   = 'master.data-asuransi.rider-kendaraan';
-    protected $routes   = 'master.data-asuransi.rider-kendaraan';
-    protected $views    = 'master.data-asuransi.rider-kendaraan';
+    protected $module   = 'master.data-asuransi.rider-kendaraan-lainnya';
+    protected $routes   = 'master.data-asuransi.rider-kendaraan-lainnya';
+    protected $views    = 'master.data-asuransi.rider-kendaraan-lainnya';
     protected $perms    = 'master';
 
     public function __construct()
@@ -24,11 +24,11 @@ class RiderKendaraanController extends Controller
                 'views' => $this->views,
                 'perms' => $this->perms,
                 'permission' => $this->perms . '.view',
-                'title' => 'Rider Kendaraan',
+                'title' => 'Rider Kendaraan Lainnya',
                 'breadcrumb' => [
                     'Data Master' => route($this->routes . '.index'),
                     'Data Asuransi' => route($this->routes . '.index'),
-                    'Rider Kendaraan' => route($this->routes . '.index'),
+                    'Rider Kendaraan Lainnya' => route($this->routes . '.index'),
                 ]
             ]
         );
@@ -42,6 +42,7 @@ class RiderKendaraanController extends Controller
                     'datatable_1' => [
                         $this->makeColumn('name:num'),
                         $this->makeColumn('name:name|label:Rider Asuransi|className:text-center'),
+                        $this->makeColumn('name:persentasi_pembayaran|label:Persentasi Pembayaran|className:text-center'),
                         $this->makeColumn('name:description|label:Deskripsi|className:text-center'),
                         $this->makeColumn('name:updated_by'),
                         $this->makeColumn('name:action'),
@@ -55,7 +56,7 @@ class RiderKendaraanController extends Controller
     public function grid()
     {
         $user = auth()->user();
-        $records = RiderKendaraan::grid()->filters()->dtGet();
+        $records = RiderKendaraanLainnya::grid()->filters()->dtGet();
 
         return \DataTables::of($records)
             ->addColumn(
@@ -68,6 +69,12 @@ class RiderKendaraanController extends Controller
                 'name',
                 function ($record) {
                     return "<span class='badge badge-danger'>" . $record->name . "</span>";
+                }
+            )
+            ->addColumn(
+                'persentasi_pembayaran',
+                function ($records) {
+                    return $records->persentasi_pembayaran. '%';
                 }
             )
             ->addColumn('description', function ($record) {
@@ -105,28 +112,28 @@ class RiderKendaraanController extends Controller
         return $this->render($this->views . '.create');
     }
 
-    public function store(RiderKendaraanRequest $request)
+    public function store(RiderKendaraanLainnyaRequest $request)
     {
-        $record = new RiderKendaraan;
+        $record = new RiderKendaraanLainnya;
         return $record->handleStoreOrUpdate($request);
     }
 
-    public function show(RiderKendaraan $record)
+    public function show(RiderKendaraanLainnya $record)
     {
         return $this->render($this->views . '.show', compact('record'));
     }
 
-    public function edit(RiderKendaraan $record)
+    public function edit(RiderKendaraanLainnya $record)
     {
         return $this->render($this->views . '.edit', compact('record'));
     }
 
-    public function update(RiderKendaraanRequest $request, RiderKendaraan $record)
+    public function update(RiderKendaraanLainnyaRequest $request, RiderKendaraanLainnya $record)
     {
         return $record->handleStoreOrUpdate($request);
     }
 
-    public function destroy(RiderKendaraan $record)
+    public function destroy(RiderKendaraanLainnya $record)
     {
         return $record->handleDestroy();
     }
@@ -149,7 +156,7 @@ class RiderKendaraanController extends Controller
 
     public function importSave(Request $request)
     {
-        $record = new RiderKendaraan;
+        $record = new RiderKendaraanLainnya;
         return $record->handleImport($request);
     }
 }

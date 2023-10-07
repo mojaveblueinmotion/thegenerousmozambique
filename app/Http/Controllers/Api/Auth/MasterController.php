@@ -30,6 +30,7 @@ use App\Models\Master\AsuransiPerjalanan\AsuransiPerjalanan;
 use App\Models\Master\AsuransiProperti\PerlindunganProperti;
 use App\Models\Master\DataAsuransi\KategoriAsuransi;
 use App\Models\Master\DataAsuransi\RiderKendaraan;
+use App\Models\Master\DataAsuransi\RiderKendaraanLainnya;
 
 class MasterController extends BaseController
 {
@@ -91,6 +92,23 @@ class MasterController extends BaseController
                 'message' => "Data Merk Mobil",
                 'data' => $record
 
+            ]);
+        }catch(Exception $e){
+            return response()->json([
+                'success' => false,
+                'message' => $e
+            ], 400);
+        }
+    }
+
+    public function selectRiderLainnya(){
+        try{
+            $record =  RiderKendaraanLainnya::all();
+
+            return response()->json([
+                'success' => true,
+                'message' => "Data Rider Lainnya",
+                'data' => $record
             ]);
         }catch(Exception $e){
             return response()->json([

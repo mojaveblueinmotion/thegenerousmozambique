@@ -465,6 +465,8 @@ Route::middleware('auth')
                                     Route::grid('fitur-asuransi', 'FiturAsuransiController');
 
                                     Route::grid('rider-kendaraan', 'RiderKendaraanController');
+
+                                    Route::grid('rider-kendaraan-lainnya', 'RiderKendaraanLainnyaController');
                                 }
                             );
                             
