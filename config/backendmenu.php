@@ -304,6 +304,11 @@ return [
                         'url' => '/master/asuransi-motor/asuransi-motor'
                     ],
                     [
+                        'name' => 'rider-motor',
+                        'title' => 'Rider Motor',
+                        'url' => '/master/asuransi-motor/rider-motor',
+                    ],
+                    [
                         'name' => 'merk',
                         'title' => 'Merk Motor',
                         'url' => '/master/asuransi-motor/merk'

@@ -10,6 +10,7 @@ use App\Models\Traits\HasFiles;
 use App\Models\Traits\HasApprovals;
 use App\Models\AsuransiMotor\PolisMotorCek;
 use App\Models\AsuransiMotor\PolisMotorNilai;
+use App\Models\AsuransiMotor\PolisMotorRider;
 use App\Models\AsuransiMotor\PolisMotorClient;
 use App\Models\AsuransiMotor\PolisMotorPayment;
 use App\Models\Master\AsuransiMotor\AsuransiMotor;
@@ -124,6 +125,11 @@ class PolisMotor extends Model
     public function asuransi()
     {
         return $this->belongsTo(AsuransiMotor::class, 'asuransi_id');
+    }
+
+    public function rider()
+    {
+        return $this->hasMany(PolisMotorRider::class, 'polis_id');
     }
     /*******************************
      ** SCOPE
@@ -292,6 +298,7 @@ class PolisMotor extends Model
                 $detailClient->no_mesin = $request->no_mesin;
                 
                 $detailClient->save();
+                $this->saveParts($request);
             }
                 
             $this->saveLogNotify();
@@ -303,6 +310,21 @@ class PolisMotor extends Model
         }
     }
 
+    public function saveParts($request)
+    {
+        $partsIds = [];
+        // External
+        if (!empty($request->ext_part)) {
+            foreach ($request->ext_part as $val) {
+                $part = $this->rider()->firstOrNew(['rider_kendaraan_id' => $val['rider_id'], 'persentasi_eksisting' => $val['persentasi_eksisting']]);
+                $this->rider()->save($part);
+                $partsIds[] = $part->id;
+            }
+        }
+
+        $this->rider()->whereNotIn('id', $partsIds)->delete();
+    }
+    
     public function saveFiles($request)
     {
         $this->saveFilesByTemp($request->ktp, $request->module, 'ktp');

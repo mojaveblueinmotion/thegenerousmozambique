@@ -71,7 +71,8 @@ class PolisMotorController extends Controller
             ->addColumn(
                 'no_asuransi',
                 function ($records) use ($user) {
-                    return '<span class="badge badge-danger">' . $records->no_asuransi . '</span><br><span class="badge badge-primary">' . $records->agent->name ?? 'System' . '</span>';
+                    $agent = $records->agent_id ? $records->agent->name : 'By System';
+                    return '<span class="badge badge-primary">' . $agent . '</span><br><span class="badge badge-danger">' . $records->no_asuransi . '</span>';
                 }
             )
             ->addColumn(

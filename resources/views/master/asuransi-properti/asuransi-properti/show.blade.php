@@ -67,6 +67,18 @@
 		<input disabled value="{{ $record->call_center }}" type="text" name="call_center" class="form-control" placeholder="{{ __('Call Center') }}">
 	</div>
 </div>
+<div class="form-group row">
+	<label class="col-sm-4 col-form-label">{{ __('Bank') }}</label>
+	<div class="col-sm-8 parent-group">
+		<input disabled type="text" value="{{ $record->bank }}" name="bank" class="form-control" placeholder="{{ __('Bank') }}">
+	</div>
+</div>
+<div class="form-group row">
+	<label class="col-sm-4 col-form-label">{{ __('No Rekening') }}</label>
+	<div class="col-sm-8 parent-group">
+		<input disabled type="text" value="{{ $record->no_rekening }}" name="no_rekening" class="form-control" placeholder="{{ __('No Rekening') }}">
+	</div>
+</div>
 @endsection
 
 @section('modal-footer')

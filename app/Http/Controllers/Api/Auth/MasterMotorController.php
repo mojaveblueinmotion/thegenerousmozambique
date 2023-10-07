@@ -29,7 +29,7 @@ class MasterMotorController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 
@@ -52,7 +52,7 @@ class MasterMotorController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
     
@@ -70,7 +70,7 @@ class MasterMotorController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 
@@ -88,7 +88,7 @@ class MasterMotorController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 
@@ -106,7 +106,7 @@ class MasterMotorController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 }

@@ -2,10 +2,12 @@
 
 namespace App\Models\Master\AsuransiMotor;
 
+use App\Models\Model;
 use App\Models\Master\DataAsuransi\FiturAsuransi;
+use App\Models\Master\DataAsuransi\KategoriAsuransi;
 use App\Models\Master\DataAsuransi\IntervalPembayaran;
 use App\Models\Master\DataAsuransi\PerusahaanAsuransi;
-use App\Models\Model;
+use App\Models\Master\AsuransiMotor\AsuransiRiderMotor;
 
 class AsuransiMotor extends Model
 {
@@ -14,9 +16,17 @@ class AsuransiMotor extends Model
     protected $fillable = [
         'perusahaan_asuransi_id',
         'interval_pembayaran_id',
-        'pembayaran_persentasi',
+        'kategori_asuransi_id',
+        'wilayah_satu_batas_atas',
+        'wilayah_satu_batas_bawah',
+        'wilayah_dua_batas_atas',
+        'wilayah_dua_batas_bawah',
+        'wilayah_tiga_batas_atas',
+        'wilayah_tiga_batas_bawah',
         'name',
         'call_center',
+        'bank',
+        'no_rekening',
     ];
 
     /*******************************
@@ -45,6 +55,15 @@ class AsuransiMotor extends Model
         return $this->belongsToMany(FiturAsuransi::class, 'ref_asuransi_motor_fitur', 'asuransi_id', 'fitur_id');
     }
 
+    public function kategoriAsuransi()
+    {
+        return $this->belongsTo(KategoriAsuransi::class, 'kategori_asuransi_id');
+    }
+
+    public function rider()
+    {
+        return $this->hasMany(AsuransiRiderMotor::class, 'asuransi_id');
+    }
     /*******************************
      ** SCOPE
      *******************************/
@@ -86,6 +105,36 @@ class AsuransiMotor extends Model
         }
     }
 
+    public function handleRiderStoreOrUpdate($request, AsuransiRiderMotor $rider)
+    {
+        $this->beginTransaction();
+        try {
+            $rider->fill($request->all());
+            $this->rider()->save($rider);
+
+            $this->save();
+            $this->saveLogNotify();
+
+            $redirect = route(request()->get('routes').'.show', $this->id);
+            return $this->commitSaved();
+        } catch (\Exception $e) {
+            return $this->rollbackSaved($e);
+        }
+    }
+
+    public function handleRiderDestroy(AsuransiRiderMotor $rider)
+    {
+        $this->beginTransaction();
+        try {
+            $this->saveLogNotify();
+            $rider->delete();
+
+            $redirect = route(request()->get('routes').'.show', $this->id);
+            return $this->commitDeleted();
+        } catch (\Exception $e) {
+            return $this->rollbackDeleted($e);
+        }
+    }
     public function handleImport($request)
     {
         $this->beginTransaction();

@@ -84,3 +84,5 @@ Route::get('selectSeriMotor/{merk_id}', [MasterMotorController::class, 'selectSe
 
 // Perjalanan
 Route::get('selectAsuransiPerjalanan', [MasterController::class, 'selectAsuransiPerjalanan']);
+
+Route::get('selectKategoriAsuransi', [MasterController::class, 'selectKategoriAsuransi']);

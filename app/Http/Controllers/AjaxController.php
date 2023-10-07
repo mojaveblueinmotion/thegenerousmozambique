@@ -28,6 +28,7 @@ use App\Models\Master\DatabaseMobil\Tahun;
 use App\Models\Setting\Globals\Notification;
 use App\Models\Master\DatabaseMobil\KodePlat;
 use App\Models\Master\DatabaseMobil\TipeMobil;
+use App\Models\Master\AsuransiMotor\RiderMotor;
 use App\Models\Master\AsuransiProperti\Okupasi;
 use App\Models\Master\DataAsuransi\FiturAsuransi;
 use App\Models\Master\AsuransiMobil\AsuransiMobil;
@@ -39,6 +40,8 @@ use App\Models\Master\AsuransiMobil\KondisiKendaraan;
 use App\Models\Master\AsuransiMobil\LuasPertanggungan;
 use App\Models\Master\DataAsuransi\IntervalPembayaran;
 use App\Models\Master\DataAsuransi\PerusahaanAsuransi;
+use App\Models\Master\AsuransiMobil\AsuransiRiderMobil;
+use App\Models\Master\AsuransiMotor\AsuransiRiderMotor;
 use App\Models\Master\AsuransiProperti\AsuransiProperti;
 use App\Models\Master\AsuransiProperti\KonstruksiProperti;
 use App\Models\Master\AsuransiPerjalanan\AsuransiPerjalanan;
@@ -369,6 +372,80 @@ class AjaxController extends Controller
     public function selectRiderKendaraan($search, Request $request)
     {
         $items = RiderKendaraan::keywordBy('name')->orderBy('name');
+        switch ($search) {
+            case 'all':
+                $items = $items;
+                break;
+
+            case 'byAsuransi':
+                $asuransi = $request->asuransi_id;
+                $items = $items->whereHas(
+                    'asuransi',
+                    function ($q) use ($asuransi) {
+                        $q->where('asuransi_id', $asuransi);
+                    }
+                );;
+                break;
+
+            default:
+                $items = $items->whereNull('id');
+                break;
+        }
+        $items = $items->paginate();
+        return $this->responseSelect2($items, 'name', 'id');
+    }
+
+    public function getRiderKendaraanPersentasi(Request $request)
+    {
+        return AsuransiRiderMobil::when(
+            $rider_id = $request->rider_id,
+            function ($q) use ($rider_id) {
+                $q->whereIn('rider_kendaraan_id', [$rider_id]);
+            }
+        )
+        ->first();
+    }
+
+    public function selectRiderKendaraanMotor($search, Request $request)
+    {
+        $items = RiderMotor::keywordBy('name')->orderBy('name');
+        switch ($search) {
+            case 'all':
+                $items = $items;
+                break;
+
+            case 'byAsuransi':
+                $asuransi = $request->asuransi_id;
+                $items = $items->whereHas(
+                    'asuransi',
+                    function ($q) use ($asuransi) {
+                        $q->where('asuransi_id', $asuransi);
+                    }
+                );;
+                break;
+
+            default:
+                $items = $items->whereNull('id');
+                break;
+        }
+        $items = $items->paginate();
+        return $this->responseSelect2($items, 'name', 'id');
+    }
+
+    public function getRiderKendaraanMotorPersentasi(Request $request)
+    {
+        return AsuransiRiderMotor::when(
+            $rider_id = $request->rider_id,
+            function ($q) use ($rider_id) {
+                $q->whereIn('rider_kendaraan_id', [$rider_id]);
+            }
+        )
+        ->first();
+    }
+
+    public function selectRiderMotor($search, Request $request)
+    {
+        $items = RiderMotor::keywordBy('name')->orderBy('name');
         switch ($search) {
             case 'all':
                 $items = $items;

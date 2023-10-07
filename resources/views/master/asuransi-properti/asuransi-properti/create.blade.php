@@ -59,6 +59,18 @@
 			<input type="text" name="call_center" class="form-control" placeholder="{{ __('Call Center') }}">
 		</div>
 	</div>
+	<div class="form-group row">
+		<label class="col-sm-4 col-form-label">{{ __('Bank') }}</label>
+		<div class="col-sm-8 parent-group">
+			<input type="text" name="bank" class="form-control" placeholder="{{ __('Bank') }}">
+		</div>
+	</div>
+	<div class="form-group row">
+		<label class="col-sm-4 col-form-label">{{ __('No Rekening') }}</label>
+		<div class="col-sm-8 parent-group">
+			<input type="text" name="no_rekening" class="form-control" placeholder="{{ __('No Rekening') }}">
+		</div>
+	</div>
 @endsection
 
 @push('scripts')

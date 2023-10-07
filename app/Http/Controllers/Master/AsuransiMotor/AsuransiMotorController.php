@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Master\AsuransiMotor;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Master\AsuransiMotor\AsuransiMotorRequest;
-use App\Models\Master\AsuransiMotor\AsuransiMotor;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\Master\AsuransiMotor\AsuransiMotor;
+use App\Models\Master\AsuransiMotor\AsuransiRiderMotor;
+use App\Http\Requests\Master\AsuransiMotor\AsuransiMotorRequest;
+use App\Http\Requests\Master\AsuransiMotor\AsuransiRiderMotorRequest;
 
 class AsuransiMotorController extends Controller
 {
@@ -96,7 +98,7 @@ class AsuransiMotorController extends Controller
                 'action',
                 function ($record) use ($user) {
                     $actions = [
-                        'type:show|id:' . $record->id,
+                        'type:show|label:Rider|page:true|id:' . $record->id,
                         'type:edit|id:' . $record->id,
                     ];
                     if ($record->canDeleted()) {
@@ -126,7 +128,7 @@ class AsuransiMotorController extends Controller
 
     public function show(AsuransiMotor $record)
     {
-        return $this->render($this->views . '.show', compact('record'));
+        return redirect()->route($this->routes . '.rider', $record->id);
     }
 
     public function edit(AsuransiMotor $record)
@@ -162,7 +164,121 @@ class AsuransiMotorController extends Controller
 
     public function importSave(Request $request)
     {
-        $record = new KondisiKendaraan;
+        $record = new AsuransiMotor;
         return $record->handleImport($request);
+    }
+
+    public function rider(AsuransiMotor $record)
+    {
+        $this->prepare(
+            [
+                'title' => 'Rider Asuransi',
+                'tableStruct' => [
+                    'url' => route($this->routes . '.riderGrid', $record->id),
+                    'datatable_1' => [
+                        $this->makeColumn('name:num'),
+                        $this->makeColumn('name:rider_kendaraan_id|label:Rider|className:text-left'),
+                        $this->makeColumn('name:pembayaran_persentasi|label:Persentasi|className:text-left'),
+                        $this->makeColumn('name:updated_by'),
+                        $this->makeColumn('name:action'),
+                    ],
+                ],
+            ]
+        );
+
+        return $this->render($this->views . '.rider.index', compact('record'));
+    }
+
+    public function riderGrid(AsuransiMotor $record)
+    {
+        $user = auth()->user();
+        $records = AsuransiRiderMotor::where('asuransi_id', $record->id)->filters()->dtGet();
+
+        return \DataTables::of($records)
+            ->addColumn(
+                'num',
+                function ($records) {
+                    return request()->start;
+                }
+            )
+            ->addColumn(
+                'rider_kendaraan_id',
+                function ($records) {
+                    return $records->riderKendaraan->name;
+                }
+            )
+            ->addColumn(
+                'pembayaran_persentasi',
+                function ($records) {
+                    return $records->pembayaran_persentasi. '%';
+                }
+            )
+            ->addColumn(
+                'updated_by',
+                function ($records) {
+                    return $records->createdByRaw();
+                }
+            )
+            ->addColumn(
+                'action',
+                function ($records) use ($user) {
+                    $actions = [];
+                    $actions[] = [
+                        'type' => 'show',
+                        'url' => route($this->routes . '.riderShow', $records->id),
+                    ];
+
+                    $actions[] = [
+                        'type' => 'edit',
+                        'url' => route($this->routes . '.riderEdit', $records->id),
+                    ];
+                    $actions[] = [
+                        'type' => 'delete',
+                        'url' => route($this->routes . '.riderDestroy', $records->id),
+                        'text' => 'pernyataan ini',
+                    ];
+                    return $this->makeButtonDropdown($actions, $records->id);
+                }
+            )
+            ->rawColumns(['action', 'updated_by', 'pembayaran_persentasi', 'rider_kendaraan_id'])
+            ->make(true);
+    }
+
+    public function riderCreate(AsuransiMotor $record)
+    {
+        $this->prepare(['title' => 'Rider Asuransi Mobil']);
+        return $this->render($this->views . '.rider.create', compact('record'));
+    }
+
+    public function riderStore(AsuransiMotor $record, AsuransiRiderMotorRequest $request)
+    {
+        $rider = new AsuransiRiderMotor;
+        return $record->handleRiderStoreOrUpdate($request, $rider);
+    }
+
+    public function riderShow(AsuransiRiderMotor $rider)
+    {
+        $this->prepare(['title' => 'Rider Asuransi Mobil']);
+        $record = $rider->asuransiMotor;
+        return $this->render($this->views . '.rider.show', compact('record', 'rider'));
+    }
+
+    public function riderEdit(AsuransiRiderMotor $rider)
+    {
+        $this->prepare(['title' => 'Rider Asuransi Mobil']);
+        $record = $rider->asuransiMotor;
+        return $this->render($this->views . '.rider.edit', compact('record', 'rider'));
+    }
+
+    public function riderUpdate(AsuransiRiderMotor $rider, AsuransiRiderMotorRequest $request)
+    {
+        $record = $rider->asuransiMotor;
+        return $record->handleRiderStoreOrUpdate($request, $rider);
+    }
+
+    public function riderDestroy(AsuransiRiderMotor $rider)
+    {
+        $record = $rider->asuransiMotor;
+        return $record->handleRiderDestroy($rider);
     }
 }

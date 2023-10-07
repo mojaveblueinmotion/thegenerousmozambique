@@ -96,7 +96,7 @@ return [
     'password'             => 'Password Anda salah.',
     'present'              => ':attribute wajib ada.',
     'regex'                => 'Format isian :attribute tidak valid.',
-    'required'             => ':attribute tidak boleh kosong.',
+    'required'             => 'tidak boleh kosong.',
     'required_if'          => ':attribute tidak boleh kosong bila :other adalah :value.',
     'required_unless'      => ':attribute tidak boleh kosong kecuali :other memiliki nilai :values.',
     'required_with'        => ':attribute tidak boleh kosong bila terdapat :values.',

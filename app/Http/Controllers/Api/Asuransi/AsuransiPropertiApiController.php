@@ -78,7 +78,7 @@ class AsuransiPropertiApiController extends Controller
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 
@@ -125,7 +125,7 @@ class AsuransiPropertiApiController extends Controller
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 

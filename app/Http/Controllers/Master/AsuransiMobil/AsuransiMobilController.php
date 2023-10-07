@@ -98,7 +98,7 @@ class AsuransiMobilController extends Controller
                 'action',
                 function ($record) use ($user) {
                     $actions = [
-                        'type:show|page:true|id:' . $record->id,
+                        'type:show|label:Rider|page:true|id:' . $record->id,
                         'type:edit|id:' . $record->id,
                     ];
                     if ($record->canDeleted()) {
@@ -179,6 +179,7 @@ class AsuransiMobilController extends Controller
                         $this->makeColumn('name:num'),
                         $this->makeColumn('name:rider_kendaraan_id|label:Rider|className:text-left'),
                         $this->makeColumn('name:pembayaran_persentasi|label:Persentasi|className:text-left'),
+                        $this->makeColumn('name:updated_by'),
                         $this->makeColumn('name:action'),
                     ],
                 ],
@@ -210,6 +211,12 @@ class AsuransiMobilController extends Controller
                 'pembayaran_persentasi',
                 function ($records) {
                     return $records->pembayaran_persentasi. '%';
+                }
+            )
+            ->addColumn(
+                'updated_by',
+                function ($records) {
+                    return $records->createdByRaw();
                 }
             )
             ->addColumn(

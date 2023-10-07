@@ -91,6 +91,10 @@ Route::middleware('auth')
                         Route::post('{search}/selectPerusahaanAsuransi', 'AjaxController@selectPerusahaanAsuransi')->name('selectPerusahaanAsuransi');
                         Route::post('{search}/selectFiturAsuransi', 'AjaxController@selectFiturAsuransi')->name('selectFiturAsuransi');
                         Route::post('{search}/selectRiderKendaraan', 'AjaxController@selectRiderKendaraan')->name('selectRiderKendaraan');
+                        Route::get('getRiderKendaraanPersentasi', 'AjaxController@getRiderKendaraanPersentasi')->name('getRiderKendaraanPersentasi');
+                        Route::post('{search}/selectRiderMotor', 'AjaxController@selectRiderMotor')->name('selectRiderMotor');
+                        Route::post('{search}/selectRiderKendaraanMotor', 'AjaxController@selectRiderKendaraanMotor')->name('selectRiderKendaraanMotor');
+                        Route::get('getRiderKendaraanMotorPersentasi', 'AjaxController@getRiderKendaraanMotorPersentasi')->name('getRiderKendaraanMotorPersentasi');
                         
                         // For Database Mobil
                         Route::post('{search}/selectMerk', 'AjaxController@selectMerk')->name('selectMerk');
@@ -346,6 +350,14 @@ Route::middleware('auth')
                             ->name('asuransi-motor.')
                             ->group(
                                 function () {
+                                    Route::get('asuransi-motor/{record}/rider', 'AsuransiMotorController@rider')->name('asuransi-motor.rider');
+                                    Route::post('asuransi-motor/{record}/riderGrid', 'AsuransiMotorController@riderGrid')->name('asuransi-motor.riderGrid');
+                                    Route::get('asuransi-motor/{record}/riderCreate', 'AsuransiMotorController@riderCreate')->name('asuransi-motor.riderCreate');
+                                    Route::post('asuransi-motor/{record}/riderStore', 'AsuransiMotorController@riderStore')->name('asuransi-motor.riderStore');
+                                    Route::get('asuransi-motor/{rider}/riderEdit', 'AsuransiMotorController@riderEdit')->name('asuransi-motor.riderEdit');
+                                    Route::patch('asuransi-motor/{rider}/riderUpdate', 'AsuransiMotorController@riderUpdate')->name('asuransi-motor.riderUpdate');
+                                    Route::delete('asuransi-motor/{rider}/riderDestroy', 'AsuransiMotorController@riderDestroy')->name('asuransi-motor.riderDestroy');
+                                    Route::get('asuransi-motor/{rider}/riderShow', 'AsuransiMotorController@riderShow')->name('asuransi-motor.riderShow');
                                     Route::grid('asuransi-motor', 'AsuransiMotorController');
 
                                     Route::grid('merk', 'MerkController');
@@ -357,6 +369,8 @@ Route::middleware('auth')
                                     Route::grid('seri', 'SeriController');
 
                                     Route::grid('tipe-motor', 'TipeMotorController');
+
+                                    Route::grid('rider-motor', 'RiderMotorController');
                                 }
                             );
 

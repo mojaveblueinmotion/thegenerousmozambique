@@ -25,6 +25,8 @@ class AsuransiMobil extends Model
         'wilayah_tiga_batas_bawah',
         'name',
         'call_center',
+        'bank',
+        'no_rekening',
     ];
 
     /*******************************
@@ -101,7 +103,7 @@ class AsuransiMobil extends Model
             $this->saveLogNotify();
 
             $redirect = route(request()->get('routes').'.show', $this->id);
-            return $this->commitSaved(['redirect' => $redirect]);
+            return $this->commitSaved();
         } catch (\Exception $e) {
             return $this->rollbackSaved($e);
         }
@@ -115,7 +117,7 @@ class AsuransiMobil extends Model
             $rider->delete();
 
             $redirect = route(request()->get('routes').'.show', $this->id);
-            return $this->commitDeleted(['redirect' => $redirect]);
+            return $this->commitDeleted();
         } catch (\Exception $e) {
             return $this->rollbackDeleted($e);
         }

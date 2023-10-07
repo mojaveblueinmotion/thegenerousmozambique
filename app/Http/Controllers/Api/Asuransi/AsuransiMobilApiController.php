@@ -60,7 +60,7 @@ class AsuransiMobilApiController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => AsuransiRiderMobil::find(3)
-            ]);
+            ], 400);
         }
     }
 
@@ -199,7 +199,7 @@ class AsuransiMobilApiController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 

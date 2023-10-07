@@ -28,7 +28,7 @@ class AuthController extends BaseController
             return response()->json([
                 'success' => true,
                 'tokens' => $token,
-            ]);
+            ], 400);
         }
     }
 
@@ -48,7 +48,7 @@ class AuthController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => 'Not Authorized',
-            ]);
+            ], 400);
         }
     }
 
@@ -85,7 +85,7 @@ class AuthController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
    

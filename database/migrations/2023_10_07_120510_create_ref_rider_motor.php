@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRefRiderProperti extends Migration
+class CreateRefRiderMotor extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class CreateRefRiderProperti extends Migration
     public function up()
     {
         Schema::create(
-            'ref_rider_properti',
+            'ref_rider_motor',
             function (Blueprint $table) {
                 $table->id();
                 $table->string('name');
@@ -31,6 +31,6 @@ class CreateRefRiderProperti extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ref_rider_properti');
+        Schema::dropIfExists('ref_rider_motor');
     }
 }

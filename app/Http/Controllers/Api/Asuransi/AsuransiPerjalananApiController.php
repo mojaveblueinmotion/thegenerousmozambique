@@ -31,7 +31,7 @@ class AsuransiPerjalananApiController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 
@@ -78,7 +78,7 @@ class AsuransiPerjalananApiController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 

@@ -17,6 +17,8 @@ class AsuransiPerjalanan extends Model
         'pembayaran_persentasi',
         'name',
         'call_center',
+        'bank',
+        'no_rekening',
     ];
 
     /*******************************

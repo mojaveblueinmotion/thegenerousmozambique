@@ -5,14 +5,16 @@ namespace App\Http\Controllers\Api\Asuransi;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
-use App\Models\AsuransiMotor\PolisMotor;
 use App\Http\Controllers\Controller;
 use App\Models\Setting\Globals\Files;
+use App\Models\AsuransiMotor\PolisMotor;
 use App\Models\AsuransiMotor\PolisMotorCek;
+use App\Http\Controllers\Api\BaseController;
 use App\Models\AsuransiMotor\PolisMotorNilai;
+use App\Models\AsuransiMotor\PolisMotorRider;
 use App\Models\AsuransiMotor\PolisMotorClient;
 use App\Models\AsuransiMotor\PolisMotorPayment;
-use App\Http\Controllers\Api\BaseController;
+use App\Models\Master\AsuransiMotor\AsuransiRiderMotor;
 
 class AsuransiMotorApiController extends BaseController
 {
@@ -44,7 +46,7 @@ class AsuransiMotorApiController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 
@@ -65,6 +67,17 @@ class AsuransiMotorApiController extends BaseController
             $recordPayment->fill($request->only($recordPayment->fillable));
             $recordPayment->polis_id = $record->id;
             $recordPayment->save();
+
+            if($request->rider){
+                foreach($request->rider as $rider){
+                    $dataRider = AsuransiRiderMotor::find($rider);
+                    $recordRider = new PolisMotorRider;   
+                    $recordRider->polis_id = $record->id;
+                    $recordRider->rider_kendaraan_id = $rider;
+                    $recordRider->persentasi_eksisting = $dataRider->pembayaran_persentasi;
+                    $recordRider->save();
+                }
+            }
 
             if ($request->files) {
                 foreach($request->files as $nama_file => $arr){
@@ -96,7 +109,7 @@ class AsuransiMotorApiController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 

@@ -18,8 +18,14 @@ class AsuransiMotorRequest extends FormRequest
             'name'        => 'required|string|max:255|unique:ref_asuransi_motor,name,'.$id,
             'perusahaan_asuransi_id' => 'required',
             'interval_pembayaran_id' => 'required',
-            'pembayaran_persentasi' => 'required',
+            'kategori_asuransi_id' => 'required',
             'call_center' => 'required',
+            'wilayah_satu_batas_atas' => 'required',
+            'wilayah_satu_batas_bawah' => 'required',
+            'wilayah_dua_batas_atas' => 'required',
+            'wilayah_dua_batas_bawah' => 'required',
+            'wilayah_tiga_batas_atas' => 'required',
+            'wilayah_tiga_batas_bawah' => 'required',
         ];
 
         return $rules;

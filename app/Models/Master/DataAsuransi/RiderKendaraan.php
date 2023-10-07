@@ -2,6 +2,7 @@
 
 namespace App\Models\Master\DataAsuransi;
 
+use App\Models\Master\AsuransiMobil\AsuransiRiderMobil;
 use App\Models\Model;
 
 class RiderKendaraan extends Model
@@ -25,6 +26,11 @@ class RiderKendaraan extends Model
      ** RELATION
      *******************************/
 
+    public function asuransi()
+    {
+        return $this->hasMany(AsuransiRiderMobil::class, 'rider_kendaraan_id');
+    }
+    
     /*******************************
      ** SCOPE
      *******************************/

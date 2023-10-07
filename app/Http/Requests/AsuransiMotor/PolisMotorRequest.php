@@ -11,7 +11,7 @@ class PolisMotorRequest extends FormRequest
         $rules = [
             'no_asuransi' => 'required',
             'tanggal' => 'required',
-            'agent_id' => 'required',
+            // 'agent_id' => 'required',
             'asuransi_id' => 'required',
             'name' => 'required',
             'phone' => 'required',

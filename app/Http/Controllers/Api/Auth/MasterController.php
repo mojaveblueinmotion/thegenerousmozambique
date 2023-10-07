@@ -28,6 +28,7 @@ use App\Models\Master\AsuransiProperti\AsuransiProperti;
 use App\Models\Master\AsuransiProperti\KonstruksiProperti;
 use App\Models\Master\AsuransiPerjalanan\AsuransiPerjalanan;
 use App\Models\Master\AsuransiProperti\PerlindunganProperti;
+use App\Models\Master\DataAsuransi\KategoriAsuransi;
 use App\Models\Master\DataAsuransi\RiderKendaraan;
 
 class MasterController extends BaseController
@@ -51,7 +52,7 @@ class MasterController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 
@@ -72,7 +73,7 @@ class MasterController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 
@@ -95,7 +96,7 @@ class MasterController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
     
@@ -113,7 +114,7 @@ class MasterController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 
@@ -131,7 +132,7 @@ class MasterController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 
@@ -149,7 +150,7 @@ class MasterController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 
@@ -168,7 +169,7 @@ class MasterController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 
@@ -186,7 +187,7 @@ class MasterController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 
@@ -204,7 +205,25 @@ class MasterController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => $e
+            ], 400);
+        }
+    }
+
+    public function selectKategoriAsuransi(){
+        try{
+            $record =  KategoriAsuransi::all();
+
+            return response()->json([
+                'success' => true,
+                'message' => "Data Kategori Asuransi",
+                'data' => $record
+
             ]);
+        }catch(Exception $e){
+            return response()->json([
+                'success' => false,
+                'message' => $e
+            ], 400);
         }
     }
 
@@ -222,7 +241,7 @@ class MasterController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 
@@ -240,7 +259,7 @@ class MasterController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 
@@ -258,7 +277,7 @@ class MasterController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 
@@ -276,7 +295,7 @@ class MasterController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 
@@ -294,7 +313,7 @@ class MasterController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 
@@ -312,7 +331,7 @@ class MasterController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 
@@ -331,7 +350,7 @@ class MasterController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 
@@ -349,7 +368,7 @@ class MasterController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 
@@ -367,7 +386,7 @@ class MasterController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 
@@ -385,7 +404,7 @@ class MasterController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 
@@ -403,7 +422,7 @@ class MasterController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 
@@ -423,7 +442,7 @@ class MasterController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => $e
-            ]);
+            ], 400);
         }
     }
 }
