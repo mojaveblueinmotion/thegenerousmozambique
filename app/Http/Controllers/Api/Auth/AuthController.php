@@ -52,15 +52,12 @@ class AuthController extends BaseController
                 return response()->json([
                     'success' => true,
                     'message' => "Data User",
-                    'data' => [
-                        'user' => User::with([
-                            'asuransiMobil', 'asuransiMotor', 'asuransiProperti', 'asuransiPerjalanan',
-                            'asuransiAgentMobil', 'asuransiAgentMotor', 'asuransiAgentProperti', 'asuransiAgentPerjalanan',
-                            'asuransiProperti.penutupanPolis',
+                    'data' => User::with([
+                        'asuransiMobil', 'asuransiMotor', 'asuransiProperti', 'asuransiPerjalanan',
+                        'asuransiAgentMobil', 'asuransiAgentMotor', 'asuransiAgentProperti', 'asuransiAgentPerjalanan',
+                        'asuransiProperti.penutupanPolis',
                         ])->find(Auth::id()),
-                        'jaringan' => $totalAsuransi,
-                    ],
-                    
+                    'jaringan' => $totalAsuransi
                 ]);
             }else{
                 return response()->json([
