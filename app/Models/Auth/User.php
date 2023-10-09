@@ -243,6 +243,20 @@ class User extends Authenticatable implements JWTSubject
             return $this->rollbackSaved($e);
         }
     }
+    
+    public function handleActivate()
+    {
+        $this->beginTransaction();
+        try {
+            $this->status = 'active';
+            $this->save();
+            $this->saveLogNotify();
+
+            return $this->commitSaved();
+        } catch (\Exception $e) {
+            return $this->rollbackSaved($e);
+        }
+    }
 
     public function handleDestroy()
     {

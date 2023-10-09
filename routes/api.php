@@ -11,6 +11,7 @@ use App\Http\Controllers\Api\Asuransi\AsuransiMotorApiController;
 use App\Http\Controllers\Api\Asuransi\AsuransiPropertiApiController;
 use App\Http\Controllers\Api\Asuransi\AsuransiPerjalananApiController;
 use App\Http\Controllers\Api\Asuransi\AsuransiKendaraanLainnyaApiController;
+use App\Http\Controllers\Setting\User\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,12 +73,14 @@ Route::middleware(['jwt.verify'])->group( function () {
     Route::post('testFiles', [AsuransiKendaraanLainnyaApiController::class, 'testFiles']);
     
     // Properti
+
+    Route::post('agentAsuransiProperti', [AsuransiPropertiApiController::class, 'agentAsuransiProperti']);
+    Route::post('agentPenawaranAsuransiProperti', [AsuransiPropertiApiController::class, 'agentPenawaranAsuransiProperti']);
+    Route::post('penutupanAsuransiProperti', [AsuransiPropertiApiController::class, 'penutupanAsuransiProperti']);
+
+    // User
+    Route::post('profile/change-password', [AuthController::class, 'updatePassword']);
 });
-
-
-Route::post('agentAsuransiProperti', [AsuransiPropertiApiController::class, 'agentAsuransiProperti']);
-Route::post('agentPenawaranAsuransiProperti', [AsuransiPropertiApiController::class, 'agentPenawaranAsuransiProperti']);
-Route::post('penutupanAsuransiProperti', [AsuransiPropertiApiController::class, 'penutupanAsuransiProperti']);
 
 // Properti
 Route::get('selectAsuransiProperti', [MasterController::class, 'selectAsuransiProperti']);
@@ -97,3 +100,4 @@ Route::get('selectSeriMotor/{merk_id}', [MasterMotorController::class, 'selectSe
 Route::get('selectAsuransiPerjalanan', [MasterController::class, 'selectAsuransiPerjalanan']);
 
 Route::get('selectKategoriAsuransi', [MasterController::class, 'selectKategoriAsuransi']);
+

@@ -503,6 +503,7 @@ Route::middleware('auth')
                                     Route::get('user/import', 'UserController@import')->name('user.import');
                                     Route::post('user/import-save', 'UserController@import-save')->name('user.import-save');
                                     Route::grid('user', 'UserController');
+                                    Route::post('user/activate/{record}', 'UserController@activate')->name('user.activate');
 
                                     Route::get('profile', 'ProfileController@index')->name('profile.index');
                                     Route::post('profile', 'ProfileController@updateProfile')->name('profile.update-profile');

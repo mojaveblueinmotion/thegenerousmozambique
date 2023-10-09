@@ -143,17 +143,22 @@ class UserController extends Controller
                         'type' => 'edit',
                         'id' => $record->id,
                     ];
-
-                    // if ($user->id == 1) {
-                    //     $actions[] = [
-                    //         'label' => 'Reset Password',
-                    //         'icon' => 'fa fa-retweet text-warning',
-                    //         'class' => 'base-form--postByUrl',
-                    //         'attrs' => 'data-swal-text="Reset password akan mengubah password menjadi: qwerty123456"',
-                    //         'id' => $record->id,
-                    //         'url' => route($this->routes . '.reset-password', $record->id)
-                    //     ];
-                    // }
+                    $agent = null;
+                    foreach ($record->roles as $role) {
+                        if($role->id == 2 || $role->id == 3){
+                            $agent = true;
+                        }
+                    }
+                    if ($agent == true) {
+                        $actions[] = [
+                            'label' => 'Aktivasi',
+                            'icon' => 'fa fa-retweet text-warning',
+                            'class' => 'base-form--postByUrl',
+                            'attrs' => 'data-swal-text="Aktivasi akun user"',
+                            'id' => $record->id,
+                            'url' => route($this->routes . '.activate', $record->id)
+                        ];
+                    }
 
                     if ($record->position_id != null) {
                         if ($record->canDeleted()) {
@@ -193,6 +198,11 @@ class UserController extends Controller
         return $record->handleStoreOrUpdate($request);
     }
 
+    public function activate(User $record, Request $request)
+    {
+        return $record->handleActivate($request);
+    }
+
     public function show(User $record)
     {
         return $this->render($this->views . '.show', compact('record'));
@@ -203,7 +213,20 @@ class UserController extends Controller
         return $this->render($this->views . '.edit', compact('record'));
     }
 
-    public function update(UserRequest $request, User $record)
+    public function updatePassword(User $record, Request $request)
+    {
+        $request->validate(
+            [
+                'old_password'          => 'required|password',
+                'new_password'              => 'required|confirmed',
+                'new_password_confirmation' => 'required',
+            ]
+        );
+
+        return $record->handleUpdatePassword($request);
+    }
+
+    public function update(User $record, Request $request)
     {
         return $record->handleStoreOrUpdate($request);
     }

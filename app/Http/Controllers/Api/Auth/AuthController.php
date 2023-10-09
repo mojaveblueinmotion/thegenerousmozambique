@@ -6,11 +6,17 @@ use Exception;
 use App\Models\Auth\User;
 use Illuminate\Http\Request;
 use Tymon\JWTAuth\Facades\JWTAuth;
+use App\Models\Asuransi\PolisMobil;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\Models\AsuransiMotor\PolisMotor;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Api\BaseController;
-   
+use App\Models\AsuransiKendaraan\PolisKendaraan;
+use App\Models\AsuransiProperti\PolisProperti;
+use App\Models\Master\AsuransiMobil\AsuransiMobil;
+use App\Models\Master\AsuransiMotor\AsuransiMotor;
+
 class AuthController extends BaseController
 {   
     public function signin(Request $request)
@@ -34,16 +40,37 @@ class AuthController extends BaseController
 
     public function getMe()
     {
-        if(Auth::user()){
-            return response()->json([
-                'success' => true,
-                'message' => "Data User",
-                'data' => User::with([
-                    'asuransiMobil', 'asuransiMotor', 'asuransiProperti', 'asuransiPerjalanan',
-                    'asuransiAgentMobil', 'asuransiAgentMotor', 'asuransiAgentProperti', 'asuransiAgentPerjalanan',
-                    'asuransiProperti.penutupanPolis',
-                    ])->find(Auth::id()),
-            ]);
+        if($record = Auth::user()){
+            $agent = null;
+            foreach ($record->roles as $role) {
+                if($role->id == 2){
+                    $agent = true;
+                    $totalAsuransi = PolisMobil::where('agent_id', Auth::id())->count() + PolisMotor::where('agent_id', Auth::id())->count() + PolisMobil::where('agent_id', Auth::id())->count() +PolisKendaraan::where('agent_id', Auth::id())->count() + PolisProperti::where('agent_id', Auth::id())->count();
+                }
+            }
+            if($agent){
+                return response()->json([
+                    'success' => true,
+                    'message' => "Data User",
+                    'data' => User::with([
+                        'asuransiMobil', 'asuransiMotor', 'asuransiProperti', 'asuransiPerjalanan',
+                        'asuransiAgentMobil', 'asuransiAgentMotor', 'asuransiAgentProperti', 'asuransiAgentPerjalanan',
+                        'asuransiProperti.penutupanPolis',
+                        ])->find(Auth::id()),
+                    'jaringan' => $totalAsuransi
+                ]);
+            }else{
+                return response()->json([
+                    'success' => true,
+                    'message' => "Data User",
+                    'data' => User::with([
+                        'asuransiMobil', 'asuransiMotor', 'asuransiProperti', 'asuransiPerjalanan',
+                        'asuransiAgentMobil', 'asuransiAgentMotor', 'asuransiAgentProperti', 'asuransiAgentPerjalanan',
+                        'asuransiProperti.penutupanPolis',
+                        ])->find(Auth::id()),
+                ]);
+            }
+            
         }else{
             return response()->json([
                 'success' => false,
@@ -64,7 +91,8 @@ class AuthController extends BaseController
             'phone' => 'required',
             'jenis_kelamin' => 'required',
             'tgl_lahir' => 'required',
-            'roles'  => 'required'
+            'roles'  => 'required',
+            'status'  => 'required',
         ]);
         // dd($request);
         try{
@@ -78,7 +106,7 @@ class AuthController extends BaseController
                 $record->roles()->sync($request->roles ?? null);
             }
             return response()->json([
-                'success' => false,
+                'success' => true,
                 'message' => 'Berhasil Register'
             ]);
         }catch(Exception $e){
@@ -88,5 +116,39 @@ class AuthController extends BaseController
             ], 400);
         }
     }
+
+    
+    public function updatePassword(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'old_password'          => 'required|password',
+            'new_password'              => 'required|confirmed',
+            'new_password_confirmation' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'success' => false,
+                'errors' => $validator->errors(),
+            ], 400);
+        }
+
+        try{
+            // $validator->fails()
+            $record = User::find(Auth::id());
+            $record->password  = bcrypt($request->new_password);
+            $record->save();
+            return response()->json([
+                'success' => true,
+                'message' => 'Berhasil Merubah Password'
+            ]);
+        }catch(Exception $e){
+            return response()->json([
+                'success' => false,
+                'message' => $e
+            ], 400);
+        }
+    }
+
    
 }

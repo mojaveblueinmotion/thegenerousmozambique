@@ -46,6 +46,28 @@ class AsuransiKendaraanLainnyaApiController extends BaseController
                 }
             }
 
+            if ($request->files) {
+                foreach($request->files as $nama_file => $arr){
+                    foreach ($request->file($nama_file) as $key => $file) {
+                        // dd(53, $file->getClientOriginalName());
+                        $file_path = Carbon::now()->format('Ymdhisu')
+                            . md5($file->getClientOriginalName())
+                            . '/' . $file->getClientOriginalName();
+        
+                        $sys_file = new Files;
+                        $sys_file->target_id    = $record->id;
+                        $sys_file->target_type  = PolisKendaraan::class;
+                        $sys_file->module       = 'asuransi.polis-kendaraan';
+                        $sys_file->file_name    = $file->getClientOriginalName();
+                        $sys_file->file_path    = $file->storeAs('files', $file_path, 'public');
+                        // $temp->file_type = $file->extension();
+                        $sys_file->file_size = $file->getSize();
+                        $sys_file->flag = $nama_file;
+                        $sys_file->save();
+                    }
+                }
+            }
+
             return response()->json([
                 'success' => true,
                 'message' => "Data Asuransi Berhasil Ditambahkan | status = Penawaran",
