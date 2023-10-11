@@ -13,6 +13,7 @@ use App\Models\AsuransiMotor\PolisMotor;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Api\BaseController;
 use App\Models\AsuransiKendaraan\PolisKendaraan;
+use App\Models\AsuransiPerjalanan\PolisPerjalanan;
 use App\Models\AsuransiProperti\PolisProperti;
 use App\Models\Master\AsuransiMobil\AsuransiMobil;
 use App\Models\Master\AsuransiMotor\AsuransiMotor;
@@ -38,7 +39,7 @@ class AuthController extends BaseController
         }
     }
 
-    public function getMe()
+    public function getMe(Request $request)
     {
         if($record = Auth::user()){
             $agent = null;
@@ -49,12 +50,44 @@ class AuthController extends BaseController
                 }
             }
             if($agent){
+                if(!empty($request->requestGetMe)){
+                    $requestGetMe = $request->requestGetMe;
+                    switch ($requestGetMe) {
+                        case 'asuransiMobil':
+                            return response()->json([
+                                'success' => true,
+                                'message' => "Data Asuransi Mobil By User",
+                                'data' => PolisMobil::where('user_id', Auth::id()),
+                            ]);
+                            break;
+                        case 'asuransiMotor':
+                            return response()->json([
+                                'success' => true,
+                                'message' => "Data Asuransi Motor By User",
+                                'data' => PolisMotor::where('user_id', Auth::id()),
+                            ]);
+                            break;
+                        case 'asuransiProperti':
+                            return response()->json([
+                                'success' => true,
+                                'message' => "Data Asuransi Properti By User",
+                                'data' => PolisProperti::where('user_id', Auth::id()),
+                            ]);
+                            break;
+                        case 'asuransiPerjalanan':
+                            return response()->json([
+                                'success' => true,
+                                'message' => "Data Asuransi Perjalanan By User",
+                                'data' => PolisPerjalanan::where('user_id', Auth::id()),
+                            ]);
+                            break;
+                    }
+                }
                 return response()->json([
                     'success' => true,
                     'message' => "Data User",
                     'data' => User::with([
                         'asuransiMobil', 'asuransiMotor', 'asuransiProperti', 'asuransiPerjalanan',
-                        'asuransiAgentMobil', 'asuransiAgentMotor', 'asuransiAgentProperti', 'asuransiAgentPerjalanan',
                         'asuransiProperti.penutupanPolis',
                         ])->find(Auth::id()),
                     'jaringan' => $totalAsuransi
@@ -94,6 +127,14 @@ class AuthController extends BaseController
             'roles'  => 'required',
             'status'  => 'required',
         ]);
+        
+        if ($validator->fails()) {
+            return response()->json([
+                'success' => false,
+                'errors' => $validator->errors(),
+            ], 400);
+        }
+        
         // dd($request);
         try{
             $record = new User;
@@ -117,7 +158,6 @@ class AuthController extends BaseController
         }
     }
 
-    
     public function updatePassword(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -150,5 +190,4 @@ class AuthController extends BaseController
         }
     }
 
-   
 }
