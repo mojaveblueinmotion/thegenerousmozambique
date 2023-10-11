@@ -84,17 +84,27 @@ class AuthController extends BaseController
                         default:
                             return response()->json([
                                 'success' => true,
-                                'message' => "Data Asuransi Perjalanan By Agent",
-                                'data' => PolisPerjalanan::where('agent_id', Auth::id())->orWhere('user_id', Auth::id())->get(),
+                                'message' => "Data Keseluruhan Asuransi Perjalanan By Agent",
+                                'data' => User::
+                                with([
+                                    'asuransiMobil', 'asuransiMotor', 'asuransiProperti', 'asuransiPerjalanan',
+                                    'asuransiAgentMobil', 'asuransiAgentMotor', 'asuransiAgentProperti', 'asuransiAgentPerjalanan',
+                                    'asuransiProperti.penutupanPolis',
+                                    ])->select(['id'])->find(Auth::id()),
                             ]);
                             break;
 
                     }
                 }
+                // $user = User::find(Auth::id());
                 return response()->json([
                     'success' => true,
                     'message' => "Data Agent",
-                    'data' => User::find(Auth::id()),
+                    'data' => User::with([
+                        'asuransiMobil', 'asuransiMotor', 'asuransiProperti', 'asuransiPerjalanan',
+                        'asuransiAgentMobil', 'asuransiAgentMotor', 'asuransiAgentProperti', 'asuransiAgentPerjalanan',
+                        'asuransiProperti.penutupanPolis',
+                        ])->withoutGlobalScope('roles')->select(['id'])->find(Auth::id()),
                     'jaringan' => $totalAsuransi
                 ]);
             }else{
@@ -142,13 +152,10 @@ class AuthController extends BaseController
                 return response()->json([
                     'success' => true,
                     'message' => "Data User",
-                    'data' => User::find(Auth::id()),
-                    // with([
-                    //     'asuransiMobil', 'asuransiMotor', 'asuransiProperti', 'asuransiPerjalanan',
-                    //     'asuransiAgentMobil', 'asuransiAgentMotor', 'asuransiAgentProperti', 'asuransiAgentPerjalanan',
-                    //     'asuransiProperti.penutupanPolis',
-                    //     ])->
-                       
+                    'data' => User::with([
+                        'asuransiMobil', 'asuransiMotor', 'asuransiProperti', 'asuransiPerjalanan',
+                        'asuransiProperti.penutupanPolis',
+                        ])->withoutGlobalScope('roles')->select(['id'])->find(Auth::id()),
                 ]);
             }
             
