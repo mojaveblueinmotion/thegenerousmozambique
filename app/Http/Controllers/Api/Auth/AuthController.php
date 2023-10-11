@@ -46,10 +46,58 @@ class AuthController extends BaseController
             foreach ($record->roles as $role) {
                 if($role->id == 2){
                     $agent = true;
-                    $totalAsuransi = PolisMobil::where('agent_id', Auth::id())->count() + PolisMotor::where('agent_id', Auth::id())->count() + PolisMobil::where('agent_id', Auth::id())->count() +PolisKendaraan::where('agent_id', Auth::id())->count() + PolisProperti::where('agent_id', Auth::id())->count();
+                    $totalAsuransi = PolisMobil::where('agent_id', Auth::id())->count() + PolisMotor::where('agent_id', Auth::id())->count() + PolisMobil::where('agent_id', Auth::id())->count() + PolisKendaraan::where('agent_id', Auth::id())->count() + PolisProperti::where('agent_id', Auth::id())->count();
                 }
             }
             if($agent){
+                if(!empty($request->requestGetMe)){
+                    $requestGetMe = $request->requestGetMe;
+                    switch ($requestGetMe) {
+                        case 'asuransiMobil':
+                            return response()->json([
+                                'success' => true,
+                                'message' => "Data Asuransi Mobil By Agent",
+                                'data' => PolisMobil::where('agent_id', Auth::id()),
+                            ]);
+                            break;
+                        case 'asuransiMotor':
+                            return response()->json([
+                                'success' => true,
+                                'message' => "Data Asuransi Motor By Agent",
+                                'data' => PolisMotor::where('agent_id', Auth::id()),
+                            ]);
+                            break;
+                        case 'asuransiProperti':
+                            return response()->json([
+                                'success' => true,
+                                'message' => "Data Asuransi Properti By Agent",
+                                'data' => PolisProperti::where('agent_id', Auth::id()),
+                            ]);
+                            break;
+                        case 'asuransiPerjalanan':
+                            return response()->json([
+                                'success' => true,
+                                'message' => "Data Asuransi Perjalanan By Agent",
+                                'data' => PolisPerjalanan::where('agent_id', Auth::id()),
+                            ]);
+                            break;
+                        default:
+                            return response()->json([
+                                'success' => true,
+                                'message' => "Data Asuransi Perjalanan By Agent",
+                                'data' => PolisPerjalanan::where('agent_id', Auth::id()),
+                            ]);
+                            break;
+
+                    }
+                }
+                return response()->json([
+                    'success' => true,
+                    'message' => "Data Agent",
+                    'data' => User::find(Auth::id()),
+                    'jaringan' => $totalAsuransi
+                ]);
+            }else{
                 if(!empty($request->requestGetMe)){
                     $requestGetMe = $request->requestGetMe;
                     switch ($requestGetMe) {
@@ -81,26 +129,26 @@ class AuthController extends BaseController
                                 'data' => PolisPerjalanan::where('user_id', Auth::id()),
                             ]);
                             break;
+                        default:
+                            return response()->json([
+                                'success' => true,
+                                'message' => "Data Asuransi Perjalanan By User",
+                                'data' => PolisPerjalanan::where('user_id', Auth::id()),
+                            ]);
+                            break;
+
                     }
                 }
                 return response()->json([
                     'success' => true,
                     'message' => "Data User",
-                    'data' => User::with([
-                        'asuransiMobil', 'asuransiMotor', 'asuransiProperti', 'asuransiPerjalanan',
-                        'asuransiProperti.penutupanPolis',
-                        ])->find(Auth::id()),
-                    'jaringan' => $totalAsuransi
-                ]);
-            }else{
-                return response()->json([
-                    'success' => true,
-                    'message' => "Data User",
-                    'data' => User::with([
-                        'asuransiMobil', 'asuransiMotor', 'asuransiProperti', 'asuransiPerjalanan',
-                        'asuransiAgentMobil', 'asuransiAgentMotor', 'asuransiAgentProperti', 'asuransiAgentPerjalanan',
-                        'asuransiProperti.penutupanPolis',
-                        ])->find(Auth::id()),
+                    'data' => User::find(Auth::id()),
+                    // with([
+                    //     'asuransiMobil', 'asuransiMotor', 'asuransiProperti', 'asuransiPerjalanan',
+                    //     'asuransiAgentMobil', 'asuransiAgentMotor', 'asuransiAgentProperti', 'asuransiAgentPerjalanan',
+                    //     'asuransiProperti.penutupanPolis',
+                    //     ])->
+                       
                 ]);
             }
             
