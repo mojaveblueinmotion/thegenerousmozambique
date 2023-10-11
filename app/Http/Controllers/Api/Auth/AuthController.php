@@ -57,35 +57,35 @@ class AuthController extends BaseController
                             return response()->json([
                                 'success' => true,
                                 'message' => "Data Asuransi Mobil By Agent",
-                                'data' => PolisMobil::where('user_id', Auth::id())->get(),
+                                'data' => PolisMobil::where('agent_id', Auth::id())->orWhere('user_id', Auth::id())->get(),
                             ]);
                             break;
                         case 'asuransiMotor':
                             return response()->json([
                                 'success' => true,
                                 'message' => "Data Asuransi Motor By Agent",
-                                'data' => PolisMotor::where('user_id', Auth::id())->get(),
+                                'data' => PolisMotor::where('agent_id', Auth::id())->orWhere('user_id', Auth::id())->get(),
                             ]);
                             break;
                         case 'asuransiProperti':
                             return response()->json([
                                 'success' => true,
                                 'message' => "Data Asuransi Properti By Agent",
-                                'data' => PolisProperti::where('user_id', Auth::id())->get(),
+                                'data' => PolisProperti::where('agent_id', Auth::id())->orWhere('user_id', Auth::id())->get(),
                             ]);
                             break;
                         case 'asuransiPerjalanan':
                             return response()->json([
                                 'success' => true,
                                 'message' => "Data Asuransi Perjalanan By Agent",
-                                'data' => PolisPerjalanan::where('user_id', Auth::id())->get(),
+                                'data' => PolisPerjalanan::where('agent_id', Auth::id())->orWhere('user_id', Auth::id())->get(),
                             ]);
                             break;
                         default:
                             return response()->json([
                                 'success' => true,
                                 'message' => "Data Asuransi Perjalanan By Agent",
-                                'data' => PolisPerjalanan::where('user_id', Auth::id())->get(),
+                                'data' => PolisPerjalanan::where('agent_id', Auth::id())->orWhere('user_id', Auth::id())->get(),
                             ]);
                             break;
 
