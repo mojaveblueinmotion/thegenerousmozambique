@@ -81,7 +81,7 @@ class AuthController extends BaseController
                                 'data' => PolisPerjalanan::where('agent_id', Auth::id())->orWhere('user_id', Auth::id())->get(),
                             ]);
                             break;
-                        default:
+                        case 'asuransi':
                             return response()->json([
                                 'success' => true,
                                 'message' => "Data Keseluruhan Asuransi Perjalanan By Agent",
@@ -104,7 +104,7 @@ class AuthController extends BaseController
                         'asuransiMobil', 'asuransiMotor', 'asuransiProperti', 'asuransiPerjalanan',
                         'asuransiAgentMobil', 'asuransiAgentMotor', 'asuransiAgentProperti', 'asuransiAgentPerjalanan',
                         'asuransiProperti.penutupanPolis',
-                        ])->withoutGlobalScope('roles')->select(['id'])->find(Auth::id()),
+                        ])->find(Auth::id()),
                     'jaringan' => $totalAsuransi
                 ]);
             }else{
@@ -139,11 +139,16 @@ class AuthController extends BaseController
                                 'data' => PolisPerjalanan::where('user_id', Auth::id())->get(),
                             ]);
                             break;
-                        default:
+                        case 'asuransi':
                             return response()->json([
                                 'success' => true,
                                 'message' => "Data Asuransi Perjalanan By User",
-                                'data' => PolisPerjalanan::where('user_id', Auth::id())->get(),
+                                'data' => User::
+                                with([
+                                    'asuransiMobil', 'asuransiMotor', 'asuransiProperti', 'asuransiPerjalanan',
+                                    'asuransiAgentMobil', 'asuransiAgentMotor', 'asuransiAgentProperti', 'asuransiAgentPerjalanan',
+                                    'asuransiProperti.penutupanPolis',
+                                    ])->select(['id'])->find(Auth::id()),
                             ]);
                             break;
 
@@ -155,7 +160,7 @@ class AuthController extends BaseController
                     'data' => User::with([
                         'asuransiMobil', 'asuransiMotor', 'asuransiProperti', 'asuransiPerjalanan',
                         'asuransiProperti.penutupanPolis',
-                        ])->withoutGlobalScope('roles')->select(['id'])->find(Auth::id()),
+                        ])->find(Auth::id()),
                 ]);
             }
             
