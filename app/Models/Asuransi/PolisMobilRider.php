@@ -4,9 +4,10 @@ namespace App\Models\Asuransi;
 
 use App\Models\Model;
 use Illuminate\Support\Carbon;
-use App\Models\Asuransi\PolisMobil;
-use App\Models\Master\AsuransiMobil\AsuransiRiderMobil;
 use App\Models\Traits\HasFiles;
+use App\Models\Asuransi\PolisMobil;
+use App\Models\Master\DataAsuransi\RiderKendaraan;
+use App\Models\Master\AsuransiMobil\AsuransiRiderMobil;
 
 class PolisMobilRider extends Model
 {
@@ -17,6 +18,9 @@ class PolisMobilRider extends Model
         'polis_id',
         'rider_kendaraan_id',
         'persentasi_eksisting',
+        'persentasi_perkalian',
+        'harga_pembayaran',
+        'total_harga'
     ];
 
     /*******************************
@@ -37,7 +41,12 @@ class PolisMobilRider extends Model
 
     public function rider()
     {
-        return $this->belongsTo(AsuransiRiderMobil::class, 'rider_kendaraan_id');
+        return $this->belongsTo(AsuransiRiderMobil::class, 'rider_kendaraan_id', 'id');
+    }
+
+    public function riderKendaraan()
+    {
+        return $this->belongsTo(RiderKendaraan::class, 'rider_kendaraan_id');
     }
 
     /*******************************

@@ -88,7 +88,7 @@ class CreateTransPolisKendaraan extends Migration
             function (Blueprint $table) {
                 $table->id();
                 $table->string('name');
-                $table->decimal('persentasi_pembayaran', 8, 5);
+                $table->decimal('persentasi_pembayaran', 8, 3);
                 $table->longText('description')->nullable();
                 $table->commonFields();
             }
@@ -100,7 +100,7 @@ class CreateTransPolisKendaraan extends Migration
                 $table->id();
                 $table->unsignedBigInteger('polis_id');
                 $table->unsignedBigInteger('rider_kendaraan_id');
-                $table->decimal('persentasi_eksisting', 8, 5);
+                $table->decimal('persentasi_eksisting', 8, 3);
                 $table->commonFields();
 
                 $table->foreign('rider_kendaraan_id')->references('id')->on('ref_rider_kendaraan_lainnya');   

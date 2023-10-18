@@ -18,8 +18,11 @@ class CreateRefRiderMotor extends Migration
             function (Blueprint $table) {
                 $table->id();
                 $table->string('name');
+                $table->unsignedBigInteger('pertanggungan_id')->nullable();
                 $table->longText('description')->nullable();
                 $table->commonFields();
+
+                $table->foreign('pertanggungan_id')->references('id')->on('ref_pertanggungan_tambahan');   
             }
         );
     }

@@ -4,6 +4,7 @@ namespace App\Models\Master\AsuransiMotor;
 
 use App\Models\Model;
 use App\Models\Master\AsuransiMotor\AsuransiRiderMotor;
+use App\Models\Master\DataAsuransi\PertanggunganTambahan;
 
 class RiderMotor extends Model
 {
@@ -11,6 +12,7 @@ class RiderMotor extends Model
 
     protected $fillable = [
         'name',
+        'pertanggungan_id',
         'description',
     ];
 
@@ -30,6 +32,11 @@ class RiderMotor extends Model
      {
          return $this->hasMany(AsuransiRiderMotor::class, 'rider_kendaraan_id');
      }
+     
+    public function pertanggungan()
+    {
+        return $this->belongsTo(PertanggunganTambahan::class, 'pertanggungan_id');
+    }
     /*******************************
      ** SCOPE
      *******************************/

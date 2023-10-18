@@ -18,6 +18,7 @@ class AsuransiRiderMotor extends Model
         'asuransi_id',
         'rider_kendaraan_id',
         'pembayaran_persentasi',
+        'pembayaran_persentasi_komersial'
     ];
 
     /*******************************

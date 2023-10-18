@@ -9,6 +9,7 @@ use Illuminate\Support\Carbon;
 use App\Models\Traits\HasFiles;
 use App\Models\Traits\HasApprovals;
 use App\Models\Asuransi\PolisMobilCek;
+use App\Models\Asuransi\PolisMobilHarga;
 use App\Models\Asuransi\PolisMobilNilai;
 use App\Models\Asuransi\PolisMobilRider;
 use App\Models\Asuransi\PolisMobilClient;
@@ -25,6 +26,7 @@ class PolisMobil extends Model
     protected $fillable = [
         'no_asuransi',
         'tanggal',
+        'tanggal_akhir_asuransi',
         'no_max',
         'agent_id',
         'user_id',
@@ -32,11 +34,18 @@ class PolisMobil extends Model
         'name',
         'phone',
         'email',
+        'harga_asuransi',
+        'harga_rider',
+        'biaya_polis',
+        'biaya_materai',
+        'diskon',
+        'total_harga',
         'status',
     ];
 
     protected $dates = [
         'tanggal',
+        'tanggal_akhir_asuransi',
     ];
 
     /*******************************
@@ -46,6 +55,11 @@ class PolisMobil extends Model
     public function setTanggalAttribute($value)
     {
         $this->attributes['tanggal'] = Carbon::createFromFormat('d/m/Y', $value);
+    }
+
+    public function setTanggalAkhirAsuransiAttribute($value)
+    {
+        $this->attributes['tanggal_akhir_asuransi'] = Carbon::createFromFormat('d/m/Y', $value);
     }
 
     /*******************************
@@ -130,6 +144,11 @@ class PolisMobil extends Model
     public function rider()
     {
         return $this->hasMany(PolisMobilRider::class, 'polis_id');
+    }
+
+    public function detailHarga()
+    {
+        return $this->hasMany(PolisMobilHarga::class, 'polis_id');
     }
     /*******************************
      ** SCOPE
@@ -248,6 +267,7 @@ class PolisMobil extends Model
                     $this->generateApproval($request->module);
                 }
                 $this->saveFiles($request);
+                $this->harga_rider = str_replace(',', '', $request->harga_rider);
                 $this->status = $request->is_submit ? 'penawaran' : 'draft';
                 $this->save();
 
@@ -271,10 +291,10 @@ class PolisMobil extends Model
                     'polis_id' => $this->id,
                 ]);
                 $detailNilai->rincian_modifikasi = $request->rincian_modifikasi;
-                $detailNilai->nilai_modifikasi = str_replace(',', '', $request->nilai_modifikasi);
+                $detailNilai->nilai_modifikasi = $request->nilai_modifikasi ? str_replace(',', '', $request->nilai_modifikasi) : null;
                 $detailNilai->tipe = $request->tipe;
                 $detailNilai->nilai_mobil = str_replace(',', '', $request->nilai_mobil);
-                $detailNilai->nilai_pertanggungan = str_replace(',', '', $request->nilai_pertanggungan);
+                // $detailNilai->nilai_pertanggungan = str_replace(',', '', $request->nilai_pertanggungan);
                 $detailNilai->pemakaian = $request->pemakaian;
                 $detailNilai->tanggal_awal = $request->tanggal_awal;
                 $detailNilai->tanggal_akhir = $request->tanggal_akhir;
@@ -318,6 +338,9 @@ class PolisMobil extends Model
         if (!empty($request->ext_part)) {
             foreach ($request->ext_part as $val) {
                 $part = $this->rider()->firstOrNew(['rider_kendaraan_id' => $val['rider_id'], 'persentasi_eksisting' => $val['persentasi_eksisting']]);
+                $part->persentasi_perkalian = 100;
+                $part->harga_pembayaran = str_replace(',', '', $val['harga_pembayaran']);
+                $part->total_harga = str_replace(',', '', $val['total_harga'] ?? 0);
                 $this->rider()->save($part);
                 $partsIds[] = $part->id;
             }

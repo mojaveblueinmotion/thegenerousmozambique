@@ -42,6 +42,7 @@ class RiderMotorController extends Controller
                     'datatable_1' => [
                         $this->makeColumn('name:num'),
                         $this->makeColumn('name:name|label:Fitur Asuransi|className:text-center'),
+                        $this->makeColumn('name:pertanggungan|label:Pertanggungan Yang Dikalikan|className:text-center'),
                         $this->makeColumn('name:description|label:Deskripsi|className:text-center'),
                         $this->makeColumn('name:updated_by'),
                         $this->makeColumn('name:action'),
@@ -70,6 +71,15 @@ class RiderMotorController extends Controller
                     return "<span class='badge badge-danger'>" . $record->name . "</span>";
                 }
             )
+            ->addColumn(
+                'pertanggungan',
+                function ($record) {
+                    if($record->pertanggungan_id){
+                        return "<span class='badge badge-primary'>" . $record->pertanggungan->name ."</span>";
+                    }
+                    return "<span class='badge badge-danger'>Default</span>";
+                }
+            )
             ->addColumn('description', function ($record) {
                 return  "<span class='badge badge-primary'>" . str_word_count($record->description) . " Words</span>";
             })
@@ -96,7 +106,7 @@ class RiderMotorController extends Controller
                     return $this->makeButtonDropdown($actions);
                 }
             )
-            ->rawColumns(['action', 'updated_by', 'name', 'description'])
+            ->rawColumns(['action', 'updated_by', 'name', 'description', 'pertanggungan'])
             ->make(true);
     }
 

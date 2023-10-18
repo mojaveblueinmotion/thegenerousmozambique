@@ -11,6 +11,7 @@ class AsuransiRiderMotorRequest extends FormRequest
         $id = $this->record->id ?? 0;
         $rules = [
             'pembayaran_persentasi' => 'required',
+            'pembayaran_persentasi_komersial' => 'required',
             'rider_kendaraan_id' => 'required',
         ];
 

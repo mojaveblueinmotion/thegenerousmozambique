@@ -69,7 +69,6 @@ class AsuransiMobilSeeder extends Seeder
             $record->kategori_asuransi_id = $val['kategori_asuransi_id'];
             $record->call_center = $val['call_center'];
             $record->save();
-            $record->save();
         }
     }
 }

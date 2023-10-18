@@ -1,6 +1,6 @@
 <script>
 	$(function () {
-		let totalHarga = 0
+		let totalHargaRider = 0
 		$(function () {
 			$('.content-page')
 			.on('change', '.rider_id', function(){
@@ -10,9 +10,9 @@
 				var ok = table.find('#persentasi_eksisting');
 				$.ajax({
 					method: 'GET',
-					url: '{{ url('/ajax/getRiderKendaraanMotorPersentasi') }}',
+					url: '{{ url('/ajax/getRiderKendaraanMobilPersentasi') }}',
 					data: {
-						rider_id: $(this).val()
+						rider_id: $(this).val(),
 					},
 					success: function(response, state, xhr) {
 						$(ok).val(response.pembayaran_persentasi);
@@ -21,6 +21,115 @@
 						console.log(a, b, c);
 					}
 				});
+			});
+
+			$('.content-page')
+			.on('change', '.rider_id', function(){
+				var me = $(this),
+				table = me.closest('tr');
+
+				var ok = table.find('#harga_pembayaran');
+				$.ajax({
+					method: 'GET',
+					url: '{{ url('/ajax/getHargaPembayaranRider') }}',
+					data: {
+						rider_id: $(this).val(),
+						asuransi_id: $('#idRecord').val(),
+					},
+					success: function(response, state, xhr) {
+						// nilai_mobil
+						if(response.harga != null){
+							$(ok).val(response.harga);
+						}else if(response.nilai_mobil != null){
+							$(ok).val(response.nilai_mobil);
+						}else if($('#nilai_mobil').val() !== ''){
+							$(ok).val($('#nilai_mobil').val());
+						}else{
+							alert('Nilai Mobil Belum Dimasukkan!');
+							$(ok).val(0);
+						}
+
+						if(me.val() == 6){
+							var harga = null;
+							if($(ok).val().replace(/,/g, '') <= 25000000){
+								harga = $(ok).val().replace(/,/g, '') * 0.01;
+							}
+					
+							if($(ok).val().replace(/,/g, '') >= 25000000 && $(ok).val().replace(/,/g, '') <= 50000000){
+								harga = $(ok).val().replace(/,/g, '') * 0.005;
+							}
+					
+							if($(ok).val().replace(/,/g, '') >= 50000000 && $(ok).val().replace(/,/g, '') <= 50000000){
+								harga = $(ok).val().replace(/,/g, '') * 0.0025;
+							}
+							var total_harga = harga;
+						}else if(me.val() == 8){
+							var harga = null;
+							if($(ok).val().replace(/,/g, '') <= 25000000){
+								harga = $(ok).val().replace(/,/g, '') * 0.005;
+							}
+					
+							if($(ok).val().replace(/,/g, '') >= 25000000 && $(ok).val().replace(/,/g, '') <= 50000000){
+								harga = $(ok).val().replace(/,/g, '') * 0.0025;
+							}
+					
+							if($(ok).val().replace(/,/g, '') >= 50000000 && $(ok).val().replace(/,/g, '') <= 50000000){
+								harga = $(ok).val().replace(/,/g, '') * 0.00125;
+							}
+							var total_harga = harga;
+						}else{
+							var total_harga = $(ok).val().replace(/,/g, '') * (table.find('#persentasi_eksisting').val()/100) * 1;
+						}
+						table.find('#total_harga').val(total_harga);
+						var elements = $('[id="total_harga"]');
+						var sum = 0;
+
+						// Loop through the selected elements and add their values
+						elements.each(function() {
+							var value = parseFloat($(this).val().replace(/,/g, '')); // Assuming the values are numeric
+							if (!isNaN(value)) {
+								sum += value;
+							}
+						});
+						$('#harga_rider').val(sum);
+					},
+					error: function(a, b, c) {
+						console.log(a, b, c);
+					}
+				});
+
+				
+			});
+
+			$('.content-page')
+			.on('keyup', '#nilai_mobil', function(){
+				var nilai_mobil = parseInt($(this).val().replace(/,/g, ''));
+
+				var harga_akhir = 0;
+				var tanggalAwal = $('#tanggal_asuransi_awal').val().split('/'); // Split the date by '/'
+				var tanggalAkhir = $('#tanggal_asuransi_akhir').val().split('/'); // Split the date by '/'
+				var tahun = tanggalAkhir[2] - tanggalAwal[2];
+
+				for (var i = 1; i <= tahun; i++) {
+					if (i === 1) {
+						harga_akhir += nilai_mobil* ($('#wilayah_satu_batas_atas').val()/100);
+						console.log(harga_akhir);
+					} else if (i === 2) {
+						harga_akhir += nilai_mobil * 0.85 * ($('#wilayah_satu_batas_atas').val()/100);
+						console.log(harga_akhir);
+					} else if (i === 3) {
+						harga_akhir += nilai_mobil * 0.75 * ($('#wilayah_satu_batas_atas').val()/100);
+						console.log(harga_akhir);
+					} else {
+						harga_akhir += nilai_mobil * 0.70 * ($('#wilayah_satu_batas_atas').val()/100);
+						console.log(harga_akhir);
+					}
+				}
+
+				// harga_akhir = harga_akhir * ($('#wilayah_satu_batas_atas').val()/100);
+
+				console.log(harga_akhir);
+				$('#harga_asuransi').val(harga_akhir);
 			});
 		});
 		initExtPart();
@@ -52,6 +161,21 @@
 				<td class="text-left parent-group">
 					<input type="text" name="ext_part[`+key+`][persentasi_eksisting]"
 						class="form-control" id="persentasi_eksisting" readonly>
+				</td>
+				<td class="text-left parent-group">
+					<input readonly name="ext_part[`+key+`][persentasi_perkalian]"
+						class="form-control" id="persentasi_perkalian"
+						placeholder="{{ __('Persentasi Perkalian') }}" value="100">
+				</td>
+				<td class="text-left parent-group">
+					<input readonly name="ext_part[`+key+`][harga_pembayaran]"
+						class="form-control base-plugin--inputmask_currency" id="harga_pembayaran"
+						placeholder="{{ __('Harga Perkalian') }}">
+				</td>
+				<td class="text-left parent-group">
+					<input readonly name="ext_part[`+key+`][total_harga]"
+						class="form-control base-plugin--inputmask_currency" id="total_harga"
+						placeholder="{{ __('Total Harga') }}">
 				</td>
 				<td class="text-center valign-top width-30px">
 					<button type="button" class="btn btn-sm btn-icon btn-circle btn-danger remove-ext-part">
