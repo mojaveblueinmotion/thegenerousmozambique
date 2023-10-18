@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Asuransi\PolisMobil;
+use App\Models\Asuransi\PolisMobilHarga;
+use App\Models\Asuransi\PolisMobilNilai;
+use App\Models\Asuransi\PolisMobilRider;
 use App\Models\Auth\Role;
 use App\Models\Auth\User;
 use App\Models\Master\Asset;
@@ -43,6 +47,7 @@ use App\Models\Master\DataAsuransi\PerusahaanAsuransi;
 use App\Models\Master\AsuransiMobil\AsuransiRiderMobil;
 use App\Models\Master\AsuransiMotor\AsuransiRiderMotor;
 use App\Models\Master\AsuransiProperti\AsuransiProperti;
+use App\Models\Master\DataAsuransi\PertanggunganTambahan;
 use App\Models\Master\AsuransiProperti\KonstruksiProperti;
 use App\Models\Master\AsuransiPerjalanan\AsuransiPerjalanan;
 use App\Models\Master\AsuransiProperti\PerlindunganProperti;
@@ -368,6 +373,22 @@ class AjaxController extends Controller
         $items = $items->paginate();
         return $this->responseSelect2($items, 'name', 'id');
     }
+    
+    public function selectPertanggunganTambahan($search, Request $request)
+    {
+        $items = PertanggunganTambahan::keywordBy('name')->orderBy('name');
+        switch ($search) {
+            case 'all':
+                $items = $items;
+                break;
+
+            default:
+                $items = $items->whereNull('id');
+                break;
+        }
+        $items = $items->paginate();
+        return $this->responseSelect2($items, 'name', 'id');
+    }
 
     public function selectRiderKendaraan($search, Request $request)
     {
@@ -430,6 +451,50 @@ class AjaxController extends Controller
         }
         $items = $items->paginate();
         return $this->responseSelect2($items, 'name', 'id');
+    }
+
+    public function getRiderKendaraanMobilPersentasi(Request $request)
+    {
+        $riderKendaraan = RiderKendaraan::find($request->rider_id);
+        $riderAsuransi = PolisMobilHarga::where('polis_id', $request->asuransi_id)->where('pertanggungan_id', $riderKendaraan->pertanggungan_id);
+        // if(in_array($riderKendaraan->pertanggungan_id, $riderAsuransi)){
+        //     $data = AsuransiRiderMobil::when(
+        //         $rider_id = $request->rider_id,
+        //         function ($q) use ($rider_id) {
+        //             $q->whereIn('rider_kendaraan_id', [$rider_id]);
+        //         }
+        //     )
+        //     ->first();
+        // }else{
+            $data = AsuransiRiderMobil::when(
+                $rider_id = $request->rider_id,
+                function ($q) use ($rider_id) {
+                    $q->whereIn('rider_kendaraan_id', [$rider_id]);
+                }
+            )
+            ->first();
+        // }
+        return $data;
+    }
+
+    public function getHargaPembayaranRider(Request $request)
+    {
+        $riderKendaraan = RiderKendaraan::find($request->rider_id);
+        // $data = PolisMobilHarga::where('polis_id', $request->asuransi_id)->where('pertanggungan_id', $riderKendaraan->pertanggungan_id)->first();
+        if($riderKendaraan->pertanggungan_id == null){
+            $data = PolisMobilNilai::find($request->asuransi_id);
+        }else{
+            $data = PolisMobilHarga::when(
+                $pertanggungan_id = $riderKendaraan->pertanggungan_id,
+                function ($q) use ($pertanggungan_id) {
+                    $q->where('pertanggungan_id', [$pertanggungan_id]);
+                }
+            )
+            ->where('polis_id', $request->asuransi_id)
+            ->first();
+        }
+        
+        return $data;
     }
 
     public function getRiderKendaraanMotorPersentasi(Request $request)

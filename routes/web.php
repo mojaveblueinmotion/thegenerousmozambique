@@ -95,6 +95,9 @@ Route::middleware('auth')
                         Route::post('{search}/selectRiderMotor', 'AjaxController@selectRiderMotor')->name('selectRiderMotor');
                         Route::post('{search}/selectRiderKendaraanMotor', 'AjaxController@selectRiderKendaraanMotor')->name('selectRiderKendaraanMotor');
                         Route::get('getRiderKendaraanMotorPersentasi', 'AjaxController@getRiderKendaraanMotorPersentasi')->name('getRiderKendaraanMotorPersentasi');
+                        Route::post('{search}/selectPertanggunganTambahan', 'AjaxController@selectPertanggunganTambahan')->name('selectPertanggunganTambahan');
+                        Route::get('getRiderKendaraanMobilPersentasi', 'AjaxController@getRiderKendaraanMobilPersentasi')->name('getRiderKendaraanMobilPersentasi');
+                        Route::get('getHargaPembayaranRider', 'AjaxController@getHargaPembayaranRider')->name('getHargaPembayaranRider');
                         
                         // For Database Mobil
                         Route::post('{search}/selectMerk', 'AjaxController@selectMerk')->name('selectMerk');
@@ -157,16 +160,16 @@ Route::middleware('auth')
                     Route::post('polis-mobil/{record}/detailGrid', 'PolisMobilController@detailGrid')->name('polis-mobil.detailGrid');
             
                     // Grid
-                    Route::post('polis-mobil/{record}/detailPolisGrid', 'PolisMobilController@detailPolisGrid')->name('polis-mobil.detailPolisGrid');
-                    Route::post('polis-mobil/{record}/detailPolisGridShow', 'PolisMobilController@detailPolisGridShow')->name('polis-mobil.detailPolisGridShow');
+                    Route::post('polis-mobil/{record}/detailHargaGrid', 'PolisMobilController@detailHargaGrid')->name('polis-mobil.detailHargaGrid');
+                    Route::post('polis-mobil/{record}/detailHargaGridShow', 'PolisMobilController@detailHargaGridShow')->name('polis-mobil.detailHargaGridShow');
             
                     // Detail 
-                    Route::get('polis-mobil/{detail}/detailPolis', 'PolisMobilController@detailPolis')->name('polis-mobil.detailPolis');
-                    Route::get('polis-mobil/{detail}/detailPolisEdit', 'PolisMobilController@detailPolisEdit')->name('polis-mobil.detailPolisEdit');
-                    Route::get('polis-mobil/{detail}/detailPolisShow', 'PolisMobilController@detailPolisShow')->name('polis-mobil.detailPolisShow');
-                    Route::patch('polis-mobil/detailPolisStore', 'PolisMobilController@detailPolisStore')->name('polis-mobil.detailPolisStore');
-                    Route::patch('polis-mobil/{detail}/detailPolisUpdate', 'PolisMobilController@detailPolisUpdate')->name('polis-mobil.detailPolisUpdate');
-                    Route::delete('polis-mobil/{detail}/detailPolisDestroy', 'PolisMobilController@detailPolisDestroy')->name('polis-mobil.detailPolisDestroy');
+                    Route::get('polis-mobil/{detail}/detailHarga', 'PolisMobilController@detailHarga')->name('polis-mobil.detailHarga');
+                    Route::get('polis-mobil/{detail}/detailHargaEdit', 'PolisMobilController@detailHargaEdit')->name('polis-mobil.detailHargaEdit');
+                    Route::get('polis-mobil/{detail}/detailHargaShow', 'PolisMobilController@detailHargaShow')->name('polis-mobil.detailHargaShow');
+                    Route::patch('polis-mobil/detailHargaStore', 'PolisMobilController@detailHargaStore')->name('polis-mobil.detailHargaStore');
+                    Route::patch('polis-mobil/{detail}/detailHargaUpdate', 'PolisMobilController@detailHargaUpdate')->name('polis-mobil.detailHargaUpdate');
+                    Route::delete('polis-mobil/{detail}/detailHargaDestroy', 'PolisMobilController@detailHargaDestroy')->name('polis-mobil.detailHargaDestroy');
             
                     Route::grid('polis-mobil', 'PolisMobilController', [
                         'with' => ['submit', 'approval', 'print', 'history', 'tracking']
@@ -463,6 +466,8 @@ Route::middleware('auth')
                                     Route::grid('interval-pembayaran', 'IntervalPembayaranController');
 
                                     Route::grid('fitur-asuransi', 'FiturAsuransiController');
+
+                                    Route::grid('pertanggungan-tambahan', 'PertanggunganTambahanController');
 
                                     Route::grid('rider-kendaraan', 'RiderKendaraanController');
 

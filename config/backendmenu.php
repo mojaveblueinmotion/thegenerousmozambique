@@ -48,8 +48,145 @@ return [
     ],
     // Admin Console
     [
-        'section' => 'ADMIN KONSOL',
+        'section' => 'ADMIN KONSOL & MASTER',
         'name' => 'console.admin',
+    ],
+    [
+        'name' => 'master',
+        'perms' => 'master',
+        'title' => 'Data Umum Asuransi',
+        'icon' => 'fa fa-book',
+        'submenu' => [
+            [
+                'name' => 'kategori-asuransi',
+                'title' => 'Kategori Asuransi',
+                'url' => '/master/data-asuransi/kategori-asuransi',
+            ],
+            [
+                'name' => 'perusahaan-asuransi',
+                'title' => 'Perusahaan Asuransi',
+                'url' => '/master/data-asuransi/perusahaan-asuransi',
+            ],
+            [
+                'name' => 'interval-pembayaran',
+                'title' => 'Interval Pembayaran',
+                'url' => '/master/data-asuransi/interval-pembayaran',
+            ],
+            [
+                'name' => 'fitur-asuransi',
+                'title' => 'Fitur Asuransi',
+                'url' => '/master/data-asuransi/fitur-asuransi',
+            ],
+            [
+                'name' => 'pertanggungan-tambahan',
+                'title' => 'Pertanggungan Tambahan',
+                'url' => '/master/data-asuransi/pertanggungan-tambahan',
+            ],
+            [
+                'name' => 'rider-kendaraan-lainnya',
+                'title' => 'Rider Kendaraan Lainnya',
+                'url' => '/master/data-asuransi/rider-kendaraan-lainnya',
+            ],
+        ],
+    ],
+    [
+        'name' => 'master',
+        'perms' => 'master',
+        'title' => 'Data Kendaraan',
+        'icon' => 'fa fa-car',
+        'submenu' => [
+            [
+                'name' => 'database-mobil',
+                'title' => 'Database Mobil',
+                'url' => '',
+                'submenu' => [
+                    [
+                        'name' => 'merk',
+                        'title' => 'Merk Mobil',
+                        'url' => '/master/database-mobil/merk'
+                    ],
+                    [
+                        'name' => 'seri',
+                        'title' => 'Seri Mobil',
+                        'url' => '/master/database-mobil/seri'
+                    ],
+                    [
+                        'name' => 'tahun',
+                        'title' => 'Tahun Mobil',
+                        'url' => '/master/database-mobil/tahun'
+                    ],
+                    [
+                        'name' => 'tipe-mobil',
+                        'title' => 'Tipe Mobil',
+                        'url' => '/master/database-mobil/tipe-mobil'
+                    ],
+                ]
+            ],
+            [
+                'name' => 'database-motor',
+                'title' => 'Database Motor',
+                'url' => '',
+                'submenu' => [
+                    [
+                        'name' => 'merk',
+                        'title' => 'Merk Motor',
+                        'url' => '/master/asuransi-motor/merk'
+                    ],
+                    [
+                        'name' => 'seri',
+                        'title' => 'Seri Motor',
+                        'url' => '/master/asuransi-motor/seri'
+                    ],
+                    [
+                        'name' => 'tahun',
+                        'title' => 'Tahun Motor',
+                        'url' => '/master/asuransi-motor/tahun'
+                    ],
+                    [
+                        'name' => 'tipe-motor',
+                        'title' => 'Tipe Motor',
+                        'url' => '/master/asuransi-motor/tipe-motor'
+                    ],
+                ]
+            ],
+            [
+                'name' => 'database-kendaraan-umum',
+                'title' => 'Database Kendaraan Umum',
+                'url' => '',
+                'submenu' => [
+                    [
+                        'name' => 'kode-plat',
+                        'title' => 'Kode Plat',
+                        'url' => '/master/database-mobil/kode-plat'
+                    ],
+                    [
+                        'name' => 'tipe-kendaraan',
+                        'title' => 'Tipe Kendaraan',
+                        'url' => '/master/database-mobil/tipe-kendaraan'
+                    ],
+                    [
+                        'name' => 'tipe-pemakaian',
+                        'title' => 'Tipe Pemakaian',
+                        'url' => '/master/asuransi-mobil/tipe-pemakaian'
+                    ],
+                    [
+                        'name' => 'luas-pertanggungan',
+                        'title' => 'Luas Pertanggungan',
+                        'url' => '/master/asuransi-mobil/luas-pertanggungan'
+                    ],
+                    [
+                        'name' => 'kondisi-kendaraan',
+                        'title' => 'Kondisi Kendaraan',
+                        'url' => '/master/asuransi-mobil/kondisi-kendaraan'
+                    ],
+                    [
+                        'name' => 'workshop',
+                        'title' => 'Workshop',
+                        'url' => '/master/asuransi-mobil/workshop'
+                    ],
+                ]
+            ],
+        ],
     ],
     [
         'name' => 'master',
@@ -126,72 +263,6 @@ return [
                     // ],
                 ]
             ],
-            // [
-            //     'name' => 'asset-type',
-            //     'title' => 'Tipe Aset',
-            //     'url' => '/master/asset-type'
-            // ],
-            // [
-            //     'name' => 'asset',
-            //     'title' => 'Aset TI',
-            //     'url' => '/master/asset'
-            // ],
-            // [
-            //     'name' => 'role-group',
-            //     'title' => 'Grup',
-            //     'url' => '/master/role-group'
-            // ],
-            // [
-            //     'name' => 'priority',
-            //     'title' => 'Prioritas',
-            //     'url' => '/master/priority'
-            // ],
-            // [
-            //     'name' => 'severity',
-            //     'title' => 'Severity',
-            //     'url' => '/master/severity'
-            // ],
-            [
-                'name' => 'data-asuransi',
-                'title' => 'Data Umum Asuransi',
-                'submenu' => [
-                    [
-                        'name' => 'kategori-asuransi',
-                        'title' => 'Kategori Asuransi',
-                        'url' => '/master/data-asuransi/kategori-asuransi',
-                    ],
-                    [
-                        'name' => 'perusahaan-asuransi',
-                        'title' => 'Perusahaan Asuransi',
-                        'url' => '/master/data-asuransi/perusahaan-asuransi',
-                    ],
-                    [
-                        'name' => 'interval-pembayaran',
-                        'title' => 'Interval Pembayaran',
-                        'url' => '/master/data-asuransi/interval-pembayaran',
-                    ],
-                    [
-                        'name' => 'fitur-asuransi',
-                        'title' => 'Fitur Asuransi',
-                        'url' => '/master/data-asuransi/fitur-asuransi',
-                    ],
-                    [
-                        'name' => 'rider-kendaraan',
-                        'title' => 'Rider Kendaraan',
-                        'url' => '/master/data-asuransi/rider-kendaraan',
-                    ],
-                    [
-                        'name' => 'rider-kendaraan-lainnya',
-                        'title' => 'Rider Kendaraan Lainnya',
-                        'url' => '/master/data-asuransi/rider-kendaraan-lainnya',
-                    ],
-                    // [
-                    //     'name' => 'rider-properti',
-                    //     'title' => 'Rider Properti',
-                    //     'url' => '/master/data-asuransi/rider-properti',
-                    // ],
-                ]
-            ],
             [
                 'name' => 'asuransi-properti',
                 'title' => 'Asuransi Properti',
@@ -235,24 +306,9 @@ return [
                     //     'url' => '/master/asuransi-mobil/tipe-kendaraan'
                     // ],
                     [
-                        'name' => 'tipe-pemakaian',
-                        'title' => 'Tipe Pemakaian',
-                        'url' => '/master/asuransi-mobil/tipe-pemakaian'
-                    ],
-                    [
-                        'name' => 'luas-pertanggungan',
-                        'title' => 'Luas Pertanggungan',
-                        'url' => '/master/asuransi-mobil/luas-pertanggungan'
-                    ],
-                    [
-                        'name' => 'kondisi-kendaraan',
-                        'title' => 'Kondisi Kendaraan',
-                        'url' => '/master/asuransi-mobil/kondisi-kendaraan'
-                    ],
-                    [
-                        'name' => 'workshop',
-                        'title' => 'Workshop',
-                        'url' => '/master/asuransi-mobil/workshop'
+                        'name' => 'rider-kendaraan',
+                        'title' => 'Rider Mobil',
+                        'url' => '/master/data-asuransi/rider-kendaraan',
                     ],
                     [
                         'name' => 'asuransi-mobil',
@@ -261,77 +317,21 @@ return [
                     ],
                 ]
             ],
-            [
-                'name' => 'database-mobil',
-                'title' => 'Database Mobil',
-                'url' => '',
-                'submenu' => [
-                    [
-                        'name' => 'merk',
-                        'title' => 'Merk Mobil',
-                        'url' => '/master/database-mobil/merk'
-                    ],
-                    [
-                        'name' => 'seri',
-                        'title' => 'Seri Mobil',
-                        'url' => '/master/database-mobil/seri'
-                    ],
-                    [
-                        'name' => 'tahun',
-                        'title' => 'Tahun Mobil',
-                        'url' => '/master/database-mobil/tahun'
-                    ],
-                    [
-                        'name' => 'tipe-mobil',
-                        'title' => 'Tipe Mobil',
-                        'url' => '/master/database-mobil/tipe-mobil'
-                    ],
-                    [
-                        'name' => 'tipe-kendaraan',
-                        'title' => 'Tipe Kendaraan',
-                        'url' => '/master/database-mobil/tipe-kendaraan'
-                    ],
-                    [
-                        'name' => 'kode-plat',
-                        'title' => 'Kode Plat',
-                        'url' => '/master/database-mobil/kode-plat'
-                    ],
-                ]
-            ],
+            
             [
                 'name' => 'asuransi-motor',
                 'title' => 'Asuransi Motor',
                 'url' => '',
                 'submenu' => [
                     [
-                        'name' => 'asuransi-motor',
-                        'title' => 'Asuransi Motor',
-                        'url' => '/master/asuransi-motor/asuransi-motor'
-                    ],
-                    [
                         'name' => 'rider-motor',
                         'title' => 'Rider Motor',
                         'url' => '/master/asuransi-motor/rider-motor',
                     ],
                     [
-                        'name' => 'merk',
-                        'title' => 'Merk Motor',
-                        'url' => '/master/asuransi-motor/merk'
-                    ],
-                    [
-                        'name' => 'seri',
-                        'title' => 'Seri Motor',
-                        'url' => '/master/asuransi-motor/seri'
-                    ],
-                    [
-                        'name' => 'tahun',
-                        'title' => 'Tahun Motor',
-                        'url' => '/master/asuransi-motor/tahun'
-                    ],
-                    [
-                        'name' => 'tipe-motor',
-                        'title' => 'Tipe Motor',
-                        'url' => '/master/asuransi-motor/tipe-motor'
+                        'name' => 'asuransi-motor',
+                        'title' => 'Asuransi Motor',
+                        'url' => '/master/asuransi-motor/asuransi-motor'
                     ],
                 ]
             ],

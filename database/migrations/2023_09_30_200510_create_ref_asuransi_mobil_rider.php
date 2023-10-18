@@ -19,12 +19,12 @@ class CreateRefAsuransiMobilRider extends Migration
                 $table->dropColumn('pembayaran_persentasi');
                 $table->unsignedBigInteger('kategori_asuransi_id');
 
-                $table->decimal('wilayah_satu_batas_atas', 8, 5);
-                $table->decimal('wilayah_satu_batas_bawah', 8, 5);
-                $table->decimal('wilayah_dua_batas_atas', 8, 5);
-                $table->decimal('wilayah_dua_batas_bawah', 8, 5);
-                $table->decimal('wilayah_tiga_batas_atas', 8, 5);
-                $table->decimal('wilayah_tiga_batas_bawah', 8, 5);
+                $table->decimal('wilayah_satu_batas_atas', 8, 3);
+                $table->decimal('wilayah_satu_batas_bawah', 8, 3);
+                $table->decimal('wilayah_dua_batas_atas', 8, 3);
+                $table->decimal('wilayah_dua_batas_bawah', 8, 3);
+                $table->decimal('wilayah_tiga_batas_atas', 8, 3);
+                $table->decimal('wilayah_tiga_batas_bawah', 8, 3);
 
                 $table->foreign('kategori_asuransi_id')->on('ref_kategori_asuransi')->references('id');
             }
@@ -36,7 +36,8 @@ class CreateRefAsuransiMobilRider extends Migration
                 $table->id();
                 $table->unsignedBigInteger('asuransi_id');
                 $table->unsignedBigInteger('rider_kendaraan_id');
-                $table->decimal('pembayaran_persentasi', 8, 5);
+                $table->decimal('pembayaran_persentasi', 8, 3);
+                $table->decimal('pembayaran_persentasi_komersial', 8, 3);
                 $table->commonFields();
 
                 $table->foreign('asuransi_id')->references('id')->on('ref_asuransi_mobil')->onDelete('cascade');    

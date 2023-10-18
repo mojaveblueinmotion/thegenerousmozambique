@@ -7,6 +7,7 @@ use App\Models\Asuransi\PolisMobil;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Asuransi\PolisMobilRequest;
 use App\Http\Requests\Asuransi\PolisMobilDetailRequest;
+use App\Models\Asuransi\PolisMobilHarga;
 
 class PolisMobilController extends Controller
 {
@@ -168,11 +169,39 @@ class PolisMobilController extends Controller
 
     public function detail(PolisMobil $record)
     {
+        $this->prepare(
+            [
+                'tableStruct2' => [
+                    'url' => route($this->routes . '.detailHargaGrid', $record->id),
+                    'datatable_2' => [
+                        $this->makeColumn('name:num'),
+                        $this->makeColumn('name:pertanggungan|label:Pertanggungan|className:text-center|width:300px'),
+                        $this->makeColumn('name:harga|label:Harga|className:text-center|width:300px'),
+                        $this->makeColumn('name:updated_by|label:Diperbarui'),
+                        $this->makeColumn('name:action'),
+                    ]
+                ],
+            ]
+        );
         return $this->render($this->views . '.detail.index', compact('record'));
     }
 
     public function detailShow(PolisMobil $record)
     {
+        $this->prepare(
+            [
+                'tableStruct2' => [
+                    'url' => route($this->routes . '.detailHargaGridShow', $record->id),
+                    'datatable_2' => [
+                        $this->makeColumn('name:num'),
+                        $this->makeColumn('name:pertanggungan|label:Pertanggungan|className:text-center|width:300px'),
+                        $this->makeColumn('name:harga|label:Harga|className:text-center|width:300px'),
+                        $this->makeColumn('name:updated_by|label:Diperbarui'),
+                        $this->makeColumn('name:action'),
+                    ]
+                ],
+            ]
+        );
         return $this->render($this->views . '.detail.index', compact('record'));
     }
 
@@ -221,6 +250,20 @@ class PolisMobilController extends Controller
 
     public function approval(PolisMobil $record)
     {
+        $this->prepare(
+            [
+                'tableStruct2' => [
+                    'url' => route($this->routes . '.detailHargaGridShow', $record->id),
+                    'datatable_2' => [
+                        $this->makeColumn('name:num'),
+                        $this->makeColumn('name:pertanggungan|label:Pertanggungan|className:text-center|width:300px'),
+                        $this->makeColumn('name:harga|label:Harga|className:text-center|width:300px'),
+                        $this->makeColumn('name:updated_by|label:Diperbarui'),
+                        $this->makeColumn('name:action'),
+                    ]
+                ],
+            ]
+        );
         return $this->render($this->views . '.approval', compact('record'));
     }
 
@@ -253,5 +296,195 @@ class PolisMobilController extends Controller
     public function destroy(PolisMobil $record)
     {
         return $record->handleDestroy();
+    }
+
+    public function detailHargaGrid(PolisMobil $record)
+    {
+        $user = auth()->user();
+        $records = PolisMobilHarga::grid()
+            ->whereHas(
+                'polis',
+                function ($q) use ($record) {
+                    $q->where('id', $record->id);
+                }
+            )
+            ->filters()
+            ->dtGet();
+
+        return \DataTables::of($records)
+            ->addColumn(
+                'num',
+                function ($detail) {
+                    return request()->start;
+                }
+            )
+            ->addColumn(
+                'pertanggungan',
+                function ($records) use ($user) {
+                    return '<span class="badge badge-danger">' . $records->pertanggungan->name . '</span>';
+                }
+            )
+            ->addColumn(
+                'harga',
+                function ($records) use ($user) {
+                    return '<span class="badge badge-info">Rp. ' . number_format($records->harga, 0, '.', ',') . '</span>';
+                }
+            )
+            ->addColumn(
+                'updated_by',
+                function ($detail) use ($user) {
+                    return '<div data-order="' . ($detail->updated_at ?: ($detail->updated_at ?: $detail->created_at)) . '" class="text-left make-td-py-0">
+                        <small>
+                            <div class="text-nowrap">
+                                <i data-toggle="tooltip" title="' . \Str::title($detail->detailCreatorName()) . '"
+                                    class="fa fa-user fa-fw fa-lg mr-2"></i>
+                                ' . \Str::title($detail->detailCreatorName()) . '
+                            </div>
+                            <div class="text-nowrap">
+                                <i data-toggle="tooltip" title="' . (($detail->updated_at ?: $detail->updated_at) ?? $detail->created_at)->format('d M Y, H:i') . '"
+                                    class="fa fa-clock fa-fw fa-lg mr-2"></i>
+                                ' . $detail->detailCreationDate() . '
+                            </div>
+                        </small>
+                    </div>';
+                }
+            )
+            ->addColumn(
+                'action',
+                function ($records) use ($user) {
+                    $actions = [];
+                    $actions[] = [
+                        'type' => 'show',
+                        'attrs' => 'data-modal-size="modal-md"',
+                        'url' => route($this->routes . '.detailHargaShow', $records->id),
+                    ];
+                    $actions[] = [
+                        'type' => 'edit',
+                        'attrs' => 'data-modal-size="modal-md"',
+                        'url' => route($this->routes . '.detailHargaEdit', $records->id),
+                    ];
+                    $actions[] = [
+                        'type' => 'delete',
+                        'url' => route($this->routes . '.detailHargaDestroy', $records->id),
+                        'text' => $records->pertanggungan->name,
+                    ];
+                
+                    return $this->makeButtonDropdown($actions, $records->id);
+                }
+            )
+            ->rawColumns(['action', 'pertanggungan', 'harga', 'updated_by'])
+            ->make(true);
+    }
+
+    public function detailHargaGridShow(PolisMobil $record)
+    {
+        $user = auth()->user();
+        $records = PolisMobilHarga::grid()
+            ->whereHas(
+                'polis',
+                function ($q) use ($record) {
+                    $q->where('id', $record->id);
+                }
+            )
+            ->filters()
+            ->dtGet();
+
+        return \DataTables::of($records)
+            ->addColumn(
+                'num',
+                function ($detail) {
+                    return request()->start;
+                }
+            )
+            ->addColumn(
+                'pertanggungan',
+                function ($records) use ($user) {
+                    return '<span class="badge badge-danger">' . $records->pertanggungan->name . '</span>';
+                }
+            )
+            ->addColumn(
+                'harga',
+                function ($records) use ($user) {
+                    return '<span class="badge badge-info">Rp. ' . number_format($records->harga, 0, '.', ',') . '</span>';
+                }
+            )
+            ->addColumn(
+                'updated_by',
+                function ($detail) use ($user) {
+                    return '<div data-order="' . ($detail->updated_at ?: ($detail->updated_at ?: $detail->created_at)) . '" class="text-left make-td-py-0">
+                        <small>
+                            <div class="text-nowrap">
+                                <i data-toggle="tooltip" title="' . \Str::title($detail->detailCreatorName()) . '"
+                                    class="fa fa-user fa-fw fa-lg mr-2"></i>
+                                ' . \Str::title($detail->detailCreatorName()) . '
+                            </div>
+                            <div class="text-nowrap">
+                                <i data-toggle="tooltip" title="' . (($detail->updated_at ?: $detail->updated_at) ?? $detail->created_at)->format('d M Y, H:i') . '"
+                                    class="fa fa-clock fa-fw fa-lg mr-2"></i>
+                                ' . $detail->detailCreationDate() . '
+                            </div>
+                        </small>
+                    </div>';
+                }
+            )
+            ->addColumn(
+                'action',
+                function ($records) use ($user) {
+                    $actions = [];
+                    $actions[] = [
+                        'type' => 'show',
+                        'attrs' => 'data-modal-size="modal-md"',
+                        'url' => route($this->routes . '.detailHargaShow', $records->id),
+                    ];
+                
+                    return $this->makeButtonDropdown($actions, $records->id);
+                }
+            )
+            ->rawColumns(['action', 'pertanggungan', 'harga', 'updated_by'])
+            ->make(true);
+    }
+
+    public function detailHarga(PolisMobil $detail)
+    {
+        $this->prepare(
+            [
+                'title' => 'Detail Harga'
+            ]
+        );
+        return $this->render($this->views . '.detail.create', compact('detail'));
+    }
+
+    public function detailHargaShow(PolisMobilHarga $detail)
+    {
+        $record = $detail->polis;
+        return $this->render($this->views . '.detail.show', compact('record', 'detail'));
+    }
+
+    public function detailHargaEdit(PolisMobilHarga $detail)
+    {
+        return $this->render($this->views . '.detail.edit', compact('detail'));
+    }
+
+    public function detailHargaStore(Request $request, PolisMobilHarga $detail)
+    {
+        $request->validate([
+            'pertanggungan_id' => 'required',
+            'harga' => 'required'
+        ]);
+        return $detail->handleDetailHargaStoreOrUpdate($request);
+    }
+
+    public function detailHargaUpdate(Request $request, PolisMobilHarga $detail)
+    {
+        $request->validate([
+            'pertanggungan_id' => 'required',
+            'harga' => 'required'
+        ]);
+        return $detail->handleDetailHargaStoreOrUpdate($request);
+    }
+
+    public function detailHargaDestroy(PolisMobilHarga $detail)
+    {
+        return $detail->handleDetailHargaDestroy($detail);
     }
 }

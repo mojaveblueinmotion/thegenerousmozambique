@@ -3,7 +3,7 @@
 		<tr>
 			<td class="text-right td-btn-create width-200px">
 				@if(request()->route()->getName() != $routes.'.detail.show' && request()->route()->getName() != $routes.'.approval')
-				<a href="{{ route($routes.'.detailPurchase', $record->id) }}"
+				<a href="{{ route($routes.'.detailHarga', $record->id) }}"
 					class="btn btn-info ml-2 {{ empty($baseContentReplace) ? 'base-modal--render' : 'base-content--replace' }}"
 					data-modal-backdrop="false" data-modal-v-middle="false">
 					<i class="fa fa-plus"></i> Tambah

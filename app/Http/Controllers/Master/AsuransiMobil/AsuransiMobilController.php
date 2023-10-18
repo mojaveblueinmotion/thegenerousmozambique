@@ -177,8 +177,9 @@ class AsuransiMobilController extends Controller
                     'url' => route($this->routes . '.riderGrid', $record->id),
                     'datatable_1' => [
                         $this->makeColumn('name:num'),
-                        $this->makeColumn('name:rider_kendaraan_id|label:Rider|className:text-left'),
+                        $this->makeColumn('name:rider_kendaraan_id|label:Rider|className:text-left|width:500px'),
                         $this->makeColumn('name:pembayaran_persentasi|label:Persentasi|className:text-left'),
+                        $this->makeColumn('name:pembayaran_persentasi_komersial|label:Persentasi Komersial|className:text-left'),
                         $this->makeColumn('name:updated_by'),
                         $this->makeColumn('name:action'),
                     ],
@@ -214,6 +215,12 @@ class AsuransiMobilController extends Controller
                 }
             )
             ->addColumn(
+                'pembayaran_persentasi_komersial',
+                function ($records) {
+                    return $records->pembayaran_persentasi_komersial. '%';
+                }
+            )
+            ->addColumn(
                 'updated_by',
                 function ($records) {
                     return $records->createdByRaw();
@@ -240,7 +247,7 @@ class AsuransiMobilController extends Controller
                     return $this->makeButtonDropdown($actions, $records->id);
                 }
             )
-            ->rawColumns(['action', 'updated_by', 'pembayaran_persentasi', 'rider_kendaraan_id'])
+            ->rawColumns(['action', 'updated_by', 'pembayaran_persentasi', 'rider_kendaraan_id', 'pembayaran_persentasi_komersial'])
             ->make(true);
     }
 

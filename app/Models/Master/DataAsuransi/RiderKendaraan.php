@@ -2,8 +2,9 @@
 
 namespace App\Models\Master\DataAsuransi;
 
-use App\Models\Master\AsuransiMobil\AsuransiRiderMobil;
 use App\Models\Model;
+use App\Models\Master\AsuransiMobil\AsuransiRiderMobil;
+use App\Models\Master\DataAsuransi\PertanggunganTambahan;
 
 class RiderKendaraan extends Model
 {
@@ -11,6 +12,7 @@ class RiderKendaraan extends Model
 
     protected $fillable = [
         'name',
+        'pertanggungan_id',
         'description',
     ];
 
@@ -31,6 +33,10 @@ class RiderKendaraan extends Model
         return $this->hasMany(AsuransiRiderMobil::class, 'rider_kendaraan_id');
     }
     
+    public function pertanggungan()
+    {
+        return $this->belongsTo(PertanggunganTambahan::class, 'pertanggungan_id');
+    }
     /*******************************
      ** SCOPE
      *******************************/

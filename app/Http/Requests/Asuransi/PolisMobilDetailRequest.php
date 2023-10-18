@@ -13,7 +13,7 @@ class PolisMobilDetailRequest extends FormRequest
             // 'nilai_modifikasi' => 'required',
             // 'tipe' => 'required',
             'nilai_mobil' => 'required',
-            'nilai_pertanggungan' => 'required',
+            // 'nilai_pertanggungan' => 'required',
             // 'pemakaian' => 'required',
             // 'tanggal_awal' => 'required',
             // 'tanggal_akhir' => 'required',

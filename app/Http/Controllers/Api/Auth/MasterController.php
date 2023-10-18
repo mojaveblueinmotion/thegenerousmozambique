@@ -29,6 +29,7 @@ use App\Models\Master\AsuransiProperti\KonstruksiProperti;
 use App\Models\Master\AsuransiPerjalanan\AsuransiPerjalanan;
 use App\Models\Master\AsuransiProperti\PerlindunganProperti;
 use App\Models\Master\DataAsuransi\KategoriAsuransi;
+use App\Models\Master\DataAsuransi\PertanggunganTambahan;
 use App\Models\Master\DataAsuransi\RiderKendaraan;
 use App\Models\Master\DataAsuransi\RiderKendaraanLainnya;
 
@@ -245,6 +246,24 @@ class MasterController extends BaseController
         }
     }
 
+    public function selectPertanggunganTambahan(){
+        try{
+            $record =  PertanggunganTambahan::all();
+
+            return response()->json([
+                'success' => true,
+                'message' => "Data Pertanggungan Tambahan",
+                'data' => $record
+
+            ]);
+        }catch(Exception $e){
+            return response()->json([
+                'success' => false,
+                'message' => $e
+            ], 400);
+        }
+    }
+
     public function selectKondisiKendaraan(){
         try{
             $record =  KondisiKendaraan::all();
@@ -253,7 +272,6 @@ class MasterController extends BaseController
                 'success' => true,
                 'message' => "Data Kondisi Kendaraan",
                 'data' => $record
-
             ]);
         }catch(Exception $e){
             return response()->json([
@@ -428,7 +446,7 @@ class MasterController extends BaseController
 
     public function selectRiderKendaraan($rider){
         try{
-            $record =  RiderKendaraan::where('name', 'like', '%' . $rider . '%')->get();
+            $record =  RiderKendaraan::with('pertanggungan')->where('name', 'like', '%' . $rider . '%')->get();
 
             return response()->json([
                 'success' => true,

@@ -19,7 +19,7 @@ class CreateTransPolisMotorRider extends Migration
                 $table->id();
                 $table->unsignedBigInteger('polis_id');
                 $table->unsignedBigInteger('rider_kendaraan_id');
-                $table->decimal('persentasi_eksisting', 8, 5);
+                $table->decimal('persentasi_eksisting', 8, 3);
                 $table->commonFields();
 
                 $table->foreign('rider_kendaraan_id')->references('id')->on('ref_asuransi_motor_rider');   

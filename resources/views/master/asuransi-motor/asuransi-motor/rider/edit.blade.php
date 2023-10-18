@@ -22,4 +22,10 @@
 			<input type="number" value="{{ $rider->pembayaran_persentasi }}" name="pembayaran_persentasi" class="form-control" placeholder="{{ __('Persentasi') }}">
 		</div>
 	</div>
+	<div class="form-group row">
+		<label class="col-sm-4 col-form-label">{{ __('Persentasi untuk Komersial') }}</label>
+		<div class="col-sm-8 parent-group">
+			<input type="number" value="{{ $rider->pembayaran_persentasi_komersial }}" name="pembayaran_persentasi_komersial" class="form-control" placeholder="{{ __('Persentasi') }}">
+		</div>
+	</div>
 @endsection

@@ -48,5 +48,9 @@ class DatabaseSeeder extends Seeder
         $this->call(OkupasiSeeder::class);
         $this->call(PerlindunganPropertiSeeder::class);
         $this->call(KonstruksiPropertiSeeder::class);
+
+        // Umum
+        $this->call(PertanggunganTambahanSeeder::class);
+        $this->call(RiderSeeder::class);
     }
 }

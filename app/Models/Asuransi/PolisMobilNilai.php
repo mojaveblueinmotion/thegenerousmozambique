@@ -16,7 +16,7 @@ class PolisMobilNilai extends Model
         'nilai_modifikasi',
         'tipe',
         'nilai_mobil',
-        'nilai_pertanggungan',
+        // 'nilai_pertanggungan',
         'tahun_awal',
         'tahun_akhir',
         'pemakaian',

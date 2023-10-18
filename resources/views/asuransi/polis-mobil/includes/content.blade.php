@@ -58,6 +58,22 @@
 				<div class="col-md-12">
 					<div class="card card-custom">
 						<div class="card-header">
+							<h3 class="card-title">Pertanggungan Tambahan</h3>
+							<div class="card-toolbar">
+							</div>
+						</div>
+						<div class="card-body">
+							@include($views.'.detail.detail-grid-laporan')
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid mt-5">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="card card-custom">
+						<div class="card-header">
 							<h3 class="card-title">Foto Mobil</h3>
 							<div class="card-toolbar">
 							</div>
@@ -78,6 +94,7 @@
                             <div class="card-toolbar">
                             </div>
                         </div>
+						<input type="hidden" class="form-control" value="{{ $record->id }}" id="idRecord">
                         <div class="card-body">
     						<div class="row">
 								<div class="col-sm-12">
@@ -90,13 +107,16 @@
 															<th class="text-center width-20px">#</th>
 															<th class="text-center width-200px">{{ __('Rider') }}</th>
 															<th class="text-center width-100px">{{ __('Persentasi Eksisting') }}</th>
+															<th class="text-center width-100px">{{ __('Persentasi Perkalian') }}</th>
+															<th class="text-center width-100px">{{ __('Harga Perkalian') }}</th>
+															<th class="text-center width-100px">{{ __('Total Harga') }}</th>
 															<th class="text-center valign-top width-30px">
 																<button type="button" class="btn btn-sm btn-icon btn-circle btn-primary add-ext-part"><i class="fa fa-plus"></i></button>
 															</th>
 														</tr>
 													</thead>
 													<tbody>
-														@foreach ($record->rider as $i => $part)
+														@foreach ($record->rider as $part)
 															<tr data-key="{{ $loop->iteration }}">
 																<td class="text-center width-20px no">{{ $loop->iteration }}</td>
 																<td class="text-left width-200px parent-group">
@@ -110,7 +130,7 @@
 																		placeholder="{{ __('Pilih Salah Satu') }}">
 																		<option value="">{{ __('Pilih Salah Satu') }}</option>
 																		@if (!empty($part->rider_kendaraan_id))
-																			<option value="{{ $part->rider_kendaraan_id }}" selected>{{ $part->rider->riderKendaraan->name }}</option>
+																			<option value="{{ $part->rider_kendaraan_id }}" selected>{{ $part->riderKendaraan->name }}</option>
 																		@endif
 																	</select>
 																</td>
@@ -118,6 +138,22 @@
 																	<input readonly name="ext_part[{{ $loop->iteration }}][persentasi_eksisting]"
 																		class="form-control" id="persentasi_eksisting"
 																		placeholder="{{ __('Persentasi') }}" value="{{ $part->persentasi_eksisting }}">
+																</td>
+																
+																<td class="text-left parent-group">
+																	<input readonly name="ext_part[{{ $loop->iteration }}][persentasi_perkalian]"
+																		class="form-control" id="persentasi_perkalian"
+																		placeholder="{{ __('Persentasi Perkalian') }}" value="100">
+																</td>
+																<td class="text-left parent-group">
+																	<input readonly name="ext_part[{{ $loop->iteration }}][harga_pembayaran]"
+																		class="form-control base-plugin--inputmask_currency" id="harga_pembayaran"
+																		placeholder="{{ __('Harga Perkalian') }}" value="{{ $part->harga_pembayaran }}">
+																</td>
+																<td class="text-left parent-group">
+																	<input readonly name="ext_part[{{ $loop->iteration }}][total_harga]"
+																		class="form-control base-plugin--inputmask_currency" id="total_harga"
+																		placeholder="{{ __('Total Harga') }}" value="{{ $part->total_harga }}">
 																</td>
 																<td class="text-center valign-top width-30px">
 																	<button type="button" class="btn btn-sm btn-icon btn-circle btn-danger remove-ext-part">
@@ -152,6 +188,22 @@
 									</div>
 								</div>
 							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid mt-5">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="card card-custom">
+						<div class="card-header">
+							<h3 class="card-title">Detail Harga</h3>
+							<div class="card-toolbar">
+							</div>
+						</div>
+						<div class="card-body">
+							@include($views.'.detail.detail-harga')
 						</div>
 					</div>
 				</div>
