@@ -109,4 +109,5 @@ Route::get('selectPertanggunganTambahan', [MasterController::class, 'selectPerta
 Route::get('getHargaAsuransiMobil', [AsuransiMobilApiController::class, 'getHargaAsuransiMobil']);
 Route::get('getAllPertanggunganTambahanMobil', [AsuransiMobilApiController::class, 'getAllPertanggunganTambahanMobil']);
 Route::post('getRiderByPertanggungan', [AsuransiMobilApiController::class, 'getRiderByPertanggungan']);
+Route::get('getRiderMobilDefault', [AsuransiMobilApiController::class, 'getRiderMobilDefault']);
 

@@ -540,4 +540,60 @@ class AsuransiMobilApiController extends BaseController
             ], 400);
         }
     }
+
+    public function getRiderMobilDefault(Request $request){
+        $validator = Validator::make($request->all(), [
+            'tipe_pemakaian_id' => 'required',
+            'asuransi_id' => 'required',
+        ]);
+        
+        if ($validator->fails()) {
+            return response()->json([
+                'success' => false,
+                'errors' => $validator->errors(),
+            ], 400);
+        }
+
+        $asuransi_id = $request->asuransi_id;
+        $tipe_pemakaian_id = $request->tipe_pemakaian_id;
+
+        try{
+            if(in_array($tipe_pemakaian_id, [1,2])){
+                $rider = AsuransiRiderMobil::grid()
+                ->whereHas(
+                    'riderKendaraan',
+                    function ($q) {
+                        $q->where('pertanggungan_id', null);
+                    }
+                )
+                ->where('asuransi_id', $asuransi_id)
+                ->with('riderKendaraan:id,name,pertanggungan_id')
+                ->get()
+                ->makeHidden(['creator', 'updater','pembayaran_persentasi_komersial']);
+            }else{
+                $rider = AsuransiRiderMobil::grid()
+                ->whereHas(
+                    'riderKendaraan',
+                    function ($q) {
+                        $q->where('pertanggungan_id', null);
+                    }
+                )
+                ->where('asuransi_id', $asuransi_id)
+                ->select(['id','pembayaran_persentasi_komersial'])
+                ->with('riderKendaraan:id,name,pertanggungan_id')
+                ->get()
+                ->makeHidden(['creator', 'updater','pembayaran_persentasi']);
+            }
+    
+            return response()->json([
+                'success' => true,
+                'data' => $rider,
+            ]);
+        }catch(Exception $e){
+            return response()->json([
+                'success' => false,
+                'message' => $e
+            ], 400);
+        }
+    }
 }
