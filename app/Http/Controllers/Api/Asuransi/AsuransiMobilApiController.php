@@ -78,7 +78,7 @@ class AsuransiMobilApiController extends BaseController
             
                     $recordRider = new PolisMobilRider;   
                     $recordRider->polis_id = $record->id;
-                    $recordRider->rider_kendaraan_id = $rider;
+                    $recordRider->rider_kendaraan_id = $rider->id;
                     $recordRider->persentasi_eksisting = $persentasi_eksisting;
                     $recordRider->persentasi_perkalian = 100;
                     $recordRider->harga_pembayaran = Self::hitungHargaPembayaranRider($rider, $request->nilai_mobil);
