@@ -642,11 +642,11 @@ class AsuransiMobilApiController extends BaseController
             // })
             // ->
             with([
-                // 'rider.rider.riderKendaraan',
-                // 'rider.rider',
-                // 'rider',
-                // 'detailNilai',
-                // 'detailPayment',
+                'rider.rider.riderKendaraan',
+                'rider.rider',
+                'rider',
+                'detailNilai',
+                'detailPayment',
                 'asuransi',
             ])->find($request->id);
 
