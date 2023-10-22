@@ -20,6 +20,7 @@ use App\Models\Asuransi\PolisMobilRider;
 use App\Models\Master\AsuransiMobil\AsuransiMobil;
 use App\Models\Master\AsuransiMobil\AsuransiRiderMobil;
 use App\Models\Master\DataAsuransi\PertanggunganTambahan;
+use App\Models\Master\DatabaseMobil\Tahun;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
 
@@ -28,12 +29,13 @@ class AsuransiMobilApiController extends BaseController
     public function agentAsuransiMobil(Request $request){
         try{
             $tanggal_akhir_asuransi = Carbon::createFromFormat('d/m/Y', $request->tanggal_akhir_asuransi);
+            $dataTahunKendaraan = Tahun::find($request->tahun_id);
             $tanggal = Carbon::createFromFormat('d/m/Y', $request->tanggal);
-            $tanggal_awal = Carbon::createFromFormat('d/m/Y', $request->tanggal_awal);
-            $tanggal_akhir = Carbon::createFromFormat('d/m/Y', $request->tanggal_akhir);
+            // $tanggal_awal = Carbon::createFromFormat('d/m/Y', $request->tanggal_awal);
+            // $tanggal_akhir = Carbon::createFromFormat('d/m/Y', $request->tanggal_akhir);
 
             $tahun_asuransi = $tanggal_akhir_asuransi->format('Y') - $tanggal->format('Y');
-            $tahun_kendaraan = $tanggal_awal->format('Y') - $tanggal_akhir->format('Y');
+            $tahun_kendaraan = now()->format('Y') - $dataTahunKendaraan->tahun;
 
             $noAsuransi = PolisMobil::generateNoAsuransi();
             $record = new PolisMobil;   
