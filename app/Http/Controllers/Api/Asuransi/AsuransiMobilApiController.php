@@ -613,4 +613,50 @@ class AsuransiMobilApiController extends BaseController
             ], 400);
         }
     }
+
+    public function getPolisMobilSpesifik(Request $request){
+        try {
+            $data = PolisMobil::whereHas('detailCek', function($q){
+                $q->with([
+                    'merk',
+                    'tahun',
+                    'tipeMobil',
+                    'seri',
+                    'kodePlat',
+                    'tipeKendaraan',
+                    'tipePemakaian',
+                    'luasPertanggungan',
+                    'kondisiKendaraan',
+                ]);
+            })->whereHas('detailClient', function($q){
+                $q->with([
+                    'province',
+                    'city',
+                    'district',
+                ]);
+            })->whereHas('detailHarga', function($q){
+                $q->with([
+                    'pertanggungan',
+                ]);
+            })
+            ->with([
+                'rider.rider.riderKendaraan',
+                'rider.rider',
+                'rider',
+                'detailNilai',
+                'detailPayment',
+                'asuransi',
+            ])->find($request->id);
+
+            return response()->json([
+                'success' => true,
+                'data' => $data,
+            ]);
+        } catch (Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => $e
+            ], 400);
+        }
+    }
 }

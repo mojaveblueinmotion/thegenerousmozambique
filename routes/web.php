@@ -474,6 +474,16 @@ Route::middleware('auth')
                                     Route::grid('rider-kendaraan-lainnya', 'RiderKendaraanLainnyaController');
                                 }
                             );
+
+                        // LAINNYA
+                        Route::namespace('Lainnya')
+                        ->prefix('lainnya')
+                        ->name('lainnya.')
+                        ->group(
+                            function () {
+                                Route::grid('blog', 'BlogController');
+                            }
+                        );
                             
                     }
                 );

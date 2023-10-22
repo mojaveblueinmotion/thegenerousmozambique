@@ -361,6 +361,19 @@ return [
         ]
     ],
     [
+        'name' => 'master',
+        'perms' => 'master',
+        'title' => 'Lainnya',
+        'icon' => 'fa fa-globe',
+        'submenu' => [
+            [
+                'name' => 'blog',
+                'title' => 'Blog',
+                'url' => '/master/lainnya/blog',
+            ],
+        ],
+    ],
+    [
         'name' => 'setting',
         'perms' => 'setting',
         'title' => 'Pengaturan Umum',

@@ -130,6 +130,18 @@
 			</div>
 		</div>
 	</div>
+	<div class="form-group row">
+		<label class="col-md-2 col-form-label">{{ __('Deskripsi') }}</label>
+		<div class="col-md-10 parent-group">
+			<textarea name="description" class="base-plugin--summernote" placeholder="{{ __('Deskripsi') }}">{{ $record->description }}</textarea>
+		</div>
+	</div>
+	<div class="form-group row">
+		<label class="col-md-2 col-form-label">{{ __('Cara Klaim') }}</label>
+		<div class="col-md-10 parent-group">
+			<textarea name="description_claim" class="base-plugin--summernote" placeholder="{{ __('Cara Klaim') }}">{{ $record->description_claim }}</textarea>
+		</div>
+	</div>
 @endsection
 
 @push('scripts')

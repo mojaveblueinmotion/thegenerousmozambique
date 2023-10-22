@@ -1,25 +1,19 @@
 <?php
 
-namespace App\Models\Master\AsuransiProperti;
+namespace App\Models\Master\Lainnya;
 
-use App\Models\Master\DataAsuransi\FiturAsuransi;
-use App\Models\Master\DataAsuransi\IntervalPembayaran;
-use App\Models\Master\DataAsuransi\PerusahaanAsuransi;
 use App\Models\Model;
+use App\Models\Master\DatabaseMobil\Seri;
 
-class AsuransiProperti extends Model
+class Blog extends Model
 {
-    protected $table = 'ref_asuransi_properti';
+    protected $table = 'ref_blog';
 
     protected $fillable = [
-        'perusahaan_asuransi_id',
-        'interval_pembayaran_id',
-        'pembayaran_persentasi',
-        'name',
-        'call_center',
-        'bank',
-        'no_rekening',
+        'title',
         'description',
+        'link',
+        'status',
     ];
 
     /*******************************
@@ -33,20 +27,6 @@ class AsuransiProperti extends Model
     /*******************************
      ** RELATION
      *******************************/
-    public function perusahaanAsuransi()
-    {
-        return $this->belongsTo(PerusahaanAsuransi::class, 'perusahaan_asuransi_id');
-    }
-
-    public function intervalPembayaran()
-    {
-        return $this->belongsTo(IntervalPembayaran::class, 'interval_pembayaran_id');
-    }
-
-    public function fiturs()
-    {
-        return $this->belongsToMany(FiturAsuransi::class, 'ref_asuransi_properti_fitur', 'asuransi_id', 'fitur_id');
-    }
 
     /*******************************
      ** SCOPE
@@ -54,7 +34,7 @@ class AsuransiProperti extends Model
 
     public function scopeFilters($query)
     {
-        return $query->filterBy(['name']);
+        return $query->filterBy(['title']);
     }
 
     /*******************************
@@ -66,7 +46,6 @@ class AsuransiProperti extends Model
         try {
             $this->fill($request->only($this->fillable));
             $this->save();
-            $this->fiturs()->sync($request->to ?? []);
             $this->saveLogNotify();
 
             return $this->commitSaved();
@@ -74,7 +53,6 @@ class AsuransiProperti extends Model
             return $this->rollbackSaved($e);
         }
     }
-    
 
     public function handleDestroy()
     {

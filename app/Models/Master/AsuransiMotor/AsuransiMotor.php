@@ -27,6 +27,7 @@ class AsuransiMotor extends Model
         'call_center',
         'bank',
         'no_rekening',
+        'description',
     ];
 
     /*******************************

@@ -122,6 +122,20 @@
 				</div>
 			</div>
 	    </div>
+		
+	</div>
+	<div class="form-group row">
+		<label class="col-md-2 col-form-label">{{ __('Deskripsi') }}</label>
+		<div class="col-md-10 parent-group">
+			<textarea name="description" class="base-plugin--summernote" placeholder="{{ __('Deskripsi') }}" disabled>{{ $record->description }}</textarea>
+		</div>
+	</div>
+	
+	<div class="form-group row">
+		<label class="col-md-2 col-form-label">{{ __('Cara Klaim') }}</label>
+		<div class="col-md-10 parent-group">
+			<textarea name="description_claim" class="base-plugin--summernote" placeholder="{{ __('Cara Klaim') }}" disabled>{{ $record->description_claim }}</textarea>
+		</div>
 	</div>
 	<hr>
 	<table id="dataFilters" class="width-full">

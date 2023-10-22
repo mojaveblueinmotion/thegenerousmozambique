@@ -48,6 +48,9 @@ Route::get('selectVillage/{id}', [MasterController::class, 'selectVillage']);
 
 Route::get('selectRiderLainnya', [MasterController::class, 'selectRiderLainnya']);
 
+// DATA LAINNYA
+Route::get('selectBlog', [MasterController::class, 'selectBlog']);
+
 
 Route::middleware(['jwt.verify'])->group( function () {
     Route::get('getMe', [AuthController::class, 'getMe']);
@@ -100,7 +103,6 @@ Route::get('selectAsuransiPerjalanan', [MasterController::class, 'selectAsuransi
 
 Route::get('selectKategoriAsuransi', [MasterController::class, 'selectKategoriAsuransi']);
 
-
 // Umum
 Route::get('selectPertanggunganTambahan', [MasterController::class, 'selectPertanggunganTambahan']);
 
@@ -110,4 +112,9 @@ Route::get('getHargaAsuransiMobil', [AsuransiMobilApiController::class, 'getHarg
 Route::get('getAllPertanggunganTambahanMobil', [AsuransiMobilApiController::class, 'getAllPertanggunganTambahanMobil']);
 Route::post('getRiderByPertanggungan', [AsuransiMobilApiController::class, 'getRiderByPertanggungan']);
 Route::get('getRiderMobilDefault', [AsuransiMobilApiController::class, 'getRiderMobilDefault']);
+
+Route::get('getPolisMobilSpesifik', [AsuransiMobilApiController::class, 'getPolisMobilSpesifik']);
+
+
+
 

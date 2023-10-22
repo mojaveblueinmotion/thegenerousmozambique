@@ -20,32 +20,32 @@ class TahunMobilSeeder extends Seeder
             [ 
                 "seri_id" => 2,
                 "tahun" => "2020",
-                "harga" => "100"
+                "harga" => "250000000"
             ],
             [ 
                 "seri_id" => 1,
                 "tahun" => "2020",
-                "harga" => "1,111"
+                "harga" => "150000000"
             ],
             [ 
                 "seri_id" => 3,
                 "tahun" => "2023",
-                "harga" => "111"
+                "harga" => "90000000"
             ],
             [ 
                 "seri_id" => 4,
                 "tahun" => "2023",
-                "harga" => "111"
+                "harga" => "80000000"
             ],
             [ 
                 "seri_id" => 5,
                 "tahun" => "2023",
-                "harga" => "1,111"
+                "harga" => "90000000"
             ],
             [ 
                 "seri_id" => 6,
                 "tahun" => "2023",
-                "harga" => "111"
+                "harga" => "10000000"
             ]
         ];
 
