@@ -371,6 +371,11 @@ return [
                 'title' => 'Blog',
                 'url' => '/master/lainnya/blog',
             ],
+            [
+                'name' => 'faq',
+                'title' => 'Faq',
+                'url' => '/master/lainnya/faq',
+            ],
         ],
     ],
     [
