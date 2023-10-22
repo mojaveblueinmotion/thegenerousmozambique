@@ -617,37 +617,27 @@ class AsuransiMobilApiController extends BaseController
     public function getPolisMobilSpesifik(Request $request){
         try {
             $data = PolisMobil::
-            // whereHas('detailCek', function($q){
-            //     $q->with([
-            //         'merk',
-            //         'tahun',
-            //         'tipeMobil',
-            //         'seri',
-            //         'kodePlat',
-            //         'tipeKendaraan',
-            //         'tipePemakaian',
-            //         'luasPertanggungan',
-            //         'kondisiKendaraan',
-            //     ]);
-            // })->whereHas('detailClient', function($q){
-            //     $q->with([
-            //         'province',
-            //         'city',
-            //         'district',
-            //     ]);
-            // })->whereHas('detailHarga', function($q){
-            //     $q->with([
-            //         'pertanggungan',
-            //     ]);
-            // })
-            // ->
             with([
+                'detailCek.merk',
+                'detailCek.tahun',
+                'detailCek.tipeMobil',
+                'detailCek.seri',
+                'detailCek.kodePlat',
+                'detailCek.tipeKendaraan',
+                'detailCek.tipePemakaian',
+                'detailCek.luasPertanggungan',
+                'detailCek.kondisiKendaraan',
                 'rider.rider.riderKendaraan',
                 'rider.rider',
                 'rider',
                 'detailNilai',
                 'detailPayment',
                 'asuransi',
+                'detailHarga',
+                'detailHarga.pertanggungan',
+                'detailClient.province',
+                'detailClient.city',
+                'detailClient.district',
             ])->find($request->id);
 
             return response()->json([
