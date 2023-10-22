@@ -432,7 +432,7 @@ class AsuransiMobilApiController extends BaseController
                 $persentasi_perkalian = 1;
                 if($tahun_kendaraan > 5){
                     $index_perkalian = $tahun_kendaraan - 5;
-                    $loading = 0.1 * $index_perkalian;
+                    $loading = 0.05 * $index_perkalian;
                     $persentasi_perkalian = $persentasi_perkalian + $loading;
                 }
                 for ($i = 1; $i  <= $tahun_asuransi; $i ++) { 
