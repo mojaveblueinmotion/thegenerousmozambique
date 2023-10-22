@@ -181,6 +181,12 @@ class AsuransiMobilApiController extends BaseController
                 if($polisPertanggunganTambahan->harga >= 50000000 && $polisPertanggunganTambahan->harga <= 50000000){
                     $hargaRider = $polisPertanggunganTambahan->harga * 0.00125;
                 }
+            }else{
+                if(in_array($tipe_pemakaian_id, [1,2])){
+                    $hargaRider = 1 * ($asuransiRider->pembayaran_persentasi/100) * $harga_perkalian;
+                }else{
+                    $hargaRider = 1 * ($asuransiRider->pembayaran_persentasi_komersial/100) * $harga_perkalian;
+                }
             }
         }else{
             $harga_perkalian = $nilai_mobil;
