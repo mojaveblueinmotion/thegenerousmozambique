@@ -483,7 +483,7 @@ class AsuransiMobilApiController extends BaseController
 
     public function getRiderByPertanggungan(Request $request){
         $validator = Validator::make($request->all(), [
-            'pertanggungan_id' => 'required|array',
+            // 'pertanggungan_id' => 'required|array',
             'tipe_pemakaian_id' => 'required',
             'asuransi_id' => 'required',
         ]);
