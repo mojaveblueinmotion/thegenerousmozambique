@@ -84,7 +84,7 @@ class AsuransiMobilApiController extends BaseController
                     $recordRider->persentasi_eksisting = $persentasi_eksisting;
                     $recordRider->persentasi_perkalian = 100;
                     $recordRider->harga_pembayaran = Self::hitungHargaPembayaranRider($rider, $request->nilai_mobil);
-                    $recordRider->total_harga = Self::hitungTotalHargaRider($rider, $request->nilai_mobil, $request->tipe_pemakaian_id, $request->asuransi_id);
+                    $recordRider->total_harga = Self::hitungTotalHargaRider($rider, $request->nilai_mobil, $request->tipe_pemakaian_id, $request->asuransi_id, $record->id);
                     $recordRider->save();
                 }
             }
@@ -115,6 +115,14 @@ class AsuransiMobilApiController extends BaseController
         }
     }
 
+    // public function tahunAsuransi(Request $request){
+    //     $dataTahunKendaraan = Tahun::find($request->tahun_id);
+    //     $tahun_asuransi = $tanggal_akhir_asuransi->format('Y') - $tanggal->format('Y');
+    //     $tahun_kendaraan = now()->format('Y') - $dataTahunKendaraan->tahun;
+
+    //     $tahun_kendaraan = now()->format('Y') - $dataTahunKendaraan->tahun;
+    // }
+
     public function hitungHargaAsuransiForPenawaran($tahun_kendaraan, $nilai_mobil, $tahun_asuransi, $asuransi_id){
         $asuransi = AsuransiMobil::find($asuransi_id);
 
@@ -141,12 +149,12 @@ class AsuransiMobilApiController extends BaseController
         return $harga_asuransi;
     }
 
-    public function hitungTotalHargaRider($rider_id, $nilai_mobil, $tipe_pemakaian_id, $asuransi_id){
+    public function hitungTotalHargaRider($rider_id, $nilai_mobil, $tipe_pemakaian_id, $asuransi_id, $polis_id){
         $asuransiRider = AsuransiRiderMobil::where('asuransi_id', $asuransi_id)->where('rider_kendaraan_id',$rider_id)->first();
 
         $hargaRider = 0;
         if(!empty($asuransiRider->riderKendaraan->pertanggungan_id)){
-            $polisPertanggunganTambahan = PolisMobilHarga::where('pertanggungan_id', $asuransiRider->riderKendaraan->pertanggungan_id)->first();
+            $polisPertanggunganTambahan = PolisMobilHarga::where('polis_id', $polis_id)->where('pertanggungan_id', $asuransiRider->riderKendaraan->pertanggungan_id)->first();
             $harga_perkalian = $polisPertanggunganTambahan->harga;
 
             if($rider_id == 6){
