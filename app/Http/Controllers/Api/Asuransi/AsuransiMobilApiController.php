@@ -142,6 +142,7 @@ class AsuransiMobilApiController extends BaseController
     public function hitungTotalHargaRider($rider_id, $nilai_mobil, $tipe_pemakaian_id, $asuransi_id){
         $asuransiRider = AsuransiRiderMobil::where('asuransi_id', $asuransi_id)->where('rider_kendaraan_id',$rider_id)->first();
 
+        $hargaRider = 0;
         if(!empty($asuransiRider->riderKendaraan->pertanggungan_id)){
             $polisPertanggunganTambahan = PolisMobilHarga::where('pertanggungan_id', $asuransiRider->riderKendaraan->pertanggungan_id)->first();
             $harga_perkalian = $polisPertanggunganTambahan->harga;
