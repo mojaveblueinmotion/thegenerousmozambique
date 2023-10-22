@@ -50,6 +50,7 @@ Route::get('selectRiderLainnya', [MasterController::class, 'selectRiderLainnya']
 
 // DATA LAINNYA
 Route::get('selectBlog', [MasterController::class, 'selectBlog']);
+Route::get('selectFaq', [MasterController::class, 'selectFaq']);
 
 
 Route::middleware(['jwt.verify'])->group( function () {

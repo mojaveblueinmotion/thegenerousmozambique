@@ -33,6 +33,7 @@ use App\Models\Master\DataAsuransi\RiderKendaraanLainnya;
 use App\Models\Master\AsuransiProperti\KonstruksiProperti;
 use App\Models\Master\AsuransiPerjalanan\AsuransiPerjalanan;
 use App\Models\Master\AsuransiProperti\PerlindunganProperti;
+use App\Models\Master\Lainnya\Faq;
 
 class MasterController extends BaseController
 {
@@ -492,6 +493,24 @@ class MasterController extends BaseController
             return response()->json([
                 'success' => true,
                 'message' => "Data Blog",
+                'data' => $record
+
+            ]);
+        }catch(Exception $e){
+            return response()->json([
+                'success' => false,
+                'message' => $e
+            ], 400);
+        }
+    }
+
+    public function selectFaq(){
+        try{
+            $record =  Faq::all();
+
+            return response()->json([
+                'success' => true,
+                'message' => "Data Faq",
                 'data' => $record
 
             ]);
