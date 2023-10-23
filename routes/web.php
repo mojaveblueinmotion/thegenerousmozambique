@@ -482,6 +482,9 @@ Route::middleware('auth')
                         ->group(
                             function () {
                                 Route::grid('blog', 'BlogController');
+
+                                Route::grid('faq', 'FaqController');
+
                             }
                         );
                             
