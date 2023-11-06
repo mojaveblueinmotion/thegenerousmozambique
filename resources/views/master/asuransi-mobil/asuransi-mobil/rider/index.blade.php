@@ -64,6 +64,8 @@
 					</select>
 				</div>
 			</div>
+	    </div>
+	    <div class="col-sm-6">
 			<div class="form-group row">
 				<label class="col-sm-4 col-form-label">{{ __('Call Center') }}</label>
 				<div class="col-sm-8 parent-group">
@@ -83,46 +85,6 @@
 				</div>
 			</div>
 	    </div>
-	    <div class="col-sm-6">
-			
-			<div class="form-group row">
-				<label class="col-sm-4 col-form-label">{{ __('Wilayah 1 Batas Atas') }}</label>
-				<div class="col-sm-8 parent-group">
-					<input type="number" value="{{ $record->wilayah_satu_batas_atas }}" disabled name="wilayah_satu_batas_atas" class="form-control" placeholder="{{ __('Wilayah 1 Batas Atas') }}">
-				</div>
-			</div>
-			<div class="form-group row">
-				<label class="col-sm-4 col-form-label">{{ __('Wilayah 1 Batas Bawah') }}</label>
-				<div class="col-sm-8 parent-group">
-					<input type="number" value="{{ $record->wilayah_satu_batas_bawah }}" disabled name="wilayah_satu_batas_bawah" class="form-control" placeholder="{{ __('Wilayah 1 Batas Bawah') }}">
-				</div>
-			</div>
-			<div class="form-group row">
-				<label class="col-sm-4 col-form-label">{{ __('Wilayah 2 Batas Atas') }}</label>
-				<div class="col-sm-8 parent-group">
-					<input type="number" value="{{ $record->wilayah_dua_batas_atas }}" disabled name="wilayah_dua_batas_atas" class="form-control" placeholder="{{ __('Wilayah 2 Batas Atas') }}">
-				</div>
-			</div>
-			<div class="form-group row">
-				<label class="col-sm-4 col-form-label">{{ __('Wilayah 2 Batas Bawah') }}</label>
-				<div class="col-sm-8 parent-group">
-					<input type="number" value="{{ $record->wilayah_dua_batas_bawah }}" disabled name="wilayah_dua_batas_bawah" class="form-control" placeholder="{{ __('Wilayah 1 Batas Bawah') }}">
-				</div>
-			</div>
-			<div class="form-group row">
-				<label class="col-sm-4 col-form-label">{{ __('Wilayah 3 Batas Atas') }}</label>
-				<div class="col-sm-8 parent-group">
-					<input type="number" value="{{ $record->wilayah_tiga_batas_atas }}" disabled name="wilayah_tiga_batas_atas" class="form-control" placeholder="{{ __('Wilayah 3 Batas Atas') }}">
-				</div>
-			</div>
-			<div class="form-group row">
-				<label class="col-sm-4 col-form-label">{{ __('Wilayah 3 Batas Bawah') }}</label>
-				<div class="col-sm-8 parent-group">
-					<input type="number" value="{{ $record->wilayah_tiga_batas_bawah }}" disabled name="wilayah_tiga_batas_bawah" class="form-control" placeholder="{{ __('Wilayah 3 Batas Bawah') }}">
-				</div>
-			</div>
-	    </div>
-		
 	</div>
 	<div class="form-group row">
 		<label class="col-md-2 col-form-label">{{ __('Deskripsi') }}</label>
@@ -141,22 +103,54 @@
 	<table id="dataFilters" class="width-full">
 		<tbody>
 			<tr>
-				<td class="pb-2 valign-top td-filter-reset width-80px">
-					<div class="reset-filter mr-1 hide">
-						<button class="btn btn-secondary btn-icon width-full reset button" data-toggle="tooltip" data-original-title="Reset Filter"><i class="fas fa-sync"></i></button>
-					</div>
-					<div class="label-filter mr-1">
-						<button class="btn btn-secondary btn-icon width-full filter button" data-toggle="tooltip" data-original-title="Filter"><i class="fas fa-filter"></i></button>
-					</div>
-				</td>
 				<td>
-					<div class="row">
-						<div class="col-12 col-sm-6 col-xl-3 pb-2">
-							<input type="text" class="form-control filter-control"
-								data-post="statement"
-								placeholder="{{ __('Pernyataan') }}">
-						</div>
-					</div>
+					<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">
+						Persentasi Asuransi
+					</h5>
+				</td>
+				<td class="text-right td-btn-create width-200px">
+					@include('layouts.forms.btnAdd', [
+						'urlAdd' => route($routes.'.persentasiCreate', $record->id)
+					])
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="table-responsive">
+	    @if(isset($tableStruct['datatable_2']))
+		    <table id="datatable_2" class="table table-bordered is-datatable" style="width: 100%;"
+		    	data-url="{{ $tableStruct['url_2'] }}"
+		    	data-paging="{{ $paging ?? true }}"
+		    	data-info="{{ $info ?? true }}">
+		        <thead>
+		            <tr>
+		                @foreach ($tableStruct['datatable_2'] as $struct)
+		                	<th class="text-center v-middle"
+		                		data-columns-name="{{ $struct['name'] ?? '' }}"
+		                		data-columns-data="{{ $struct['data'] ?? '' }}"
+		                		data-columns-label="{{ $struct['label'] ?? '' }}"
+		                		data-columns-sortable="{{ $struct['sortable'] === true ? 'true' : 'false' }}"
+		                		data-columns-width="{{ $struct['width'] ?? '' }}"
+		                		data-columns-class-name="{{ $struct['className'] ?? '' }}"
+		                		style="{{ isset($struct['width']) ? 'width: '.$struct['width'].'; ' : '' }}">
+		                		{{ $struct['label'] }}
+		                	</th>
+		                @endforeach
+		            </tr>
+		        </thead>
+		        <tbody>
+		        </tbody>
+		    </table>
+		@endif
+	</div>
+	<hr>
+	<table id="dataFilters" class="width-full">
+		<tbody>
+			<tr>
+				<td>
+					<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">
+						Rider Asuransi
+					</h5>
 				</td>
 				<td class="text-right td-btn-create width-200px">
 					@include('layouts.forms.btnAdd', [

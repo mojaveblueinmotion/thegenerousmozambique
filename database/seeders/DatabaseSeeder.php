@@ -42,7 +42,6 @@ class DatabaseSeeder extends Seeder
         $this->call(IntervalPembayaranSeeder::class);
         $this->call(PerusahaanAsuransiSeeder::class);
         $this->call(KategoriAsuransiSeeder::class);
-        $this->call(AsuransiMobilSeeder::class);
 
         // Asuransi Properti
         $this->call(OkupasiSeeder::class);
@@ -52,5 +51,9 @@ class DatabaseSeeder extends Seeder
         // Umum
         $this->call(PertanggunganTambahanSeeder::class);
         $this->call(RiderSeeder::class);
+        
+        // Asuransi Mobil
+        $this->call(AsuransiMobilSeeder::class);
+
     }
 }

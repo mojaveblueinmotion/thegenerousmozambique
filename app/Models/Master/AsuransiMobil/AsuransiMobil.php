@@ -8,6 +8,7 @@ use App\Models\Master\DataAsuransi\KategoriAsuransi;
 use App\Models\Master\DataAsuransi\IntervalPembayaran;
 use App\Models\Master\DataAsuransi\PerusahaanAsuransi;
 use App\Models\Master\AsuransiMobil\AsuransiRiderMobil;
+use App\Models\Master\AsuransiMobil\AsuransiPersentasiMobil;
 
 class AsuransiMobil extends Model
 {
@@ -64,6 +65,11 @@ class AsuransiMobil extends Model
     public function rider()
     {
         return $this->hasMany(AsuransiRiderMobil::class, 'asuransi_id');
+    }
+
+    public function persentasi()
+    {
+        return $this->hasMany(AsuransiPersentasiMobil::class, 'asuransi_id');
     }
 
     /*******************************
@@ -124,6 +130,38 @@ class AsuransiMobil extends Model
         }
     }
     
+    public function handlePersentasiStoreOrUpdate($request, AsuransiPersentasiMobil $persentasi)
+    {
+        $this->beginTransaction();
+        try {
+            $persentasi->fill($request->all());
+            $persentasi->uang_pertanggungan_atas = str_replace(',', '', $request->uang_pertanggungan_atas ?? 0);
+            $persentasi->uang_pertanggungan_bawah = str_replace(',', '', $request->uang_pertanggungan_bawah ?? 0);
+            $this->persentasi()->save($persentasi);
+
+            $this->save();
+            $this->saveLogNotify();
+
+            $redirect = route(request()->get('routes').'.show', $this->id);
+            return $this->commitSaved();
+        } catch (\Exception $e) {
+            return $this->rollbackSaved($e);
+        }
+    }
+
+    public function handlePersentasiDestroy(AsuransiPersentasiMobil $persentasi)
+    {
+        $this->beginTransaction();
+        try {
+            $this->saveLogNotify();
+            $persentasi->delete();
+
+            $redirect = route(request()->get('routes').'.show', $this->id);
+            return $this->commitDeleted();
+        } catch (\Exception $e) {
+            return $this->rollbackDeleted($e);
+        }
+    }
 
     public function handleDestroy()
     {

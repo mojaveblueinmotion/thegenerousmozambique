@@ -36,6 +36,7 @@ use App\Models\Master\AsuransiMotor\RiderMotor;
 use App\Models\Master\AsuransiProperti\Okupasi;
 use App\Models\Master\DataAsuransi\FiturAsuransi;
 use App\Models\Master\AsuransiMobil\AsuransiMobil;
+use App\Models\Master\AsuransiMobil\AsuransiPersentasiMobil;
 use App\Models\Master\AsuransiMobil\TipePemakaian;
 use App\Models\Master\DataAsuransi\RiderKendaraan;
 use App\Models\Master\DatabaseMobil\TipeKendaraan;
@@ -475,6 +476,24 @@ class AjaxController extends Controller
             ->first();
         // }
         return $data;
+    }
+
+    public function getProvinceById(Request $request)
+    {
+        $data = Province::find($request->province_id);
+
+        return $data;
+    }
+
+    public function getAsuransiPersentasiMobil(Request $request)
+    {
+        if($request->harga >= 800000000){
+            $persentasi = AsuransiPersentasiMobil::where('uang_pertanggungan_atas', 0)->where('asuransi_id', $request->asuransi_id)->first();
+        }else{
+            $persentasi = AsuransiPersentasiMobil::where('uang_pertanggungan_bawah', '<=',$request->harga)->where('uang_pertanggungan_atas', '>=', $request->harga)->where('asuransi_id', $request->asuransi_id)->first();
+        }
+
+        return $persentasi;
     }
 
     public function getHargaPembayaranRider(Request $request)

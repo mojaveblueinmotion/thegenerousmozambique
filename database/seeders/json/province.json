@@ -1,138 +1,138 @@
 [
     {
-        "code": "11",
+        "code": "1",
         "name": "ACEH"
     },
     {
-        "code": "12",
+        "code": "1",
         "name": "SUMATERA UTARA"
     },
     {
-        "code": "13",
+        "code": "1",
         "name": "SUMATERA BARAT"
     },
     {
-        "code": "14",
+        "code": "1",
         "name": "RIAU"
     },
     {
-        "code": "15",
+        "code": "1",
         "name": "JAMBI"
     },
     {
-        "code": "16",
+        "code": "1",
         "name": "SUMATERA SELATAN"
     },
     {
-        "code": "17",
+        "code": "1",
         "name": "BENGKULU"
     },
     {
-        "code": "18",
+        "code": "1",
         "name": "LAMPUNG"
     },
     {
-        "code": "19",
+        "code": "1",
         "name": "KEPULAUAN BANGKA BELITUNG"
     },
     {
-        "code": "21",
+        "code": "1",
         "name": "KEPULAUAN RIAU"
     },
     {
-        "code": "31",
+        "code": "2",
         "name": "DKI JAKARTA"
     },
     {
-        "code": "32",
+        "code": "2",
         "name": "JAWA BARAT"
     },
     {
-        "code": "33",
+        "code": "3",
         "name": "JAWA TENGAH"
     },
     {
-        "code": "34",
+        "code": "3",
         "name": "DAERAH ISTIMEWA YOGYAKARTA"
     },
     {
-        "code": "35",
+        "code": "3",
         "name": "JAWA TIMUR"
     },
     {
-        "code": "36",
+        "code": "2",
         "name": "BANTEN"
     },
     {
-        "code": "51",
+        "code": "3",
         "name": "BALI"
     },
     {
-        "code": "52",
+        "code": "3",
         "name": "NUSA TENGGARA BARAT"
     },
     {
-        "code": "53",
+        "code": "3",
         "name": "NUSA TENGGARA TIMUR"
     },
     {
-        "code": "61",
+        "code": "3",
         "name": "KALIMANTAN BARAT"
     },
     {
-        "code": "62",
+        "code": "3",
         "name": "KALIMANTAN TENGAH"
     },
     {
-        "code": "63",
+        "code": "3",
         "name": "KALIMANTAN SELATAN"
     },
     {
-        "code": "64",
+        "code": "3",
         "name": "KALIMANTAN TIMUR"
     },
     {
-        "code": "65",
+        "code": "3",
         "name": "KALIMANTAN UTARA"
     },
     {
-        "code": "71",
+        "code": "3",
         "name": "SULAWESI UTARA"
     },
     {
-        "code": "72",
+        "code": "3",
         "name": "SULAWESI TENGAH"
     },
     {
-        "code": "73",
+        "code": "3",
         "name": "SULAWESI SELATAN"
     },
     {
-        "code": "74",
+        "code": "3",
         "name": "SULAWESI TENGGARA"
     },
     {
-        "code": "75",
+        "code": "3",
         "name": "GORONTALO"
     },
     {
-        "code": "76",
+        "code": "3",
         "name": "SULAWESI BARAT"
     },
     {
-        "code": "81",
+        "code": "3",
         "name": "MALUKU"
     },
     {
-        "code": "82",
+        "code": "3",
         "name": "MALUKU UTARA"
     },
     {
-        "code": "91",
+        "code": "3",
         "name": "PAPUA"
     },
     {
-        "code": "92",
+        "code": "3",
         "name": "PAPUA BARAT"
     }
 ]

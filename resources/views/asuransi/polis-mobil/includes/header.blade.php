@@ -44,7 +44,7 @@
         <div class="form-group row">
             <label class="col-sm-4 col-form-label">{{ __('Asuransi Mobil') }}</label>
             <div class="col-sm-8 parent-group">
-                <select disabled required name="asuransi_id" class="form-control base-plugin--select2-ajax"
+                <select disabled required id="asuransi_id" name="asuransi_id" class="form-control base-plugin--select2-ajax"
                     data-url="{{ route('ajax.selectAsuransiMobil', 'all') }}" placeholder="{{ __('Pilih Salah Satu') }}">
                     <option value="">{{ __('Pilih Salah Satu') }}</option>
                     @if (!empty($record->asuransi_id))
@@ -76,4 +76,5 @@
     </div>
 </div>
 
-<input type="hidden" id="wilayah_satu_batas_atas" value="{{ $record->asuransi->wilayah_satu_batas_atas }}">
+<input type="text" id="kode_wilayah" value="">
+<input type="text" id="persentasi_wilayah" value="">

@@ -5,44 +5,22 @@ namespace App\Models\Asuransi;
 use App\Models\Model;
 use Illuminate\Support\Carbon;
 use App\Models\Asuransi\PolisMobil;
+use App\Models\Traits\HasFiles;
 
-class PolisMobilNilai extends Model
+class PolisMobilModifikasi extends Model
 {
-    protected $table = 'trans_polis_mobil_nilai';
+    use HasFiles;
+    protected $table = 'trans_polis_mobil_modifikasi';
 
     protected $fillable = [
         'polis_id',
-        'rincian_modifikasi',
+        'name',
         'nilai_modifikasi',
-        'tipe',
-        'nilai_mobil',
-        'nilai_pertanggungan',
-        'tahun_awal',
-        'tahun_akhir',
-        'pemakaian',
-        'tanggal_awal',
-        'tanggal_akhir',
-        'no_plat',
-    ];
-
-    protected $dates = [
-        'tanggal_awal',
-        'tanggal_akhir',
     ];
 
     /*******************************
      ** MUTATOR
      *******************************/
-
-    public function setTanggalAkhirAttribute($value)
-    {
-        $this->attributes['tanggal_akhir'] = Carbon::createFromFormat('d/m/Y', $value);
-    }
-
-    public function setTanggalAwalAttribute($value)
-    {
-        $this->attributes['tanggal_awal'] = Carbon::createFromFormat('d/m/Y', $value);
-    }
 
     /*******************************
      ** ACCESSOR
@@ -67,7 +45,7 @@ class PolisMobilNilai extends Model
 
     public function scopeFilters($query)
     {
-        return $query->filterBy(['rincian_modifikasi']);
+        return $query->filterBy(['nama']);
     }
 
     /*******************************
@@ -104,7 +82,7 @@ class PolisMobilNilai extends Model
 
     public function saveLogNotify()
     {
-        $data = $this->tipe;
+        $data = $this->nama;
         $routes = request()->get('routes');
         switch (request()->route()->getName()) {
             case $routes . '.store':

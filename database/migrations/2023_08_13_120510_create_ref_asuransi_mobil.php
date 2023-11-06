@@ -21,10 +21,6 @@ class CreateRefAsuransiMobil extends Migration
                 $table->unsignedBigInteger('interval_pembayaran_id');
                 $table->string('pembayaran_persentasi');
                 $table->string('name');
-                // $table->integer('kisaran_harga_awal')->unsigned();
-                // $table->integer('kisaran_harga_akhir')->unsigned();
-                // $table->integer('pembayaran_persentasi')->unsigned();
-                // $table->integer('kerusakan_persentasi')->unsigned();
                 $table->string('call_center');
                 $table->commonFields();
 

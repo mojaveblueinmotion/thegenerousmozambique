@@ -13,7 +13,6 @@
 		</select>
 	</div>
 </div>
-
 <div class="form-group row">
 	<label class="col-sm-4 col-form-label">{{ __('Kategori Asuransi') }}</label>
 	<div class="col-sm-8 parent-group">
@@ -30,42 +29,6 @@
 	<label class="col-sm-4 col-form-label">{{ __('Nama Asuransi') }}</label>
 	<div class="col-sm-8 parent-group">
 		<input type="text" value="{{ $record->name }}" disabled name="name" class="form-control" placeholder="{{ __('Nama Asuransi') }}">
-	</div>
-</div>
-<div class="form-group row">
-	<label class="col-sm-4 col-form-label">{{ __('Wilayah 1 Batas Atas') }}</label>
-	<div class="col-sm-8 parent-group">
-		<input type="number" value="{{ $record->wilayah_satu_batas_atas }}" disabled name="wilayah_satu_batas_atas" class="form-control" placeholder="{{ __('Wilayah 1 Batas Atas') }}">
-	</div>
-</div>
-<div class="form-group row">
-	<label class="col-sm-4 col-form-label">{{ __('Wilayah 1 Batas Bawah') }}</label>
-	<div class="col-sm-8 parent-group">
-		<input type="number" value="{{ $record->wilayah_satu_batas_bawah }}" disabled name="wilayah_satu_batas_bawah" class="form-control" placeholder="{{ __('Wilayah 1 Batas Bawah') }}">
-	</div>
-</div>
-<div class="form-group row">
-	<label class="col-sm-4 col-form-label">{{ __('Wilayah 2 Batas Atas') }}</label>
-	<div class="col-sm-8 parent-group">
-		<input type="number" value="{{ $record->wilayah_dua_batas_atas }}" disabled name="wilayah_dua_batas_atas" class="form-control" placeholder="{{ __('Wilayah 2 Batas Atas') }}">
-	</div>
-</div>
-<div class="form-group row">
-	<label class="col-sm-4 col-form-label">{{ __('Wilayah 2 Batas Bawah') }}</label>
-	<div class="col-sm-8 parent-group">
-		<input type="number" value="{{ $record->wilayah_dua_batas_bawah }}" disabled name="wilayah_dua_batas_bawah" class="form-control" placeholder="{{ __('Wilayah 1 Batas Bawah') }}">
-	</div>
-</div>
-<div class="form-group row">
-	<label class="col-sm-4 col-form-label">{{ __('Wilayah 3 Batas Atas') }}</label>
-	<div class="col-sm-8 parent-group">
-		<input type="number" value="{{ $record->wilayah_tiga_batas_atas }}" disabled name="wilayah_tiga_batas_atas" class="form-control" placeholder="{{ __('Wilayah 3 Batas Atas') }}">
-	</div>
-</div>
-<div class="form-group row">
-	<label class="col-sm-4 col-form-label">{{ __('Wilayah 3 Batas Bawah') }}</label>
-	<div class="col-sm-8 parent-group">
-		<input type="number" value="{{ $record->wilayah_tiga_batas_bawah }}" disabled name="wilayah_tiga_batas_bawah" class="form-control" placeholder="{{ __('Wilayah 3 Batas Bawah') }}">
 	</div>
 </div>
 <div class="form-group row">

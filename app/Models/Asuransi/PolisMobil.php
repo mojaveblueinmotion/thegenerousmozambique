@@ -14,6 +14,7 @@ use App\Models\Asuransi\PolisMobilNilai;
 use App\Models\Asuransi\PolisMobilRider;
 use App\Models\Asuransi\PolisMobilClient;
 use App\Models\Asuransi\PolisMobilPayment;
+use App\Models\Asuransi\PolisMobilModifikasi;
 use App\Models\Master\AsuransiMobil\AsuransiMobil;
 
 class PolisMobil extends Model
@@ -150,6 +151,12 @@ class PolisMobil extends Model
     {
         return $this->hasMany(PolisMobilHarga::class, 'polis_id');
     }
+
+    public function detailModifikasi()
+    {
+        return $this->hasMany(PolisMobilModifikasi::class, 'polis_id');
+    }
+
     /*******************************
      ** SCOPE
      *******************************/
@@ -267,7 +274,12 @@ class PolisMobil extends Model
                     $this->generateApproval($request->module);
                 }
                 $this->saveFiles($request);
-                $this->harga_rider = str_replace(',', '', $request->harga_rider);
+                $this->harga_rider = str_replace(',', '', $request->harga_rider ?? 0);
+                $this->harga_asuransi = str_replace(',', '', $request->harga_asuransi ?? 0);
+                $this->biaya_polis = str_replace(',', '', $request->biaya_polis ?? 0);
+                $this->biaya_materai = str_replace(',', '', $request->biaya_materai ?? 0);
+                $this->diskon = str_replace(',', '', $request->diskon ?? 0);
+                $this->total_harga = str_replace(',', '', $request->total_harga ?? 0);
                 $this->status = $request->is_submit ? 'penawaran' : 'draft';
                 $this->save();
 
@@ -334,6 +346,7 @@ class PolisMobil extends Model
     public function saveParts($request)
     {
         $partsIds = [];
+        $partsIdsMod = [];
         // External
         if (!empty($request->ext_part)) {
             foreach ($request->ext_part as $val) {
@@ -346,7 +359,16 @@ class PolisMobil extends Model
             }
         }
 
+        if (!empty($request->mod_part)) {
+            foreach ($request->mod_part as $val) {
+                $partMod = $this->detailModifikasi()->firstOrNew(['name' => $val['name'], 'nilai_modifikasi' => str_replace(',', '', $val['nilai_modifikasi'] ?? 0)]);
+                $this->detailModifikasi()->save($partMod);
+                $partsIdsMod[] = $partMod->id;
+            }
+        }
+
         $this->rider()->whereNotIn('id', $partsIds)->delete();
+        $this->detailModifikasi()->whereNotIn('id', $partsIdsMod)->delete();
     }
 
     public function saveFiles($request)

@@ -36,6 +36,7 @@
 				<input type="hidden" name="tahun_id" value="{{ $record->detailCek->tahun_id ?? '' }}">
 				<select name="tahun_id" class="form-control base-plugin--select2-ajax tahun_id"
 					data-url="{{ route('ajax.tahunOptions', ['seri_id' => '']) }}"
+					id="tahun_mobil"
 					data-url-origin="{{ route('ajax.tahunOptions') }}" placeholder="{{ __('Pilih Salah Satu') }}" disabled
 					required>
 					<option value="">{{ __('Pilih Salah Satu') }}</option>

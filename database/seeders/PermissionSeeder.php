@@ -61,6 +61,9 @@ class PermissionSeeder extends Seeder
                     'dashboard'                 => ['view'],
                     'master'                    => ['view', 'create', 'edit', 'delete'],
                     'setting'                   => ['view', 'create', 'edit', 'delete'],
+
+                    'asuransi.polis-mobil'      => ['view', 'create', 'edit', 'delete'],
+                    'asuransi.polis-motor'      => ['view', 'create', 'edit', 'delete'],
                 ],
             ],
             [

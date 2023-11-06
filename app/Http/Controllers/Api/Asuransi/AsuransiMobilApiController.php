@@ -3,26 +3,28 @@
 namespace App\Http\Controllers\Api\Asuransi;
 
 use Exception;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Str;
 use App\Models\Asuransi\PolisMobil;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 use App\Models\Setting\Globals\Files;
 use App\Models\Asuransi\PolisMobilCek;
-use App\Models\Asuransi\PolisMobilNilai;
-use App\Models\Asuransi\PolisMobilClient;
-use App\Models\Asuransi\PolisMobilPayment;
-use App\Http\Controllers\Api\BaseController;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Asuransi\PolisMobilHarga;
+use App\Models\Asuransi\PolisMobilNilai;
 use App\Models\Asuransi\PolisMobilRider;
+use App\Models\Asuransi\PolisMobilClient;
+use Illuminate\Support\Facades\Validator;
+use App\Models\Asuransi\PolisMobilPayment;
+use App\Models\Master\DatabaseMobil\Tahun;
+use App\Http\Controllers\Api\BaseController;
+use App\Models\Asuransi\PolisMobilModifikasi;
 use App\Models\Master\AsuransiMobil\AsuransiMobil;
+use App\Models\Master\DataAsuransi\RiderKendaraan;
 use App\Models\Master\AsuransiMobil\AsuransiRiderMobil;
 use App\Models\Master\DataAsuransi\PertanggunganTambahan;
-use App\Models\Master\DatabaseMobil\Tahun;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Storage;
 
 class AsuransiMobilApiController extends BaseController
 {
@@ -57,15 +59,27 @@ class AsuransiMobilApiController extends BaseController
             $recordNilai->polis_id = $record->id;
             $recordNilai->save();
             
-            $dataPertanggungan = $request->input('pertanggungan');
+            
 
-            // Loop through the "items" array and insert into the database
-            foreach ($dataPertanggungan as $item) {
-                $pertanggungan = new PolisMobilHarga();
-                $pertanggungan->polis_id = $record->id;
-                $pertanggungan->pertanggungan_id = $item['pertanggungan_id'];
-                $pertanggungan->harga = $item['harga'];
-                $pertanggungan->save();
+            if($dataPertanggungan = $request->input('pertanggungan')){
+                // Loop through the "items" array and insert into the database
+                foreach ($dataPertanggungan as $item) {
+                    $pertanggungan = new PolisMobilHarga();
+                    $pertanggungan->polis_id = $record->id;
+                    $pertanggungan->pertanggungan_id = $item['pertanggungan_id'];
+                    $pertanggungan->harga = $item['harga'];
+                    $pertanggungan->save();
+                }
+            }
+            
+            if($dataModifikasi = $request->input('modifikasi')){
+                foreach ($dataModifikasi as $item) {
+                    $modifikasi = new PolisMobilModifikasi();
+                    $modifikasi->polis_id = $record->id;
+                    $modifikasi->name = $item['name'];
+                    $modifikasi->nilai_modifikasi = $item['nilai_modifikasi'];
+                    $modifikasi->save();
+                }
             }
 
             if($request->rider){
@@ -88,8 +102,6 @@ class AsuransiMobilApiController extends BaseController
                     $recordRider->save();
                 }
             }
-
-             
 
             $recordPolisUpdateHarga = PolisMobil::find($record->id);
             $recordPolisUpdateHarga->update([
@@ -210,6 +222,87 @@ class AsuransiMobilApiController extends BaseController
         }
 
         return $harga_perkalian;
+    }
+
+    public function getAsuransiByRider(Request $request){
+        $validator = Validator::make($request->all(), [
+            'rider_id' => 'required',
+        ]);
+        
+        if ($validator->fails()) {
+            return response()->json([
+                'success' => false,
+                'errors' => $validator->errors(),
+            ], 400);
+        }
+
+        $rider_id = $request->rider_id;
+
+        try{
+            $idAsuransi = AsuransiRiderMobil::whereIn('rider_kendaraan_id', $rider_id)->groupBy('asuransi_id')->select('asuransi_id')->get()->toArray();
+            $data = AsuransiMobil::whereIn('id', $idAsuransi)->get();
+    
+            return response()->json([
+                'success' => true,
+                'data' => $data,
+            ]);
+        }catch(Exception $e){
+            return response()->json([
+                'success' => false,
+                'message' => $e
+            ], 400);
+        }
+    }
+
+    public function getAllRiderMobil(){
+        try{
+            $data = RiderKendaraan::all();
+    
+            return response()->json([
+                'success' => true,
+                'data' => $data,
+            ]);
+        }catch(Exception $e){
+            return response()->json([
+                'success' => false,
+                'message' => $e
+            ], 400);
+        }
+    }
+
+    public function getRiderByAsuransiId(Request $request){
+        try{
+            $validator = Validator::make($request->all(), [
+                'id' => 'required',
+            ]);
+            
+            if ($validator->fails()) {
+                return response()->json([
+                    'success' => false,
+                    'errors' => $validator->errors(),
+                ], 400);
+            }
+
+            $id = $request->id;
+            $data = AsuransiMobil::with([
+                'perusahaanAsuransi',
+                'intervalPembayaran',
+                'kategoriAsuransi',
+                'rider',
+                'rider.riderKendaraan',
+                'persentasi',
+            ])->find($id);
+    
+            return response()->json([
+                'success' => true,
+                'data' => $data,
+            ]);
+        }catch(Exception $e){
+            return response()->json([
+                'success' => false,
+                'message' => $e
+            ], 400);
+        }
     }
 
     public function agentPenawaranAsuransiMobil(Request $request){

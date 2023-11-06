@@ -84,6 +84,8 @@ Route::middleware('auth')
                         Route::post('{search}/select-nip', 'AjaxController@selectNip')->name('select-nip');
 
                         // For Province -> City
+                        Route::get('getProvinceById', 'AjaxController@getProvinceById')->name('getProvinceById');
+                        Route::get('getAsuransiPersentasiMobil', 'AjaxController@getAsuransiPersentasiMobil')->name('getAsuransiPersentasiMobil');
                         Route::post('{search}/selectProvinceForCity', 'AjaxController@selectProvinceForCity')->name('selectProvinceForCity');
                         Route::post('city-options', 'AjaxController@cityOptions')->name('cityOptions');
                         Route::post('district-options', 'AjaxController@districtOptions')->name('districtOptions');
@@ -393,6 +395,7 @@ Route::middleware('auth')
 
                                     Route::grid('workshop', 'WorkshopController');
 
+                                    // Rider Mobil
                                     Route::get('asuransi-mobil/{record}/rider', 'AsuransiMobilController@rider')->name('asuransi-mobil.rider');
                                     Route::post('asuransi-mobil/{record}/riderGrid', 'AsuransiMobilController@riderGrid')->name('asuransi-mobil.riderGrid');
                                     Route::get('asuransi-mobil/{record}/riderCreate', 'AsuransiMobilController@riderCreate')->name('asuransi-mobil.riderCreate');
@@ -401,6 +404,15 @@ Route::middleware('auth')
                                     Route::patch('asuransi-mobil/{rider}/riderUpdate', 'AsuransiMobilController@riderUpdate')->name('asuransi-mobil.riderUpdate');
                                     Route::delete('asuransi-mobil/{rider}/riderDestroy', 'AsuransiMobilController@riderDestroy')->name('asuransi-mobil.riderDestroy');
                                     Route::get('asuransi-mobil/{rider}/riderShow', 'AsuransiMobilController@riderShow')->name('asuransi-mobil.riderShow');
+                                    // Persentasi Mobil
+                                    Route::get('asuransi-mobil/{record}/persentasi', 'AsuransiMobilController@persentasi')->name('asuransi-mobil.persentasi');
+                                    Route::post('asuransi-mobil/{record}/persentasiGrid', 'AsuransiMobilController@persentasiGrid')->name('asuransi-mobil.persentasiGrid');
+                                    Route::get('asuransi-mobil/{record}/persentasiCreate', 'AsuransiMobilController@persentasiCreate')->name('asuransi-mobil.persentasiCreate');
+                                    Route::post('asuransi-mobil/{record}/persentasiStore', 'AsuransiMobilController@persentasiStore')->name('asuransi-mobil.persentasiStore');
+                                    Route::get('asuransi-mobil/{persentasi}/persentasiEdit', 'AsuransiMobilController@persentasiEdit')->name('asuransi-mobil.persentasiEdit');
+                                    Route::patch('asuransi-mobil/{persentasi}/persentasiUpdate', 'AsuransiMobilController@persentasiUpdate')->name('asuransi-mobil.persentasiUpdate');
+                                    Route::delete('asuransi-mobil/{persentasi}/persentasiDestroy', 'AsuransiMobilController@persentasiDestroy')->name('asuransi-mobil.persentasiDestroy');
+                                    Route::get('asuransi-mobil/{persentasi}/persentasiShow', 'AsuransiMobilController@persentasiShow')->name('asuransi-mobil.persentasiShow');
                                     Route::grid('asuransi-mobil', 'AsuransiMobilController');
 
                                     // Route::get('bod/import', 'BodController@import')->name('bod.import');

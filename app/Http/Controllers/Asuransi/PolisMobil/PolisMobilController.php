@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Asuransi\PolisMobilRequest;
 use App\Http\Requests\Asuransi\PolisMobilDetailRequest;
 use App\Models\Asuransi\PolisMobilHarga;
+use App\Models\Master\AsuransiMobil\AsuransiMobil;
+use App\Models\Master\AsuransiMobil\AsuransiRiderMobil;
 
 class PolisMobilController extends Controller
 {
@@ -36,6 +38,7 @@ class PolisMobilController extends Controller
 
     public function index()
     {
+        
         $this->prepare(
             [
                 'tableStruct' => [

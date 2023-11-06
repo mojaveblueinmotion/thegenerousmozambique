@@ -41,6 +41,65 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="card card-custom">
+                        <div class="card-header">
+                            <h3 class="card-title">Detail Modifikasi</h3>
+                            <div class="card-toolbar">
+                            </div>
+                        </div>
+                        <div class="card-body">
+    						<div class="row">
+								<div class="col-sm-12">
+									<div class="form-group row">
+										<div class="col-sm-12 parent-group">
+											<div class="table-responsive" style="overflow-x:auto!important;">
+												<table class="table table-bordered">
+													<thead>
+														<tr>
+															<th class="text-center width-20px">#</th>
+															<th class="text-center width-200px">{{ __('Nama Modifikasi') }}</th>
+															<th class="text-center width-100px">{{ __('Harga Modifikasi') }}</th>
+															<th class="text-center valign-top width-30px">
+																<button type="button" class="btn btn-sm btn-icon btn-circle btn-primary add-mod-part"><i class="fa fa-plus"></i></button>
+															</th>
+														</tr>
+													</thead>
+													<tbody>
+														@foreach ($record->detailModifikasi as $part)
+															<tr data-key="{{ $loop->iteration }}">
+																<td class="text-center width-20px no">{{ $loop->iteration }}</td>
+																<td class="text-left parent-group">
+																	<input name="mod_part[{{ $loop->iteration }}][name]"
+																		class="form-control" id="name"
+																		placeholder="{{ __('Nama Modifikasi') }}" value="{{ $part->name }}">
+																</td>
+																<td class="text-left parent-group">
+																	<input name="mod_part[{{ $loop->iteration }}][nilai_modifikasi]"
+																		class="form-control base-plugin--inputmask_currency nilai_modifikasi_detail" id="nilai_modifikasi_detail"
+																		placeholder="{{ __('Harga Modifikasi') }}" value="{{ $part->nilai_modifikasi }}">
+																</td>
+																<td class="text-center valign-top width-30px">
+																	<button type="button" class="btn btn-sm btn-icon btn-circle btn-danger remove-ext-part">
+																		<i class="fa fa-trash"></i>
+																	</button>
+																</td>
+															</tr>
+														@endforeach
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid mt-5">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="card card-custom">
 						<div class="card-header">
 							<h3 class="card-title">Nilai Mobil</h3>
 							<div class="card-toolbar">
