@@ -257,9 +257,9 @@ class AsuransiMobilApiController extends BaseController
     public function getAllRiderMobil(Request $request){
         try{
             if(!empty($request->id)){
-                $data = RiderKendaraan::where('pertanggungan_id', $request->id)->get();
+                $data = RiderKendaraan::whereIn('pertanggungan_id', $request->id)->get();
             }else{
-                $data = RiderKendaraan::all();
+                $data = RiderKendaraan::where('pertanggungan_id', null)->get();
             }
     
             return response()->json([
