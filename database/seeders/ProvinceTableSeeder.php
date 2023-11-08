@@ -30,6 +30,7 @@ class ProvinceTableSeeder extends Seeder
                 $prov = new Province;
             }
             $prov->code         = $val->code;
+            $prov->code_wilayah         = $val->code_wilayah;
             $prov->name         = $val->name;
             $prov->created_by   = 1;
             $prov->created_at   = \Carbon\Carbon::now();

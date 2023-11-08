@@ -38,7 +38,6 @@ class PolisMobilController extends Controller
 
     public function index()
     {
-        
         $this->prepare(
             [
                 'tableStruct' => [

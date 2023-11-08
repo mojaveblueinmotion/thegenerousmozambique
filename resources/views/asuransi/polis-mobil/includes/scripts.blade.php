@@ -193,7 +193,7 @@
 						province_id: $('.province_id').val(),
 					},
 					success: function(response, state, xhr) {
-						$('#kode_wilayah').val(response.code);
+						$('#kode_wilayah').val(response.code_wilayah);
 						// persentasi.val(response.code_id);
 					},
 					error: function(a, b, c) {

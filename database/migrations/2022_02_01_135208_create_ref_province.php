@@ -18,6 +18,7 @@ class CreateRefProvince extends Migration
             function (Blueprint $table) {
                 $table->id();
                 $table->string('code', 6)->nullable();
+                $table->string('code_wilayah', 6)->nullable();
                 $table->string('name', 32);
                 $table->commonFields();
             }

@@ -254,9 +254,13 @@ class AsuransiMobilApiController extends BaseController
         }
     }
 
-    public function getAllRiderMobil(){
+    public function getAllRiderMobil(Request $request){
         try{
-            $data = RiderKendaraan::all();
+            if(!empty($request->id)){
+                $data = RiderKendaraan::where('pertanggungan_id', $request->id)->get();
+            }else{
+                $data = RiderKendaraan::all();
+            }
     
             return response()->json([
                 'success' => true,
@@ -591,65 +595,85 @@ class AsuransiMobilApiController extends BaseController
         }
     }
 
-    public function getRiderByPertanggungan(Request $request){
-        $validator = Validator::make($request->all(), [
-            // 'pertanggungan_id' => 'required|array',
-            'tipe_pemakaian_id' => 'required',
-            'asuransi_id' => 'required',
-        ]);
+    // public function getRiderMobilByPertanggunganId(Request $request){
+    //     try{
+    //         if(!empty($request->id)){
+    //             $data = RiderKendaraan::where('pertanggungan_id', $request->id)->get();
+    //         }else{
+    //             $data = PertanggunganTambahan::all();
+    //         }
+
+    //         return response()->json([
+    //             'success' => true,
+    //             'data' => $data,
+    //         ]);
+    //     }catch(Exception $e){
+    //         return response()->json([
+    //             'success' => false,
+    //             'message' => $e
+    //         ], 400);
+    //     }
+    // }
+
+    // public function getRiderByPertanggungan(Request $request){
+    //     $validator = Validator::make($request->all(), [
+    //         // 'pertanggungan_id' => 'required|array',
+    //         'tipe_pemakaian_id' => 'required',
+    //         'asuransi_id' => 'required',
+    //     ]);
         
-        if ($validator->fails()) {
-            return response()->json([
-                'success' => false,
-                'errors' => $validator->errors(),
-            ], 400);
-        }
+    //     if ($validator->fails()) {
+    //         return response()->json([
+    //             'success' => false,
+    //             'errors' => $validator->errors(),
+    //         ], 400);
+    //     }
 
-        $pertanggungan_id = $request->pertanggungan_id;
-        $asuransi_id = $request->asuransi_id;
-        $tipe_pemakaian_id = $request->tipe_pemakaian_id;
+    //     $pertanggungan_id = $request->pertanggungan_id;
+    //     $asuransi_id = $request->asuransi_id;
+    //     $tipe_pemakaian_id = $request->tipe_pemakaian_id;
 
-        try{
-            if(in_array($tipe_pemakaian_id, [1,2])){
-                $rider = AsuransiRiderMobil::grid()
-                ->whereHas(
-                    'riderKendaraan',
-                    function ($q) use ($pertanggungan_id) {
-                        $q->whereIn('pertanggungan_id', $pertanggungan_id);
-                        $q->orWhere('pertanggungan_id', null);
-                    }
-                )
-                ->where('asuransi_id', $asuransi_id)
-                ->with('riderKendaraan:id,name,pertanggungan_id')
-                ->get()
-                ->makeHidden(['creator', 'updater','pembayaran_persentasi_komersial']);
-            }else{
-                $rider = AsuransiRiderMobil::grid()
-                ->whereHas(
-                    'riderKendaraan',
-                    function ($q) use ($pertanggungan_id) {
-                        $q->whereIn('pertanggungan_id', $pertanggungan_id);
-                        $q->orWhere('pertanggungan_id', null);
-                    }
-                )
-                ->where('asuransi_id', $asuransi_id)
-                ->select(['id','pembayaran_persentasi_komersial'])
-                ->with('riderKendaraan:id,name,pertanggungan_id')
-                ->get()
-                ->makeHidden(['creator', 'updater','pembayaran_persentasi']);
-            }
+    //     try{
+    //         if(in_array($tipe_pemakaian_id, [1,2])){
+    //             $rider = AsuransiRiderMobil::grid()
+    //             ->whereHas(
+    //                 'riderKendaraan',
+    //                 function ($q) use ($pertanggungan_id) {
+    //                     $q->whereIn('pertanggungan_id', $pertanggungan_id);
+    //                     $q->orWhere('pertanggungan_id', null);
+    //                 }
+    //             )
+    //             ->where('asuransi_id', $asuransi_id)
+    //             ->with('riderKendaraan:id,name,pertanggungan_id')
+    //             ->get()
+    //             ->makeHidden(['creator', 'updater','pembayaran_persentasi_komersial']);
+    //         }else{
+    //             $rider = AsuransiRiderMobil::grid()
+    //             ->whereHas(
+    //                 'riderKendaraan',
+    //                 function ($q) use ($pertanggungan_id) {
+    //                     $q->whereIn('pertanggungan_id', $pertanggungan_id);
+    //                     $q->orWhere('pertanggungan_id', null);
+    //                 }
+    //             )
+    //             ->where('asuransi_id', $asuransi_id)
+    //             ->select(['id','pembayaran_persentasi_komersial'])
+    //             ->with('riderKendaraan:id,name,pertanggungan_id')
+    //             ->get()
+    //             ->makeHidden(['creator', 'updater','pembayaran_persentasi']);
+    //         }
     
-            return response()->json([
-                'success' => true,
-                'data' => $rider,
-            ]);
-        }catch(Exception $e){
-            return response()->json([
-                'success' => false,
-                'message' => $e
-            ], 400);
-        }
-    }
+    //         return response()->json([
+    //             'success' => true,
+    //             'data' => $rider,
+    //         ]);
+    //     }catch(Exception $e){
+    //         return response()->json([
+    //             'success' => false,
+    //             'message' => $e
+    //         ], 400);
+    //     }
+    // }
 
     public function getRiderMobilDefault(Request $request){
         $validator = Validator::make($request->all(), [

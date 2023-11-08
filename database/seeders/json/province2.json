@@ -1,171 +1,137 @@
 [
     {
-        "code_wilayah": "1",
         "code": "11",
         "name": "ACEH"
     },
     {
-        "code_wilayah": "1",
         "code": "12",
         "name": "SUMATERA UTARA"
     },
     {
-        "code_wilayah": "1",
         "code": "13",
         "name": "SUMATERA BARAT"
     },
     {
-        "code_wilayah": "1",
         "code": "14",
         "name": "RIAU"
     },
     {
-        "code_wilayah": "1",
         "code": "15",
         "name": "JAMBI"
     },
     {
-        "code_wilayah": "1",
         "code": "16",
         "name": "SUMATERA SELATAN"
     },
     {
-        "code_wilayah": "1",
         "code": "17",
         "name": "BENGKULU"
     },
     {
-        "code_wilayah": "1",
         "code": "18",
         "name": "LAMPUNG"
     },
     {
-        "code_wilayah": "1",
         "code": "19",
         "name": "KEPULAUAN BANGKA BELITUNG"
     },
     {
-        "code_wilayah": "1",
         "code": "21",
         "name": "KEPULAUAN RIAU"
     },
     {
-        "code_wilayah": "2",
         "code": "31",
         "name": "DKI JAKARTA"
     },
     {
-        "code_wilayah": "2",
         "code": "32",
         "name": "JAWA BARAT"
     },
     {
-        "code_wilayah": "3",
         "code": "33",
         "name": "JAWA TENGAH"
     },
     {
-        "code_wilayah": "3",
         "code": "34",
         "name": "DAERAH ISTIMEWA YOGYAKARTA"
     },
     {
-        "code_wilayah": "3",
         "code": "35",
         "name": "JAWA TIMUR"
     },
     {
-        "code_wilayah": "2",
         "code": "36",
         "name": "BANTEN"
     },
     {
-        "code_wilayah": "3",
         "code": "51",
         "name": "BALI"
     },
     {
-        "code_wilayah": "3",
         "code": "52",
         "name": "NUSA TENGGARA BARAT"
     },
     {
-        "code_wilayah": "3",
         "code": "53",
         "name": "NUSA TENGGARA TIMUR"
     },
     {
-        "code_wilayah": "3",
         "code": "61",
         "name": "KALIMANTAN BARAT"
     },
     {
-        "code_wilayah": "3",
         "code": "62",
         "name": "KALIMANTAN TENGAH"
     },
     {
-        "code_wilayah": "3",
         "code": "63",
         "name": "KALIMANTAN SELATAN"
     },
     {
-        "code_wilayah": "3",
         "code": "64",
         "name": "KALIMANTAN TIMUR"
     },
     {
-        "code_wilayah": "3",
         "code": "65",
         "name": "KALIMANTAN UTARA"
     },
     {
-        "code_wilayah": "3",
         "code": "71",
         "name": "SULAWESI UTARA"
     },
     {
-        "code_wilayah": "3",
         "code": "72",
         "name": "SULAWESI TENGAH"
     },
     {
-        "code_wilayah": "3",
         "code": "73",
         "name": "SULAWESI SELATAN"
     },
     {
-        "code_wilayah": "3",
         "code": "74",
         "name": "SULAWESI TENGGARA"
     },
     {
-        "code_wilayah": "3",
         "code": "75",
         "name": "GORONTALO"
     },
     {
-        "code_wilayah": "3",
         "code": "76",
         "name": "SULAWESI BARAT"
     },
     {
-        "code_wilayah": "3",
         "code": "81",
         "name": "MALUKU"
     },
     {
-        "code_wilayah": "3",
         "code": "82",
         "name": "MALUKU UTARA"
     },
     {
-        "code_wilayah": "3",
         "code": "91",
         "name": "PAPUA"
     },
     {
-        "code_wilayah": "3",
         "code": "92",
         "name": "PAPUA BARAT"
     }
