@@ -225,22 +225,26 @@ class AsuransiMobilApiController extends BaseController
     }
 
     public function getAsuransiByRider(Request $request){
-        $validator = Validator::make($request->all(), [
-            'rider_id' => 'required',
-        ]);
+        // $validator = Validator::make($request->all(), [
+        //     'rider_id' => 'required',
+        // ]);
         
-        if ($validator->fails()) {
-            return response()->json([
-                'success' => false,
-                'errors' => $validator->errors(),
-            ], 400);
-        }
+        // if ($validator->fails()) {
+        //     return response()->json([
+        //         'success' => false,
+        //         'errors' => $validator->errors(),
+        //     ], 400);
+        // }
 
         $rider_id = $request->rider_id;
 
         try{
-            $idAsuransi = AsuransiRiderMobil::whereIn('rider_kendaraan_id', $rider_id)->groupBy('asuransi_id')->select('asuransi_id')->get()->toArray();
-            $data = AsuransiMobil::whereIn('id', $idAsuransi)->get();
+            if(!empty($rider_id)){
+                $idAsuransi = AsuransiRiderMobil::whereIn('rider_kendaraan_id', $rider_id)->groupBy('asuransi_id')->select('asuransi_id')->get()->toArray();
+                $data = AsuransiMobil::whereIn('id', $idAsuransi)->get();
+            }else{
+                $data = AsuransiMobil::all();
+            }
     
             return response()->json([
                 'success' => true,
