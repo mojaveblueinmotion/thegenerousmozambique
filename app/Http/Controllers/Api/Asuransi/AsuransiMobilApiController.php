@@ -22,9 +22,11 @@ use App\Models\Master\DatabaseMobil\Tahun;
 use App\Http\Controllers\Api\BaseController;
 use App\Models\Asuransi\PolisMobilModifikasi;
 use App\Models\Master\AsuransiMobil\AsuransiMobil;
+use App\Models\Master\AsuransiMobil\AsuransiPersentasiMobil;
 use App\Models\Master\DataAsuransi\RiderKendaraan;
 use App\Models\Master\AsuransiMobil\AsuransiRiderMobil;
 use App\Models\Master\DataAsuransi\PertanggunganTambahan;
+use App\Models\Master\Geo\Province;
 
 class AsuransiMobilApiController extends BaseController
 {
@@ -43,7 +45,7 @@ class AsuransiMobilApiController extends BaseController
             $record = new PolisMobil;   
             $record->fill($request->only($record->fillable));
             $record->no_asuransi = $noAsuransi->no_asuransi;
-            $record->harga_asuransi = Self::hitungHargaAsuransiForPenawaran($tahun_kendaraan, $request->nilai_mobil, $tahun_asuransi, $request->asuransi_id);
+            $record->harga_asuransi = Self::hitungHargaAsuransiForPenawaran($tahun_kendaraan, $request->nilai_pertanggungan, $tahun_asuransi, $request->asuransi_id, $request->province_id);
             // $record->tanggal_akhir_asuransi = $request->tanggal_akhir_asuransi;
             $record->no_max = $noAsuransi->no_max;
             $record->status = 'penawaran';
@@ -58,7 +60,11 @@ class AsuransiMobilApiController extends BaseController
             $recordNilai->fill($request->only($recordNilai->fillable));
             $recordNilai->polis_id = $record->id;
             $recordNilai->save();
-            
+
+            $recordClient = new PolisMobilClient;   
+            $recordClient->fill($request->only($recordClient->fillable));
+            $recordClient->polis_id = $record->id;
+            $recordClient->save();
             
 
             if($dataPertanggungan = $request->input('pertanggungan')){
@@ -97,8 +103,8 @@ class AsuransiMobilApiController extends BaseController
                     $recordRider->rider_kendaraan_id = $dataRider->id;
                     $recordRider->persentasi_eksisting = $persentasi_eksisting;
                     $recordRider->persentasi_perkalian = 100;
-                    $recordRider->harga_pembayaran = Self::hitungHargaPembayaranRider($rider, $request->nilai_mobil);
-                    $recordRider->total_harga = Self::hitungTotalHargaRider($rider, $request->nilai_mobil, $request->tipe_pemakaian_id, $request->asuransi_id, $record->id);
+                    $recordRider->harga_pembayaran = Self::hitungHargaPembayaranRider($rider, $request->nilai_pertanggungan);
+                    $recordRider->total_harga = Self::hitungTotalHargaRider($rider, $request->nilai_pertanggungan, $request->tipe_pemakaian_id, $request->asuransi_id, $record->id);
                     $recordRider->save();
                 }
             }
@@ -135,29 +141,62 @@ class AsuransiMobilApiController extends BaseController
     //     $tahun_kendaraan = now()->format('Y') - $dataTahunKendaraan->tahun;
     // }
 
-    public function hitungHargaAsuransiForPenawaran($tahun_kendaraan, $nilai_mobil, $tahun_asuransi, $asuransi_id){
+    public function hitungHargaAsuransiForPenawaran($tahun_kendaraan, $nilai_pertanggungan, $tahun_asuransi, $asuransi_id, $province_id){
         $asuransi = AsuransiMobil::find($asuransi_id);
-
         $harga_asuransi = 0;
-        $persentasi_perkalian = 1;
-        if($tahun_kendaraan > 5){
-            $index_perkalian = $tahun_kendaraan - 5;
-            $loading = 0.1 * $index_perkalian;
-            $persentasi_perkalian = $persentasi_perkalian + $loading;
-        }
-        for ($i = 1; $i  <= $tahun_asuransi; $i ++) { 
-            if ($i == 1) {
-                $harga_asuransi += $nilai_mobil* ($asuransi->wilayah_satu_batas_atas/100);
-            } else if ($i == 2) {
-                $harga_asuransi += $nilai_mobil* 0.85 *($asuransi->wilayah_satu_batas_atas/100);
-            } else if ($i == 3) {
-                $harga_asuransi += $nilai_mobil* 0.75 *($asuransi->wilayah_satu_batas_atas/100);
-            } else {
-                $harga_asuransi += $nilai_mobil* 0.70 *($asuransi->wilayah_satu_batas_atas/100);
+        $asuransiPersentasiPerkalian = 0;
+        if($asuransi){
+            $persentasi_perkalian = 1;
+            if($tahun_kendaraan > 5){
+                $index_perkalian = $tahun_kendaraan - 5;
+                $loading = 0.05 * $index_perkalian;
+                $persentasi_perkalian = $persentasi_perkalian + $loading;
             }
-        }
-        $harga_asuransi = $persentasi_perkalian * $harga_asuransi;
 
+            for ($i = 1; $i  <= $tahun_asuransi; $i ++) { 
+                if($nilai_pertanggungan > 0 && $nilai_pertanggungan <=125000000){
+                    $asuransiPersentasi = AsuransiPersentasiMobil::where('kategori', 'Kategori 1')->first();
+                }elseif($nilai_pertanggungan > 125000000 && $nilai_pertanggungan <= 200000000){
+                    $asuransiPersentasi = AsuransiPersentasiMobil::where('kategori', 'Kategori 2')->first();
+                }elseif($nilai_pertanggungan > 200000000 && $nilai_pertanggungan <= 400000000){
+                    $asuransiPersentasi = AsuransiPersentasiMobil::where('kategori', 'Kategori 3')->first();
+                }elseif($nilai_pertanggungan > 400000000 && $nilai_pertanggungan <= 800000000){
+                    $asuransiPersentasi = AsuransiPersentasiMobil::where('kategori', 'Kategori 4')->first();
+                }elseif($nilai_pertanggungan > 800000000){
+                    $asuransiPersentasi = AsuransiPersentasiMobil::where('kategori', 'Kategori 5')->first();
+                }
+
+                if($province_id){
+                    $province = Province::find($province_id);
+                    $batas_wilayah = $province->code_wilayah;
+                    switch ($batas_wilayah) {
+                        case "1":
+                            $asuransiPersentasiPerkalian = $asuransiPersentasi->wilayah_satu_bawah;
+                            break;
+                        case "2":
+                            $asuransiPersentasiPerkalian = $asuransiPersentasi->wilayah_dua_bawah;
+                            break;
+                        case "3":
+                            $asuransiPersentasiPerkalian = $asuransiPersentasi->wilayah_tiga_bawah;
+                            break;
+                        default:
+                            $asuransiPersentasiPerkalian = 0;
+                            break;
+                    }
+                }
+
+                if ($i == 1) {
+                    $harga_asuransi += $nilai_pertanggungan* ($asuransiPersentasiPerkalian/100);
+                } else if ($i == 2) {
+                    $harga_asuransi += $nilai_pertanggungan* 0.85 *($asuransiPersentasiPerkalian/100);
+                } else if ($i == 3) {
+                    $harga_asuransi += $nilai_pertanggungan* 0.75 *($asuransiPersentasiPerkalian/100);
+                } else {
+                    $harga_asuransi += $nilai_pertanggungan* 0.70 *($asuransiPersentasiPerkalian/100);
+                }
+            }
+            $harga_asuransi = $persentasi_perkalian * $harga_asuransi;
+        }
         return $harga_asuransi;
     }
 
@@ -225,17 +264,6 @@ class AsuransiMobilApiController extends BaseController
     }
 
     public function getAsuransiByRider(Request $request){
-        // $validator = Validator::make($request->all(), [
-        //     'rider_id' => 'required',
-        // ]);
-        
-        // if ($validator->fails()) {
-        //     return response()->json([
-        //         'success' => false,
-        //         'errors' => $validator->errors(),
-        //     ], 400);
-        // }
-
         $rider_id = $request->rider_id;
 
         try{
@@ -320,12 +348,6 @@ class AsuransiMobilApiController extends BaseController
                 'status' => 'pending'
             ]);
             $record->save();
-
-            $recordClient = new PolisMobilClient;   
-            $recordClient->fill($request->only($recordClient->fillable));
-            $recordClient->polis_id = $record->id;
-            $recordClient->save();
-
             $recordPayment = new PolisMobilPayment;   
             $recordPayment->fill($request->only($recordPayment->fillable));
             $recordPayment->polis_id = $record->id;
@@ -525,12 +547,140 @@ class AsuransiMobilApiController extends BaseController
         ]);
     }
 
+    public function getHargaLengkapAsuransiMobil(Request $request){
+        $asuransi_id = $request->asuransi_id;
+        $province_id = $request->province_id;
+        $tahun_kendaraan = $request->tahun_kendaraan;
+        $nilai_pertanggungan = $request->nilai_pertanggungan;
+        $tahun_asuransi = $request->tahun_asuransi;
+
+        try{
+            $asuransiMobil = AsuransiMobil::find($asuransi_id);
+            $harga_asuransi = 0;
+            if($asuransiMobil){
+                $persentasi_perkalian = 1;
+                if($tahun_kendaraan > 5){
+                    $index_perkalian = $tahun_kendaraan - 5;
+                    $loading = 0.05 * $index_perkalian;
+                    $persentasi_perkalian = $persentasi_perkalian + $loading;
+                }
+
+                for ($i = 1; $i  <= $tahun_asuransi; $i ++) { 
+                    if($nilai_pertanggungan > 0 && $nilai_pertanggungan <=125000000){
+                        $asuransiPersentasi = AsuransiPersentasiMobil::where('kategori', 'Kategori 1')->first();
+                    }elseif($nilai_pertanggungan > 125000000 && $nilai_pertanggungan <= 200000000){
+                        $asuransiPersentasi = AsuransiPersentasiMobil::where('kategori', 'Kategori 2')->first();
+                    }elseif($nilai_pertanggungan > 200000000 && $nilai_pertanggungan <= 400000000){
+                        $asuransiPersentasi = AsuransiPersentasiMobil::where('kategori', 'Kategori 3')->first();
+                    }elseif($nilai_pertanggungan > 400000000 && $nilai_pertanggungan <= 800000000){
+                        $asuransiPersentasi = AsuransiPersentasiMobil::where('kategori', 'Kategori 4')->first();
+                    }elseif($nilai_pertanggungan > 800000000){
+                        $asuransiPersentasi = AsuransiPersentasiMobil::where('kategori', 'Kategori 5')->first();
+                    }
+
+                    if($province_id){
+                        $province = Province::find($province_id);
+                        $batas_wilayah = $province->code_wilayah;
+                        switch ($batas_wilayah) {
+                            case "1":
+                                $asuransiPersentasi = $asuransiPersentasi->wilayah_satu_bawah;
+                                break;
+                            case "2":
+                                $asuransiPersentasi = $asuransiPersentasi->wilayah_dua_bawah;
+                                break;
+                            case "3":
+                                $asuransiPersentasi = $asuransiPersentasi->wilayah_tiga_bawah;
+                                break;
+                            default:
+                                $asuransiPersentasi = 0;
+                                break;
+                        }
+                    }
+
+                    if ($i == 1) {
+                        $harga_asuransi += $nilai_pertanggungan* ($asuransiPersentasi/100);
+                    } else if ($i == 2) {
+                        $harga_asuransi += $nilai_pertanggungan* 0.85 *($asuransiPersentasi/100);
+                    } else if ($i == 3) {
+                        $harga_asuransi += $nilai_pertanggungan* 0.75 *($asuransiPersentasi/100);
+                    } else {
+                        $harga_asuransi += $nilai_pertanggungan* 0.70 *($asuransiPersentasi/100);
+                    }
+                }
+                $asuransiMobil->harga_asuransi = $persentasi_perkalian * $harga_asuransi;
+            }
+                
+            // ================================
+            // if(!empty($rider_id)){
+            //     $asuransiRider = AsuransiRiderMobil::where('asuransi_id', $asuransi_id)->whereIn('rider_kendaraan_id', $rider_id)->get();
+            //     $asuransiRider->each(function ($model) use ($tahun_kendaraan, $nilai_pertanggungan, $tahun_asuransi, $province_id) {
+            //         $hargaRider = 0;
+            //         if(!empty($model->riderKendaraan->pertanggungan_id)){
+            //             $polisPertanggunganTambahan = PolisMobilHarga::where('polis_id', $polis_id)->where('pertanggungan_id', $asuransiRider->riderKendaraan->pertanggungan_id)->first();
+            //             $harga_perkalian = $polisPertanggunganTambahan->harga;
+
+            //             if($rider_id == 6){
+            //                 if($polisPertanggunganTambahan->harga <= 25000000){
+            //                     $hargaRider = $polisPertanggunganTambahan->harga * 0.01;
+            //                 }
+                    
+            //                 if($polisPertanggunganTambahan->harga >= 25000000 && $polisPertanggunganTambahan->harga <= 50000000){
+            //                     $hargaRider = $polisPertanggunganTambahan->harga * 0.005;
+            //                 }
+                    
+            //                 if($polisPertanggunganTambahan->harga >= 50000000 && $polisPertanggunganTambahan->harga <= 50000000){
+            //                     $hargaRider = $polisPertanggunganTambahan->harga * 0.0025;
+            //                 }
+            //             }elseif($rider_id == 8){
+            //                 if($polisPertanggunganTambahan->harga <= 25000000){
+            //                     $hargaRider = $polisPertanggunganTambahan->harga * 0.005;
+            //                 }
+                    
+            //                 if($polisPertanggunganTambahan->harga >= 25000000 && $polisPertanggunganTambahan->harga <= 50000000){
+            //                     $hargaRider = $polisPertanggunganTambahan->harga * 0.0025;
+            //                 }
+                    
+            //                 if($polisPertanggunganTambahan->harga >= 50000000 && $polisPertanggunganTambahan->harga <= 50000000){
+            //                     $hargaRider = $polisPertanggunganTambahan->harga * 0.00125;
+            //                 }
+            //             }else{
+            //                 if(in_array($tipe_pemakaian_id, [1,2])){
+            //                     $hargaRider = 1 * ($asuransiRider->pembayaran_persentasi/100) * $harga_perkalian;
+            //                 }else{
+            //                     $hargaRider = 1 * ($asuransiRider->pembayaran_persentasi_komersial/100) * $harga_perkalian;
+            //                 }
+            //             }
+            //         }else{
+            //             $harga_perkalian = $nilai_mobil;
+            //             if(in_array($tipe_pemakaian_id, [1,2])){
+            //                 $hargaRider = 1 * ($asuransiRider->pembayaran_persentasi/100) * $harga_perkalian;
+            //             }else{
+            //                 $hargaRider = 1 * ($asuransiRider->pembayaran_persentasi_komersial/100) * $harga_perkalian;
+            //             }
+            //         }
+            //     });
+            // }else{
+            //     $riderAsuransi = null;
+            // }
+    
+            return response()->json([
+                'success' => true,
+                'data' => $asuransiMobil
+            ]);
+        }catch(Exception $e){
+            return response()->json([
+                'success' => false,
+                'message' => $e
+            ], 400);
+        }
+    }
+
     public function getHargaAsuransiMobil(Request $request){
-        $asuransiMobil = AsuransiMobil::all();
         $validator = Validator::make($request->all(), [
             'tahun_kendaraan' => 'required',
-            'nilai_mobil' => 'required',
+            'nilai_pertanggungan' => 'required',
             'tahun_asuransi' => 'required',
+            'province_id' => 'required',
         ]);
         
         if ($validator->fails()) {
@@ -541,11 +691,19 @@ class AsuransiMobilApiController extends BaseController
         }
         
         $tahun_kendaraan = $request->tahun_kendaraan;
-        $nilai_mobil = $request->nilai_mobil;
+        $nilai_pertanggungan = $request->nilai_pertanggungan;
         $tahun_asuransi = $request->tahun_asuransi;
+        $rider_id = $request->rider_id;
+        $province_id = $request->province_id;
 
         try{
-            $asuransiMobil->each(function ($model) use ($tahun_kendaraan, $nilai_mobil, $tahun_asuransi) {
+            if(!empty($rider_id)){
+                $idAsuransi = AsuransiRiderMobil::whereIn('rider_kendaraan_id', $rider_id)->groupBy('asuransi_id')->select('asuransi_id')->get()->toArray();
+                $asuransiMobil = AsuransiMobil::whereHas('persentasi')->whereIn('id', $idAsuransi)->get();
+            }else{
+                $asuransiMobil = AsuransiMobil::whereHas('persentasi')->get();
+            }
+            $asuransiMobil->each(function ($model) use ($tahun_kendaraan, $nilai_pertanggungan, $tahun_asuransi, $province_id) {
                 $harga_asuransi = 0;
                 $persentasi_perkalian = 1;
                 if($tahun_kendaraan > 5){
@@ -553,15 +711,47 @@ class AsuransiMobilApiController extends BaseController
                     $loading = 0.05 * $index_perkalian;
                     $persentasi_perkalian = $persentasi_perkalian + $loading;
                 }
+
                 for ($i = 1; $i  <= $tahun_asuransi; $i ++) { 
+                    if($nilai_pertanggungan > 0 && $nilai_pertanggungan <=125000000){
+                        $asuransiPersentasi = AsuransiPersentasiMobil::where('asuransi_id', $model->id)->where('kategori', 'Kategori 1')->first();
+                    }elseif($nilai_pertanggungan > 125000000 && $nilai_pertanggungan <= 200000000){
+                        $asuransiPersentasi = AsuransiPersentasiMobil::where('asuransi_id', $model->id)->where('kategori', 'Kategori 2')->first();
+                    }elseif($nilai_pertanggungan > 200000000 && $nilai_pertanggungan <= 400000000){
+                        $asuransiPersentasi = AsuransiPersentasiMobil::where('asuransi_id', $model->id)->where('kategori', 'Kategori 3')->first();
+                    }elseif($nilai_pertanggungan > 400000000 && $nilai_pertanggungan <= 800000000){
+                        $asuransiPersentasi = AsuransiPersentasiMobil::where('asuransi_id', $model->id)->where('kategori', 'Kategori 4')->first();
+                    }elseif($nilai_pertanggungan > 800000000){
+                        $asuransiPersentasi = AsuransiPersentasiMobil::where('asuransi_id', $model->id)->where('kategori', 'Kategori 5')->first();
+                    }
+
+                    if($province_id){
+                        $province = Province::find($province_id);
+                        $batas_wilayah = $province->code_wilayah;
+                        switch ($batas_wilayah) {
+                            case "1":
+                                $asuransiPersentasi = $asuransiPersentasi->wilayah_satu_bawah;
+                                break;
+                            case "2":
+                                $asuransiPersentasi = $asuransiPersentasi->wilayah_dua_bawah;
+                                break;
+                            case "3":
+                                $asuransiPersentasi = $asuransiPersentasi->wilayah_tiga_bawah;
+                                break;
+                            default:
+                                $asuransiPersentasi = 0;
+                                break;
+                        }
+                    }
+
                     if ($i == 1) {
-                        $harga_asuransi += $nilai_mobil* ($model->wilayah_satu_batas_atas/100);
+                        $harga_asuransi += $nilai_pertanggungan* ($asuransiPersentasi/100);
                     } else if ($i == 2) {
-                        $harga_asuransi += $nilai_mobil* 0.85 *($model->wilayah_satu_batas_atas/100);
+                        $harga_asuransi += $nilai_pertanggungan* 0.85 *($asuransiPersentasi/100);
                     } else if ($i == 3) {
-                        $harga_asuransi += $nilai_mobil* 0.75 *($model->wilayah_satu_batas_atas/100);
+                        $harga_asuransi += $nilai_pertanggungan* 0.75 *($asuransiPersentasi/100);
                     } else {
-                        $harga_asuransi += $nilai_mobil* 0.70 *($model->wilayah_satu_batas_atas/100);
+                        $harga_asuransi += $nilai_pertanggungan* 0.70 *($asuransiPersentasi/100);
                     }
                 }
                 $model->harga_asuransi = $persentasi_perkalian * $harga_asuransi;

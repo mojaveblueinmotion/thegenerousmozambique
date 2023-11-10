@@ -12,6 +12,7 @@ class Province extends Model
 
     protected $fillable = [
         'code',
+        'code_wilayah',
         'name',
     ];
 

@@ -117,6 +117,7 @@ Route::post('getAsuransiByRider', [AsuransiMobilApiController::class, 'getAsuran
 
 Route::post('getAllRiderMobil', [AsuransiMobilApiController::class, 'getAllRiderMobil']);
 Route::post('getRiderByAsuransiId', [AsuransiMobilApiController::class, 'getRiderByAsuransiId']);
+Route::get('getHargaLengkapAsuransiMobil', [AsuransiMobilApiController::class, 'getHargaLengkapAsuransiMobil']);
 
 
 
