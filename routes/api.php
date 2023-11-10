@@ -107,7 +107,7 @@ Route::get('selectKategoriAsuransi', [MasterController::class, 'selectKategoriAs
 Route::get('selectPertanggunganTambahan', [MasterController::class, 'selectPertanggunganTambahan']);
 
 // Preview Harga Rider Mobil 
-Route::get('getHargaAsuransiMobil', [AsuransiMobilApiController::class, 'getHargaAsuransiMobil']);
+Route::post('getHargaAsuransiMobil', [AsuransiMobilApiController::class, 'getHargaAsuransiMobil']);
 Route::get('getAllPertanggunganTambahanMobil', [AsuransiMobilApiController::class, 'getAllPertanggunganTambahanMobil']);
 Route::post('getRiderByPertanggungan', [AsuransiMobilApiController::class, 'getRiderByPertanggungan']);
 Route::get('getRiderMobilDefault', [AsuransiMobilApiController::class, 'getRiderMobilDefault']);
