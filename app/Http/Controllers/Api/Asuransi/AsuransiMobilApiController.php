@@ -698,8 +698,23 @@ class AsuransiMobilApiController extends BaseController
 
         try{
             if(!empty($rider_id)){
-                $idAsuransi = AsuransiRiderMobil::whereIn('rider_kendaraan_id', $rider_id)->groupBy('asuransi_id')->select('asuransi_id')->get()->toArray();
-                $asuransiMobil = AsuransiMobil::whereHas('persentasi')->whereIn('id', $idAsuransi)->get();
+                // $idAsuransi = AsuransiRiderMobil::whereIn('rider_kendaraan_id', $rider_id)->groupBy('asuransi_id')->select('asuransi_id')->get()->toArray();
+                // $idAsuransi = AsuransiRiderMobil::where(function ($query) use ($rider_id) {
+                //     foreach ($rider_id as $riderId) {
+                //         $query->where('rider_kendaraan_id', $riderId);
+                //     }
+                // })
+                // ->groupBy('asuransi_id')
+                // ->select('asuransi_id')
+                // ->get()
+                // ->toArray();
+                // $asuransiMobil = AsuransiMobil::whereHas('persentasi')
+                // ->whereHas('rider', function($q) use($rider_id){
+                //     $q->whereIn('rider_kendaraan_id', $rider_id);
+                // })->get();
+                $asuransiMobil = AsuransiMobil::whereHas('rider', function ($query) use ($rider_id) {
+                    $query->whereIn('rider_kendaraan_id', $rider_id);
+                }, '=', count($rider_id))->get();
             }else{
                 $asuransiMobil = AsuransiMobil::whereHas('persentasi')->get();
             }
@@ -764,7 +779,8 @@ class AsuransiMobilApiController extends BaseController
         }catch(Exception $e){
             return response()->json([
                 'success' => false,
-                'message' => $e
+                'trace' => $e->getTraceAsString(),
+                'message' => $e->getMessage(),
             ], 400);
         }
     }
