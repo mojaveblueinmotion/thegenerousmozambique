@@ -42,6 +42,9 @@ class OkupasiController extends Controller
                         $this->makeColumn('name:num'),
                         $this->makeColumn('name:code|label:Kode|className:text-center'),
                         $this->makeColumn('name:name|label:Okupasi|className:text-center'),
+                        $this->makeColumn('name:kelas_satu|label:Kelas 1|className:text-center'),
+                        $this->makeColumn('name:kelas_dua|label:Kelas 2|className:text-center'),
+                        $this->makeColumn('name:kelas_tiga|label:Kelas 3|className:text-center'),
                         $this->makeColumn('name:description|label:Deskripsi|className:text-center'),
                         $this->makeColumn('name:updated_by'),
                         $this->makeColumn('name:action'),
@@ -76,6 +79,24 @@ class OkupasiController extends Controller
                     return "<span class='badge badge-danger'>" . $record->name . "</span>";
                 }
             )
+            ->addColumn(
+                'kelas_satu',
+                function ($record) {
+                    return "<span class='badge badge-danger'>" . $record->tarif_konstruksi_satu . "</span>";
+                }
+            )
+            ->addColumn(
+                'kelas_dua',
+                function ($record) {
+                    return "<span class='badge badge-danger'>" . $record->tarif_konstruksi_dua . "</span>";
+                }
+            )
+            ->addColumn(
+                'kelas_tiga',
+                function ($record) {
+                    return "<span class='badge badge-danger'>" . $record->tarif_konstruksi_tiga . "</span>";
+                }
+            )
             ->addColumn('description', function ($record) {
                 return  "<span class='badge badge-primary'>" . str_word_count($record->description) . " Words</span>";
             })
@@ -102,7 +123,7 @@ class OkupasiController extends Controller
                     return $this->makeButtonDropdown($actions);
                 }
             )
-            ->rawColumns(['action', 'updated_by', 'name', 'description', 'code'])
+            ->rawColumns(['action', 'updated_by', 'name', 'description', 'code', 'kelas_satu',  'kelas_dua',  'kelas_tiga'])
             ->make(true);
     }
 

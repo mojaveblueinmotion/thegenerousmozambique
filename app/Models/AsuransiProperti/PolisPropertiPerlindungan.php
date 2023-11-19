@@ -4,37 +4,30 @@ namespace App\Models\AsuransiProperti;
 
 use App\Models\Model;
 use Illuminate\Support\Carbon;
+use App\Models\Traits\HasFiles;
 use App\Models\Asuransi\PolisMobil;
 use App\Models\AsuransiProperti\PolisProperti;
+use App\Models\Master\DataAsuransi\RiderKendaraan;
+use App\Models\Master\AsuransiMobil\AsuransiRiderMobil;
+use App\Models\Master\AsuransiProperti\PerlindunganProperti;
 
-class PolisPropertiNilai extends Model
+class PolisPropertiPerlindungan extends Model
 {
-    protected $table = 'trans_polis_properti_nilai';
+    use HasFiles;
+    protected $table = 'trans_polis_properti_perlindungan';
 
     protected $fillable = [
         'polis_id',
-        'nama_pertanggungan',
-        'nilai_pertanggungan',
-    ];
-
-    protected $dates = [
-        'tanggal_awal',
-        'tanggal_akhir',
+        'perlindungan_id',
+        'persentasi_eksisting',
+        'persentasi_perkalian',
+        'harga_pembayaran',
+        'total_harga'
     ];
 
     /*******************************
      ** MUTATOR
      *******************************/
-
-    public function setTanggalAkhirAttribute($value)
-    {
-        $this->attributes['tanggal_akhir'] = Carbon::createFromFormat('d/m/Y', $value);
-    }
-
-    public function setTanggalAwalAttribute($value)
-    {
-        $this->attributes['tanggal_awal'] = Carbon::createFromFormat('d/m/Y', $value);
-    }
 
     /*******************************
      ** ACCESSOR
@@ -48,6 +41,11 @@ class PolisPropertiNilai extends Model
         return $this->belongsTo(PolisProperti::class, 'polis_id');
     }
 
+    public function perlindungan()
+    {
+        return $this->belongsTo(PerlindunganProperti::class, 'perlindungan_id', 'id');
+    }
+
     /*******************************
      ** SCOPE
      *******************************/
@@ -59,7 +57,7 @@ class PolisPropertiNilai extends Model
 
     public function scopeFilters($query)
     {
-        return $query->filterBy(['rincian_modifikasi']);
+        return $query->filterBy(['nama']);
     }
 
     /*******************************
@@ -96,7 +94,7 @@ class PolisPropertiNilai extends Model
 
     public function saveLogNotify()
     {
-        $data = $this->tipe;
+        $data = $this->nama;
         $routes = request()->get('routes');
         switch (request()->route()->getName()) {
             case $routes . '.store':

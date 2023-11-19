@@ -21,12 +21,6 @@ class PolisPropertiCek extends Model
 
     protected $fillable = [
         'polis_id',
-        'province_id',
-        'city_id',
-        'district_id',
-        'village',
-        'alamat',
-        'okupasi_id',
         'status_lantai',
         'status_bangunan',
         'status_banjir',

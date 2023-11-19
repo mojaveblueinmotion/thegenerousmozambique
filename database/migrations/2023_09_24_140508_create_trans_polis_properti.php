@@ -22,7 +22,7 @@ class CreateTransPolisProperti extends Migration
                 $table->date('tanggal');
                 $table->unsignedBigInteger('user_id')->nullable();
                 $table->unsignedBigInteger('agent_id')->nullable();
-                $table->unsignedBigInteger('asuransi_id');
+                $table->unsignedBigInteger('asuransi_id')->nullable();
                 $table->text('name');
                 $table->text('phone');
                 $table->text('email');
@@ -40,13 +40,6 @@ class CreateTransPolisProperti extends Migration
             function (Blueprint $table) {
                 $table->id();
                 $table->unsignedBigInteger('polis_id');
-                $table->unsignedBigInteger('province_id');
-                $table->unsignedBigInteger('city_id');
-                $table->unsignedBigInteger('district_id');
-                $table->text('village');
-                $table->longText('alamat');
-                $table->unsignedBigInteger('okupasi_id');
-                
                 $table->unsignedBigInteger('status_lantai');
                 $table->unsignedBigInteger('status_bangunan');
                 $table->unsignedBigInteger('status_banjir');
@@ -54,24 +47,37 @@ class CreateTransPolisProperti extends Migration
                 $table->commonFields();
 
                 $table->foreign('polis_id')->references('id')->on('trans_polis_properti');   
-                $table->foreign('okupasi_id')->references('id')->on('ref_okupasi');   
             }
         );
 
+        // To Many
         Schema::create(
             'trans_polis_properti_nilai',
             function (Blueprint $table) {
                 $table->id();
                 $table->unsignedBigInteger('polis_id');
-                $table->bigInteger('nilai_bangunan')->unsigned();
-                $table->bigInteger('nilai_isi')->unsigned();
-                $table->bigInteger('nilai_mesin')->unsigned()->nullable();
-                $table->bigInteger('nilai_stok')->unsigned();
+                $table->text('nama_pertanggungan');
                 $table->bigInteger('nilai_pertanggungan')->unsigned();
-                $table->date('tanggal_awal');
-                $table->date('tanggal_akhir');
                 $table->commonFields();
 
+                $table->foreign('polis_id')->references('id')->on('trans_polis_properti');   
+            }
+        );
+
+        // To Many
+        Schema::create(
+            'trans_polis_properti_perlindungan',
+            function (Blueprint $table) {
+                $table->id();
+                $table->unsignedBigInteger('polis_id');
+                $table->unsignedBigInteger('perlindungan_id');
+                $table->decimal('persentasi_eksisting', 8, 3);
+                $table->decimal('persentasi_perkalian', 8, 3);
+                $table->decimal('harga_pembayaran', 15, 2);
+                $table->decimal('total_harga', 15, 2);
+                $table->commonFields();
+
+                $table->foreign('perlindungan_id')->references('id')->on('ref_perlindungan_properti');   
                 $table->foreign('polis_id')->references('id')->on('trans_polis_properti');   
             }
         );

@@ -24,6 +24,12 @@ class PerlindunganPropertiSeeder extends Seeder
             [ 
                 "name" => "Gempa Bumi"
             ],
+            [ 
+                "name" => "Banjir"
+            ],
+            [ 
+                "name" => "Kebakaran"
+            ],
         ];
 
         foreach ($data as $val) {

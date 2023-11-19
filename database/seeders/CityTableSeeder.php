@@ -21,6 +21,12 @@ class CityTableSeeder extends Seeder
         $data = json_decode($json);
 
         $this->generate($data);
+
+        $path_gempabumi = base_path('database/seeders/json/zona_gempabumi.json');
+        $json_gempabumi = File::get($path_gempabumi);
+        $data_gempabumi = json_decode($json_gempabumi);
+
+        $this->generateZona($data_gempabumi);
     }
 
     public function generate($data)
@@ -42,6 +48,23 @@ class CityTableSeeder extends Seeder
             $city->created_by   = 1;
             $city->created_at   = \Carbon\Carbon::now();
             $city->save();
+        }
+    }
+
+    public function generateZona($data_gempabumi)
+    {
+        foreach ($data_gempabumi as $value) {
+            if(!empty($value->daerah)){
+                $city = City::where('name', $value->daerah)->first();
+                if ($city) {
+                    $city->zona         = $value->zona ?? null;
+                    $city->updated_at   = \Carbon\Carbon::now();
+                    $city->save();
+                }
+            }else{
+                dd($value);
+            }
+            
         }
     }
 }

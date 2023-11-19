@@ -20,6 +20,7 @@ class CreateRefCity extends Migration
                 $table->unsignedBigInteger('province_id');
                 $table->string('code', 8)->nullable();
                 $table->string('name', 32);
+                $table->integer('zona')->nullable();
                 $table->commonFields();
 
                 $table->foreign('province_id')

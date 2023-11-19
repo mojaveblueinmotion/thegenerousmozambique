@@ -14,6 +14,7 @@ class City extends Model
         'province_id',
         'code',
         'name',
+        'zona',
     ];
 
     /*******************************

@@ -37,7 +37,6 @@ class PolisProperti extends Model
         'name',
         'phone',
         'email',
-
         'province_id',
         'city_id',
         'district_id',
@@ -45,11 +44,8 @@ class PolisProperti extends Model
         'village',
         'alamat',
         'tahun_bangunan',
-        'nilai_bangunan',
-        'nilai_isi',
         'perlindungan_id',
         'konstruksi_id',
-
         'status',
     ];
 
@@ -162,7 +158,7 @@ class PolisProperti extends Model
 
     public function detailNilai()
     {
-        return $this->hasOne(PolisPropertiNilai::class, 'polis_id');
+        return $this->hasMany(PolisPropertiNilai::class, 'polis_id');
     }
 
     public function detailPayment()

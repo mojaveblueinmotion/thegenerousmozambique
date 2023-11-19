@@ -14,6 +14,10 @@ class Okupasi extends Model
         'code',
         'name',
         'description',
+        'status_judul',
+        'tarif_konstruksi_satu',
+        'tarif_konstruksi_dua',
+        'tarif_konstruksi_tiga',
     ];
 
     /*******************************

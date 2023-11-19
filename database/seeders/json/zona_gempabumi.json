@@ -1,0 +1,2557 @@
+[
+    {
+        "provinsi": "BALI",
+        "daerah": "KAB. BADUNG",
+        "zona": 4
+    },
+    {
+     "provinsi": "BALI",
+     "daerah": "KAB. BANGLI",
+     "zona": 3
+    },
+    {
+     "provinsi": "BALI",
+     "daerah": "KAB. BULELENG",
+     "zona": 3
+    },
+    {
+     "provinsi": "BALI",
+     "daerah": "KAB. GIANYAR",
+     "zona": 4
+    },
+    {
+     "provinsi": "BALI",
+     "daerah": "KAB. JEMBRANA",
+     "zona": 3
+    },
+    {
+     "provinsi": "BALI",
+     "daerah": "KAB. KLUNGKUNG",
+     "zona": 3
+    },
+    {
+     "provinsi": "BALI",
+     "daerah": "KAB. TABANAN",
+     "zona": 3
+    },
+    {
+     "provinsi": "BALI",
+     "daerah": "KOTA DENPASAR",
+     "zona": 4
+    },
+    {
+     "provinsi": "BALI",
+     "daerah": "KAB. KARANG ASEM",
+     "zona": 3
+    },
+    {
+     "provinsi": "BANTEN",
+     "daerah": "KAB. LEBAK",
+     "zona": 4
+    },
+    {
+     "provinsi": "BANTEN",
+     "daerah": "KAB. SERANG",
+     "zona": 4
+    },
+    {
+     "provinsi": "BANTEN",
+     "daerah": "KAB. TANGERANG",
+     "zona": 4
+    },
+    {
+     "provinsi": "BANTEN",
+     "daerah": "KOTA CILEGON",
+     "zona": 4
+    },
+    {
+     "provinsi": "BANTEN",
+     "daerah": "KOTA SERANG",
+     "zona": 4
+    },
+    {
+     "provinsi": "BANTEN",
+     "daerah": "KOTA TANGERANG",
+     "zona": 4
+    },
+    {
+     "provinsi": "BANTEN",
+     "daerah": "KAB. PANDEGLANG",
+     "zona": 4
+    },
+    {
+     "provinsi": "BANTEN",
+     "daerah": "KOTA TANGERANG SELATAN",
+     "zona": 4
+    },
+    {
+     "provinsi": "BENGKULU",
+     "daerah": "KAB. BENGKULU SELATAN",
+     "zona": 4
+    },
+    {
+     "provinsi": "BENGKULU",
+     "daerah": "KAB. BENGKULU UTARA",
+     "zona": 5
+    },
+    {
+     "provinsi": "BENGKULU",
+     "daerah": "KAB. KAUR",
+     "zona": 5
+    },
+    {
+     "provinsi": "BENGKULU",
+     "daerah": "KAB. KEPAHIANG",
+     "zona": 5
+    },
+    {
+     "provinsi": "BENGKULU",
+     "daerah": "KAB. LEBONG",
+     "zona": 5
+    },
+    {
+     "provinsi": "BENGKULU",
+     "daerah": "KAB. MUKOMUKO",
+     "zona": 5
+    },
+    {
+     "provinsi": "BENGKULU",
+     "daerah": "KAB. REJANG LEBONG",
+     "zona": 5
+    },
+    {
+     "provinsi": "BENGKULU",
+     "daerah": "KAB. SELUMA",
+     "zona": 4
+    },
+    {
+     "provinsi": "BENGKULU",
+     "daerah": "KOTA BENGKULU",
+     "zona": 5
+    },
+    {
+     "provinsi": "BENGKULU",
+     "daerah": "KAB. BENGKULU TENGAH",
+     "zona": 5
+    },
+    {
+     "provinsi": "D.I. YOGYAKARTA",
+     "daerah": "KAB. BANTUL",
+     "zona": 5
+    },
+    {
+     "provinsi": "D.I. YOGYAKARTA",
+     "daerah": "KAB. GUNUNG KIDUL",
+     "zona": 4
+    },
+    {
+     "provinsi": "D.I. YOGYAKARTA",
+     "daerah": "KAB. KULON PROGO",
+     "zona": 4
+    },
+    {
+     "provinsi": "D.I. YOGYAKARTA",
+     "daerah": "KAB. SLEMAN",
+     "zona": 4
+    },
+    {
+     "provinsi": "D.I. YOGYAKARTA",
+     "daerah": "KOTA YOGYAKARTA",
+     "zona": 4
+    },
+    {
+     "provinsi": "DKI JAKARTA",
+     "daerah": "KAB. KEPULAUAN SERIBU",
+     "zona": 4
+    },
+    {
+     "provinsi": "DKI JAKARTA",
+     "daerah": "KOTA JAKARTA BARAT",
+     "zona": 4
+    },
+    {
+     "provinsi": "DKI JAKARTA",
+     "daerah": "KOTA JAKARTA PUSAT",
+     "zona": 4
+    },
+    {
+     "provinsi": "DKI JAKARTA",
+     "daerah": "KOTA JAKARTA SELATAN",
+     "zona": 4
+    },
+    {
+     "provinsi": "DKI JAKARTA",
+     "daerah": "KOTA JAKARTA TIMUR",
+     "zona": 4
+    },
+    {
+     "provinsi": "DKI JAKARTA",
+     "daerah": "KOTA JAKARTA UTARA",
+     "zona": 4
+    },
+    {
+     "provinsi": "GORONTALO",
+     "daerah": "KAB. BOALEMO",
+     "zona": 5
+    },
+    {
+     "provinsi": "GORONTALO",
+     "daerah": "KAB. BONE BOLANGO",
+     "zona": 5
+    },
+    {
+     "provinsi": "GORONTALO",
+     "daerah": "KAB. GORONTALO",
+     "zona": 5
+    },
+    {
+     "provinsi": "GORONTALO",
+     "daerah": "KAB. GORONTALO UTARA",
+     "zona": 5
+    },
+    {
+     "provinsi": "GORONTALO",
+     "daerah": "KAB. POHUWATO",
+     "zona": 5
+    },
+    {
+     "provinsi": "GORONTALO",
+     "daerah": "KOTA GORONTALO",
+     "zona": 5
+    },
+    {
+     "provinsi": "JAMBI",
+     "daerah": "KAB. BATANG HARI",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAMBI",
+     "daerah": "KAB. MUARO JAMBI",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAMBI",
+     "daerah": "KAB. TANJUNG JABUNG BARAT",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAMBI",
+     "daerah": "KAB. TANJUNG JABUNG TIMUR",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAMBI",
+     "daerah": "KOTA JAMBI",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAMBI",
+     "daerah": "KAB. BUNGO",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAMBI",
+     "daerah": "KAB. SAROLANGUN",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAMBI",
+     "daerah": "KAB. TEBO",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAMBI",
+     "daerah": "KAB. MERANGIN",
+     "zona": 5
+    },
+    {
+     "provinsi": "JAMBI",
+     "daerah": "KAB. KERINCI",
+     "zona": 5
+    },
+    {
+     "provinsi": "JAMBI",
+     "daerah": "KOTA SUNGAI PENUH",
+     "zona": 5
+    },
+    {
+     "provinsi": "JAWA BARAT",
+     "daerah": "KAB. CIREBON",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA BARAT",
+     "daerah": "KAB. INDRAMAYU",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAWA BARAT",
+     "daerah": "KAB. SUMEDANG",
+     "zona": 5
+    },
+    {
+     "provinsi": "JAWA BARAT",
+     "daerah": "KOTA CIREBON",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA BARAT",
+     "daerah": "KAB. BANDUNG",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAWA BARAT",
+     "daerah": "KAB. BANDUNG BARAT",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAWA BARAT",
+     "daerah": "KAB. BEKASI",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA BARAT",
+     "daerah": "KAB. BOGOR",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAWA BARAT",
+     "daerah": "KAB. CIAMIS",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAWA BARAT",
+     "daerah": "KAB. CIANJUR",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAWA BARAT",
+     "daerah": "KAB. GARUT",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAWA BARAT",
+     "daerah": "KAB. KARAWANG",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA BARAT",
+     "daerah": "KAB. KUNINGAN",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA BARAT",
+     "daerah": "KAB. MAJALENGKA",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA BARAT",
+     "daerah": "KAB. PURWAKARTA",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAWA BARAT",
+     "daerah": "KAB. PANGANDARAN",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAWA BARAT",
+     "daerah": "KAB. SUBANG",
+     "zona": 5
+    },
+    {
+     "provinsi": "JAWA BARAT",
+     "daerah": "KAB. SUKABUMI",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAWA BARAT",
+     "daerah": "KAB. TASIKMALAYA",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAWA BARAT",
+     "daerah": "KOTA BANDUNG",
+     "zona": 5
+    },
+    {
+     "provinsi": "JAWA BARAT",
+     "daerah": "KOTA BANJAR",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA BARAT",
+     "daerah": "KOTA BEKASI",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAWA BARAT",
+     "daerah": "KOTA BOGOR",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAWA BARAT",
+     "daerah": "KOTA CIMAHI",
+     "zona": 5
+    },
+    {
+     "provinsi": "JAWA BARAT",
+     "daerah": "KOTA DEPOK",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAWA BARAT",
+     "daerah": "KOTA SUKABUMI",
+     "zona": 5
+    },
+    {
+     "provinsi": "JAWA BARAT",
+     "daerah": "KOTA TASIKMALAYA",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KAB. BANYUMAS",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KAB. BATANG",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KAB. BLORA",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KAB. BOYOLALI",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KAB. BREBES",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KAB. DEMAK",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KAB. GROBOGAN",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KAB. JEPARA",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KAB. KARANGANYAR",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KAB. KENDAL",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KAB. KUDUS",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KAB. PATI",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KAB. PEKALONGAN",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KAB. PEMALANG",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KAB. PURBALINGGA",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KAB. REMBANG",
+     "zona": 5
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KAB. SEMARANG",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KAB. SRAGEN",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KAB. TEMANGGUNG",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KOTA MAGELANG",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KOTA PEKALONGAN",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KOTA SALATIGA",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KOTA SEMARANG",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KOTA SURAKARTA",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KOTA TEGAL",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KAB. BANJARNEGARA",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KAB. CILACAP",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KAB. KEBUMEN",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KAB. KLATEN",
+     "zona": 5
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KAB. MAGELANG",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KAB. PURWOREJO",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KAB. SUKOHARJO",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KAB. TEGAL",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KAB. WONOGIRI",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAWA TENGAH",
+     "daerah": "KAB. WONOSOBO",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KAB. BANGKALAN",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KAB. BOJONEGORO",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KAB. BONDOWOSO",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KAB. GRESIK",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KAB. JEMBER",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KAB. JOMBANG",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KAB. LAMONGAN",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KAB. MADIUN",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KAB. MAGETAN",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KAB. MOJOKERTO",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KAB. NGANJUK",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KAB. NGAWI",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KAB. PAMEKASAN",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KAB. PASURUAN",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KAB. PROBOLINGGO",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KAB. SAMPANG",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KAB. SIDOARJO",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KAB. SITUBONDO",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KAB. SUMENEP",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KAB. TUBAN",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KOTA MADIUN",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KOTA MOJOKERTO",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KOTA PASURUAN",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KOTA PROBOLINGGO",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KOTA SURABAYA",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KAB. BANYUWANGI",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KAB. BLITAR",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KAB. KEDIRI",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KAB. LUMAJANG",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KAB. MALANG",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KAB. PACITAN",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KAB. PONOROGO",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KAB. TRENGGALEK",
+     "zona": 4
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KAB. TULUNGAGUNG",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KOTA BATU",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KOTA BLITAR",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KOTA KEDIRI",
+     "zona": 3
+    },
+    {
+     "provinsi": "JAWA TIMUR",
+     "daerah": "KOTA MALANG",
+     "zona": 3
+    },
+    {
+     "provinsi": "KALIMANTAN BARAT",
+     "daerah": "KAB. BENGKAYANG",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN BARAT",
+     "daerah": "KAB. KAPUAS HULU",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN BARAT",
+     "daerah": "KAB. KAYONG UTARA",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN BARAT",
+     "daerah": "KAB. KETAPANG",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN BARAT",
+     "daerah": "KAB. KUBU RAYA",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN BARAT",
+     "daerah": "KAB. LANDAK",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN BARAT",
+     "daerah": "KAB. MELAWI",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN BARAT",
+     "daerah": "KAB. MEMPAWAH",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN BARAT",
+     "daerah": "KAB. SAMBAS",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN BARAT",
+     "daerah": "KAB. SANGGAU",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN BARAT",
+     "daerah": "KAB. SEKADAU",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN BARAT",
+     "daerah": "KAB. SINTANG",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN BARAT",
+     "daerah": "KOTA PONTIANAK",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN BARAT",
+     "daerah": "KOTA SINGKAWANG",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN SELATAN",
+     "daerah": "KAB. BALANGAN",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN SELATAN",
+     "daerah": "KAB. BANJAR",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN SELATAN",
+     "daerah": "KAB. BARITO KUALA",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN SELATAN",
+     "daerah": "KAB. HULU SUNGAI SELATAN",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN SELATAN",
+     "daerah": "KAB. HULU SUNGAI TENGAH",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN SELATAN",
+     "daerah": "KAB. HULU SUNGAI UTARA",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN SELATAN",
+     "daerah": "KAB. KOTABARU",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN SELATAN",
+     "daerah": "KAB. TABALONG",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN SELATAN",
+     "daerah": "KAB. TANAH BUMBU",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN SELATAN",
+     "daerah": "KAB. TANAH LAUT",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN SELATAN",
+     "daerah": "KAB. TAPIN",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN SELATAN",
+     "daerah": "KOTA BANJARBARU",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN SELATAN",
+     "daerah": "KOTA BANJARMASIN",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN TENGAH",
+     "daerah": "KAB. BARITO SELATAN",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN TENGAH",
+     "daerah": "KAB. BARITO TIMUR",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN TENGAH",
+     "daerah": "KAB. BARITO UTARA",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN TENGAH",
+     "daerah": "KAB. GUNUNG MAS",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN TENGAH",
+     "daerah": "KAB. KAPUAS",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN TENGAH",
+     "daerah": "KAB. KATINGAN",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN TENGAH",
+     "daerah": "KAB. KOTAWARINGIN BARAT",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN TENGAH",
+     "daerah": "KAB. KOTAWARINGIN TIMUR",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN TENGAH",
+     "daerah": "KAB. LAMANDAU",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN TENGAH",
+     "daerah": "KAB. MURUNG RAYA",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN TENGAH",
+     "daerah": "KAB. PULANG PISAU",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN TENGAH",
+     "daerah": "KAB. SERUYAN",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN TENGAH",
+     "daerah": "KAB. SUKAMARA",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN TENGAH",
+     "daerah": "KOTA PALANG KARAYA",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN TIMUR",
+     "daerah": "KAB. KUTAI BARAT",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN TIMUR",
+     "daerah": "KAB. KUTAI KARTANEGARA",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN TIMUR",
+     "daerah": "KAB. PASER",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN TIMUR",
+     "daerah": "KAB. PENAJAM PASER UTARA",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN TIMUR",
+     "daerah": "KOTA BALIKPAPAN",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN TIMUR",
+     "daerah": "KOTA SAMARINDA",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN TIMUR",
+     "daerah": "KAB. KUTAI TIMUR",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN TIMUR",
+     "daerah": "KOTA BONTANG",
+     "zona": 2
+    },
+    {
+     "provinsi": "KALIMANTAN TIMUR",
+     "daerah": "KAB. BERAU",
+     "zona": 2
+    },
+    {
+     "provinsi": "KALIMANTAN TIMUR",
+     "daerah": "KAB. MAHAKAM ULU",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN UTARA",
+     "daerah": "KAB. MALINAU",
+     "zona": 2
+    },
+    {
+     "provinsi": "KALIMANTAN UTARA",
+     "daerah": "KAB. NUNUKAN",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN UTARA",
+     "daerah": "KAB. TANA TIDUNG",
+     "zona": 1
+    },
+    {
+     "provinsi": "KALIMANTAN UTARA",
+     "daerah": "KOTA TARAKAN",
+     "zona": 2
+    },
+    {
+     "provinsi": "KALIMANTAN UTARA",
+     "daerah": "KAB. BULUNGAN",
+     "zona": 1
+    },
+    {
+     "provinsi": "KEPULAUAN BANGKA BELITUNG",
+     "daerah": "KAB. BANGKA",
+     "zona": 3
+    },
+    {
+     "provinsi": "KEPULAUAN BANGKA BELITUNG",
+     "daerah": "KAB. BANGKA BARAT",
+     "zona": 3
+    },
+    {
+     "provinsi": "KEPULAUAN BANGKA BELITUNG",
+     "daerah": "KAB. BANGKA TENGAH",
+     "zona": 2
+    },
+    {
+     "provinsi": "KEPULAUAN BANGKA BELITUNG",
+     "daerah": "KAB. BELITUNG",
+     "zona": 1
+    },
+    {
+     "provinsi": "KEPULAUAN BANGKA BELITUNG",
+     "daerah": "KAB. BELITUNG TIMUR",
+     "zona": 1
+    },
+    {
+     "provinsi": "KEPULAUAN BANGKA BELITUNG",
+     "daerah": "KOTA PANGKAL PINANG",
+     "zona": 2
+    },
+    {
+     "provinsi": "KEPULAUAN BANGKA BELITUNG",
+     "daerah": "KAB. BANGKA SELATAN",
+     "zona": 2
+    },
+    {
+     "provinsi": "KEPULAUAN RIAU",
+     "daerah": "KAB. BINTAN",
+     "zona": 2
+    },
+    {
+     "provinsi": "KEPULAUAN RIAU",
+     "daerah": "KAB. KARIMUN",
+     "zona": 2
+    },
+    {
+     "provinsi": "KEPULAUAN RIAU",
+     "daerah": "KAB. LINGGA",
+     "zona": 3
+    },
+    {
+     "provinsi": "KEPULAUAN RIAU",
+     "daerah": "KAB. NATUNA",
+     "zona": 1
+    },
+    {
+     "provinsi": "KEPULAUAN RIAU",
+     "daerah": "KOTA BATAM",
+     "zona": 2
+    },
+    {
+     "provinsi": "KEPULAUAN RIAU",
+     "daerah": "KOTA TANJUNG PINANG",
+     "zona": 2
+    },
+    {
+     "provinsi": "KEPULAUAN RIAU",
+     "daerah": "KAB. KEPULAUAN ANAMABAS",
+     "zona": 1
+    },
+    {
+     "provinsi": "LAMPUNG",
+     "daerah": "KAB. LAMPUNG TENGAH",
+     "zona": 4
+    },
+    {
+     "provinsi": "LAMPUNG",
+     "daerah": "KAB. LAMPUNG TIMUR",
+     "zona": 4
+    },
+    {
+     "provinsi": "LAMPUNG",
+     "daerah": "KAB. LAMPUNG UTARA",
+     "zona": 4
+    },
+    {
+     "provinsi": "LAMPUNG",
+     "daerah": "KAB. TULANGBAWANG",
+     "zona": 4
+    },
+    {
+     "provinsi": "LAMPUNG",
+     "daerah": "KAB. WAY KANAN",
+     "zona": 4
+    },
+    {
+     "provinsi": "LAMPUNG",
+     "daerah": "KOTA METRO",
+     "zona": 4
+    },
+    {
+     "provinsi": "LAMPUNG",
+     "daerah": "KAB. LAMPUNG SELATAN",
+     "zona": 4
+    },
+    {
+     "provinsi": "LAMPUNG",
+     "daerah": "KAB. PESAWARAN",
+     "zona": 4
+    },
+    {
+     "provinsi": "LAMPUNG",
+     "daerah": "KOTA BANDAR LAMPUNG",
+     "zona": 4
+    },
+    {
+     "provinsi": "LAMPUNG",
+     "daerah": "KAB. LAMPUNG BARAT",
+     "zona": 5
+    },
+    {
+     "provinsi": "LAMPUNG",
+     "daerah": "KAB. TANGGAMUS",
+     "zona": 5
+    },
+    {
+     "provinsi": "LAMPUNG",
+     "daerah": "KAB. PESISIR BARAT",
+     "zona": 5
+    },
+    {
+     "provinsi": "LAMPUNG",
+     "daerah": "KAB. PRINGSEWU",
+     "zona": 4
+    },
+    {
+     "provinsi": "LAMPUNG",
+     "daerah": "KAB. MESUJI",
+     "zona": 3
+    },
+    {
+     "provinsi": "LAMPUNG",
+     "daerah": "KAB. TULANG BAWANG BARAT",
+     "zona": 4
+    },
+    {
+     "provinsi": "MALUKU",
+     "daerah": "KAB. MALUKU TENGAH",
+     "zona": 5
+    },
+    {
+     "provinsi": "MALUKU",
+     "daerah": "KAB. MALUKU TENGGARA",
+     "zona": 5
+    },
+    {
+     "provinsi": "MALUKU",
+     "daerah": "KAB. SERAM BAGIAN BARAT",
+     "zona": 5
+    },
+    {
+     "provinsi": "MALUKU",
+     "daerah": "KOTA TUAL",
+     "zona": 5
+    },
+    {
+     "provinsi": "MALUKU",
+     "daerah": "KAB. BURU",
+     "zona": 5
+    },
+    {
+     "provinsi": "MALUKU",
+     "daerah": "KAB. KEPULAUAN ARU",
+     "zona": 4
+    },
+    {
+     "provinsi": "MALUKU",
+     "daerah": "KAB. MALUKU TENGGARA BARAT",
+     "zona": 5
+    },
+    {
+     "provinsi": "MALUKU",
+     "daerah": "KAB. SERAM BAGIAN TIMUR",
+     "zona": 5
+    },
+    {
+     "provinsi": "MALUKU",
+     "daerah": "KOTA AMBON",
+     "zona": 5
+    },
+    {
+     "provinsi": "MALUKU",
+     "daerah": "KAB. MALUKU BARAT DAYA",
+     "zona": 4
+    },
+    {
+     "provinsi": "MALUKU",
+     "daerah": "KAB. BURU SELATAN",
+     "zona": 4
+    },
+    {
+     "provinsi": "MALUKU UTARA",
+     "daerah": "KAB. HALMAHERA TENGAH",
+     "zona": 4
+    },
+    {
+     "provinsi": "MALUKU UTARA",
+     "daerah": "KAB. HALMAHERA TIMUR",
+     "zona": 4
+    },
+    {
+     "provinsi": "MALUKU UTARA",
+     "daerah": "KAB. HALMAHERA BARAT",
+     "zona": 5
+    },
+    {
+     "provinsi": "MALUKU UTARA",
+     "daerah": "KAB. HALMAHERA SELATAN",
+     "zona": 4
+    },
+    {
+     "provinsi": "MALUKU UTARA",
+     "daerah": "KAB. HALMAHERA UTARA",
+     "zona": 5
+    },
+    {
+     "provinsi": "MALUKU UTARA",
+     "daerah": "KAB. KEPULAUAN SULA",
+     "zona": 4
+    },
+    {
+     "provinsi": "MALUKU UTARA",
+     "daerah": "KOTA TERNATE",
+     "zona": 5
+    },
+    {
+     "provinsi": "MALUKU UTARA",
+     "daerah": "KOTA TIDORE KEPULAUAN",
+     "zona": 5
+    },
+    {
+     "provinsi": "MALUKU UTARA",
+     "daerah": "KAB. PULAU TALIABU",
+     "zona": 4
+    },
+    {
+     "provinsi": "MALUKU UTARA",
+     "daerah": "KAB. PULAU MOROTAI",
+     "zona": 5
+    },
+    {
+     "provinsi": "NANGGROE ACEH DARUSSALAM",
+     "daerah": "KAB. ACEH UTARA",
+     "zona": 5
+    },
+    {
+     "provinsi": "NANGGROE ACEH DARUSSALAM",
+     "daerah": "KOTA LHOKSEUMAWE",
+     "zona": 4
+    },
+    {
+     "provinsi": "NANGGROE ACEH DARUSSALAM",
+     "daerah": "KAB. ACEH TAMIANG",
+     "zona": 4
+    },
+    {
+     "provinsi": "NANGGROE ACEH DARUSSALAM",
+     "daerah": "KAB. ACEH TENGAH",
+     "zona": 5
+    },
+    {
+     "provinsi": "NANGGROE ACEH DARUSSALAM",
+     "daerah": "KAB. ACEH TIMUR",
+     "zona": 5
+    },
+    {
+     "provinsi": "NANGGROE ACEH DARUSSALAM",
+     "daerah": "KAB. BENER MERIAH",
+     "zona": 4
+    },
+    {
+     "provinsi": "NANGGROE ACEH DARUSSALAM",
+     "daerah": "KAB. BIREUEN",
+     "zona": 5
+    },
+    {
+     "provinsi": "NANGGROE ACEH DARUSSALAM",
+     "daerah": "KOTA LANGSA",
+     "zona": 4
+    },
+    {
+     "provinsi": "NANGGROE ACEH DARUSSALAM",
+     "daerah": "KAB. ACEH BARAT",
+     "zona": 5
+    },
+    {
+     "provinsi": "NANGGROE ACEH DARUSSALAM",
+     "daerah": "KAB. ACEH BARAT DAYA",
+     "zona": 5
+    },
+    {
+     "provinsi": "NANGGROE ACEH DARUSSALAM",
+     "daerah": "KAB. ACEH BESAR",
+     "zona": 5
+    },
+    {
+     "provinsi": "NANGGROE ACEH DARUSSALAM",
+     "daerah": "KAB. ACEH JAYA",
+     "zona": 5
+    },
+    {
+     "provinsi": "NANGGROE ACEH DARUSSALAM",
+     "daerah": "KAB. ACEH SELATAN",
+     "zona": 5
+    },
+    {
+     "provinsi": "NANGGROE ACEH DARUSSALAM",
+     "daerah": "KAB. ACEH SINGKIL",
+     "zona": 5
+    },
+    {
+     "provinsi": "NANGGROE ACEH DARUSSALAM",
+     "daerah": "KAB. ACEH TENGGARA",
+     "zona": 5
+    },
+    {
+     "provinsi": "NANGGROE ACEH DARUSSALAM",
+     "daerah": "KAB. GAYO LUES",
+     "zona": 5
+    },
+    {
+     "provinsi": "NANGGROE ACEH DARUSSALAM",
+     "daerah": "KAB. NAGAN RAYA",
+     "zona": 5
+    },
+    {
+     "provinsi": "NANGGROE ACEH DARUSSALAM",
+     "daerah": "KAB. PIDIE",
+     "zona": 5
+    },
+    {
+     "provinsi": "NANGGROE ACEH DARUSSALAM",
+     "daerah": "KAB. PIDIE JAYA",
+     "zona": 5
+    },
+    {
+     "provinsi": "NANGGROE ACEH DARUSSALAM",
+     "daerah": "KAB. SIMEULUE",
+     "zona": 5
+    },
+    {
+     "provinsi": "NANGGROE ACEH DARUSSALAM",
+     "daerah": "KOTA BANDA ACEH",
+     "zona": 5
+    },
+    {
+     "provinsi": "NANGGROE ACEH DARUSSALAM",
+     "daerah": "KOTA SABANG",
+     "zona": 5
+    },
+    {
+     "provinsi": "NANGGROE ACEH DARUSSALAM",
+     "daerah": "KOTA SUBULUSSALAM",
+     "zona": 5
+    },
+    {
+     "provinsi": "NUSA TENGGARA",
+     "daerah": "KAB. BIMA",
+     "zona": 3
+    },
+    {
+     "provinsi": "NUSA TENGGARA",
+     "daerah": "KAB. LOMBOK TENGAH",
+     "zona": 4
+    },
+    {
+     "provinsi": "NUSA TENGGARA",
+     "daerah": "KAB. LOMBOK TIMUR",
+     "zona": 3
+    },
+    {
+     "provinsi": "NUSA TENGGARA BARAT",
+     "daerah": "KAB. SUMBAWA",
+     "zona": 3
+    },
+    {
+     "provinsi": "NUSA TENGGARA",
+     "daerah": "KAB. SUMBAWA BARAT",
+     "zona": 3
+    },
+    {
+     "provinsi": "NUSA TENGGARA BARAT",
+     "daerah": "KOTA BIMA",
+     "zona": 4
+    },
+    {
+     "provinsi": "NUSA TENGGARA",
+     "daerah": "KAB. DOMPU",
+     "zona": 3
+    },
+    {
+     "provinsi": "NUSA TENGGARA BARAT",
+     "daerah": "KAB. LOMBOK BARAT",
+     "zona": 4
+    },
+    {
+     "provinsi": "NUSA TENGGARA",
+     "daerah": "KOTA MATARAM",
+     "zona": 5
+    },
+    {
+     "provinsi": "NUSA TENGGARA BARAT",
+     "daerah": "KAB. LOMBOK UTARA",
+     "zona": 3
+    },
+    {
+     "provinsi": "NUSA TENGGARA",
+     "daerah": "KAB. ENDE",
+     "zona": 3
+    },
+    {
+     "provinsi": "NUSA TENGGARA",
+     "daerah": "KAB. FLORES TIMUR",
+     "zona": 3
+    },
+    {
+     "provinsi": "NUSA TENGGARA",
+     "daerah": "KAB. KUPANG",
+     "zona": 4
+    },
+    {
+     "provinsi": "NUSA TENGGARA",
+     "daerah": "KAB. MANGGARAI",
+     "zona": 3
+    },
+    {
+     "provinsi": "NUSA TENGGARA TIMUR",
+     "daerah": "KAB. MANGGARAI BARAT",
+     "zona": 4
+    },
+    {
+     "provinsi": "NUSA TENGGARA",
+     "daerah": "KAB. MANGGARAI TIMUR",
+     "zona": 3
+    },
+    {
+     "provinsi": "NUSA TENGGARA TIMUR",
+     "daerah": "KAB. NGADA",
+     "zona": 3
+    },
+    {
+     "provinsi": "NUSA TENGGARA",
+     "daerah": "KAB. ROTE NDAO",
+     "zona": 4
+    },
+    {
+     "provinsi": "NUSA TENGGARA TIMUR",
+     "daerah": "KAB. SIKKA",
+     "zona": 3
+    },
+    {
+     "provinsi": "NUSA TENGGARA",
+     "daerah": "KAB. SUMBA TIMUR",
+     "zona": 3
+    },
+    {
+     "provinsi": "NUSA TENGGARA TIMUR",
+     "daerah": "KOTA KUPANG",
+     "zona": 5
+    },
+    {
+     "provinsi": "NUSA TENGGARA",
+     "daerah": "KAB. ALOR",
+     "zona": 3
+    },
+    {
+     "provinsi": "NUSA TENGGARA",
+     "daerah": "KAB. BELU",
+     "zona": 4
+    },
+    {
+     "provinsi": "NUSA TENGGARA",
+     "daerah": "KAB. LEMBATA",
+     "zona": 3
+    },
+    {
+     "provinsi": "NUSA TENGGARA",
+     "daerah": "KAB. NAGEKEO",
+     "zona": 3
+    },
+    {
+     "provinsi": "NUSA TENGGARA TIMUR",
+     "daerah": "KAB. SUMBA BARAT",
+     "zona": 4
+    },
+    {
+     "provinsi": "NUSA TENGGARA",
+     "daerah": "KAB. SUMBA BARAT DAYA",
+     "zona": 4
+    },
+    {
+     "provinsi": "NUSA TENGGARA TIMUR",
+     "daerah": "KAB. SUMBA TENGAH",
+     "zona": 3
+    },
+    {
+     "provinsi": "NUSA TENGGARA",
+     "daerah": "KAB. TIMOR TENGAH SELATAN",
+     "zona": 3
+    },
+    {
+     "provinsi": "NUSA TENGGARA",
+     "daerah": "KAB. TIMOR TENGAH UTARA",
+     "zona": 3
+    },
+    {
+     "provinsi": "NUSA TENGGARA TIMUR",
+     "daerah": "KAB. MALAKA",
+     "zona": 4
+    },
+    {
+     "provinsi": "NUSA TENGGARA",
+     "daerah": "KAB. SABU RAIJUA",
+     "zona": 5
+    },
+    {
+     "provinsi": "PAPUA",
+     "daerah": "KAB. MERAUKE",
+     "zona": 1
+    },
+    {
+     "provinsi": "PAPUA",
+     "daerah": "KAB. ASMAT",
+     "zona": 3
+    },
+    {
+     "provinsi": "PAPUA",
+     "daerah": "KAB. BOVEN DIGOEL",
+     "zona": 2
+    },
+    {
+     "provinsi": "PAPUA",
+     "daerah": "KAB. MAPPI",
+     "zona": 2
+    },
+    {
+     "provinsi": "PAPUA",
+     "daerah": "KAB. MIMIKA",
+     "zona": 5
+    },
+    {
+     "provinsi": "PAPUA",
+     "daerah": "KAB. PUNCAK JAYA",
+     "zona": 3
+    },
+    {
+     "provinsi": "PAPUA",
+     "daerah": "KAB. BIAK NUMFOR",
+     "zona": 4
+    },
+    {
+     "provinsi": "PAPUA",
+     "daerah": "KAB. PANIAI",
+     "zona": 3
+    },
+    {
+     "provinsi": "PAPUA",
+     "daerah": "KAB. PEGUNUNGAN BINTANG",
+     "zona": 5
+    },
+    {
+     "provinsi": "PAPUA",
+     "daerah": "KAB. SUPIORI",
+     "zona": 5
+    },
+    {
+     "provinsi": "PAPUA",
+     "daerah": "KAB. WAROPEN",
+     "zona": 4
+    },
+    {
+     "provinsi": "PAPUA",
+     "daerah": "KAB. KEPULAUAN YAPEN",
+     "zona": 5
+    },
+    {
+     "provinsi": "PAPUA",
+     "daerah": "KAB. JAYAPURA",
+     "zona": 5
+    },
+    {
+     "provinsi": "PAPUA",
+     "daerah": "KAB. JAYAWIJAYA",
+     "zona": 3
+    },
+    {
+     "provinsi": "PAPUA",
+     "daerah": "KAB. KEEROM",
+     "zona": 4
+    },
+    {
+     "provinsi": "PAPUA",
+     "daerah": "KAB. NABIRE",
+     "zona": 5
+    },
+    {
+     "provinsi": "PAPUA",
+     "daerah": "KAB. SARMI",
+     "zona": 5
+    },
+    {
+     "provinsi": "PAPUA",
+     "daerah": "KAB. TOLIKARA",
+     "zona": 3
+    },
+    {
+     "provinsi": "PAPUA",
+     "daerah": "KAB. YAHUKIMO",
+     "zona": 3
+    },
+    {
+     "provinsi": "PAPUA",
+     "daerah": "KOTA JAYAPURA",
+     "zona": 3
+    },
+    {
+     "provinsi": "PAPUA",
+     "daerah": "KAB. MAMBERAMO RAYA",
+     "zona": 4
+    },
+    {
+     "provinsi": "PAPUA",
+     "daerah": "KAB. NDUGA",
+     "zona": 4
+    },
+    {
+     "provinsi": "PAPUA",
+     "daerah": "KAB. LANNY JAYA",
+     "zona": 3
+    },
+    {
+     "provinsi": "PAPUA",
+     "daerah": "KAB. MAMBERAMO TENGAH",
+     "zona": 3
+    },
+    {
+     "provinsi": "PAPUA",
+     "daerah": "KAB. YALIMO",
+     "zona": 3
+    },
+    {
+     "provinsi": "PAPUA",
+     "daerah": "KAB. PUNCAK",
+     "zona": 3
+    },
+    {
+     "provinsi": "PAPUA",
+     "daerah": "KAB. DOGIYAI",
+     "zona": 4
+    },
+    {
+     "provinsi": "PAPUA",
+     "daerah": "KAB. INTAN JAYA",
+     "zona": 3
+    },
+    {
+     "provinsi": "PAPUA",
+     "daerah": "KAB. DEIYAI",
+     "zona": 4
+    },
+    {
+     "provinsi": "PAPUA BARAT",
+     "daerah": "KAB. FAKFAK",
+     "zona": 4
+    },
+    {
+     "provinsi": "PAPUA BARAT",
+     "daerah": "KAB. KAIMANA",
+     "zona": 5
+    },
+    {
+     "provinsi": "PAPUA BARAT",
+     "daerah": "KAB. SORONG SELATAN",
+     "zona": 3
+    },
+    {
+     "provinsi": "PAPUA BARAT",
+     "daerah": "KOTA SORONG",
+     "zona": 5
+    },
+    {
+     "provinsi": "PAPUA BARAT",
+     "daerah": "KAB. RAJA AMPAT",
+     "zona": 3
+    },
+    {
+     "provinsi": "PAPUA BARAT",
+     "daerah": "KAB. SORONG",
+     "zona": 4
+    },
+    {
+     "provinsi": "PAPUA BARAT",
+     "daerah": "KAB. TELUK BINTUNI",
+     "zona": 3
+    },
+    {
+     "provinsi": "PAPUA BARAT",
+     "daerah": "KAB. TELUK WONDOMA",
+     "zona": 3
+    },
+    {
+     "provinsi": "PAPUA BARAT",
+     "daerah": "KAB. MANOKWARI",
+     "zona": 4
+    },
+    {
+     "provinsi": "PAPUA BARAT",
+     "daerah": "KAB. MANOKWARI SELATAN",
+     "zona": 4
+    },
+    {
+     "provinsi": "PAPUA BARAT",
+     "daerah": "KAB. PEGUNUNGAN ARFAK",
+     "zona": 4
+    },
+    {
+     "provinsi": "PAPUA BARAT",
+     "daerah": "KAB. TAMBRAUW",
+     "zona": 5
+    },
+    {
+     "provinsi": "PAPUA BARAT",
+     "daerah": "KAB. MAYBRAT",
+     "zona": 4
+    },
+    {
+     "provinsi": "RIAU",
+     "daerah": "KAB. BENGKALIS",
+     "zona": 3
+    },
+    {
+     "provinsi": "RIAU",
+     "daerah": "KAB. INDRAGIRI HILIR",
+     "zona": 3
+    },
+    {
+     "provinsi": "RIAU",
+     "daerah": "KAB. INDRAGIRI HULU",
+     "zona": 4
+    },
+    {
+     "provinsi": "RIAU",
+     "daerah": "KAB. PELALAWAN",
+     "zona": 4
+    },
+    {
+     "provinsi": "RIAU",
+     "daerah": "KAB. ROKAN HILIR",
+     "zona": 4
+    },
+    {
+     "provinsi": "RIAU",
+     "daerah": "KAB. SIAK",
+     "zona": 3
+    },
+    {
+     "provinsi": "RIAU",
+     "daerah": "KOTA DUMAI",
+     "zona": 3
+    },
+    {
+     "provinsi": "RIAU",
+     "daerah": "KAB. KAMPAR",
+     "zona": 4
+    },
+    {
+     "provinsi": "RIAU",
+     "daerah": "KAB. KUANTAN SINGINGI",
+     "zona": 4
+    },
+    {
+     "provinsi": "RIAU",
+     "daerah": "KAB. ROKAN HULU",
+     "zona": 4
+    },
+    {
+     "provinsi": "RIAU",
+     "daerah": "KOTA PEKANBARU",
+     "zona": 4
+    },
+    {
+     "provinsi": "RIAU",
+     "daerah": "KAB. KEPULAUAN MERANTI",
+     "zona": 3
+    },
+    {
+     "provinsi": "SULAWESI SELATAN",
+     "daerah": "KAB. BARRU",
+     "zona": 2
+    },
+    {
+     "provinsi": "SULAWESI SELATAN",
+     "daerah": "KAB. ENREKANG",
+     "zona": 3
+    },
+    {
+     "provinsi": "SULAWESI SELATAN",
+     "daerah": "KAB. LUWU",
+     "zona": 2
+    },
+    {
+     "provinsi": "SULAWESI SELATAN",
+     "daerah": "KAB. LUWU TIMUR",
+     "zona": 4
+    },
+    {
+     "provinsi": "SULAWESI SELATAN",
+     "daerah": "KAB. LUWU UTARA",
+     "zona": 3
+    },
+    {
+     "provinsi": "SULAWESI SELATAN",
+     "daerah": "KAB. PINRANG",
+     "zona": 3
+    },
+    {
+     "provinsi": "SULAWESI SELATAN",
+     "daerah": "KAB. SIDENRENG RAPPANG",
+     "zona": 4
+    },
+    {
+     "provinsi": "SULAWESI SELATAN",
+     "daerah": "KAB. SOPPENG",
+     "zona": 3
+    },
+    {
+     "provinsi": "SULAWESI SELATAN",
+     "daerah": "KAB. WAJO",
+     "zona": 3
+    },
+    {
+     "provinsi": "SULAWESI SELATAN",
+     "daerah": "KOTA PALOPO",
+     "zona": 3
+    },
+    {
+     "provinsi": "SULAWESI SELATAN",
+     "daerah": "KOTA PARE-PARE",
+     "zona": 3
+    },
+    {
+     "provinsi": "SULAWESI BARAT",
+     "daerah": "KAB. MAMUJU UTARA",
+     "zona": 4
+    },
+    {
+     "provinsi": "SULAWESI BARAT",
+     "daerah": "KAB. MAJENE",
+     "zona": 5
+    },
+    {
+     "provinsi": "SULAWESI BARAT",
+     "daerah": "KAB. MAMASA",
+     "zona": 3
+    },
+    {
+     "provinsi": "SULAWESI BARAT",
+     "daerah": "KAB. MAMUJU",
+     "zona": 4
+    },
+    {
+     "provinsi": "SULAWESI BARAT",
+     "daerah": "KAB. POLEWALI MANDAR",
+     "zona": 5
+    },
+    {
+     "provinsi": "SULAWESI BARAT",
+     "daerah": "KAB. MAMUJU TENGAH",
+     "zona": 4
+    },
+    {
+     "provinsi": "SULAWESI SELATAN",
+     "daerah": "KAB. BANTAENG",
+     "zona": 2
+    },
+    {
+     "provinsi": "SULAWESI SELATAN",
+     "daerah": "KAB. BONE",
+     "zona": 2
+    },
+    {
+     "provinsi": "SULAWESI SELATAN",
+     "daerah": "KAB. BULUKUMBA",
+     "zona": 2
+    },
+    {
+     "provinsi": "SULAWESI SELATAN",
+     "daerah": "KAB. GOWA",
+     "zona": 2
+    },
+    {
+     "provinsi": "SULAWESI SELATAN",
+     "daerah": "KAB. JENEPONTO",
+     "zona": 2
+    },
+    {
+     "provinsi": "SULAWESI SELATAN",
+     "daerah": "KAB. MAROS",
+     "zona": 2
+    },
+    {
+     "provinsi": "SULAWESI SELATAN",
+     "daerah": "KAB. PANGKAJENE DAN KEPULAUAN",
+     "zona": 3
+    },
+    {
+     "provinsi": "SULAWESI SELATAN",
+     "daerah": "KAB. SELAYAR",
+     "zona": 4
+    },
+    {
+     "provinsi": "SULAWESI SELATAN",
+     "daerah": "KAB. SINJAI",
+     "zona": 2
+    },
+    {
+     "provinsi": "SULAWESI SELATAN",
+     "daerah": "KAB. TAKALAR",
+     "zona": 2
+    },
+    {
+     "provinsi": "SULAWESI SELATAN",
+     "daerah": "KOTA MAKASSAR",
+     "zona": 2
+    },
+    {
+     "provinsi": "SULAWESI SELATAN",
+     "daerah": "KAB. TANA TORAJA",
+     "zona": 3
+    },
+    {
+     "provinsi": "SULAWESI SELATAN",
+     "daerah": "KAB. TORAJA UTARA",
+     "zona": 3
+    },
+    {
+     "provinsi": "SULAWESI TENGAH",
+     "daerah": "KAB. MOROWALI",
+     "zona": 4
+    },
+    {
+     "provinsi": "SULAWESI TENGAH",
+     "daerah": "KAB. BANGGAI KEPULAUAN",
+     "zona": 4
+    },
+    {
+     "provinsi": "SULAWESI TENGAH",
+     "daerah": "KAB. DONGGALA",
+     "zona": 4
+    },
+    {
+     "provinsi": "SULAWESI TENGAH",
+     "daerah": "KAB. POSO",
+     "zona": 5
+    },
+    {
+     "provinsi": "SULAWESI TENGAH",
+     "daerah": "KAB. TOJO UNA-UNA",
+     "zona": 4
+    },
+    {
+     "provinsi": "SULAWESI TENGAH",
+     "daerah": "KOTA PALU",
+     "zona": 5
+    },
+    {
+     "provinsi": "SULAWESI TENGAH",
+     "daerah": "KAB. BANGGAI",
+     "zona": 4
+    },
+    {
+     "provinsi": "SULAWESI TENGAH",
+     "daerah": "KAB. BUOL",
+     "zona": 5
+    },
+    {
+     "provinsi": "SULAWESI TENGAH",
+     "daerah": "KAB. PARIGI MOUTONG",
+     "zona": 4
+    },
+    {
+     "provinsi": "SULAWESI TENGAH",
+     "daerah": "KAB. TOLI-TOLI",
+     "zona": 5
+    },
+    {
+     "provinsi": "SULAWESI TENGAH",
+     "daerah": "KAB. BANGGAI LAUT",
+     "zona": 4
+    },
+    {
+     "provinsi": "SULAWESI TENGAH",
+     "daerah": "KAB. MOROWALI UTARA",
+     "zona": 4
+    },
+    {
+     "provinsi": "SULAWESI TENGAH",
+     "daerah": "KAB. SIGI",
+     "zona": 4
+    },
+    {
+     "provinsi": "SULAWESI TENGGARA",
+     "daerah": "KAB. BOMBANA",
+     "zona": 2
+    },
+    {
+     "provinsi": "SULAWESI TENGGARA",
+     "daerah": "KAB. BUTON",
+     "zona": 3
+    },
+    {
+     "provinsi": "SULAWESI TENGGARA",
+     "daerah": "KAB. KOLAKA",
+     "zona": 2
+    },
+    {
+     "provinsi": "SULAWESI TENGGARA",
+     "daerah": "KAB. KOLAKA UTARA",
+     "zona": 3
+    },
+    {
+     "provinsi": "SULAWESI TENGGARA",
+     "daerah": "KAB. KONAWE",
+     "zona": 4
+    },
+    {
+     "provinsi": "SULAWESI TENGGARA",
+     "daerah": "KAB. KONAWE SELATAN",
+     "zona": 3
+    },
+    {
+     "provinsi": "SULAWESI TENGGARA",
+     "daerah": "KAB. KONAWE UTARA",
+     "zona": 5
+    },
+    {
+     "provinsi": "SULAWESI TENGGARA",
+     "daerah": "KAB. MUNA",
+     "zona": 2
+    },
+    {
+     "provinsi": "SULAWESI TENGGARA",
+     "daerah": "KAB. WAKATOBI",
+     "zona": 3
+    },
+    {
+     "provinsi": "SULAWESI TENGGARA",
+     "daerah": "KOTA BAU-BAU",
+     "zona": 2
+    },
+    {
+     "provinsi": "SULAWESI TENGGARA",
+     "daerah": "KAB. BUTON UTARA",
+     "zona": 3
+    },
+    {
+     "provinsi": "SULAWESI TENGGARA",
+     "daerah": "KOTA KENDARI",
+     "zona": 5
+    },
+    {
+     "provinsi": "SULAWESI TENGGARA",
+     "daerah": "KAB. KONAWE KEPULAUAN",
+     "zona": 4
+    },
+    {
+     "provinsi": "SULAWESI TENGGARA",
+     "daerah": "KAB. KOLAKA TIMUR",
+     "zona": 2
+    },
+    {
+     "provinsi": "SULAWESI UTARA",
+     "daerah": "KAB. BOLAANG MONGONDOW",
+     "zona": 4
+    },
+    {
+     "provinsi": "SULAWESI UTARA",
+     "daerah": "KAB. BOLAANG MONGONDOW UTARA",
+     "zona": 4
+    },
+    {
+     "provinsi": "SULAWESI UTARA",
+     "daerah": "KAB. KEPULAUAN SANGIHE",
+     "zona": 5
+    },
+    {
+     "provinsi": "SULAWESI UTARA",
+     "daerah": "KAB. SIAU TAGULANDANG BITARO",
+     "zona": 5
+    },
+    {
+     "provinsi": "SULAWESI UTARA",
+     "daerah": "KAB. KEPULAUAN TALAUD",
+     "zona": 5
+    },
+    {
+     "provinsi": "SULAWESI UTARA",
+     "daerah": "KAB. MINAHASA",
+     "zona": 5
+    },
+    {
+     "provinsi": "SULAWESI UTARA",
+     "daerah": "KAB. MINAHASA SELATAN",
+     "zona": 4
+    },
+    {
+     "provinsi": "SULAWESI UTARA",
+     "daerah": "KAB. MINAHASA TENGGARA",
+     "zona": 5
+    },
+    {
+     "provinsi": "SULAWESI UTARA",
+     "daerah": "KAB. MINAHASA UTARA",
+     "zona": 5
+    },
+    {
+     "provinsi": "SULAWESI UTARA",
+     "daerah": "KOTA BITUNG",
+     "zona": 5
+    },
+    {
+     "provinsi": "SULAWESI UTARA",
+     "daerah": "KOTA KOTAMOBAGU",
+     "zona": 4
+    },
+    {
+     "provinsi": "SULAWESI UTARA",
+     "daerah": "KOTA MANADO",
+     "zona": 4
+    },
+    {
+     "provinsi": "SULAWESI UTARA",
+     "daerah": "KOTA TOMOHON",
+     "zona": 5
+    },
+    {
+     "provinsi": "SULAWESI UTARA",
+     "daerah": "KAB. BOLAANG MONGONDOW SELATAN",
+     "zona": 4
+    },
+    {
+     "provinsi": "SULAWESI UTARA",
+     "daerah": "KAB. BOLAANG MONGONDOW TIMUR",
+     "zona": 4
+    },
+    {
+     "provinsi": "SUMATERA BARAT",
+     "daerah": "KAB. DHARMASRAYA",
+     "zona": 4
+    },
+    {
+     "provinsi": "SUMATERA BARAT",
+     "daerah": "KAB. PASAMAN",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA BARAT",
+     "daerah": "KAB. LIMA PULUH KOTA",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA BARAT",
+     "daerah": "KAB. PASAMAN BARAT",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA BARAT",
+     "daerah": "KAB. SIJUNJUNG",
+     "zona": 4
+    },
+    {
+     "provinsi": "SUMATERA BARAT",
+     "daerah": "KAB. TANAH DATAR",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA BARAT",
+     "daerah": "KOTA PAYAKUMBUH",
+     "zona": 4
+    },
+    {
+     "provinsi": "SUMATERA BARAT",
+     "daerah": "KOTA SAWAH LUNTO",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA BARAT",
+     "daerah": "KAB. AGAM",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA BARAT",
+     "daerah": "KAB. KEPULAUAN MENTAWAI",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA BARAT",
+     "daerah": "KAB. PADANG PARIAMAN",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA BARAT",
+     "daerah": "KAB. PESISIR SELATAN",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA BARAT",
+     "daerah": "KAB. SOLOK",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA BARAT",
+     "daerah": "KAB. SOLOK SELATAN",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA BARAT",
+     "daerah": "KOTA BUKITTINGGI",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA BARAT",
+     "daerah": "KOTA PADANG",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA BARAT",
+     "daerah": "KOTA PADANG PANJANG",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA BARAT",
+     "daerah": "KOTA PARIAMAN",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA BARAT",
+     "daerah": "KOTA SOLOK",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA SELATAN",
+     "daerah": "KAB. OGAN ILIR",
+     "zona": 4
+    },
+    {
+     "provinsi": "SUMATERA SELATAN",
+     "daerah": "KAB. OGAN KOMERING ILIR",
+     "zona": 3
+    },
+    {
+     "provinsi": "SUMATERA SELATAN",
+     "daerah": "KOTA PALEMBANG",
+     "zona": 3
+    },
+    {
+     "provinsi": "SUMATERA SELATAN",
+     "daerah": "KAB. BANYU ASIN",
+     "zona": 4
+    },
+    {
+     "provinsi": "SUMATERA SELATAN",
+     "daerah": "KAB. LAHAT",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA SELATAN",
+     "daerah": "KAB. MUARA ENIM",
+     "zona": 4
+    },
+    {
+     "provinsi": "SUMATERA SELATAN",
+     "daerah": "KAB. MUSI BANYUASIN",
+     "zona": 4
+    },
+    {
+     "provinsi": "SUMATERA SELATAN",
+     "daerah": "KAB. OGAN KOMERING ULU",
+     "zona": 4
+    },
+    {
+     "provinsi": "SUMATERA SELATAN",
+     "daerah": "KAB. OGAN KOMERING ULU TIMUR",
+     "zona": 4
+    },
+    {
+     "provinsi": "SUMATERA SELATAN",
+     "daerah": "KOTA PRABUMULIH",
+     "zona": 4
+    },
+    {
+     "provinsi": "SUMATERA SELATAN",
+     "daerah": "KAB. EMPAT LAWANG",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA SELATAN",
+     "daerah": "KAB. MUSI RAWAS",
+     "zona": 4
+    },
+    {
+     "provinsi": "SUMATERA SELATAN",
+     "daerah": "KAB. OGAN KOMERING ULU SELATAN",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA SELATAN",
+     "daerah": "KOTA LUBUKLINGGAU",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA SELATAN",
+     "daerah": "KOTA PAGAR ALAM",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA SELATAN",
+     "daerah": "KAB. PENUKAL ABAB LEMATANG ILIR",
+     "zona": 4
+    },
+    {
+     "provinsi": "SUMATERA SELATAN",
+     "daerah": "KAB. MUSI RAWAS UTARA",
+     "zona": 4
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KAB. ASAHAN",
+     "zona": 4
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KAB. BATU BARA",
+     "zona": 4
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KAB. DELI SERDANG",
+     "zona": 4
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KAB. LABUHAN BATU",
+     "zona": 4
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KAB. LANGKAT",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KAB. SERDANG BEDAGAI",
+     "zona": 4
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KOTA BINJAI",
+     "zona": 4
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KOTA MEDAN",
+     "zona": 4
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KOTA TANJUNG BALAI",
+     "zona": 4
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KOTA TEBING TINGGI",
+     "zona": 4
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KAB. DAIRI",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KAB. KARO",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KAB. MANDAILING NATAL",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KAB. PADANG LAWAS",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KAB. PAKPAK BHARAT",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KAB. SAMOSIR",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KAB. SIMALUNGUN",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KAB. TAPANULI SELATAN",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KAB. TOBA SAMOSIR",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KOTA PADANGSIDIMPUAN",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KOTA PEMATANG SIANTAR",
+     "zona": 4
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KAB. HUMBANG HASUNDUTAN",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KAB. NIAS",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KAB. NIAS SELATAN",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KAB. TAPANULI TENGAH",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KAB. TAPANULI UTARA",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KAB. PADANG LAWAS UTARA",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KAB. LABUHAN BATU SELATAN",
+     "zona": 4
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KAB. LABUHAN BATU UTARA",
+     "zona": 4
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KAB. NIAS UTARA",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KAB. NIAS BARAT",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KOTA GUNUNGSITOLI",
+     "zona": 5
+    },
+    {
+     "provinsi": "SUMATERA UTARA",
+     "daerah": "KOTA SIBOLGA",
+     "zona": 5
+    }
+   ]

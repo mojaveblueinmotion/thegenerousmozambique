@@ -120,4 +120,9 @@ Route::post('getRiderByAsuransiId', [AsuransiMobilApiController::class, 'getRide
 Route::get('getHargaLengkapAsuransiMobil', [AsuransiMobilApiController::class, 'getHargaLengkapAsuransiMobil']);
 
 
+// ASURANSI PROPERTI
+Route::get('getOkupasi', [AsuransiPropertiApiController::class, 'getOkupasi']);
+Route::get('getKonstruksiProperti', [AsuransiPropertiApiController::class, 'getKonstruksiProperti']);
+Route::get('getPerlindunganProperti', [AsuransiPropertiApiController::class, 'getPerlindunganProperti']);
+
 

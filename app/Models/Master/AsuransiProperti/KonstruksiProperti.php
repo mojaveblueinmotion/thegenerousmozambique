@@ -12,6 +12,11 @@ class KonstruksiProperti extends Model
 
     protected $fillable = [
         'name',
+        'zona_satu',
+        'zona_dua',
+        'zona_tiga',
+        'zona_empat',
+        'zona_lima',
         'description',
     ];
 
