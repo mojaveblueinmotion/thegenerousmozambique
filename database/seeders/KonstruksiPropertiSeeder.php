@@ -19,7 +19,7 @@ class KonstruksiPropertiSeeder extends Seeder
                 "name" => "Kelas Konstruksi 1",
                 "zona_satu" => 0.76,
                 "zona_dua" => 0.79,
-                "zona_tiga" => 1.00,
+                "zona_tiga" => 1.04,
                 "zona_empat" => 1.43,
                 "zona_lima" => 1.90,
             ],

@@ -17,6 +17,7 @@ use App\Models\AsuransiProperti\PolisPropertiNilai;
 use App\Models\AsuransiProperti\PolisPropertiPayment;
 use App\Models\AsuransiProperti\PolisPropertiPenutupan;
 use App\Models\Master\AsuransiProperti\AsuransiProperti;
+use App\Models\AsuransiProperti\PolisPropertiPerlindungan;
 use App\Models\Master\AsuransiProperti\KonstruksiProperti;
 use App\Models\Master\AsuransiProperti\PerlindunganProperti;
 
@@ -44,7 +45,6 @@ class PolisProperti extends Model
         'village',
         'alamat',
         'tahun_bangunan',
-        'perlindungan_id',
         'konstruksi_id',
         'status',
     ];
@@ -164,6 +164,11 @@ class PolisProperti extends Model
     public function detailPayment()
     {
         return $this->hasOne(PolisPropertiPayment::class, 'polis_id');
+    }
+
+    public function detailPerlindungan()
+    {
+        return $this->hasOne(PolisPropertiPerlindungan::class, 'polis_id');
     }
 
     public function asuransi()
