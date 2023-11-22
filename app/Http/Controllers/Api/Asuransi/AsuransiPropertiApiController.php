@@ -394,41 +394,51 @@ class AsuransiPropertiApiController extends Controller
             foreach ($perlindungan as $value) {
                 $harga = 0;
                 $name = '';
+                $rumus = '';
                 if($value == 3){ // Gempa Bumi
                     if(in_array($okupasi->code, [2976, 29761])){
                         $harga = ($harga_pertanggungan *  $zona_gempabumi) / 1000;
                     }
+                    $rumus = "(" . $zona_gempabumi / 10 . "% x " . number_format($harga_pertanggungan) . ")";
                     $name = "Gempa Bumi";
-                    $harga_preview[] = ['name' => $name, 'harga' => $harga];
+                    $harga_preview[] = ['name' => $name, 'harga' => $harga, 'rumus' => $rumus];
                 }
                 if($value == 4){ // Banjir
                     if(in_array($city->province_id, [16, 11, 12])){
                         $harga = ($harga_pertanggungan * 0.050) / 100; 
+                        $rumus = "(0.050% x " . number_format($harga_pertanggungan) . ")";
                     }else{
                         $harga = ($harga_pertanggungan * 0.045) / 100; 
+                        $rumus = "(0.045% x " . number_format($harga_pertanggungan) . ")";
                     }
                     $name = "Banjir";
-                    $harga_preview[] = ['name' => $name, 'harga' => $harga];
+                    $harga_preview[] = ['name' => $name, 'harga' => $harga, 'rumus' => $rumus];
                 }
                 if($value == 5){ // Kebakaran
                     if($konstruksi_id == 1){
                         $harga = ($harga_pertanggungan * $okupasi->tarif_konstruksi_satu) / 1000; 
+                        $rumus = "(" . $okupasi->tarif_konstruksi_satu / 10 . "% x " . number_format($harga_pertanggungan) . ")";
                     }elseif($konstruksi_id == 2){
                         $harga = ($harga_pertanggungan * $okupasi->tarif_konstruksi_dua) / 1000; 
+                        $rumus = "(" . $okupasi->tarif_konstruksi_dua / 10 . "% x " . number_format($harga_pertanggungan) . ")";
                     }else{
                         $harga = ($harga_pertanggungan * $okupasi->tarif_konstruksi_tiga) / 1000; 
+                        $rumus = "(" . $okupasi->tarif_konstruksi_tiga / 10 . "% x " . number_format($harga_pertanggungan) . ")";
                     }
                     $name = "Kebakaran";
-                    $harga_preview[] = ['name' => $name, 'harga' => $harga];
+                    $harga_preview[] = ['name' => $name, 'harga' => $harga, 'rumus' => $rumus];
                 }
                 if($value == 2){
                     $name = "Banjir, Angin Topan, Badai dan Kerusakan Akibat Air (FSTWD)";
                     $harga = ($harga_pertanggungan * 0.0001) / 100; 
-                    $harga_preview[] = ['name' => $name, 'harga' => $harga];
+                    $rumus = "(0.0001% x " . number_format($harga_pertanggungan) . ")";
+                    
+                    $harga_preview[] = ['name' => $name, 'harga' => $harga, 'rumus' => $rumus];
 
                     $name = "Kerusuhan, Pemogokan, Pengrusakan harta benda akibat tindakan jahat serta Huru Hara (Riot,Strike,Malicious Damage,Civil Commotion /RSMDCC)";
-                    $harga = ($harga_pertanggungan * 0.0001) / 100; 
-                    $harga_preview[] = ['name' => $name, 'harga' => $harga];
+                    $harga = ($harga_pertanggungan * 0.0001) / 100;
+                    $rumus = "(0.0001% x " . number_format($harga_pertanggungan) . ")";
+                    $harga_preview[] = ['name' => $name, 'harga' => $harga, 'rumus' => $rumus];
                 }
             }
 
@@ -443,7 +453,8 @@ class AsuransiPropertiApiController extends Controller
         } catch (Exception $e) {
             return response()->json([
                 'success' => false,
-                'message' => $e
+                'trace' => $e->getTrace(),
+                'message' => $e->getMessage(),
             ], 400);
         }
     }
