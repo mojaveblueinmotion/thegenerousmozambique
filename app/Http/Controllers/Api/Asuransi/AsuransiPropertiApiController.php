@@ -102,17 +102,17 @@ class AsuransiPropertiApiController extends Controller
 
             if($dataPerlindungan = $request->input('perlindungan')){
                 foreach ($dataPerlindungan as $item) {
-                    if(in_array($item, [1,2])){
+                    if(in_array($item, [1])){
                         continue;
                     }
 
-                    if($item == 3){ // Gempa Bumi
+                    if($item == 2){ // Gempa Bumi
                         if(in_array($okupasi->code, [2976, 29761])){
                             $persentasi = $zona_gempabumi;
                             $harga = ($harga_pertanggungan *  $zona_gempabumi) / 1000;
                         }
                     }
-                    if($item == 4){ // Banjir
+                    if($item == 3){ // Banjir
                         if(in_array($city->province_id, [16, 11, 12])){
                             $harga = ($harga_pertanggungan * 0.050) / 100; 
                             $persentasi = 0.050;
@@ -122,7 +122,7 @@ class AsuransiPropertiApiController extends Controller
                         }
                     }
 
-                    if($item == 5){ // Kebakaran
+                    if($item == 4){ // Kebakaran
                         if($konstruksi->id == 1){
                             $harga = ($harga_pertanggungan * $okupasi->tarif_konstruksi_satu) / 1000; 
                             $persentasi = $okupasi->tarif_konstruksi_satu;
@@ -134,17 +134,17 @@ class AsuransiPropertiApiController extends Controller
                             $persentasi = $okupasi->tarif_konstruksi_tiga;
                         }
                     }
-                    if($item == 6){
+                    if($item == 5){
                         $persentasi = 0.0001;
                         $harga = ($harga_pertanggungan * 0.0001) / 100; 
                     }
     
-                    if($item == 7){
+                    if($item == 6){
                         $persentasi = 0.0001;
                         $harga = ($harga_pertanggungan * 0.0001) / 100; 
                     }
                     
-                    if(in_array($item, [5,3])){
+                    if(in_array($item, [4,2])){
                         $persentasi_perkalian = 0.001;
                     }else{
                         $persentasi_perkalian = 0.01;
@@ -395,7 +395,7 @@ class AsuransiPropertiApiController extends Controller
                 $harga = 0;
                 $name = '';
                 $rumus = '';
-                if($value == 3){ // Gempa Bumi
+                if($value == 2){ // Gempa Bumi
                     if(in_array($okupasi->code, [2976, 29761])){
                         $harga = ($harga_pertanggungan *  $zona_gempabumi) / 1000;
                     }
@@ -403,7 +403,7 @@ class AsuransiPropertiApiController extends Controller
                     $name = "Gempa Bumi";
                     $harga_preview[] = ['name' => $name, 'harga' => $harga, 'rumus' => $rumus];
                 }
-                if($value == 4){ // Banjir
+                if($value == 3){ // Banjir
                     if(in_array($city->province_id, [16, 11, 12])){
                         $harga = ($harga_pertanggungan * 0.050) / 100; 
                         $rumus = "(0.050% x " . number_format($harga_pertanggungan) . ")";
@@ -414,7 +414,7 @@ class AsuransiPropertiApiController extends Controller
                     $name = "Banjir";
                     $harga_preview[] = ['name' => $name, 'harga' => $harga, 'rumus' => $rumus];
                 }
-                if($value == 5){ // Kebakaran
+                if($value == 4){ // Kebakaran
                     if($konstruksi_id == 1){
                         $harga = ($harga_pertanggungan * $okupasi->tarif_konstruksi_satu) / 1000; 
                         $rumus = "(" . $okupasi->tarif_konstruksi_satu / 10 . "% x " . number_format($harga_pertanggungan) . ")";
@@ -428,7 +428,7 @@ class AsuransiPropertiApiController extends Controller
                     $name = "Kebakaran";
                     $harga_preview[] = ['name' => $name, 'harga' => $harga, 'rumus' => $rumus];
                 }
-                if($value == 2){
+                if($value == 1){
                     $name = "Banjir, Angin Topan, Badai dan Kerusakan Akibat Air (FSTWD)";
                     $harga = ($harga_pertanggungan * 0.0001) / 100; 
                     $rumus = "(0.0001% x " . number_format($harga_pertanggungan) . ")";

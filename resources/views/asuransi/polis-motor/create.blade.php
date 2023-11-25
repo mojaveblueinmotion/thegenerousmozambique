@@ -12,15 +12,22 @@
 	</div>
 </div>
 <div class="form-group row">
-	<label class="col-md-4 col-form-label">{{ __('Tanggal') }}</label>
+	<label class="col-md-4 col-form-label">{{ __('Tanggal Asuransi') }}</label>
 	<div class="col-md-8 parent-group">
-		<input type="text" name="tanggal"
-		class="form-control base-plugin--datepicker tanggal" 
-		data-options='@json([
-			"startDate" => "",
-			"endDate"=> now()->format('d/m/Y')
-		])'
-		placeholder="{{ __('Tanggal') }}">
+		<div class="row no-gutters input-group">
+			<div class="col-md-6 parent-group" >
+				<input type="text" name="tanggal"
+					class="form-control base-plugin--datepicker date_start rounded-right-0"
+					placeholder="{{ __('Awal') }}"
+					data-orientation="top">
+			</div>
+			<div class="col-md-6 parent-group" >
+				<input type="text" name="tanggal_akhir_asuransi"
+					class="form-control base-plugin--datepicker date_end rounded-left-0"
+					placeholder="{{ __('Akhir') }}"
+					data-orientation="top" disabled>
+			</div>
+		</div>
 	</div>
 </div>
 <div class="form-group row">
@@ -62,3 +69,20 @@
 @endsection
 
 
+@push('scripts')
+<script>
+	$(function () {
+			$('.content-page').on('changeDate', 'input.date_start', function (value) {
+				var me = $(this);
+				if (me.val()) {
+					var startDate = new Date(value.date.valueOf());
+					var date_end = me.closest('.input-group').find('input.date_end');
+					date_end.prop('disabled', false)
+							.val(me.val())
+							.datepicker('setStartDate', startDate)
+							.focus();
+				}
+			});
+		});
+</script>
+@endpush

@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Master\AsuransiMotor\AsuransiMotor;
 use App\Models\Master\AsuransiMotor\AsuransiRiderMotor;
+use App\Models\Master\AsuransiMotor\AsuransiPersentasiMotor;
 use App\Http\Requests\Master\AsuransiMotor\AsuransiMotorRequest;
 use App\Http\Requests\Master\AsuransiMotor\AsuransiRiderMotorRequest;
+use App\Http\Requests\Master\AsuransiMotor\AsuransiPersentasiMotorRequest;
 
 class AsuransiMotorController extends Controller
 {
@@ -82,7 +84,7 @@ class AsuransiMotorController extends Controller
             ->addColumn(
                 'pembayaran_persentasi',
                 function ($record) {
-                    return "<span class='badge badge-info'>Rp. " . $record->pembayaran_persentasi . "/". $record->intervalPembayaran->name."</span>";
+                    return "<span class='badge badge-info'>". $record->intervalPembayaran->name."</span>";
                 }
             )
             ->addColumn('call_center', function ($record) {
@@ -162,11 +164,7 @@ class AsuransiMotorController extends Controller
         return \Excel::download(new GenerateExport($view, $data), $fileName);
     }
 
-    public function importSave(Request $request)
-    {
-        $record = new AsuransiMotor;
-        return $record->handleImport($request);
-    }
+    // RIDER ASURANSI
 
     public function rider(AsuransiMotor $record)
     {
@@ -183,7 +181,19 @@ class AsuransiMotorController extends Controller
                         $this->makeColumn('name:updated_by'),
                         $this->makeColumn('name:action'),
                     ],
+                    'url_2' => route($this->routes . '.persentasiGrid', $record->id),
+                    'datatable_2' => [
+                        $this->makeColumn('name:num'),
+                        $this->makeColumn('name:kategori|label:Kategori|className:text-left'),
+                        $this->makeColumn('name:uang_pertanggungan|label:Uang Pertanggungan|className:text-center'),
+                        $this->makeColumn('name:wilayah_satu|label:Wilayah Satu|className:text-center'),
+                        $this->makeColumn('name:wilayah_dua|label:Wilayah Dua|className:text-center'),
+                        $this->makeColumn('name:wilayah_tiga|label:Wilayah Tiga|className:text-center'),
+                        $this->makeColumn('name:updated_by'),
+                        $this->makeColumn('name:action'),
+                    ],
                 ],
+                
             ]
         );
 
@@ -220,7 +230,6 @@ class AsuransiMotorController extends Controller
                     return $records->pembayaran_persentasi_komersial. '%';
                 }
             )
-            
             ->addColumn(
                 'updated_by',
                 function ($records) {
@@ -254,7 +263,7 @@ class AsuransiMotorController extends Controller
 
     public function riderCreate(AsuransiMotor $record)
     {
-        $this->prepare(['title' => 'Rider Asuransi Mobil']);
+        $this->prepare(['title' => 'Rider Asuransi Motor']);
         return $this->render($this->views . '.rider.create', compact('record'));
     }
 
@@ -266,14 +275,14 @@ class AsuransiMotorController extends Controller
 
     public function riderShow(AsuransiRiderMotor $rider)
     {
-        $this->prepare(['title' => 'Rider Asuransi Mobil']);
+        $this->prepare(['title' => 'Rider Asuransi Motor']);
         $record = $rider->asuransiMotor;
         return $this->render($this->views . '.rider.show', compact('record', 'rider'));
     }
 
     public function riderEdit(AsuransiRiderMotor $rider)
     {
-        $this->prepare(['title' => 'Rider Asuransi Mobil']);
+        $this->prepare(['title' => 'Rider Asuransi Motor']);
         $record = $rider->asuransiMotor;
         return $this->render($this->views . '.rider.edit', compact('record', 'rider'));
     }
@@ -289,4 +298,127 @@ class AsuransiMotorController extends Controller
         $record = $rider->asuransiMotor;
         return $record->handleRiderDestroy($rider);
     }
+
+    // PERSENTASI ASURANSI
+    // PERSENTASI ASURANSI
+    // PERSENTASI ASURANSI
+    public function persentasiGrid(AsuransiMotor $record)
+    {
+        $user = auth()->user();
+        $records = AsuransiPersentasiMotor::where('asuransi_id', $record->id)->filters()->dtGet();
+
+        return \DataTables::of($records)
+            ->addColumn(
+                'num',
+                function ($records) {
+                    return request()->start;
+                }
+            )
+            ->addColumn(
+                'kategori',
+                function ($records) {
+                    return $records->kategori;
+                }
+            )
+            ->addColumn(
+                'uang_pertanggungan',
+                function ($records) {
+                    return "Rp. ". number_format($records->uang_pertanggungan_bawah , 0, ',', '.'). ' s/d ' . "Rp. ". number_format($records->uang_pertanggungan_atas , 0, ',', '.');
+                }
+            )
+            ->addColumn(
+                'wilayah_satu',
+                function ($records) {
+                    return $records->wilayah_satu_bawah. '% - ' . $records->wilayah_satu_atas . "%";
+                }
+            )
+            ->addColumn(
+                'wilayah_dua',
+                function ($records) {
+                    return $records->wilayah_dua_bawah. '% - ' . $records->wilayah_dua_atas . "%";
+                }
+            )
+            ->addColumn(
+                'wilayah_tiga',
+                function ($records) {
+                    return $records->wilayah_tiga_bawah. '% - ' . $records->wilayah_tiga_atas. "%";
+                }
+            )
+            ->addColumn(
+                'updated_by',
+                function ($records) {
+                    return $records->createdByRaw();
+                }
+            )
+            ->addColumn(
+                'action',
+                function ($records) use ($user) {
+                    $actions = [];
+                    $actions[] = [
+                        'type' => 'show',
+                        'url' => route($this->routes . '.persentasiShow', $records->id),
+                    ];
+
+                    $actions[] = [
+                        'type' => 'edit',
+                        'url' => route($this->routes . '.persentasiEdit', $records->id),
+                    ];
+                    $actions[] = [
+                        'type' => 'delete',
+                        'url' => route($this->routes . '.persentasiDestroy', $records->id),
+                        'text' => 'Hapus Data Ini',
+                    ];
+                    return $this->makeButtonDropdown($actions, $records->id);
+                }
+            )
+            ->rawColumns([
+                'action', 
+                'updated_by', 
+                'kategori',
+                'uang_pertanggungan',
+                'wilayah_satu',
+                'wilayah_dua',
+                'wilayah_tiga',
+                ])
+            ->make(true);
+    }
+
+    public function persentasiCreate(AsuransiMotor $record)
+    {
+        $this->prepare(['title' => 'Persentasi Asuransi Motor']);
+        return $this->render($this->views . '.persentasi.create', compact('record'));
+    }
+
+    public function persentasiStore(AsuransiMotor $record, AsuransiPersentasiMotorRequest $request)
+    {
+        $persentasi = new AsuransiPersentasiMotor;
+        return $record->handlePersentasiStoreOrUpdate($request, $persentasi);
+    }
+
+    public function persentasiShow(AsuransiPersentasiMotor $persentasi)
+    {
+        $this->prepare(['title' => 'Persentasi Asuransi Motor']);
+        $record = $persentasi->asuransiMotor;
+        return $this->render($this->views . '.persentasi.show', compact('record', 'persentasi'));
+    }
+
+    public function persentasiEdit(AsuransiPersentasiMotor $persentasi)
+    {
+        $this->prepare(['title' => 'Persentasi Asuransi Motor']);
+        $record = $persentasi->asuransiMotor;
+        return $this->render($this->views . '.persentasi.edit', compact('record', 'persentasi'));
+    }
+
+    public function persentasiUpdate(AsuransiPersentasiMotor $persentasi, AsuransiPersentasiMotorRequest $request)
+    {
+        $record = $persentasi->asuransiMotor;
+        return $record->handlePersentasiStoreOrUpdate($request, $persentasi);
+    }
+
+    public function persentasiDestroy(AsuransiPersentasiMotor $persentasi)
+    {
+        $record = $persentasi->asuransiMotor;
+        return $record->handlePersentasiDestroy($persentasi);
+    } 
+
 }

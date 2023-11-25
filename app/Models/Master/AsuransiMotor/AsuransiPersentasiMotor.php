@@ -3,32 +3,27 @@
 namespace App\Models\Master\AsuransiMotor;
 
 use App\Models\Model;
-use App\Models\Master\DataAsuransi\FiturAsuransi;
-use App\Models\Master\DataAsuransi\KategoriAsuransi;
-use App\Models\Master\DataAsuransi\IntervalPembayaran;
-use App\Models\Master\DataAsuransi\PerusahaanAsuransi;
-use App\Models\Master\AsuransiMotor\AsuransiRiderMotor;
-use App\Models\Master\AsuransiMotor\AsuransiPersentasiMotor;
+use App\Imports\Master\ExampleImport;
+use App\Models\Setting\Globals\TempFiles;
+use App\Models\Master\AsuransiMobil\AsuransiMobil;
+use App\Models\Master\AsuransiMotor\AsuransiMotor;
+use App\Models\Master\DataAsuransi\RiderKendaraan;
 
-class AsuransiMotor extends Model
+class AsuransiPersentasiMotor extends Model
 {
-    protected $table = 'ref_asuransi_motor';
+    protected $table = 'ref_asuransi_motor_persentasi';
 
     protected $fillable = [
-        'perusahaan_asuransi_id',
-        'interval_pembayaran_id',
-        'kategori_asuransi_id',
-        'wilayah_satu_batas_atas',
-        'wilayah_satu_batas_bawah',
-        'wilayah_dua_batas_atas',
-        'wilayah_dua_batas_bawah',
-        'wilayah_tiga_batas_atas',
-        'wilayah_tiga_batas_bawah',
-        'name',
-        'call_center',
-        'bank',
-        'no_rekening',
-        'description',
+        'asuransi_id',
+        'kategori',
+        'uang_pertanggungan_bawah',
+        'uang_pertanggungan_atas',
+        'wilayah_satu_atas',
+        'wilayah_satu_bawah',
+        'wilayah_dua_atas',
+        'wilayah_dua_bawah',
+        'wilayah_tiga_atas',
+        'wilayah_tiga_bawah',
     ];
 
     /*******************************
@@ -42,35 +37,11 @@ class AsuransiMotor extends Model
     /*******************************
      ** RELATION
      *******************************/
-    public function perusahaanAsuransi()
+    public function asuransiMotor()
     {
-        return $this->belongsTo(PerusahaanAsuransi::class, 'perusahaan_asuransi_id');
+        return $this->belongsTo(AsuransiMotor::class, 'asuransi_id');
     }
-
-    public function intervalPembayaran()
-    {
-        return $this->belongsTo(IntervalPembayaran::class, 'interval_pembayaran_id');
-    }
-
-    public function fiturs()
-    {
-        return $this->belongsToMany(FiturAsuransi::class, 'ref_asuransi_motor_fitur', 'asuransi_id', 'fitur_id');
-    }
-
-    public function kategoriAsuransi()
-    {
-        return $this->belongsTo(KategoriAsuransi::class, 'kategori_asuransi_id');
-    }
-
-    public function rider()
-    {
-        return $this->hasMany(AsuransiRiderMotor::class, 'asuransi_id');
-    }
-
-    public function persentasi()
-    {
-        return $this->hasMany(AsuransiPersentasiMotor::class, 'asuransi_id');
-    }
+    
     /*******************************
      ** SCOPE
      *******************************/
@@ -89,7 +60,6 @@ class AsuransiMotor extends Model
         try {
             $this->fill($request->only($this->fillable));
             $this->save();
-            $this->fiturs()->sync($request->to ?? []);
             $this->saveLogNotify();
 
             return $this->commitSaved();
@@ -97,7 +67,6 @@ class AsuransiMotor extends Model
             return $this->rollbackSaved($e);
         }
     }
-    
 
     public function handleDestroy()
     {
@@ -112,36 +81,6 @@ class AsuransiMotor extends Model
         }
     }
 
-    public function handleRiderStoreOrUpdate($request, AsuransiRiderMotor $rider)
-    {
-        $this->beginTransaction();
-        try {
-            $rider->fill($request->all());
-            $this->rider()->save($rider);
-
-            $this->save();
-            $this->saveLogNotify();
-
-            $redirect = route(request()->get('routes').'.show', $this->id);
-            return $this->commitSaved();
-        } catch (\Exception $e) {
-            return $this->rollbackSaved($e);
-        }
-    }
-
-    public function handleRiderDestroy(AsuransiRiderMotor $rider)
-    {
-        $this->beginTransaction();
-        try {
-            $this->saveLogNotify();
-            $rider->delete();
-
-            $redirect = route(request()->get('routes').'.show', $this->id);
-            return $this->commitDeleted();
-        } catch (\Exception $e) {
-            return $this->rollbackDeleted($e);
-        }
-    }
     public function handleImport($request)
     {
         $this->beginTransaction();
@@ -164,7 +103,7 @@ class AsuransiMotor extends Model
 
     public function saveLogNotify()
     {
-        $data = $this->name;
+        $data = $this->year.' | '.$this->merk.' | '.$this->type;
         $routes = request()->get('routes');
         switch (request()->route()->getName()) {
             case $routes.'.store':

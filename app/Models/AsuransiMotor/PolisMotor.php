@@ -9,10 +9,12 @@ use Illuminate\Support\Carbon;
 use App\Models\Traits\HasFiles;
 use App\Models\Traits\HasApprovals;
 use App\Models\AsuransiMotor\PolisMotorCek;
+use App\Models\AsuransiMotor\PolisMotorHarga;
 use App\Models\AsuransiMotor\PolisMotorNilai;
 use App\Models\AsuransiMotor\PolisMotorRider;
 use App\Models\AsuransiMotor\PolisMotorClient;
 use App\Models\AsuransiMotor\PolisMotorPayment;
+use App\Models\AsuransiMotor\PolisMotorModifikasi;
 use App\Models\Master\AsuransiMotor\AsuransiMotor;
 
 class PolisMotor extends Model
@@ -24,19 +26,27 @@ class PolisMotor extends Model
 
     protected $fillable = [
         'no_asuransi',
-        'no_max',
         'tanggal',
+        'tanggal_akhir_asuransi',
+        'no_max',
         'agent_id',
         'user_id',
         'asuransi_id',
         'name',
         'phone',
         'email',
+        'harga_asuransi',
+        'harga_rider',
+        'biaya_polis',
+        'biaya_materai',
+        'diskon',
+        'total_harga',
         'status',
     ];
 
     protected $dates = [
         'tanggal',
+        'tanggal_akhir_asuransi',
     ];
 
     /*******************************
@@ -46,6 +56,11 @@ class PolisMotor extends Model
     public function setTanggalAttribute($value)
     {
         $this->attributes['tanggal'] = Carbon::createFromFormat('d/m/Y', $value);
+    }
+
+    public function setTanggalAkhirAsuransiAttribute($value)
+    {
+        $this->attributes['tanggal_akhir_asuransi'] = Carbon::createFromFormat('d/m/Y', $value);
     }
 
     /*******************************
@@ -130,6 +145,16 @@ class PolisMotor extends Model
     public function rider()
     {
         return $this->hasMany(PolisMotorRider::class, 'polis_id');
+    }
+
+    public function detailHarga()
+    {
+        return $this->hasMany(PolisMotorHarga::class, 'polis_id');
+    }
+
+    public function detailModifikasi()
+    {
+        return $this->hasMany(PolisMotorModifikasi::class, 'polis_id');
     }
     /*******************************
      ** SCOPE

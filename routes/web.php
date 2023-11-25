@@ -86,6 +86,7 @@ Route::middleware('auth')
                         // For Province -> City
                         Route::get('getProvinceById', 'AjaxController@getProvinceById')->name('getProvinceById');
                         Route::get('getAsuransiPersentasiMobil', 'AjaxController@getAsuransiPersentasiMobil')->name('getAsuransiPersentasiMobil');
+                        Route::get('getAsuransiPersentasiMotor', 'AjaxController@getAsuransiPersentasiMotor')->name('getAsuransiPersentasiMotor');
                         Route::post('{search}/selectProvinceForCity', 'AjaxController@selectProvinceForCity')->name('selectProvinceForCity');
                         Route::post('city-options', 'AjaxController@cityOptions')->name('cityOptions');
                         Route::post('district-options', 'AjaxController@districtOptions')->name('districtOptions');
@@ -99,7 +100,9 @@ Route::middleware('auth')
                         Route::get('getRiderKendaraanMotorPersentasi', 'AjaxController@getRiderKendaraanMotorPersentasi')->name('getRiderKendaraanMotorPersentasi');
                         Route::post('{search}/selectPertanggunganTambahan', 'AjaxController@selectPertanggunganTambahan')->name('selectPertanggunganTambahan');
                         Route::get('getRiderKendaraanMobilPersentasi', 'AjaxController@getRiderKendaraanMobilPersentasi')->name('getRiderKendaraanMobilPersentasi');
+                        Route::get('getRiderKendaraanMotorPersentasi', 'AjaxController@getRiderKendaraanMotorPersentasiPolis')->name('getRiderKendaraanMotorPersentasi');
                         Route::get('getHargaPembayaranRider', 'AjaxController@getHargaPembayaranRider')->name('getHargaPembayaranRider');
+                        Route::get('getHargaPembayaranRiderMotor', 'AjaxController@getHargaPembayaranRiderMotor')->name('getHargaPembayaranRiderMotor');
                         
                         // For Database Mobil
                         Route::post('{search}/selectMerk', 'AjaxController@selectMerk')->name('selectMerk');
@@ -185,16 +188,16 @@ Route::middleware('auth')
                     Route::post('polis-motor/{record}/detailGrid', 'PolisMotorController@detailGrid')->name('polis-motor.detailGrid');
             
                     // Grid
-                    Route::post('polis-motor/{record}/detailPolisGrid', 'PolisMotorController@detailPolisGrid')->name('polis-motor.detailPolisGrid');
-                    Route::post('polis-motor/{record}/detailPolisGridShow', 'PolisMotorController@detailPolisGridShow')->name('polis-motor.detailPolisGridShow');
+                    Route::post('polis-motor/{record}/detailHargaGrid', 'PolisMotorController@detailHargaGrid')->name('polis-motor.detailHargaGrid');
+                    Route::post('polis-motor/{record}/detailHargaGridShow', 'PolisMotorController@detailHargaGridShow')->name('polis-motor.detailHargaGridShow');
             
                     // Detail 
-                    Route::get('polis-motor/{detail}/detailPolis', 'PolisMotorController@detailPolis')->name('polis-motor.detailPolis');
-                    Route::get('polis-motor/{detail}/detailPolisEdit', 'PolisMotorController@detailPolisEdit')->name('polis-motor.detailPolisEdit');
-                    Route::get('polis-motor/{detail}/detailPolisShow', 'PolisMotorController@detailPolisShow')->name('polis-motor.detailPolisShow');
-                    Route::patch('polis-motor/detailPolisStore', 'PolisMotorController@detailPolisStore')->name('polis-motor.detailPolisStore');
-                    Route::patch('polis-motor/{detail}/detailPolisUpdate', 'PolisMotorController@detailPolisUpdate')->name('polis-motor.detailPolisUpdate');
-                    Route::delete('polis-motor/{detail}/detailPolisDestroy', 'PolisMotorController@detailPolisDestroy')->name('polis-motor.detailPolisDestroy');
+                    Route::get('polis-motor/{detail}/detailHarga', 'PolisMotorController@detailHarga')->name('polis-motor.detailHarga');
+                    Route::get('polis-motor/{detail}/detailHargaEdit', 'PolisMotorController@detailHargaEdit')->name('polis-motor.detailHargaEdit');
+                    Route::get('polis-motor/{detail}/detailHargaShow', 'PolisMotorController@detailHargaShow')->name('polis-motor.detailHargaShow');
+                    Route::patch('polis-motor/detailHargaStore', 'PolisMotorController@detailHargaStore')->name('polis-motor.detailHargaStore');
+                    Route::patch('polis-motor/{detail}/detailHargaUpdate', 'PolisMotorController@detailHargaUpdate')->name('polis-motor.detailHargaUpdate');
+                    Route::delete('polis-motor/{detail}/detailHargaDestroy', 'PolisMotorController@detailHargaDestroy')->name('polis-motor.detailHargaDestroy');
             
                     Route::grid('polis-motor', 'PolisMotorController', [
                         'with' => ['submit', 'approval', 'print', 'history', 'tracking']
@@ -355,6 +358,7 @@ Route::middleware('auth')
                             ->name('asuransi-motor.')
                             ->group(
                                 function () {
+                                    // Rider Motor
                                     Route::get('asuransi-motor/{record}/rider', 'AsuransiMotorController@rider')->name('asuransi-motor.rider');
                                     Route::post('asuransi-motor/{record}/riderGrid', 'AsuransiMotorController@riderGrid')->name('asuransi-motor.riderGrid');
                                     Route::get('asuransi-motor/{record}/riderCreate', 'AsuransiMotorController@riderCreate')->name('asuransi-motor.riderCreate');
@@ -363,6 +367,15 @@ Route::middleware('auth')
                                     Route::patch('asuransi-motor/{rider}/riderUpdate', 'AsuransiMotorController@riderUpdate')->name('asuransi-motor.riderUpdate');
                                     Route::delete('asuransi-motor/{rider}/riderDestroy', 'AsuransiMotorController@riderDestroy')->name('asuransi-motor.riderDestroy');
                                     Route::get('asuransi-motor/{rider}/riderShow', 'AsuransiMotorController@riderShow')->name('asuransi-motor.riderShow');
+                                    // Persentasi Motor
+                                    Route::get('asuransi-motor/{record}/persentasi', 'AsuransiMotorController@persentasi')->name('asuransi-motor.persentasi');
+                                    Route::post('asuransi-motor/{record}/persentasiGrid', 'AsuransiMotorController@persentasiGrid')->name('asuransi-motor.persentasiGrid');
+                                    Route::get('asuransi-motor/{record}/persentasiCreate', 'AsuransiMotorController@persentasiCreate')->name('asuransi-motor.persentasiCreate');
+                                    Route::post('asuransi-motor/{record}/persentasiStore', 'AsuransiMotorController@persentasiStore')->name('asuransi-motor.persentasiStore');
+                                    Route::get('asuransi-motor/{persentasi}/persentasiEdit', 'AsuransiMotorController@persentasiEdit')->name('asuransi-motor.persentasiEdit');
+                                    Route::patch('asuransi-motor/{persentasi}/persentasiUpdate', 'AsuransiMotorController@persentasiUpdate')->name('asuransi-motor.persentasiUpdate');
+                                    Route::delete('asuransi-motor/{persentasi}/persentasiDestroy', 'AsuransiMotorController@persentasiDestroy')->name('asuransi-motor.persentasiDestroy');
+                                    Route::get('asuransi-motor/{persentasi}/persentasiShow', 'AsuransiMotorController@persentasiShow')->name('asuransi-motor.persentasiShow');
                                     Route::grid('asuransi-motor', 'AsuransiMotorController');
 
                                     Route::grid('merk', 'MerkController');

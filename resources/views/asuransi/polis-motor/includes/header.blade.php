@@ -7,17 +7,26 @@
                 <input type="text" readonly value="{{ $record->no_asuransi }}" name="no_asuransi" class="form-control" placeholder="{{ __('No Asuransi') }}">
             </div>
         </div>
+        
         <div class="form-group row">
-            <label class="col-md-4 col-form-label">{{ __('Tanggal') }}</label>
+            <label class="col-md-4 col-form-label">{{ __('Tanggal Asuransi') }}</label>
             <div class="col-md-8 parent-group">
-                <input disabled type="text" name="tanggal"
-                class="form-control base-plugin--datepicker tanggal" 
-                data-options='@json([
-                    "startDate" => "",
-                    "endDate"=> now()->format('d/m/Y')
-                ])'
-                value="{{ $record->tanggal->format('d/m/Y') }}"
-                placeholder="{{ __('Tanggal') }}">
+                <div class="row no-gutters input-group">
+                    <div class="col-md-6 parent-group" >
+                        <input disabled type="text" id="tanggal_asuransi_awal" name="tanggal"
+                            class="form-control base-plugin--datepicker date_start rounded-right-0"
+                            placeholder="{{ __('Awal') }}"
+                            value="{{ $record->tanggal->format('d/m/Y') }}"
+                            data-orientation="top">
+                    </div>
+                    <div class="col-md-6 parent-group" >
+                        <input disabled type="text" id="tanggal_asuransi_akhir" name="tanggal_akhir_asuransi"
+                            class="form-control base-plugin--datepicker date_end rounded-left-0"
+                            placeholder="{{ __('Akhir') }}"
+                            value="{{ $record->tanggal_akhir_asuransi->format('d/m/Y') }}"
+                            data-orientation="top" disabled>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="form-group row">
@@ -35,7 +44,7 @@
         <div class="form-group row">
             <label class="col-sm-4 col-form-label">{{ __('Asuransi Motor') }}</label>
             <div class="col-sm-8 parent-group">
-                <select disabled required name="asuransi_id" class="form-control base-plugin--select2-ajax"
+                <select disabled required id="asuransi_id" name="asuransi_id" class="form-control base-plugin--select2-ajax"
                     data-url="{{ route('ajax.selectAsuransiMotor', 'all') }}" placeholder="{{ __('Pilih Salah Satu') }}">
                     <option value="">{{ __('Pilih Salah Satu') }}</option>
                     @if (!empty($record->asuransi_id))
@@ -66,3 +75,6 @@
         </div>
     </div>
 </div>
+
+<input type="text" id="kode_wilayah" value="">
+<input type="text" id="persentasi_wilayah" value="">

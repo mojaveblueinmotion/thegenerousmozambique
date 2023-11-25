@@ -32,6 +32,12 @@ class DatabaseSeeder extends Seeder
         $this->call(TipeMobilSeeder::class);
         $this->call(KodePlatSeeder::class);
 
+        // Motor
+        $this->call(MerkMotorSeeder::class);
+        $this->call(SeriMotorSeeder::class);
+        $this->call(TahunMotorSeeder::class);
+        $this->call(TipeMotorSeeder::class);
+
         // Kendaraan
         $this->call(TipeKendaraanSeeder::class);
         $this->call(TipePemakaianSeeder::class);
@@ -54,6 +60,7 @@ class DatabaseSeeder extends Seeder
         
         // Asuransi Mobil
         $this->call(AsuransiMobilSeeder::class);
+        $this->call(AsuransiMotorSeeder::class);
 
     }
 }

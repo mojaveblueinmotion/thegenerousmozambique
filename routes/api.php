@@ -120,6 +120,18 @@ Route::post('getRiderByAsuransiId', [AsuransiMobilApiController::class, 'getRide
 Route::get('getHargaLengkapAsuransiMobil', [AsuransiMobilApiController::class, 'getHargaLengkapAsuransiMobil']);
 
 
+// Preview Harga Rider Motor 
+Route::post('getHargaAsuransiMotor', [AsuransiMotorApiController::class, 'getHargaAsuransiMotor']);
+Route::get('getAllPertanggunganTambahanMotor', [AsuransiMotorApiController::class, 'getAllPertanggunganTambahanMotor']);
+Route::get('getRiderMotorDefault', [AsuransiMotorApiController::class, 'getRiderMotorDefault']);
+
+Route::get('getPolisMotorSpesifik', [AsuransiMotorApiController::class, 'getPolisMotorSpesifik']);
+Route::post('getAsuransiByRiderMotor', [AsuransiMotorApiController::class, 'getAsuransiByRiderMotor']);
+
+Route::post('getAllRiderMotor', [AsuransiMotorApiController::class, 'getAllRiderMotor']);
+Route::post('getRiderByAsuransiIdMotor', [AsuransiMotorApiController::class, 'getRiderByAsuransiIdMotor']);
+Route::get('getHargaLengkapAsuransiMotor', [AsuransiMotorApiController::class, 'getHargaLengkapAsuransiMotor']);
+
 // ASURANSI PROPERTI
 Route::get('getOkupasi', [AsuransiPropertiApiController::class, 'getOkupasi']);
 Route::get('getKonstruksiProperti', [AsuransiPropertiApiController::class, 'getKonstruksiProperti']);

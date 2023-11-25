@@ -21,7 +21,7 @@
 					<div class="parent-group input-group-prepend"><span
 						class="input-group-text font-weight-bolder">Rp.</span>
 					</div>
-						<input value="{{ $record->detailNilai->nilai_modifikasi ?? '' }}" 
+						<input readonly value="{{ $record->detailNilai->nilai_modifikasi ?? '' }}" 
 						@if(request()->route()->getName() == $routes.'.detail.show' || request()->route()->getName() == $routes.'.approval') disabled @endif
 						class="form-control base-plugin--inputmask_currency nilai_modifikasi" id="nilai_modifikasi" name="nilai_modifikasi"
 							placeholder="{{ __('Nilai Modifikasi') }}">
@@ -37,16 +37,16 @@
 			</div>
 		</div>
 		<div class="form-group row">
-			<label class="col-md-4 col-form-label">{{ __('Nilai Motor') }}</label>
+			<label class="col-md-4 col-form-label">{{ __('Nilai Mobil') }}</label>
 			<div class="col-md-8 parent-group">
 				<div class="input-group">
 					<div class="parent-group input-group-prepend"><span
 						class="input-group-text font-weight-bolder">Rp.</span>
 					</div>
-						<input value="{{ $record->detailNilai->nilai_motor ?? '' }}" 
+						<input value="{{ $record->detailNilai->nilai_mobil ?? '' }}" 
 						@if(request()->route()->getName() == $routes.'.detail.show' || request()->route()->getName() == $routes.'.approval') disabled @endif
-						class="form-control base-plugin--inputmask_currency nilai_motor" id="nilai_motor" name="nilai_motor"
-							placeholder="{{ __('Nilai Motor') }}">
+						class="form-control base-plugin--inputmask_currency nilai_mobil" id="nilai_mobil" name="nilai_mobil"
+							placeholder="{{ __('Nilai Mobil') }}">
 				</div>
 			</div>
 		</div>
@@ -57,7 +57,7 @@
 					<div class="parent-group input-group-prepend"><span
 						class="input-group-text font-weight-bolder">Rp.</span>
 					</div>
-						<input value="{{ $record->detailNilai->nilai_pertanggungan ?? '' }}" 
+						<input readonly value="{{ $record->detailNilai->nilai_pertanggungan ?? '' }}" 
 						@if(request()->route()->getName() == $routes.'.detail.show' || request()->route()->getName() == $routes.'.approval') disabled @endif
 						class="form-control base-plugin--inputmask_currency nilai_pertanggungan" id="nilai_pertanggungan" name="nilai_pertanggungan"
 							placeholder="{{ __('Nilai Pertanggungan') }}">
@@ -73,6 +73,7 @@
 					<div class="col-md-6 parent-group" >
 						<input type="text" name="tanggal_awal"
 							@if(request()->route()->getName() == $routes.'.detail.show' || request()->route()->getName() == $routes.'.approval') disabled @endif
+							id="tanggal_mobil_awal"
 							class="form-control base-plugin--datepicker date_start rounded-right-0"
 							@if(!empty($record->detailNilai->tanggal_awal))
 							value="{{ $record->detailNilai->tanggal_awal->format('d/m/Y') }}"
@@ -87,6 +88,7 @@
 						@endif>
 						<input type="text" name="tanggal_akhir"
 							@if(request()->route()->getName() == $routes.'.detail.show' || request()->route()->getName() == $routes.'.approval') disabled @endif
+							id="tanggal_mobil_akhir"
 							class="form-control base-plugin--datepicker date_end rounded-left-0"
 							@if(!empty($record->detailNilai->tanggal_akhir))
 							value="{{ $record->detailNilai->tanggal_akhir->format('d/m/Y') }}"

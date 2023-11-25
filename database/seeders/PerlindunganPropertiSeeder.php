@@ -16,9 +16,6 @@ class PerlindunganPropertiSeeder extends Seeder
     {
         $data = [
             [ 
-                "name" => "Flexas"
-            ],
-            [ 
                 "name" => "Property All Risk"
             ],
             [ 

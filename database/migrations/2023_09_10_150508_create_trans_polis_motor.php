@@ -29,9 +29,9 @@ class CreateTransPolisMotor extends Migration
                 $table->string('status');
                 $table->commonFields();
 
-                $table->foreign('user_id')->references('id')->on('sys_users');
                 $table->foreign('agent_id')->references('id')->on('sys_users');   
-                $table->foreign('asuransi_id')->references('id')->on('ref_asuransi_motor');    
+                $table->foreign('user_id')->references('id')->on('sys_users');   
+                $table->foreign('asuransi_id')->references('id')->on('ref_asuransi_mobil');    
             }
         );
 
@@ -53,10 +53,10 @@ class CreateTransPolisMotor extends Migration
                 $table->commonFields();
 
                 $table->foreign('polis_id')->references('id')->on('trans_polis_motor');   
-                $table->foreign('merk_id')->references('id')->on('ref_merk_motor');   
-                $table->foreign('tahun_id')->references('id')->on('ref_tahun_motor');   
-                $table->foreign('tipe_id')->references('id')->on('ref_tipe_motor');   
-                $table->foreign('seri_id')->references('id')->on('ref_seri_motor');   
+                $table->foreign('merk_id')->references('id')->on('ref_merk_mobil');   
+                $table->foreign('tahun_id')->references('id')->on('ref_tahun_mobil');   
+                $table->foreign('tipe_id')->references('id')->on('ref_tipe_mobil');   
+                $table->foreign('seri_id')->references('id')->on('ref_seri_mobil');   
                 $table->foreign('tipe_kendaraan_id')->references('id')->on('ref_tipe_kendaraan');
                 
                 $table->foreign('tipe_pemakaian_id')->references('id')->on('ref_tipe_pemakaian');   
@@ -73,7 +73,7 @@ class CreateTransPolisMotor extends Migration
                 $table->longText('rincian_modifikasi');
                 $table->bigInteger('nilai_modifikasi')->unsigned();
                 $table->text('tipe');
-                $table->bigInteger('nilai_motor')->unsigned();
+                $table->bigInteger('nilai_mobil')->unsigned();
                 $table->bigInteger('nilai_pertanggungan')->unsigned();
                 $table->year('tahun_awal')->nullable();
                 $table->year('tahun_akhir')->nullable();

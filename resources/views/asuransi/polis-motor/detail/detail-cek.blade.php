@@ -36,6 +36,7 @@
 				<input type="hidden" name="tahun_id" value="{{ $record->detailCek->tahun_id ?? '' }}">
 				<select name="tahun_id" class="form-control base-plugin--select2-ajax tahun_id"
 					data-url="{{ route('ajax.tahunMotorOptions', ['seri_id' => '']) }}"
+					id="tahun_motor"
 					data-url-origin="{{ route('ajax.tahunMotorOptions') }}" placeholder="{{ __('Pilih Salah Satu') }}" disabled
 					required>
 					<option value="">{{ __('Pilih Salah Satu') }}</option>
@@ -48,14 +49,13 @@
 		<div class="form-group row">
 			<label class="col-md-4 col-form-label">{{ __('Tipe Motor') }}</label>
 			<div class="col-md-8 parent-group">
-				<input type="hidden" name="tipe_id" value="{{ $record->detailCek->tipe_id ?? '' }}">
 				<select name="tipe_id" class="form-control base-plugin--select2-ajax tipe_id"
 					data-url="{{ route('ajax.selectTipeMotor', ['search' => 'all']) }}"
 					@if(request()->route()->getName() == $routes.'.detail.show' || request()->route()->getName() == $routes.'.approval') disabled @endif	
 					placeholder="{{ __('Pilih Salah Satu') }}">
 					<option value="">{{ __('Pilih Salah Satu') }}</option>
 					@if (!empty($record->detailCek->tipe_id))
-						<option value="{{ $record->detailCek->tipe_id }}" selected>{{ $record->detailCek->tipeMotor->name }}</option>
+						<option value="{{ $record->detailCek->tipe_id }}" selected>{{ $record->detailCek->tipemotor->name }}</option>
 					@endif
 				</select>
 			</div>

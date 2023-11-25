@@ -184,7 +184,7 @@
 	</div>
 	<div class="col-md-6">
 		<div class="form-group row">
-			<label class="col-sm-4 col-form-label">{{ __('Motor Tampak Depan') }}</label>
+			<label class="col-sm-4 col-form-label">{{ __('Mobil Tampak Depan') }}</label>
 			<div class="col-sm-8 parent-group">
 				<div class="custom-file">
 					<input type="hidden" name="mobil_tampak_depan[uploaded]" class="uploaded" value="0">
@@ -220,7 +220,7 @@
 			</div>
 		</div>
 		<div class="form-group row">
-			<label class="col-sm-4 col-form-label">{{ __('Motor Tampak Kanan') }}</label>
+			<label class="col-sm-4 col-form-label">{{ __('Mobil Tampak Kanan') }}</label>
 			<div class="col-sm-8 parent-group">
 				<div class="custom-file">
 					<input type="hidden" name="mobil_tampak_kanan[uploaded]" class="uploaded" value="0">
@@ -256,7 +256,7 @@
 			</div>
 		</div>
 		<div class="form-group row">
-			<label class="col-sm-4 col-form-label">{{ __('Motor Tampak Kiri') }}</label>
+			<label class="col-sm-4 col-form-label">{{ __('Mobil Tampak Kiri') }}</label>
 			<div class="col-sm-8 parent-group">
 				<div class="custom-file">
 					<input type="hidden" name="mobil_tampak_kiri[uploaded]" class="uploaded" value="0">
@@ -292,7 +292,7 @@
 			</div>
 		</div>
 		<div class="form-group row">
-			<label class="col-sm-4 col-form-label">{{ __('Motor Tampak Belakang') }}</label>
+			<label class="col-sm-4 col-form-label">{{ __('Mobil Tampak Belakang') }}</label>
 			<div class="col-sm-8 parent-group">
 				<div class="custom-file">
 					<input type="hidden" name="mobil_tampak_belakang[uploaded]" class="uploaded" value="0">
@@ -328,7 +328,7 @@
 			</div>
 		</div>
 		<div class="form-group row">
-			<label class="col-sm-4 col-form-label">{{ __('Dashboard Motor') }}</label>
+			<label class="col-sm-4 col-form-label">{{ __('Dashboard Mobil') }}</label>
 			<div class="col-sm-8 parent-group">
 				<div class="custom-file">
 					<input type="hidden" name="dashboard_mobil[uploaded]" class="uploaded" value="0">

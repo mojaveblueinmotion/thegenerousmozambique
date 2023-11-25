@@ -86,7 +86,7 @@
 				</div>
 			</div>
 		</div>
-		@if(!empty($record->status) && ($record->status == 'pending' || $record->status == 'waiting.approval' || $record->status == 'completed'))
+		@if(!empty($record->status) && $record->status == 'pending')
 		<div class="container-fluid mt-5">
 			<div class="row">
 				<div class="col-md-12">
