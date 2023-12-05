@@ -19,6 +19,9 @@ class PolisMotorRider extends Model
         'polis_id',
         'rider_kendaraan_id',
         'persentasi_eksisting',
+        'persentasi_perkalian',
+        'harga_pembayaran',
+        'total_harga'
     ];
 
     /*******************************

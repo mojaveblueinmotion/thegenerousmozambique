@@ -24,7 +24,7 @@ class CreateTransPolisMotorRider extends Migration
                 $table->commonFields();
 
                 $table->foreign('rider_kendaraan_id')->references('id')->on('ref_asuransi_rider');   
-                $table->foreign('polis_id')->references('id')->on('trans_polis_mobil');   
+                $table->foreign('polis_id')->references('id')->on('trans_polis_motor');   
             }
         );
     }

@@ -7,7 +7,9 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Models\Asuransi\PolisMobil;
+use App\Models\Master\Geo\Province;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use App\Models\Setting\Globals\Files;
 use App\Models\Asuransi\PolisMobilCek;
@@ -22,11 +24,10 @@ use App\Models\Master\DatabaseMobil\Tahun;
 use App\Http\Controllers\Api\BaseController;
 use App\Models\Asuransi\PolisMobilModifikasi;
 use App\Models\Master\AsuransiMobil\AsuransiMobil;
-use App\Models\Master\AsuransiMobil\AsuransiPersentasiMobil;
 use App\Models\Master\DataAsuransi\RiderKendaraan;
 use App\Models\Master\AsuransiMobil\AsuransiRiderMobil;
 use App\Models\Master\DataAsuransi\PertanggunganTambahan;
-use App\Models\Master\Geo\Province;
+use App\Models\Master\AsuransiMobil\AsuransiPersentasiMobil;
 
 class AsuransiMobilApiController extends BaseController
 {
@@ -41,9 +42,15 @@ class AsuransiMobilApiController extends BaseController
             $tahun_asuransi = $tanggal_akhir_asuransi->format('Y') - $tanggal->format('Y');
             $tahun_kendaraan = now()->format('Y') - $dataTahunKendaraan->tahun;
 
+            $roles = Auth::user()->roles[0]->id;
             $noAsuransi = PolisMobil::generateNoAsuransi();
             $record = new PolisMobil;   
             $record->fill($request->only($record->fillable));
+            if($roles == 3){
+                $record->user_id = Auth::id();
+            }else{
+                $record->agent_id = Auth::id();
+            }
             $record->no_asuransi = $noAsuransi->no_asuransi;
             $record->harga_asuransi = Self::hitungHargaAsuransiForPenawaran($tahun_kendaraan, $request->nilai_pertanggungan, $tahun_asuransi, $request->asuransi_id, $request->province_id);
             // $record->tanggal_akhir_asuransi = $request->tanggal_akhir_asuransi;

@@ -105,7 +105,7 @@ class AuthController extends BaseController
                         'asuransiAgentMobil', 'asuransiAgentMotor', 'asuransiAgentProperti', 'asuransiAgentPerjalanan',
                         'asuransiProperti.penutupanPolis',
                         ])->find(Auth::id()),
-                    'jaringan' => $totalAsuransi
+                    'jaringan' => $totalAsuransi,
                 ]);
             }else{
                 if(!empty($request->requestGetMe)){
@@ -160,7 +160,7 @@ class AuthController extends BaseController
                     'data' => User::with([
                         'asuransiMobil', 'asuransiMotor', 'asuransiProperti', 'asuransiPerjalanan',
                         'asuransiProperti.penutupanPolis',
-                        ])->find(Auth::id()),
+                        ])->find(Auth::id())
                 ]);
             }
             

@@ -10,7 +10,7 @@ use App\Models\Traits\HasFiles;
 class PolisMotorModifikasi extends Model
 {
     use HasFiles;
-    protected $table = 'trans_polis_mobil_modifikasi';
+    protected $table = 'trans_polis_motor_modifikasi';
 
     protected $fillable = [
         'polis_id',

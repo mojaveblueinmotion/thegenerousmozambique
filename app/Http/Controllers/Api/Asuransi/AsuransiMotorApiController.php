@@ -124,7 +124,7 @@ class AsuransiMotorApiController extends BaseController
         }catch(Exception $e){
             return response()->json([
                 'success' => false,
-                'trace' => $e->getTraceAsString(),
+                'trace' => $e->getTrace(),
                 'message' => $e->getMessage(),
             ], 400);
         }
@@ -587,7 +587,7 @@ class AsuransiMotorApiController extends BaseController
         }catch(Exception $e){
             return response()->json([
                 'success' => false,
-                'trace' => $e->getTraceAsString(),
+                'trace' => $e->getTrace(),
                 'message' => $e->getMessage(),
             ], 400);
         }

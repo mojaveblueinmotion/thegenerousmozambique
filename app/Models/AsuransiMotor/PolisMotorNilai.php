@@ -15,7 +15,7 @@ class PolisMotorNilai extends Model
         'rincian_modifikasi',
         'nilai_modifikasi',
         'tipe',
-        'nilai_motor',
+        'nilai_mobil',
         'nilai_pertanggungan',
         'tahun_awal',
         'tahun_akhir',
