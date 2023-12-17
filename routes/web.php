@@ -345,6 +345,8 @@ Route::middleware('auth')
                             ->group(
                                 function () {
                                     Route::grid('okupasi', 'OkupasiController');
+                                    Route::grid('surrounding-risk', 'SurroundingRiskController');
+                                    Route::grid('kelas-bangunan', 'KelasBangunanController');
                                     Route::grid('perlindungan-properti', 'PerlindunganPropertiController');
                                     Route::grid('konstruksi-properti', 'KonstruksiPropertiController');
 

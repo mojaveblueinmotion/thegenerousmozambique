@@ -15,11 +15,13 @@ use App\Models\Master\AsuransiProperti\Okupasi;
 use App\Models\AsuransiProperti\PolisPropertiCek;
 use App\Models\AsuransiProperti\PolisPropertiNilai;
 use App\Models\AsuransiProperti\PolisPropertiPayment;
+use App\Models\Master\AsuransiProperti\KelasBangunan;
 use App\Models\AsuransiProperti\PolisPropertiPenutupan;
 use App\Models\Master\AsuransiProperti\AsuransiProperti;
 use App\Models\AsuransiProperti\PolisPropertiPerlindungan;
 use App\Models\Master\AsuransiProperti\KonstruksiProperti;
 use App\Models\Master\AsuransiProperti\PerlindunganProperti;
+use App\Models\AsuransiProperti\PolisPropertiSurroundingRisk;
 
 class PolisProperti extends Model
 {
@@ -45,6 +47,8 @@ class PolisProperti extends Model
         'village',
         'alamat',
         'tahun_bangunan',
+        'nilai_bangunan',
+        'kelas_bangunan_id',
         'konstruksi_id',
         'status',
     ];
@@ -114,6 +118,16 @@ class PolisProperti extends Model
     public function okupasi()
     {
         return $this->belongsTo(Okupasi::class, 'okupasi_id');
+    }
+
+    public function kelasBangunan()
+    {
+        return $this->belongsTo(KelasBangunan::class, 'kelas_bangunan_id');
+    }
+
+    public function detailSurrounding()
+    {
+        return $this->hasMany(PolisPropertiSurroundingRisk::class, 'polis_id');
     }
 
     public function perlindungan()

@@ -16,8 +16,11 @@ use App\Models\AsuransiProperti\PolisPropertiNilai;
 use App\Models\AsuransiProperti\PolisPropertiPayment;
 use App\Models\AsuransiProperti\PolisPropertiPenutupan;
 use App\Models\AsuransiProperti\PolisPropertiPerlindungan;
+use App\Models\AsuransiProperti\PolisPropertiSurroundingRisk;
+use App\Models\Master\AsuransiProperti\KelasBangunan;
 use App\Models\Master\AsuransiProperti\KonstruksiProperti;
 use App\Models\Master\AsuransiProperti\PerlindunganProperti;
+use App\Models\Master\AsuransiProperti\SurroundingRisk;
 
 class AsuransiPropertiApiController extends Controller
 {
@@ -67,9 +70,19 @@ class AsuransiPropertiApiController extends Controller
                     $pertanggungan->save();
                 }
             }
+            if($dataSurrounding = $request->input('surroundingRisk')){
+                // Loop through the "items" array and insert into the database
+                foreach ($dataSurrounding as $item) {
+                    $surrounding = new PolisPropertiSurroundingRisk();
+                    $surrounding->polis_id = $record->id;
+                    $surrounding->surrounding_risk_id = $item;
+                    $surrounding->save();
+                }
+            }
             $dataVarPenawaran = $request->input('penawaran');
             $okupasi = Okupasi::find($dataVarPenawaran['okupasi_id']);
             $city = City::find($dataVarPenawaran['city_id']);
+            $kelasBangunan = KelasBangunan::find($dataVarPenawaran['kelas_bangunan_id']);
             $konstruksi = KonstruksiProperti::find($dataVarPenawaran['konstruksi_id']);
             $zona_gempabumi = null;
             
@@ -98,7 +111,7 @@ class AsuransiPropertiApiController extends Controller
                     $zona_gempabumi = $konstruksi->zona_satu;
                     break;
             }
-            $harga_pertanggungan = $record->detailNilai->sum('nilai_pertanggungan');
+            $harga_pertanggungan = $record->detailNilai->sum('nilai_pertanggungan') + $dataVarPenawaran['nilai_bangunan'];
 
             if($dataPerlindungan = $request->input('perlindungan')){
                 foreach ($dataPerlindungan as $item) {
@@ -123,10 +136,10 @@ class AsuransiPropertiApiController extends Controller
                     }
 
                     if($item == 4){ // Kebakaran
-                        if($konstruksi->id == 1){
+                        if($kelasBangunan->id == 1){
                             $harga = ($harga_pertanggungan * $okupasi->tarif_konstruksi_satu) / 1000; 
                             $persentasi = $okupasi->tarif_konstruksi_satu;
-                        }elseif($konstruksi->id == 2){
+                        }elseif($kelasBangunan->id == 2){
                             $harga = ($harga_pertanggungan * $okupasi->tarif_konstruksi_dua) / 1000; 
                             $persentasi = $okupasi->tarif_konstruksi_dua;
                         }else{
@@ -284,6 +297,46 @@ class AsuransiPropertiApiController extends Controller
                 $data = Okupasi::where('name', 'like', '%' . $request->name . '%')->get();
             }else{
                 $data = Okupasi::all();
+            }
+
+            return response()->json([
+                'success' => true,
+                'data' => $data,
+            ]);
+        }catch(Exception $e){
+            return response()->json([
+                'success' => false,
+                'message' => $e
+            ], 400);
+        }
+    }
+
+    public function getKelasBangunan(Request $request){
+        try{
+            if(!empty($request->name)){
+                $data = KelasBangunan::where('name', 'like', '%' . $request->name . '%')->get();
+            }else{
+                $data = KelasBangunan::all();
+            }
+
+            return response()->json([
+                'success' => true,
+                'data' => $data,
+            ]);
+        }catch(Exception $e){
+            return response()->json([
+                'success' => false,
+                'message' => $e
+            ], 400);
+        }
+    }
+
+    public function getSurroundingRisk(Request $request){
+        try{
+            if(!empty($request->name)){
+                $data = SurroundingRisk::where('name', 'like', '%' . $request->name . '%')->get();
+            }else{
+                $data = SurroundingRisk::all();
             }
 
             return response()->json([
@@ -506,6 +559,8 @@ class AsuransiPropertiApiController extends Controller
                 'user',
                 'detailCek',
                 'detailNilai',
+                'detailSurrounding',
+                'detailSurrounding.surroundingRisk',
                 'detailPayment',
                 'detailPerlindungan',
                 'detailPerlindungan.perlindungan',

@@ -134,6 +134,8 @@ Route::get('getHargaLengkapAsuransiMotor', [AsuransiMotorApiController::class, '
 
 // ASURANSI PROPERTI
 Route::get('getOkupasi', [AsuransiPropertiApiController::class, 'getOkupasi']);
+Route::get('getSurroundingRisk', [AsuransiPropertiApiController::class, 'getSurroundingRisk']);
+Route::get('getKelasBangunan', [AsuransiPropertiApiController::class, 'getKelasBangunan']);
 Route::get('getKonstruksiProperti', [AsuransiPropertiApiController::class, 'getKonstruksiProperti']);
 Route::get('getPerlindunganProperti', [AsuransiPropertiApiController::class, 'getPerlindunganProperti']);
 Route::post('getPreviewHargaAsuransi', [AsuransiPropertiApiController::class, 'getPreviewHargaAsuransi']);

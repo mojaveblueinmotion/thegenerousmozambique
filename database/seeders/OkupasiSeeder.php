@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\Master\AsuransiProperti\Okupasi;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\File;
+
 
 class OkupasiSeeder extends Seeder
 {
@@ -14,29 +16,16 @@ class OkupasiSeeder extends Seeder
      */
     public function run()
     {
-        $data = [
-            [ 
-                "name" => "Dwelling House",
-                "code" => "2976",
-                'tarif_konstruksi_satu' => 0.294,
-                'tarif_konstruksi_dua' => 0.397,
-                'tarif_konstruksi_tiga' => 0.499,
-            ],
-            [ 
-                "name" => "Dwelling House for Boarding House",
-                "code" => "29761",
-                'tarif_konstruksi_satu' => 0.478,
-                'tarif_konstruksi_dua' => 0.645,
-                'tarif_konstruksi_tiga' => 0.812,
-            ],
-        ];
+        $path = base_path('database/seeders/json/okupasi.json');
+        $json = File::get($path);
+        $data = json_decode($json, true);
 
         foreach ($data as $val) {
             $record          = Okupasi::firstOrNew(['name' => $val['name']]);
-            $record->code = $val['code'];
-            $record->tarif_konstruksi_satu = $val['tarif_konstruksi_satu'];
-            $record->tarif_konstruksi_dua = $val['tarif_konstruksi_dua'];
-            $record->tarif_konstruksi_tiga = $val['tarif_konstruksi_tiga'];
+            $record->code = $val['code'] ?? null;
+            $record->tarif_konstruksi_satu = $val['tarif_konstruksi_satu'] ?? 0;
+            $record->tarif_konstruksi_dua = $val['tarif_konstruksi_dua'] ?? 0;
+            $record->tarif_konstruksi_tiga = $val['tarif_konstruksi_tiga'] ?? 0;
             $record->save();
         }
     }

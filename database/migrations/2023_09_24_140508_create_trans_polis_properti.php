@@ -66,6 +66,19 @@ class CreateTransPolisProperti extends Migration
 
         // To Many
         Schema::create(
+            'trans_polis_properti_surrounding',
+            function (Blueprint $table) {
+                $table->id();
+                $table->unsignedBigInteger('polis_id');
+                $table->unsignedBigInteger('surrounding_risk_id');
+                $table->commonFields();
+
+                $table->foreign('polis_id')->references('id')->on('trans_polis_properti');   
+            }
+        );
+
+        // To Many
+        Schema::create(
             'trans_polis_properti_perlindungan',
             function (Blueprint $table) {
                 $table->id();

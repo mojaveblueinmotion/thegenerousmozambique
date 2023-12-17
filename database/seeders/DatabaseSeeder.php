@@ -61,6 +61,7 @@ class DatabaseSeeder extends Seeder
         // Asuransi Mobil
         $this->call(AsuransiMobilSeeder::class);
         $this->call(AsuransiMotorSeeder::class);
-
+        $this->call(SurroundingRiskSeeder::class);
+        $this->call(KelasBangunanSeeder::class);
     }
 }

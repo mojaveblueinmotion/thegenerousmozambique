@@ -1,0 +1,2787 @@
+[
+    {
+     "name": "Mining  (underground  or above  ground)  of precious  metal (Gold, Silver, Platinum  and other  precious  metals) including  primarily smelting  and  refining",
+     "tarif_konstruksi_satu": 0.49,
+     "tarif_konstruksi_dua": 0.735,
+     "tarif_konstruksi_tiga": 0.98
+    },
+    {
+     "name": "Mining  (underground  or above  ground)  of Aluminium  including Smelting  and  Refinery",
+     "tarif_konstruksi_satu": 0.8,
+     "tarif_konstruksi_dua": 1.2,
+     "tarif_konstruksi_tiga": 1.6
+    },
+    {
+     "code": 2020,
+     "name": "Iron Mines (underground or above ground)",
+     "tarif_konstruksi_satu": 0.7,
+     "tarif_konstruksi_dua": 1.05,
+     "tarif_konstruksi_tiga": 1.4
+    },
+    {
+     "code": 2021,
+     "name": "Blast Furnaces and Iron Foundries, kegiatan pengubahan seperti reduksi bijih besi dalam tungku pembakar dan oxygen converter.",
+     "tarif_konstruksi_satu": 0.805,
+     "tarif_konstruksi_dua": 1.208,
+     "tarif_konstruksi_tiga": 1.61
+    },
+    {
+     "name": "Steelworks  and  Rolling Mills, termasuk  juga pembuatan  besi  dan  baja paduan. Termasuk kegiatan  tungku pembakar  selain  blast furnaces, steel converter, pabrik penggulungan  dan finishing; produksi  besi kasar  dalam  bentuk dasar  seperti  balok; produksi  besi  campuran.",
+     "tarif_konstruksi_satu": 1.085,
+     "tarif_konstruksi_dua": 1.628,
+     "tarif_konstruksi_tiga": 2.17
+    },
+    {
+     "code": 2041,
+     "name": "Exploration and Production for Crude Petroleum, on shore only",
+     "tarif_konstruksi_satu": 2.915
+    },
+    {
+     "code": 2042,
+     "name": "Crude Petroleum Pipe Lines including pump station, on shore only",
+     "tarif_konstruksi_satu": 1.635
+    },
+    {
+     "code": 2043,
+     "name": "Exploration and Production for Natural gas and geothermal, on shore",
+     "tarif_konstruksi_satu": 2.702
+    },
+    {
+     "code": 2044,
+     "name": "Natural Gas Transmission and distribution including geothermal (including pipelines and pump stations), on shore only",
+     "tarif_konstruksi_satu": 2.489
+    },
+    {
+     "code": 2045,
+     "name": "Terminal for crude oil",
+     "tarif_konstruksi_satu": 1.849
+    },
+    {
+     "code": 2046,
+     "name": "Terminals for Liquefied Gases",
+     "tarif_konstruksi_satu": 2.275
+    },
+    {
+     "code": 2047,
+     "name": "Other petroleum and gas products",
+     "tarif_konstruksi_satu": 3.2
+    },
+    {
+     "code": 2048,
+     "name": "Degasification Stations",
+     "tarif_konstruksi_satu": 2.062
+    },
+    {
+     "code": 2049,
+     "name": "Off shore Facilities",
+     "tarif_konstruksi_satu": 2.987
+    },
+    {
+     "name": "Mines, Other  than  Iron, Aluminium, Precious Metal, Salt"
+    },
+    {
+     "code": 2051,
+     "name": "Extraction and Processing above Ground",
+     "tarif_konstruksi_satu": 0.996,
+     "tarif_konstruksi_dua": 1.494,
+     "tarif_konstruksi_tiga": 1.992
+    },
+    {
+     "code": 2052,
+     "name": "Extraction and Processing below Ground",
+     "tarif_konstruksi_satu": 1.145,
+     "tarif_konstruksi_dua": 1.718,
+     "tarif_konstruksi_tiga": 2.291
+    },
+    {
+     "code": 2058,
+     "name": "Other and \/or Mixed",
+     "tarif_konstruksi_satu": 1.295,
+     "tarif_konstruksi_dua": 1.942,
+     "tarif_konstruksi_tiga": 2.59
+    },
+    {
+     "name": "Foundries  , Reduction Plants  (Smelting  and Refinery)  for  Metals (Excluding  Iron, Alumunium  and Precious  Metal)",
+     "tarif_konstruksi_satu": 0.754,
+     "tarif_konstruksi_dua": 1.13,
+     "tarif_konstruksi_tiga": 1.507
+    },
+    {
+     "name": "Coal and  Lignite Extraction, Asphalt Mines"
+    },
+    {
+     "code": 2071,
+     "name": "Extraction and Processing of Coal and Lignite above Ground (surface)",
+     "tarif_konstruksi_satu": 0.981,
+     "tarif_konstruksi_dua": 1.471,
+     "tarif_konstruksi_tiga": 1.962
+    },
+    {
+     "code": 2072,
+     "name": "Extraction and Processing of Coal and Lignite below Ground",
+     "tarif_konstruksi_satu": 1.422,
+     "tarif_konstruksi_dua": 2.133,
+     "tarif_konstruksi_tiga": 2.844
+    },
+    {
+     "code": 2073,
+     "name": "Coal Coking Plants (kokas)",
+     "tarif_konstruksi_satu": 1.275,
+     "tarif_konstruksi_dua": 1.913,
+     "tarif_konstruksi_tiga": 2.55
+    },
+    {
+     "code": 2074,
+     "name": "Manufacturing of Coal Briquettes",
+     "tarif_konstruksi_satu": 1.128,
+     "tarif_konstruksi_dua": 1.692,
+     "tarif_konstruksi_tiga": 2.256
+    },
+    {
+     "name": "Salt  mines"
+    },
+    {
+     "code": 2081,
+     "name": "Salt mines, extraction from rock or evaporated deposit",
+     "tarif_konstruksi_satu": 0.98,
+     "tarif_konstruksi_dua": 1.47,
+     "tarif_konstruksi_tiga": 1.96
+    },
+    {
+     "code": 2082,
+     "name": "Salt extraction  from sea water (tambak garam)",
+     "tarif_konstruksi_satu": 0.852,
+     "tarif_konstruksi_dua": 1.278,
+     "tarif_konstruksi_tiga": 1.704
+    },
+    {
+     "name": "Peat  extraction, Peat processing",
+     "tarif_konstruksi_satu": 0.5,
+     "tarif_konstruksi_dua": 0.75,
+     "tarif_konstruksi_tiga": 1
+    },
+    {
+     "name": "Stone, gravel and  sand extraction  installations",
+     "tarif_konstruksi_satu": 0.55,
+     "tarif_konstruksi_dua": 0.743,
+     "tarif_konstruksi_tiga": 0.935
+    },
+    {
+     "name": "Cement, Chalk, Lime and  Gypsum  Industry"
+    },
+    {
+     "code": 21121,
+     "name": "Cement Factories with rotary kiln",
+     "tarif_konstruksi_satu": 0.87,
+     "tarif_konstruksi_dua": 1.305,
+     "tarif_konstruksi_tiga": 1.74
+    },
+    {
+     "code": 21122,
+     "name": "Cement Factories without rotary kiln",
+     "tarif_konstruksi_satu": 0.78,
+     "tarif_konstruksi_dua": 1.17,
+     "tarif_konstruksi_tiga": 1.56
+    },
+    {
+     "code": 2113,
+     "name": "Concrete product, Ready Mixed Concrete, Unfired Stoneware, Industri beton, barang-barang dari batu buatan atau semen yang digunakan  dalam konstruksi, seperti ubin, batu bata, papan, lembaran, panel, pipa, tonggak dan sebagainya. Industri mortar bubuk. Industri beton, dry mixed dan mortar siap pakai. Industri barang-barang gips yang digunakan dalam konstruksi, seperti papan, lembaran, panel.",
+     "tarif_konstruksi_satu": 0.69,
+     "tarif_konstruksi_dua": 1.035,
+     "tarif_konstruksi_tiga": 1.38
+    },
+    {
+     "code": 2114,
+     "name": "Artificial Teeth,  non plastic",
+     "tarif_konstruksi_satu": 0.6,
+     "tarif_konstruksi_dua": 0.9,
+     "tarif_konstruksi_tiga": 1.2
+    },
+    {
+     "name": "Asbestos  Products, Cut Stone  and  Stone products, (Animal) Bones  and\/or  Shell crushing  for  feed, Mineral  Wool"
+    },
+    {
+     "code": 2121,
+     "name": "Asbestos products, Cut stone and stone products",
+     "tarif_konstruksi_satu": 1.188,
+     "tarif_konstruksi_dua": 1.782,
+     "tarif_konstruksi_tiga": 2.376
+    },
+    {
+     "code": 2122,
+     "name": "Animal Bones and\/or shell crushing for feed",
+     "tarif_konstruksi_satu": 1.366,
+     "tarif_konstruksi_dua": 2.049,
+     "tarif_konstruksi_tiga": 2.732
+    },
+    {
+     "code": 2123,
+     "name": "Mineral Wool",
+     "tarif_konstruksi_satu": 1.544,
+     "tarif_konstruksi_dua": 2.317,
+     "tarif_konstruksi_tiga": 3.089
+    },
+    {
+     "name": "Brick  and  Structural Clay  Tile, and  structural Clay  products  (batubata, genteng, ubin)"
+    },
+    {
+     "code": 2131,
+     "name": "Factories which only have Tunnel Kilns",
+     "tarif_konstruksi_satu": 0.6,
+     "tarif_konstruksi_dua": 0.9,
+     "tarif_konstruksi_tiga": 1.2
+    },
+    {
+     "code": 2132,
+     "name": "Factories which other types of Kilns",
+     "tarif_konstruksi_satu": 0.531,
+     "tarif_konstruksi_dua": 0.796,
+     "tarif_konstruksi_tiga": 1.062
+    },
+    {
+     "code": 2133,
+     "name": "Ceramic Color, Ceramic Frit, Glass Enamel Color, Inorganic Pigments",
+     "tarif_konstruksi_satu": 0.462,
+     "tarif_konstruksi_dua": 0.692,
+     "tarif_konstruksi_tiga": 0.923
+    },
+    {
+     "name": "Porcelain, Earthenware, Stoneware, Pottery, Clay Refractories,  Ceramic Wall and  tiles  factory"
+    },
+    {
+     "code": 2141,
+     "name": "Factories which only have Tunnel Kilns",
+     "tarif_konstruksi_satu": 0.748,
+     "tarif_konstruksi_dua": 1.122,
+     "tarif_konstruksi_tiga": 1.496
+    },
+    {
+     "code": 2142,
+     "name": "Factories with other kiln",
+     "tarif_konstruksi_satu": 0.65,
+     "tarif_konstruksi_dua": 0.976,
+     "tarif_konstruksi_tiga": 1.301
+    },
+    {
+     "name": "Glass  works, Glass blowing  plants"
+    },
+    {
+     "code": 2151,
+     "name": "Glass container, Pressed and Blown Glass and Glassware",
+     "tarif_konstruksi_satu": 1.834,
+     "tarif_konstruksi_dua": 2.75,
+     "tarif_konstruksi_tiga": 3.667
+    },
+    {
+     "code": 2152,
+     "name": "Flat Glass including tempered",
+     "tarif_konstruksi_satu": 1.594,
+     "tarif_konstruksi_dua": 2.392,
+     "tarif_konstruksi_tiga": 3.189
+    },
+    {
+     "code": 2158,
+     "name": "Mixed",
+     "tarif_konstruksi_satu": 2.073,
+     "tarif_konstruksi_dua": 3.109,
+     "tarif_konstruksi_tiga": 4.145
+    },
+    {
+     "name": "Glass  Products  Made  of Purchased  Glass,  lenses, safety  glass,  mirror",
+     "tarif_konstruksi_satu": 2.052,
+     "tarif_konstruksi_dua": 2.771,
+     "tarif_konstruksi_tiga": 3.489
+    },
+    {
+     "name": "Precious  stone workshops  and processing plant",
+     "tarif_konstruksi_satu": 0.375,
+     "tarif_konstruksi_dua": 0.506,
+     "tarif_konstruksi_tiga": 0.637
+    },
+    {
+     "name": "Emery  and  abrasive materials  factories",
+     "tarif_konstruksi_satu": 2.717,
+     "tarif_konstruksi_dua": 3.667,
+     "tarif_konstruksi_tiga": 4.618
+    },
+    {
+     "name": "Tarcoated  chippings manufacture, asphalt and  roofing  felt factories, Asphalt  Goods",
+     "tarif_konstruksi_satu": 3.124,
+     "tarif_konstruksi_dua": 4.686,
+     "tarif_konstruksi_tiga": 6.249
+    },
+    {
+     "name": "Foil and  sheet  making plant, Forging  Works, Locksmiths, Constructional Metalworks"
+    },
+    {
+     "code": 2201,
+     "name": "Sheet rolling  mills and foil making plants, forging works, locksmiths, constructional metal works, insulating pipes or metal",
+     "tarif_konstruksi_satu": 0.584,
+     "tarif_konstruksi_dua": 0.877,
+     "tarif_konstruksi_tiga": 1.169
+    },
+    {
+     "code": 2202,
+     "name": "Metal product from metal powder, industri penempaan, pengepresan, pencetakan dan pembentukan  logam dengan metalurgi bubuk",
+     "tarif_konstruksi_satu": 1.801,
+     "tarif_konstruksi_dua": 2.701,
+     "tarif_konstruksi_tiga": 3.602
+    },
+    {
+     "code": 2203,
+     "name": "Mixed",
+     "tarif_konstruksi_satu": 1.241,
+     "tarif_konstruksi_dua": 1.861,
+     "tarif_konstruksi_tiga": 2.481
+    },
+    {
+     "name": "Industrial, Mining  and Commercial Machinery, Metal Coating  Services, Coating  Processes  Using Flammable  Materials including  dipping  and spray  painting"
+    },
+    {
+     "code": 2211,
+     "name": "Industrial, Mining and Commercial Machinery"
+    },
+    {
+     "code": 22111,
+     "name": "Industrial, Mining and Commercial Machinery, without melting of metal",
+     "tarif_konstruksi_satu": 0.41,
+     "tarif_konstruksi_dua": 0.616,
+     "tarif_konstruksi_tiga": 0.821
+    },
+    {
+     "code": 22112,
+     "name": "Industrial, Mining and Commercial Machinery with melting of metal",
+     "tarif_konstruksi_satu": 0.472,
+     "tarif_konstruksi_dua": 0.708,
+     "tarif_konstruksi_tiga": 0.944
+    },
+    {
+     "code": 2212,
+     "name": "Metal Coating Services (enameling, zincing, galvanizing, anodizing)",
+     "tarif_konstruksi_satu": 3.279,
+     "tarif_konstruksi_dua": 4.919,
+     "tarif_konstruksi_tiga": 6.558
+    },
+    {
+     "code": 2213,
+     "name": "Coating Processes Using Flammable Materials including dipping  and spray painting services",
+     "tarif_konstruksi_satu": 0.941,
+     "tarif_konstruksi_dua": 1.411,
+     "tarif_konstruksi_tiga": 1.881
+    },
+    {
+     "code": 2214,
+     "name": "Metal\/Steel Furniture factories (where plastic and foam is utilized) plastic cupboards and foldable chair factories",
+     "tarif_konstruksi_satu": 1.996,
+     "tarif_konstruksi_dua": 2.993,
+     "tarif_konstruksi_tiga": 3.991
+    },
+    {
+     "code": 2215,
+     "name": "Metal \/ Steel Spring Mattresses Manufacturing (without foam)",
+     "tarif_konstruksi_satu": 2.57,
+     "tarif_konstruksi_dua": 3.854,
+     "tarif_konstruksi_tiga": 5.139
+    },
+    {
+     "code": 2218,
+     "name": "Mixed",
+     "tarif_konstruksi_satu": 3.689,
+     "tarif_konstruksi_dua": 5.533,
+     "tarif_konstruksi_tiga": 7.378
+    },
+    {
+     "name": "Manufacture  of electrical apparatus, Wet  &  dry  batteries, Measuring  and  Precision apparatus  photographic apparatus, Scientific laboratories"
+    },
+    {
+     "code": 2221,
+     "name": "Manufacture   assembly and repair of electrical machines and apparatus",
+     "tarif_konstruksi_satu": 0.75,
+     "tarif_konstruksi_dua": 1.125,
+     "tarif_konstruksi_tiga": 1.5
+    },
+    {
+     "code": 2222,
+     "name": "Wet and dry battery factories",
+     "tarif_konstruksi_satu": 0.58,
+     "tarif_konstruksi_dua": 0.87,
+     "tarif_konstruksi_tiga": 1.16
+    },
+    {
+     "code": 2223,
+     "name": "Manufacture of measuring equipment photographic apparatus precision instrument, and scientific  laboratories",
+     "tarif_konstruksi_satu": 0.823,
+     "tarif_konstruksi_dua": 1.235,
+     "tarif_konstruksi_tiga": 1.646
+    },
+    {
+     "code": 2228,
+     "name": "Mixed",
+     "tarif_konstruksi_satu": 1.375,
+     "tarif_konstruksi_dua": 2.062,
+     "tarif_konstruksi_tiga": 2.749
+    },
+    {
+     "name": "Cable  and  wire  factories"
+    },
+    {
+     "code": 2231,
+     "name": "Wire factories",
+     "tarif_konstruksi_satu": 0.754,
+     "tarif_konstruksi_dua": 1.131,
+     "tarif_konstruksi_tiga": 1.509
+    },
+    {
+     "code": 2232,
+     "name": "Cable factories",
+     "tarif_konstruksi_satu": 0.787,
+     "tarif_konstruksi_dua": 1.18,
+     "tarif_konstruksi_tiga": 1.574
+    },
+    {
+     "code": 2233,
+     "name": "Nails, screws, bolts and nuts factories",
+     "tarif_konstruksi_satu": 0.618,
+     "tarif_konstruksi_dua": 0.927,
+     "tarif_konstruksi_tiga": 1.236
+    },
+    {
+     "code": 2238,
+     "name": "Mixed",
+     "tarif_konstruksi_satu": 0.76,
+     "tarif_konstruksi_dua": 1.14,
+     "tarif_konstruksi_tiga": 1.52
+    },
+    {
+     "name": "Vehicle, Railways carriage  and  locomotive, Aircraft, Ships construction  and assembling  plants",
+     "tarif_konstruksi_satu": 0.429,
+     "tarif_konstruksi_dua": 0.644,
+     "tarif_konstruksi_tiga": 0.858
+    },
+    {
+     "code": 2241,
+     "name": "Vehicle construction plants including bicycle and becak (three wheels)",
+     "tarif_konstruksi_satu": 0.908,
+     "tarif_konstruksi_dua": 1.362,
+     "tarif_konstruksi_tiga": 1.815
+    },
+    {
+     "code": 2242,
+     "name": "Construction of railway carriages and locomotives",
+     "tarif_konstruksi_satu": 0.722,
+     "tarif_konstruksi_dua": 1.082,
+     "tarif_konstruksi_tiga": 1.443
+    },
+    {
+     "code": 2243,
+     "name": "Aircraft construction plants",
+     "tarif_konstruksi_satu": 0.676,
+     "tarif_konstruksi_dua": 1.014,
+     "tarif_konstruksi_tiga": 1.353
+    },
+    {
+     "code": 2244,
+     "name": "Ship construction, naval shipyards",
+     "tarif_konstruksi_satu": 0.41,
+     "tarif_konstruksi_dua": 0.615,
+     "tarif_konstruksi_tiga": 0.82
+    },
+    {
+     "code": 2245,
+     "name": "Vehicle assembling plants",
+     "tarif_konstruksi_satu": 0.861,
+     "tarif_konstruksi_dua": 1.291,
+     "tarif_konstruksi_tiga": 1.721
+    },
+    {
+     "code": 2248,
+     "name": "Mixed"
+    },
+    {
+     "name": "Manufacture  and  or assembly  of telecommunication  or computer  apparatus  and Integrated  circuits  (IC)",
+     "tarif_konstruksi_satu": 0.906,
+     "tarif_konstruksi_dua": 1.359,
+     "tarif_konstruksi_tiga": 1.812
+    },
+    {
+     "code": 2251,
+     "name": "Manufacture and or assembly of telecommunication apparatus",
+     "tarif_konstruksi_satu": 1.169,
+     "tarif_konstruksi_dua": 1.754,
+     "tarif_konstruksi_tiga": 2.338
+    },
+    {
+     "code": 2252,
+     "name": "Manufacture and or assembly of computer apparatus",
+     "tarif_konstruksi_satu": 1.354,
+     "tarif_konstruksi_dua": 2.031,
+     "tarif_konstruksi_tiga": 2.708
+    },
+    {
+     "code": 2253,
+     "name": "Manufacture   of Integrated Circuit (IC) from Chips"
+    },
+    {
+     "name": "Radio  and  Television Receiver  factories, and or  assembling plant, audio  and  audio-video recorder  and  or  player factories  and  or assembling  plants, manufacture  of parts  for radio  and  television receivers, audio  and audio-video  recorders and  or  players",
+     "tarif_konstruksi_satu": 0.824,
+     "tarif_konstruksi_dua": 1.236,
+     "tarif_konstruksi_tiga": 1.648
+    },
+    {
+     "code": 2261,
+     "name": "Radio and television receiver factories and or assembling plants, audio video recorder and or player factories and or assembling plants",
+     "tarif_konstruksi_satu": 1.187,
+     "tarif_konstruksi_dua": 1.78,
+     "tarif_konstruksi_tiga": 2.373
+    },
+    {
+     "code": 2262,
+     "name": "Factories of parts for radio and television receivers,   audio and audio-video recorders and players",
+     "tarif_konstruksi_satu": 0.778,
+     "tarif_konstruksi_dua": 1.167,
+     "tarif_konstruksi_tiga": 1.556
+    },
+    {
+     "name": "Light  Bulb  Factories, Manufacture  of Electronic  Tubes  and Fluorescent  Tubes, Neon Signs, LED",
+     "tarif_konstruksi_satu": 0.829,
+     "tarif_konstruksi_dua": 1.243,
+     "tarif_konstruksi_tiga": 1.657
+    },
+    {
+     "name": "Watches  and  clocks  and their  component parts factories"
+    },
+    {
+     "name": "Metal jewelry  and precious  metal goods factories\/diamond polishing  factories",
+     "tarif_konstruksi_satu": 0.771,
+     "tarif_konstruksi_dua": 1.156,
+     "tarif_konstruksi_tiga": 1.542
+    },
+    {
+     "code": 2299,
+     "name": "Other  industries  in  main category  22"
+    },
+    {
+     "name": "Chemical products, pharmaceutical products"
+    },
+    {
+     "code": 2300,
+     "name": "Chemical products, pharmaceutical products"
+    },
+    {
+     "code": 23001,
+     "name": "General Chemical Products Factories, including biofuel from vegetable oil and oleochemical"
+    },
+    {
+     "code": 230011,
+     "name": "General Chemical Products Factories flammable, including biofuel from  vegetable oil and oleochemical",
+     "tarif_konstruksi_satu": 2.272,
+     "tarif_konstruksi_dua": 3.409,
+     "tarif_konstruksi_tiga": 4.545
+    },
+    {
+     "code": 230012,
+     "name": "General Chemical Products Factories non flammable",
+     "tarif_konstruksi_satu": 1.976,
+     "tarif_konstruksi_dua": 2.964,
+     "tarif_konstruksi_tiga": 3.952
+    },
+    {
+     "code": 23002,
+     "name": "Pharmaceutical Products Factories and Medicated Plaster",
+     "tarif_konstruksi_satu": 0.984,
+     "tarif_konstruksi_dua": 1.476,
+     "tarif_konstruksi_tiga": 1.968
+    },
+    {
+     "code": 23003,
+     "name": "Natural Drug (Jamu)",
+     "tarif_konstruksi_satu": 1.188,
+     "tarif_konstruksi_dua": 1.783,
+     "tarif_konstruksi_tiga": 2.377
+    },
+    {
+     "code": 23004,
+     "name": "Pesticides and agricultural chemical",
+     "tarif_konstruksi_satu": 1.382,
+     "tarif_konstruksi_dua": 2.074,
+     "tarif_konstruksi_tiga": 2.765
+    },
+    {
+     "code": 23005,
+     "name": "Paint & Varnish"
+    },
+    {
+     "code": 230051,
+     "name": "Solvent base product",
+     "tarif_konstruksi_satu": 5.644,
+     "tarif_konstruksi_dua": 8.466,
+     "tarif_konstruksi_tiga": 11.288
+    },
+    {
+     "code": 230052,
+     "name": "Water base product",
+     "tarif_konstruksi_satu": 2.258,
+     "tarif_konstruksi_dua": 3.386,
+     "tarif_konstruksi_tiga": 4.515
+    },
+    {
+     "code": 23006,
+     "name": "Acid, Alkaline Factories",
+     "tarif_konstruksi_satu": 3.104,
+     "tarif_konstruksi_dua": 4.656,
+     "tarif_konstruksi_tiga": 6.208
+    },
+    {
+     "code": 23007,
+     "name": "Chlor - Alkali Electrolysis",
+     "tarif_konstruksi_satu": 3.951,
+     "tarif_konstruksi_dua": 5.926,
+     "tarif_konstruksi_tiga": 7.902
+    },
+    {
+     "code": 23008,
+     "name": "Air Separation Plants (production of Technical Gases,e.g. Oxygen, Nitrogen, Hydrogen)",
+     "tarif_konstruksi_satu": 4.797,
+     "tarif_konstruksi_dua": 7.196,
+     "tarif_konstruksi_tiga": 9.595
+    },
+    {
+     "code": 23009,
+     "name": "Peroxide Manufacture, Application and Storage",
+     "tarif_konstruksi_satu": 5.644,
+     "tarif_konstruksi_dua": 8.466,
+     "tarif_konstruksi_tiga": 11.288
+    },
+    {
+     "code": 23010,
+     "name": "Others than 23006 – 23009",
+     "tarif_konstruksi_satu": 6.491,
+     "tarif_konstruksi_dua": 9.736,
+     "tarif_konstruksi_tiga": 12.981
+    },
+    {
+     "code": 23012,
+     "name": "Ink Factory"
+    },
+    {
+     "code": 230121,
+     "name": "Ink factories - solvent base",
+     "tarif_konstruksi_satu": 1.38,
+     "tarif_konstruksi_dua": 2.07,
+     "tarif_konstruksi_tiga": 2.76
+    },
+    {
+     "code": 230122,
+     "name": "Ink factories - water base",
+     "tarif_konstruksi_satu": 1.2,
+     "tarif_konstruksi_dua": 1.8,
+     "tarif_konstruksi_tiga": 2.4
+    },
+    {
+     "name": "Oil Processing"
+    },
+    {
+     "code": 2310,
+     "name": "Oil Refinery, establishments primarily engaged in producing gasoline, kerosene, distillate fuel oils, residual fuel oils and through fractionation or straight distillation of crude oil, re-distillation of unfinished petroleum derivatives, cracking or other processes. Refinery products and byproducts typically include alkylates; asphalts; bitumens; benzene; butadiene; butylenes; ethylene; jet aircraft fuels; mineral jelly, oils and waxes; naphtha; naphthenic acids; paraffin wax; propylene; refinery gas; solvents; tar; biofuel",
+     "tarif_konstruksi_satu": 2.135
+    },
+    {
+     "name": "mixing, lubricating oil from petroleum refinery, etc."
+    },
+    {
+     "code": 2311,
+     "name": "Other   Chemical and physical treatments e.g washing, desalinating, etc"
+    },
+    {
+     "code": 23111,
+     "name": "Hydrogen Generation from Natural Gas, Refinery Gas, or Liquid",
+     "tarif_konstruksi_satu": 1.857,
+     "tarif_konstruksi_dua": 2.785,
+     "tarif_konstruksi_tiga": 3.713
+    },
+    {
+     "code": 23115,
+     "name": "Lubricating oils and greases by blending and compounding purchased materials including re- used oil processing",
+     "tarif_konstruksi_satu": 1.614,
+     "tarif_konstruksi_dua": 2.422,
+     "tarif_konstruksi_tiga": 3.229
+    },
+    {
+     "name": "Petrochemical works"
+    },
+    {
+     "code": 2321,
+     "name": "Primary Petrochemical Works with Basic Materials such as Ethylene, Methanol, Propylene, Butadiene, Benzene, Toluene, Xylene, producing  formaldehyde, Acetic acid, ethanol, ethylene, oxide, ethylene dichloride, polyethylene, ethylbenzene, cumene, polypropylene, isopropanol, propylene oxide, cyclohexane",
+     "tarif_konstruksi_satu": 1.616,
+     "tarif_konstruksi_dua": 2.425,
+     "tarif_konstruksi_tiga": 3.233
+    },
+    {
+     "code": 2322,
+     "name": "Petrochemical Intermediate Products (Vinyl Chloride Monomer and Other than 2321)",
+     "tarif_konstruksi_satu": 1.914,
+     "tarif_konstruksi_dua": 2.871,
+     "tarif_konstruksi_tiga": 3.828
+    },
+    {
+     "code": 2323,
+     "name": "Polymerization on a Large Scale including manufacture of PP, PET, PE, ABS, PU, PIR, PS, PVC, Teflon, silicones, etc",
+     "tarif_konstruksi_satu": 1.452,
+     "tarif_konstruksi_dua": 2.178,
+     "tarif_konstruksi_tiga": 2.904
+    },
+    {
+     "code": 2324,
+     "name": "Fertilizer factories on petrochemical basis"
+    },
+    {
+     "code": 23241,
+     "name": "Ammonia Production and\/or Urea Production",
+     "tarif_konstruksi_satu": 0.96,
+     "tarif_konstruksi_dua": 1.441,
+     "tarif_konstruksi_tiga": 1.921
+    },
+    {
+     "code": 23242,
+     "name": "Production of Melamine Powder\/Melamine Crystal using Urea Solution  and Ammonia Gas",
+     "tarif_konstruksi_satu": 0.835,
+     "tarif_konstruksi_dua": 1.253,
+     "tarif_konstruksi_tiga": 1.67
+    },
+    {
+     "code": 2325,
+     "name": "Synthetic rubber",
+     "tarif_konstruksi_satu": 3.092,
+     "tarif_konstruksi_dua": 4.638,
+     "tarif_konstruksi_tiga": 6.185
+    },
+    {
+     "code": 2326,
+     "name": "Liquefaction of natural gas",
+     "tarif_konstruksi_satu": 1.759,
+     "tarif_konstruksi_dua": 2.639,
+     "tarif_konstruksi_tiga": 3.518
+    },
+    {
+     "code": 2327,
+     "name": "Liquefaction of petroleum gases",
+     "tarif_konstruksi_satu": 1.224,
+     "tarif_konstruksi_dua": 1.836,
+     "tarif_konstruksi_tiga": 2.448
+    },
+    {
+     "code": 2328,
+     "name": "Petrol coke, soot, graphite",
+     "tarif_konstruksi_satu": 6.846,
+     "tarif_konstruksi_dua": 10.269,
+     "tarif_konstruksi_tiga": 13.692
+    },
+    {
+     "code": 2329,
+     "name": "Liquefaction and gasification of coal",
+     "tarif_konstruksi_satu": 8.215,
+     "tarif_konstruksi_dua": 12.323,
+     "tarif_konstruksi_tiga": 16.431
+    },
+    {
+     "name": "Storage  Tanks  (non terminal)"
+    },
+    {
+     "code": 2331,
+     "name": "Crude Oil (non terminal)",
+     "tarif_konstruksi_satu": 1.189,
+     "tarif_konstruksi_dua": 1.784,
+     "tarif_konstruksi_tiga": 2.379
+    },
+    {
+     "code": 2332,
+     "name": "Oil Products in Tanks located in the Harbour Area (non terminal)",
+     "tarif_konstruksi_satu": 1.4,
+     "tarif_konstruksi_dua": 2.1,
+     "tarif_konstruksi_tiga": 2.8
+    },
+    {
+     "code": 2333,
+     "name": "Liquefied Gases (non terminal)",
+     "tarif_konstruksi_satu": 2.127,
+     "tarif_konstruksi_dua": 3.19,
+     "tarif_konstruksi_tiga": 4.254
+    },
+    {
+     "code": 2334,
+     "name": "Pipeline for chemical products",
+     "tarif_konstruksi_satu": 1.422,
+     "tarif_konstruksi_dua": 2.133,
+     "tarif_konstruksi_tiga": 2.844
+    },
+    {
+     "code": 2335,
+     "name": "Other liquid chemicals (e.g ammonia)",
+     "tarif_konstruksi_satu": 1.589,
+     "tarif_konstruksi_dua": 2.384,
+     "tarif_konstruksi_tiga": 3.179
+    },
+    {
+     "name": "Manufacturer  of plastic articles, Foam  plastic, Synthetics  resin"
+    },
+    {
+     "code": 2341,
+     "name": "Manufacture of Plastic product by extrusions, compression, transfer molding, injection molding, blow molding, blow stretch molding, etc",
+     "tarif_konstruksi_satu": 2.505,
+     "tarif_konstruksi_dua": 3.758,
+     "tarif_konstruksi_tiga": 5.011
+    },
+    {
+     "code": 2342,
+     "name": "Manufacture and processing of foam  and expanded plastics",
+     "tarif_konstruksi_satu": 14.623,
+     "tarif_konstruksi_dua": 21.935,
+     "tarif_konstruksi_tiga": 29.246
+    },
+    {
+     "code": 2343,
+     "name": "Manufacturer of synthetic adhesive also called synthetic resin adhesive"
+    },
+    {
+     "code": 23431,
+     "name": "Using Inflammable \/ Combustible \/ Volatile Liquids and or Solids at anytime during the production process",
+     "tarif_konstruksi_satu": 5.85,
+     "tarif_konstruksi_dua": 8.776,
+     "tarif_konstruksi_tiga": 11.701
+    },
+    {
+     "code": 23432,
+     "name": "Using Liquid Methanol, Water and Air in a continuous process to produce Formaldehyde Gas thence Formaldehyde Solution in Water (Formalin) and then by mixing with either Urea, Phenol, Melamine, or Resorcinol in batch produce the related Formaldehyde Resin Adhesives",
+     "tarif_konstruksi_satu": 6.728,
+     "tarif_konstruksi_dua": 10.092,
+     "tarif_konstruksi_tiga": 13.456
+    },
+    {
+     "name": "Manufacture  of Artificial Fibres  (Petrochemical Feedstock  Process), Establishments primarily  engaged  in  the manufacture  of cellulosic  fibers, such  as rayon, viscose, cellulose acetate, cigarette tow, nitrocellulose fibers, etc, in  the  form of monofilament, yarn, staple  or  tow suitable for  further manufacturing  on spindles, looms, knitting  machines  or other  textile  processing equipment.",
+     "tarif_konstruksi_satu": 1.974,
+     "tarif_konstruksi_dua": 2.961,
+     "tarif_konstruksi_tiga": 3.948
+    },
+    {
+     "name": "Manufacture  of film, photographic paper, magnetic  tape  and celluloid  batch  adhesive tape  (selotip)",
+     "tarif_konstruksi_satu": 0.7,
+     "tarif_konstruksi_dua": 1.05,
+     "tarif_konstruksi_tiga": 1.4
+    },
+    {
+     "name": "Manufacture  of tooth paste, soap, detergents, polishes, etheric  oils, essences, parfumes, and cosmetic products, gelatine  non-synthetic adhesives, starches, candles  and  wax  goods, natural resins"
+    },
+    {
+     "code": 2371,
+     "name": "Manufacture of soaps, detergents and polishes",
+     "tarif_konstruksi_satu": 1.022,
+     "tarif_konstruksi_dua": 1.532,
+     "tarif_konstruksi_tiga": 2.043
+    },
+    {
+     "code": 2372,
+     "name": "Manufacture of etheric oils, essences, perfumes and cosmetic products",
+     "tarif_konstruksi_satu": 1.221,
+     "tarif_konstruksi_dua": 1.831,
+     "tarif_konstruksi_tiga": 2.442
+    },
+    {
+     "code": 2373,
+     "name": "Manufacture of gelatine, non-synthetic adhesives, starches, candles and wax goods, natural resins",
+     "tarif_konstruksi_satu": 2.839,
+     "tarif_konstruksi_dua": 4.258,
+     "tarif_konstruksi_tiga": 5.678
+    },
+    {
+     "code": 2374,
+     "name": "Manufacture of natural adhesives (glue) of organic origin coming from animal, vegetable or mineral source"
+    },
+    {
+     "code": 23741,
+     "name": "water based",
+     "tarif_konstruksi_satu": 3.8,
+     "tarif_konstruksi_dua": 5.7,
+     "tarif_konstruksi_tiga": 7.6
+    },
+    {
+     "code": 23742,
+     "name": "solvent based",
+     "tarif_konstruksi_satu": 4.37,
+     "tarif_konstruksi_dua": 6.555,
+     "tarif_konstruksi_tiga": 8.74
+    },
+    {
+     "code": 2378,
+     "name": "Mixed",
+     "tarif_konstruksi_satu": 2.2,
+     "tarif_konstruksi_dua": 3.3,
+     "tarif_konstruksi_tiga": 4.4
+    },
+    {
+     "name": "Chemical fertilizer factories  (conventional)",
+     "tarif_konstruksi_satu": 1.427,
+     "tarif_konstruksi_dua": 2.14,
+     "tarif_konstruksi_tiga": 2.853
+    },
+    {
+     "name": "Powders, explosives, matches  and  firework factories"
+    },
+    {
+     "code": 2399,
+     "name": "Powder, Explosives, Matches and Firework Factories",
+     "tarif_konstruksi_satu": 8.7,
+     "tarif_konstruksi_dua": 13.05,
+     "tarif_konstruksi_tiga": 17.4
+    },
+    {
+     "name": "Spinning  Mills, pre- spinning process"
+    },
+    {
+     "code": 2401,
+     "name": "Spinning mills, Pre- spinning : Animal Fibres",
+     "tarif_konstruksi_satu": 1.794,
+     "tarif_konstruksi_dua": 2.691,
+     "tarif_konstruksi_tiga": 3.588
+    },
+    {
+     "code": 2402,
+     "name": "Spinning mills, Pre- spinning : Vegetable and cellulose fibres",
+     "tarif_konstruksi_satu": 1.67,
+     "tarif_konstruksi_dua": 2.505,
+     "tarif_konstruksi_tiga": 3.34
+    },
+    {
+     "code": 2403,
+     "name": "Spinning mills, Pre- spinning : Synthetic fibres (mechanical process)",
+     "tarif_konstruksi_satu": 1.55,
+     "tarif_konstruksi_dua": 2.325,
+     "tarif_konstruksi_tiga": 3.1
+    },
+    {
+     "code": 2408,
+     "name": "Spinning mills,Pre- spinning : Mixed",
+     "tarif_konstruksi_satu": 2.159,
+     "tarif_konstruksi_dua": 3.239,
+     "tarif_konstruksi_tiga": 4.319
+    },
+    {
+     "name": "Weaving, pre-weaving process"
+    },
+    {
+     "code": 2411,
+     "name": "Weaving, Pre-Weaving Processes: Animal fibres",
+     "tarif_konstruksi_satu": 1.601,
+     "tarif_konstruksi_dua": 2.402,
+     "tarif_konstruksi_tiga": 3.203
+    },
+    {
+     "code": 2412,
+     "name": "Weaving, Pre-Weaving Processes: Vegetable and cellulose fibres",
+     "tarif_konstruksi_satu": 1.744,
+     "tarif_konstruksi_dua": 2.616,
+     "tarif_konstruksi_tiga": 3.489
+    },
+    {
+     "code": 2413,
+     "name": "Weaving, Pre-Weaving Processes: Synthetic fibres",
+     "tarif_konstruksi_satu": 1.428,
+     "tarif_konstruksi_dua": 2.142,
+     "tarif_konstruksi_tiga": 2.856
+    },
+    {
+     "code": 2418,
+     "name": "Weaving, Pre-Weaving Processes: Mixed",
+     "tarif_konstruksi_satu": 2.081,
+     "tarif_konstruksi_dua": 3.121,
+     "tarif_konstruksi_tiga": 4.162
+    },
+    {
+     "name": "Dressing  (including  but not  limited  to printing) and  finishing"
+    },
+    {
+     "code": 2421,
+     "name": "Dressing and finishing processes : Animal Fibres",
+     "tarif_konstruksi_satu": 1.738,
+     "tarif_konstruksi_dua": 2.608,
+     "tarif_konstruksi_tiga": 3.477
+    },
+    {
+     "code": 2422,
+     "name": "Dressing and finishing processes : Vegetable and Cellulose Fibres",
+     "tarif_konstruksi_satu": 1.21,
+     "tarif_konstruksi_dua": 1.816,
+     "tarif_konstruksi_tiga": 2.421
+    },
+    {
+     "code": 2423,
+     "name": "Dressing and finishing processes : Synthetic Fibres",
+     "tarif_konstruksi_satu": 1.386,
+     "tarif_konstruksi_dua": 2.079,
+     "tarif_konstruksi_tiga": 2.772
+    },
+    {
+     "code": 2428,
+     "name": "Dressing and finishing processes : Mixed",
+     "tarif_konstruksi_satu": 2.065,
+     "tarif_konstruksi_dua": 3.098,
+     "tarif_konstruksi_tiga": 4.131
+    },
+    {
+     "name": "Mixed  processes (Spinning,  Weaving, Dressing  and  Finishing)"
+    },
+    {
+     "code": 2431,
+     "name": "Mixed processes(spinning, weaving) :Animal fibres",
+     "tarif_konstruksi_satu": 1.79,
+     "tarif_konstruksi_dua": 2.685,
+     "tarif_konstruksi_tiga": 3.58
+    },
+    {
+     "code": 2432,
+     "name": "Mixed processes(spinning, weaving) : Vegetable and cellulose",
+     "tarif_konstruksi_satu": 1.445,
+     "tarif_konstruksi_dua": 2.167,
+     "tarif_konstruksi_tiga": 2.889
+    },
+    {
+     "code": 2433,
+     "name": "Mixed processes(spinning, weaving) : Synthetic fibres",
+     "tarif_konstruksi_satu": 1.745,
+     "tarif_konstruksi_dua": 2.618,
+     "tarif_konstruksi_tiga": 3.491
+    },
+    {
+     "code": 2438,
+     "name": "Mixed processes(spinning, weaving) : Mixed",
+     "tarif_konstruksi_satu": 2.102,
+     "tarif_konstruksi_dua": 3.153,
+     "tarif_konstruksi_tiga": 4.203
+    },
+    {
+     "name": "Processing  of textile waste  and  non  woven process"
+    },
+    {
+     "code": 2441,
+     "name": "Processing of textile waste : Animal fibres",
+     "tarif_konstruksi_satu": 4.89,
+     "tarif_konstruksi_dua": 7.335,
+     "tarif_konstruksi_tiga": 9.78
+    },
+    {
+     "code": 2442,
+     "name": "Processing of textile waste : Vegetable and cellulose fibres",
+     "tarif_konstruksi_satu": 4.877,
+     "tarif_konstruksi_dua": 7.315,
+     "tarif_konstruksi_tiga": 9.754
+    },
+    {
+     "code": 2443,
+     "name": "Processing of textile waste : Synthetic fibres",
+     "tarif_konstruksi_satu": 2.599,
+     "tarif_konstruksi_dua": 3.898,
+     "tarif_konstruksi_tiga": 5.198
+    },
+    {
+     "code": 2448,
+     "name": "Processing of textile waste : Mixed",
+     "tarif_konstruksi_satu": 3.658,
+     "tarif_konstruksi_dua": 5.486,
+     "tarif_konstruksi_tiga": 7.315
+    },
+    {
+     "name": "Ropemakers, stringmakers, sackmakers, blankets weaving  mills, carpet manufacturer"
+    },
+    {
+     "code": 2451,
+     "name": "Ropemakers, stringmakers and sackmakers",
+     "tarif_konstruksi_satu": 1.605,
+     "tarif_konstruksi_dua": 2.407,
+     "tarif_konstruksi_tiga": 3.209
+    },
+    {
+     "code": 2452,
+     "name": "Blanket waving mills and carpet manufacture",
+     "tarif_konstruksi_satu": 1.41,
+     "tarif_konstruksi_dua": 2.115,
+     "tarif_konstruksi_tiga": 2.82
+    },
+    {
+     "code": 2458,
+     "name": "Mixed",
+     "tarif_konstruksi_satu": 1.55,
+     "tarif_konstruksi_dua": 2.325,
+     "tarif_konstruksi_tiga": 3.1
+    },
+    {
+     "name": "Knitting  mills, knitwear factories, stocking factories, glove  factories hosiery  mills,  lamp  wick factories, clothing  and underwear manufacturers, sewing works, furrires, skin processing  works, custom  tailors, umbrella factories, felt  goods factories, lace"
+    },
+    {
+     "code": 2461,
+     "name": "Knitting mills, knitwear factories, stocking factories, hosiery mills, glove factories and lamp wick factories",
+     "tarif_konstruksi_satu": 3.18,
+     "tarif_konstruksi_dua": 4.771,
+     "tarif_konstruksi_tiga": 6.361
+    },
+    {
+     "code": 2462,
+     "name": "Clothing and underwear manufactures, sewing works, furriers, skin processing works, custom tailors (garment",
+     "tarif_konstruksi_satu": 1.285,
+     "tarif_konstruksi_dua": 1.928,
+     "tarif_konstruksi_tiga": 2.57
+    },
+    {
+     "name": "manufacture) - large scale\/factory based."
+    },
+    {
+     "code": 2463,
+     "name": "Umbrella factories, felt goods factories, lace factories, embroidery factories",
+     "tarif_konstruksi_satu": 1.655,
+     "tarif_konstruksi_dua": 2.483,
+     "tarif_konstruksi_tiga": 3.311
+    },
+    {
+     "code": 2464,
+     "name": "Batik Establishments",
+     "tarif_konstruksi_satu": 1.171,
+     "tarif_konstruksi_dua": 1.756,
+     "tarif_konstruksi_tiga": 2.341
+    },
+    {
+     "code": 2465,
+     "name": "Clothing, underwear, jacket, custom tailor and other garment product (konveksi) - small scale\/home industry",
+     "tarif_konstruksi_satu": 1.906,
+     "tarif_konstruksi_dua": 2.859,
+     "tarif_konstruksi_tiga": 3.812
+    },
+    {
+     "code": 2466,
+     "name": "Zipper Factories",
+     "tarif_konstruksi_satu": 2.514,
+     "tarif_konstruksi_dua": 3.771,
+     "tarif_konstruksi_tiga": 5.028
+    },
+    {
+     "code": 2468,
+     "name": "Mixed",
+     "tarif_konstruksi_satu": 1.499,
+     "tarif_konstruksi_dua": 2.248,
+     "tarif_konstruksi_tiga": 2.997
+    },
+    {
+     "name": "Upholstery, cushion maker’s  and  saddler's workshops",
+     "tarif_konstruksi_satu": 3.35,
+     "tarif_konstruksi_dua": 5.025,
+     "tarif_konstruksi_tiga": 6.7
+    },
+    {
+     "name": "Cotton  wool and  capoc factories",
+     "tarif_konstruksi_satu": 3.223,
+     "tarif_konstruksi_dua": 4.834,
+     "tarif_konstruksi_tiga": 6.446
+    },
+    {
+     "name": "Laundries, pressers,  dry- (chemical)  cleaning, cleaning  of feathers  and down"
+    },
+    {
+     "code": 2491,
+     "name": "Laundries and pressers",
+     "tarif_konstruksi_satu": 2.8,
+     "tarif_konstruksi_dua": 4.2,
+     "tarif_konstruksi_tiga": 5.6
+    },
+    {
+     "code": 2492,
+     "name": "Dry-(chemical) cleaning",
+     "tarif_konstruksi_satu": 2.354,
+     "tarif_konstruksi_dua": 3.531,
+     "tarif_konstruksi_tiga": 4.708
+    },
+    {
+     "code": 2493,
+     "name": "Cleaning of feathers and down",
+     "tarif_konstruksi_satu": 3.1,
+     "tarif_konstruksi_dua": 4.65,
+     "tarif_konstruksi_tiga": 6.2
+    },
+    {
+     "code": 2498,
+     "name": "Mixed",
+     "tarif_konstruksi_satu": 2.6,
+     "tarif_konstruksi_dua": 3.9,
+     "tarif_konstruksi_tiga": 5.2
+    },
+    {
+     "name": "Wood  pulp, cellulose based  on  wood  pulp  and linoleum  factories"
+    },
+    {
+     "code": 2501,
+     "name": "Wood pulp and cellulose based on wood pulp",
+     "tarif_konstruksi_satu": 2.852,
+     "tarif_konstruksi_dua": 4.279,
+     "tarif_konstruksi_tiga": 5.705
+    },
+    {
+     "code": 2502,
+     "name": "Lino factories",
+     "tarif_konstruksi_satu": 4.423,
+     "tarif_konstruksi_dua": 6.635,
+     "tarif_konstruksi_tiga": 8.846
+    },
+    {
+     "code": 2508,
+     "name": "Mixed",
+     "tarif_konstruksi_satu": 4.469,
+     "tarif_konstruksi_dua": 6.704,
+     "tarif_konstruksi_tiga": 8.938
+    },
+    {
+     "name": "Paper, cardboard  and hardboard  factories"
+    },
+    {
+     "code": 2511,
+     "name": "Paper manufacture",
+     "tarif_konstruksi_satu": 2.287,
+     "tarif_konstruksi_dua": 3.431,
+     "tarif_konstruksi_tiga": 4.574
+    },
+    {
+     "code": 2512,
+     "name": "Manufacture of cardboard and hardboard",
+     "tarif_konstruksi_satu": 3.067,
+     "tarif_konstruksi_dua": 4.601,
+     "tarif_konstruksi_tiga": 6.134
+    },
+    {
+     "code": 2518,
+     "name": "Mixed",
+     "tarif_konstruksi_satu": 3.282,
+     "tarif_konstruksi_dua": 4.922,
+     "tarif_konstruksi_tiga": 6.563
+    },
+    {
+     "name": "Cartoon  and  paper  goods factories, bookbinders"
+    },
+    {
+     "code": 2521,
+     "name": "Carton Manufacture including corrugated paper product",
+     "tarif_konstruksi_satu": 4.363,
+     "tarif_konstruksi_dua": 6.545,
+     "tarif_konstruksi_tiga": 8.726
+    },
+    {
+     "code": 2522,
+     "name": "Paper goods and or carton goods factories",
+     "tarif_konstruksi_satu": 2.959,
+     "tarif_konstruksi_dua": 4.439,
+     "tarif_konstruksi_tiga": 5.919
+    },
+    {
+     "code": 2523,
+     "name": "Bookbinders",
+     "tarif_konstruksi_satu": 2.807,
+     "tarif_konstruksi_dua": 4.211,
+     "tarif_konstruksi_tiga": 5.614
+    },
+    {
+     "code": 2528,
+     "name": "Mixed",
+     "tarif_konstruksi_satu": 3.869,
+     "tarif_konstruksi_dua": 5.804,
+     "tarif_konstruksi_tiga": 7.738
+    },
+    {
+     "name": "Newspaper printers, other  printers, art printing  works, lithographers, screen printing  on paper (sablon), typeplate workshops, block workshops, photogravure  workshops"
+    },
+    {
+     "code": 2531,
+     "name": "Newspaper printers",
+     "tarif_konstruksi_satu": 0.713,
+     "tarif_konstruksi_dua": 1.07,
+     "tarif_konstruksi_tiga": 1.426
+    },
+    {
+     "code": 2532,
+     "name": "Other printers, art printing works, lithographers, sablon",
+     "tarif_konstruksi_satu": 1.148,
+     "tarif_konstruksi_dua": 1.722,
+     "tarif_konstruksi_tiga": 2.296
+    },
+    {
+     "code": 2533,
+     "name": "Typeplate workshops, block workshops",
+     "tarif_konstruksi_satu": 1.892,
+     "tarif_konstruksi_dua": 2.838,
+     "tarif_konstruksi_tiga": 3.785
+    },
+    {
+     "code": 2534,
+     "name": "Photogravure workshop",
+     "tarif_konstruksi_satu": 1.762,
+     "tarif_konstruksi_dua": 2.642,
+     "tarif_konstruksi_tiga": 3.523
+    },
+    {
+     "code": 2538,
+     "name": "Mixed",
+     "tarif_konstruksi_satu": 2.134,
+     "tarif_konstruksi_dua": 3.201,
+     "tarif_konstruksi_tiga": 4.268
+    },
+    {
+     "name": "Coloured paper  and\/or wallpaper  printing  works",
+     "tarif_konstruksi_satu": 2.315,
+     "tarif_konstruksi_dua": 3.473,
+     "tarif_konstruksi_tiga": 4.631
+    },
+    {
+     "name": "Straw and  rush  goods factories",
+     "tarif_konstruksi_satu": 1.631,
+     "tarif_konstruksi_dua": 2.446,
+     "tarif_konstruksi_tiga": 3.262
+    },
+    {
+     "name": "Leather  production  and tanneries",
+     "tarif_konstruksi_satu": 1.323,
+     "tarif_konstruksi_dua": 1.985,
+     "tarif_konstruksi_tiga": 2.646
+    },
+    {
+     "name": "Shoe  factories"
+    },
+    {
+     "code": 2571,
+     "name": "Leather",
+     "tarif_konstruksi_satu": 5.415,
+     "tarif_konstruksi_dua": 8.122,
+     "tarif_konstruksi_tiga": 10.829
+    },
+    {
+     "code": 2572,
+     "name": "Rubber and\/or Canvas",
+     "tarif_konstruksi_satu": 5.844,
+     "tarif_konstruksi_dua": 8.767,
+     "tarif_konstruksi_tiga": 11.689
+    },
+    {
+     "code": 2578,
+     "name": "Other materials or mixture of above mentioned materials and other materials",
+     "tarif_konstruksi_satu": 7.269,
+     "tarif_konstruksi_dua": 10.904,
+     "tarif_konstruksi_tiga": 14.539
+    },
+    {
+     "name": "Leather  goods  factories"
+    },
+    {
+     "code": 2581,
+     "name": "Leather goods factories",
+     "tarif_konstruksi_satu": 0.931,
+     "tarif_konstruksi_dua": 1.396,
+     "tarif_konstruksi_tiga": 1.861
+    },
+    {
+     "code": 2582,
+     "name": "Imitation leather goods factories",
+     "tarif_konstruksi_satu": 2.985,
+     "tarif_konstruksi_dua": 4.477,
+     "tarif_konstruksi_tiga": 5.969
+    },
+    {
+     "code": 2588,
+     "name": "Mixed",
+     "tarif_konstruksi_satu": 2.854,
+     "tarif_konstruksi_dua": 4.281,
+     "tarif_konstruksi_tiga": 5.708
+    },
+    {
+     "name": "Rubber  goods  factories, foamed  rubber  factories, tyre  factories, vulcanizing  works, rubber  factories  (non estate  risk), tyre  cord manufacturers"
+    },
+    {
+     "code": 2591,
+     "name": "Rubber goods factories (excluding foamed rubber)",
+     "tarif_konstruksi_satu": 2.603,
+     "tarif_konstruksi_dua": 3.905,
+     "tarif_konstruksi_tiga": 5.206
+    },
+    {
+     "code": 2592,
+     "name": "Foamed rubber factories",
+     "tarif_konstruksi_satu": 8.692,
+     "tarif_konstruksi_dua": 13.038,
+     "tarif_konstruksi_tiga": 17.385
+    },
+    {
+     "code": 2593,
+     "name": "Tyre factories, vulcanizing works rubber factories (non estate risks)",
+     "tarif_konstruksi_satu": 1.036,
+     "tarif_konstruksi_dua": 1.554,
+     "tarif_konstruksi_tiga": 2.072
+    },
+    {
+     "code": 25931,
+     "name": "Tyre Cord Manufacturers (using Tyre Yarn as basic Material)",
+     "tarif_konstruksi_satu": 0.901,
+     "tarif_konstruksi_dua": 1.351,
+     "tarif_konstruksi_tiga": 1.802
+    },
+    {
+     "code": 2594,
+     "name": "Remilling factories",
+     "tarif_konstruksi_satu": 2.837,
+     "tarif_konstruksi_dua": 4.256,
+     "tarif_konstruksi_tiga": 5.674
+    },
+    {
+     "code": 2595,
+     "name": "Smoke houses (rubber)",
+     "tarif_konstruksi_satu": 22.271,
+     "tarif_konstruksi_dua": 33.407,
+     "tarif_konstruksi_tiga": 44.542
+    },
+    {
+     "code": 2596,
+     "name": "Crumb Rubber Factories (natural and recycling)",
+     "tarif_konstruksi_satu": 3.13,
+     "tarif_konstruksi_dua": 4.694,
+     "tarif_konstruksi_tiga": 6.259
+    },
+    {
+     "code": 2598,
+     "name": "Mixed",
+     "tarif_konstruksi_satu": 6.007,
+     "tarif_konstruksi_dua": 9.011,
+     "tarif_konstruksi_tiga": 12.014
+    },
+    {
+     "name": "Sawmills,  carpenter's shops, parquet  factories, sawing  and  cutting  of firewood"
+    },
+    {
+     "code": 2601,
+     "name": "Sawmills, panglong (sawmills  with manual manufacture only)",
+     "tarif_konstruksi_satu": 7.031,
+     "tarif_konstruksi_dua": 10.546,
+     "tarif_konstruksi_tiga": 14.062
+    },
+    {
+     "code": 2602,
+     "name": "Carpenter's shops, parquet factories sawing and cutting of firewood",
+     "tarif_konstruksi_satu": 3.015,
+     "tarif_konstruksi_dua": 4.523,
+     "tarif_konstruksi_tiga": 6.031
+    },
+    {
+     "code": 2603,
+     "name": "Wooden sport equipment",
+     "tarif_konstruksi_satu": 3.92,
+     "tarif_konstruksi_dua": 5.88,
+     "tarif_konstruksi_tiga": 7.84
+    },
+    {
+     "code": 2604,
+     "name": "Obat nyamuk bakar\/mosquito coil factories",
+     "tarif_konstruksi_satu": 3.32,
+     "tarif_konstruksi_dua": 4.98,
+     "tarif_konstruksi_tiga": 6.64
+    },
+    {
+     "code": 2605,
+     "name": "Toothpick, chopsticks factories",
+     "tarif_konstruksi_satu": 7.803,
+     "tarif_konstruksi_dua": 11.704,
+     "tarif_konstruksi_tiga": 15.605
+    },
+    {
+     "code": 2606,
+     "name": "Rattan drying  & peeling mills",
+     "tarif_konstruksi_satu": 3.394,
+     "tarif_konstruksi_dua": 5.091,
+     "tarif_konstruksi_tiga": 6.788
+    },
+    {
+     "code": 2608,
+     "name": "Mixed",
+     "tarif_konstruksi_satu": 15.138,
+     "tarif_konstruksi_dua": 22.708,
+     "tarif_konstruksi_tiga": 30.277
+    },
+    {
+     "name": "Furniture  manufacture, cabinet  makers, wooden boat  builders, bamboo, rattan  and  wooden carvings  and  handicrafts",
+     "tarif_konstruksi_satu": 4,
+     "tarif_konstruksi_dua": 6,
+     "tarif_konstruksi_tiga": 8
+    },
+    {
+     "name": "Manufacture  of wood fibre  board, hardboard masonite, wood chipboard, particle board, pressed  wood  and plywood, veneers"
+    },
+    {
+     "code": 2621,
+     "name": "Manufacture of fibreboard, hardboard, Masonite",
+     "tarif_konstruksi_satu": 1.523,
+     "tarif_konstruksi_dua": 2.285,
+     "tarif_konstruksi_tiga": 3.046
+    },
+    {
+     "code": 2622,
+     "name": "manufacture of wood chipboard, particle board, pressed wood",
+     "tarif_konstruksi_satu": 2.957,
+     "tarif_konstruksi_dua": 4.436,
+     "tarif_konstruksi_tiga": 5.914
+    },
+    {
+     "code": 2623,
+     "name": "Manufacture of plywood (triplex, multiplex) and veneer and blackboard, laminboard, fancy flooring and other related products provided carried out in the same (plywood) manufacture building using formaldehyde synthetic resin adhesives",
+     "tarif_konstruksi_satu": 4.466,
+     "tarif_konstruksi_dua": 6.699,
+     "tarif_konstruksi_tiga": 8.932
+    },
+    {
+     "code": 2624,
+     "name": "Sirap  factories",
+     "tarif_konstruksi_satu": 8.892,
+     "tarif_konstruksi_dua": 13.338,
+     "tarif_konstruksi_tiga": 17.785
+    },
+    {
+     "code": 2628,
+     "name": "Mixed",
+     "tarif_konstruksi_satu": 4.37,
+     "tarif_konstruksi_dua": 6.555,
+     "tarif_konstruksi_tiga": 8.74
+    },
+    {
+     "name": "Turner's  shop, coachbuilder's  shop, pipes, walking-sticks and  picture  frame factories, pencil factories",
+     "tarif_konstruksi_satu": 1.883,
+     "tarif_konstruksi_dua": 2.824,
+     "tarif_konstruksi_tiga": 3.766
+    },
+    {
+     "name": "Wicker  -  Work  Factories (anyaman  bambu)",
+     "tarif_konstruksi_satu": 6.841,
+     "tarif_konstruksi_dua": 10.262,
+     "tarif_konstruksi_tiga": 13.683
+    },
+    {
+     "name": "Cork  goods  factories such  as  shuttle  cock factories",
+     "tarif_konstruksi_satu": 5.415,
+     "tarif_konstruksi_dua": 8.123,
+     "tarif_konstruksi_tiga": 10.831
+    },
+    {
+     "name": "Broom, brush  and paintbrush  factories",
+     "tarif_konstruksi_satu": 1.428,
+     "tarif_konstruksi_dua": 2.142,
+     "tarif_konstruksi_tiga": 2.856
+    },
+    {
+     "name": "Timber  impregnation installations, plywood coating  installation",
+     "tarif_konstruksi_satu": 3.836,
+     "tarif_konstruksi_dua": 5.753,
+     "tarif_konstruksi_tiga": 7.671
+    },
+    {
+     "name": "Wooden  musical instruments  factories",
+     "tarif_konstruksi_satu": 2.4,
+     "tarif_konstruksi_dua": 3.6,
+     "tarif_konstruksi_tiga": 4.8
+    },
+    {
+     "name": "Charcoal producers  and other  industries  in  main category  26",
+     "tarif_konstruksi_satu": 3.418,
+     "tarif_konstruksi_dua": 5.126,
+     "tarif_konstruksi_tiga": 6.835
+    },
+    {
+     "name": "Corn  mills,  paddy  (rice), gambir"
+    },
+    {
+     "code": 2701,
+     "name": "Corn mills",
+     "tarif_konstruksi_satu": 0.853,
+     "tarif_konstruksi_dua": 1.28,
+     "tarif_konstruksi_tiga": 1.707
+    },
+    {
+     "code": 2702,
+     "name": "Fodder mills",
+     "tarif_konstruksi_satu": 1.141,
+     "tarif_konstruksi_dua": 1.712,
+     "tarif_konstruksi_tiga": 2.283
+    },
+    {
+     "code": 2703,
+     "name": "Gaplek mills",
+     "tarif_konstruksi_satu": 0.508,
+     "tarif_konstruksi_dua": 0.762,
+     "tarif_konstruksi_tiga": 1.016
+    },
+    {
+     "code": 2704,
+     "name": "Gambir factories",
+     "tarif_konstruksi_satu": 2.742,
+     "tarif_konstruksi_dua": 4.113,
+     "tarif_konstruksi_tiga": 5.483
+    },
+    {
+     "code": 2705,
+     "name": "Flour Mills (tepung  terigu, tepung tapioka, tepung sagu, tepung beras, etc)",
+     "tarif_konstruksi_satu": 0.612,
+     "tarif_konstruksi_dua": 0.918,
+     "tarif_konstruksi_tiga": 1.224
+    },
+    {
+     "code": 2708,
+     "name": "Mixed including feed mill",
+     "tarif_konstruksi_satu": 1.825,
+     "tarif_konstruksi_dua": 2.737,
+     "tarif_konstruksi_tiga": 3.65
+    },
+    {
+     "code": 2709,
+     "name": "Paddy & Hulling Mills",
+     "tarif_konstruksi_satu": 1.008,
+     "tarif_konstruksi_dua": 1.511,
+     "tarif_konstruksi_tiga": 2.015
+    },
+    {
+     "name": "Sugar  mills,  chocolate factories, sweets factories"
+    },
+    {
+     "code": 2711,
+     "name": "Sugar mills, chocolate factories, sweets factories"
+    },
+    {
+     "code": 27111,
+     "name": "sugar refinery plant",
+     "tarif_konstruksi_satu": 0.788,
+     "tarif_konstruksi_dua": 1.183,
+     "tarif_konstruksi_tiga": 1.577
+    },
+    {
+     "code": 27112,
+     "name": "cane sugar plant",
+     "tarif_konstruksi_satu": 0.891,
+     "tarif_konstruksi_dua": 1.337,
+     "tarif_konstruksi_tiga": 1.783
+    },
+    {
+     "code": 27113,
+     "name": "Chocolate and Sweets Factories",
+     "tarif_konstruksi_satu": 0.686,
+     "tarif_konstruksi_dua": 1.028,
+     "tarif_konstruksi_tiga": 1.371
+    },
+    {
+     "name": "Food  paste  producers, bakeries, processed  food factories"
+    },
+    {
+     "code": 2721,
+     "name": "Alimentary Paste Producers (dried dough, pasta, macaroni, etc)",
+     "tarif_konstruksi_satu": 1.115,
+     "tarif_konstruksi_dua": 1.673,
+     "tarif_konstruksi_tiga": 2.23
+    },
+    {
+     "code": 2722,
+     "name": "Bakeries and biscuit works",
+     "tarif_konstruksi_satu": 0.713,
+     "tarif_konstruksi_dua": 1.07,
+     "tarif_konstruksi_tiga": 1.426
+    },
+    {
+     "code": 2723,
+     "name": "Processed food factories (bihun, mie, lomie, kerupuk) and the like",
+     "tarif_konstruksi_satu": 1.345,
+     "tarif_konstruksi_dua": 2.018,
+     "tarif_konstruksi_tiga": 2.691
+    },
+    {
+     "code": 2728,
+     "name": "Mixed",
+     "tarif_konstruksi_satu": 1.27,
+     "tarif_konstruksi_dua": 1.905,
+     "tarif_konstruksi_tiga": 2.54
+    },
+    {
+     "name": "Preserves  factories  (jams etc), pabrik  sari  gula, monosodium  glutamate (MSG)  producers, meat, meat products  and  fish product  factories"
+    },
+    {
+     "code": 2731,
+     "name": "Preserves Factories (Jam, fruit canning, etc.), Pabrik sari gula Monosodium Glutamate (MSG ) Producers",
+     "tarif_konstruksi_satu": 0.972,
+     "tarif_konstruksi_dua": 1.458,
+     "tarif_konstruksi_tiga": 1.944
+    },
+    {
+     "code": 2732,
+     "name": "Meat, meat products and fish products factories",
+     "tarif_konstruksi_satu": 0.923,
+     "tarif_konstruksi_dua": 1.384,
+     "tarif_konstruksi_tiga": 1.845
+    },
+    {
+     "code": 2733,
+     "name": "Soya bean, tomato and hot pepper sauce",
+     "tarif_konstruksi_satu": 0.465,
+     "tarif_konstruksi_dua": 0.698,
+     "tarif_konstruksi_tiga": 0.931
+    },
+    {
+     "code": 2734,
+     "name": "Poultry Farms",
+     "tarif_konstruksi_satu": 1.48,
+     "tarif_konstruksi_dua": 2.221,
+     "tarif_konstruksi_tiga": 2.961
+    },
+    {
+     "code": 2735,
+     "name": "Other farms",
+     "tarif_konstruksi_satu": 0.937,
+     "tarif_konstruksi_dua": 1.406,
+     "tarif_konstruksi_tiga": 1.875
+    },
+    {
+     "code": 2736,
+     "name": "Poultry Hatcheries",
+     "tarif_konstruksi_satu": 0.968,
+     "tarif_konstruksi_dua": 1.451,
+     "tarif_konstruksi_tiga": 1.935
+    },
+    {
+     "code": 2737,
+     "name": "Fish Hatcheries",
+     "tarif_konstruksi_satu": 0.823,
+     "tarif_konstruksi_dua": 1.234,
+     "tarif_konstruksi_tiga": 1.646
+    },
+    {
+     "name": "Edible  fats, edible  oil and  desiccated  coconut producers"
+    },
+    {
+     "code": 2741,
+     "name": "Edible fats producers",
+     "tarif_konstruksi_satu": 1.553,
+     "tarif_konstruksi_dua": 2.329,
+     "tarif_konstruksi_tiga": 3.105
+    },
+    {
+     "code": 2742,
+     "name": "Edible Oils Plants and Other Plants Producing Edible Palm Oil (CPO, PKO, CCO), cooking oil and margarine from vegetable oil or Other Edible Oils or Desiccated Coconut",
+     "tarif_konstruksi_satu": 0.81,
+     "tarif_konstruksi_dua": 1.215,
+     "tarif_konstruksi_tiga": 1.62
+    },
+    {
+     "code": 2743,
+     "name": "Storage of crude palm oil (CPO) outside estates including storage of edible oils in tanks",
+     "tarif_konstruksi_satu": 1.506,
+     "tarif_konstruksi_dua": 2.26,
+     "tarif_konstruksi_tiga": 3.013
+    },
+    {
+     "code": 2748,
+     "name": "Mixed",
+     "tarif_konstruksi_satu": 1.761,
+     "tarif_konstruksi_dua": 2.641,
+     "tarif_konstruksi_tiga": 3.521
+    },
+    {
+     "name": "Dairy  Product"
+    },
+    {
+     "code": 2751,
+     "name": "Dairies and Dairy Products, including fresh milk, UHT milk, yogurt, ice cream, cheese, butter, etc",
+     "tarif_konstruksi_satu": 0.584,
+     "tarif_konstruksi_dua": 0.876,
+     "tarif_konstruksi_tiga": 1.168
+    },
+    {
+     "code": 2752,
+     "name": "Powder milk",
+     "tarif_konstruksi_satu": 0.934,
+     "tarif_konstruksi_dua": 1.4,
+     "tarif_konstruksi_tiga": 1.867
+    },
+    {
+     "name": "Coffee  roasting  plants and  coffee  extract factories, malting"
+    },
+    {
+     "code": 2761,
+     "name": "Coffee roasting plants and other roasting plants, coffee extract factories, coffee sorting and peeling establishments, cashew nut roasting and peeling plants",
+     "tarif_konstruksi_satu": 0.802,
+     "tarif_konstruksi_dua": 1.203,
+     "tarif_konstruksi_tiga": 1.605
+    },
+    {
+     "code": 2762,
+     "name": "Malting",
+     "tarif_konstruksi_satu": 0.9,
+     "tarif_konstruksi_dua": 1.35,
+     "tarif_konstruksi_tiga": 1.8
+    },
+    {
+     "code": 2763,
+     "name": "Tea Sheds and Tea Factories, including herb drink (serbat, etc)",
+     "tarif_konstruksi_satu": 1.277,
+     "tarif_konstruksi_dua": 1.915,
+     "tarif_konstruksi_tiga": 2.554
+    },
+    {
+     "code": 2768,
+     "name": "Mixed",
+     "tarif_konstruksi_satu": 1.25,
+     "tarif_konstruksi_dua": 1.875,
+     "tarif_konstruksi_tiga": 2.5
+    },
+    {
+     "name": "Cold  stores, ice factories,  abattoirs, butchers  drying installation"
+    },
+    {
+     "code": 2771,
+     "name": "Cold stores and ice factories",
+     "tarif_konstruksi_satu": 0.923,
+     "tarif_konstruksi_dua": 1.384,
+     "tarif_konstruksi_tiga": 1.846
+    },
+    {
+     "code": 2772,
+     "name": "Abbatoirs and Butchers, including slaughter house",
+     "tarif_konstruksi_satu": 1.163,
+     "tarif_konstruksi_dua": 1.745,
+     "tarif_konstruksi_tiga": 2.326
+    },
+    {
+     "code": 2773,
+     "name": "Drying installations",
+     "tarif_konstruksi_satu": 2.593,
+     "tarif_konstruksi_dua": 3.89,
+     "tarif_konstruksi_tiga": 5.186
+    },
+    {
+     "code": 2778,
+     "name": "Mixed",
+     "tarif_konstruksi_satu": 2.106,
+     "tarif_konstruksi_dua": 3.159,
+     "tarif_konstruksi_tiga": 4.212
+    },
+    {
+     "name": "Breweries, beverage producers, spirits, liquors producers, distilleries  and  vinegar Factories."
+    },
+    {
+     "code": 2781,
+     "name": "Breweries, beer factory",
+     "tarif_konstruksi_satu": 0.52,
+     "tarif_konstruksi_dua": 0.78,
+     "tarif_konstruksi_tiga": 1.04
+    },
+    {
+     "code": 2782,
+     "name": "Producers of wines, fruit juices and mineral water",
+     "tarif_konstruksi_satu": 0.88,
+     "tarif_konstruksi_dua": 1.319,
+     "tarif_konstruksi_tiga": 1.759
+    },
+    {
+     "code": 2783,
+     "name": "Producers of Spirits and Liquors and   Distilleries"
+    },
+    {
+     "code": 27831,
+     "name": "Producers of Spirits and Liquors",
+     "tarif_konstruksi_satu": 0.936,
+     "tarif_konstruksi_dua": 1.404,
+     "tarif_konstruksi_tiga": 1.872
+    },
+    {
+     "code": 27832,
+     "name": "Distilleries producing Alcohol (Ethanol) for Nutrional Purposes from Non - Petrochemical Materials. For Producers of Alcohol (Ethanol) from Petrochemical Materials see Code No. 2321: Petrochemical",
+     "tarif_konstruksi_satu": 1.076,
+     "tarif_konstruksi_dua": 1.615,
+     "tarif_konstruksi_tiga": 2.153
+    },
+    {
+     "code": 2784,
+     "name": "Vinegar factories (Acid liquor) factories",
+     "tarif_konstruksi_satu": 1.169,
+     "tarif_konstruksi_dua": 1.754,
+     "tarif_konstruksi_tiga": 2.338
+    },
+    {
+     "code": 2788,
+     "name": "Mixed",
+     "tarif_konstruksi_satu": 1.286,
+     "tarif_konstruksi_dua": 1.929,
+     "tarif_konstruksi_tiga": 2.572
+    },
+    {
+     "name": "Tobacco, cigars  and cigarettes  manufacture"
+    },
+    {
+     "code": 2790,
+     "name": "Tobacco, cigars and cigarettes manufacture",
+     "tarif_konstruksi_satu": 0.719,
+     "tarif_konstruksi_dua": 1.079,
+     "tarif_konstruksi_tiga": 1.438
+    },
+    {
+     "code": 2791,
+     "name": "Drying Sheds \/ Smoke Houses for tobacco leaves Drying Shed \/ Smoke House is a place for the drying process of a Tobacco leaves by using naturally and heating process alternately",
+     "tarif_konstruksi_satu": 0.827,
+     "tarif_konstruksi_dua": 1.241,
+     "tarif_konstruksi_tiga": 1.654
+    },
+    {
+     "code": 2792,
+     "name": "Oven, is a place for the drying process of a Tobacco leaves by using heating process",
+     "tarif_konstruksi_satu": 1.199,
+     "tarif_konstruksi_dua": 1.799,
+     "tarif_konstruksi_tiga": 2.399
+    },
+    {
+     "code": 2793,
+     "name": "Tobacco Establishement (Usaha Pengolahan Tembakau) is a Company with an activity to process a Tobacco leaves received from the Farmers and will be proceed to be a Tobacco leaves which is ready for the export of to be used by Cigarrette Factories. The activity of this Tobacco Establishment covering Purchasing, Peeling, Fermenatasion, Packing and Storing Processes",
+     "tarif_konstruksi_satu": 1.559,
+     "tarif_konstruksi_dua": 2.339,
+     "tarif_konstruksi_tiga": 3.118
+    },
+    {
+     "name": "Hydro-electric power stations"
+    },
+    {
+     "code": 2801,
+     "name": "Conventional hydro electric power station",
+     "tarif_konstruksi_satu": 1.035,
+     "tarif_konstruksi_dua": 1.553,
+     "tarif_konstruksi_tiga": 2.07
+    },
+    {
+     "code": 2802,
+     "name": "Micro hydro electric power station",
+     "tarif_konstruksi_satu": 0.9,
+     "tarif_konstruksi_dua": 1.35,
+     "tarif_konstruksi_tiga": 1.8
+    },
+    {
+     "name": "Conventional power station, buildings  with boiler  houses  and  steam houses"
+    },
+    {
+     "code": 2811,
+     "name": "PLTU"
+    },
+    {
+     "code": 28111,
+     "name": "PLTU using steam boiler",
+     "tarif_konstruksi_satu": 3.011,
+     "tarif_konstruksi_dua": 4.516,
+     "tarif_konstruksi_tiga": 6.021
+    },
+    {
+     "code": 28112,
+     "name": "PLTU using Geothermal",
+     "tarif_konstruksi_satu": 2.164,
+     "tarif_konstruksi_dua": 3.246,
+     "tarif_konstruksi_tiga": 4.328
+    },
+    {
+     "code": 2812,
+     "name": "PLTG",
+     "tarif_konstruksi_satu": 2.728,
+     "tarif_konstruksi_dua": 4.092,
+     "tarif_konstruksi_tiga": 5.457
+    },
+    {
+     "code": 2813,
+     "name": "PLTGU (combined cycle)",
+     "tarif_konstruksi_satu": 2.446,
+     "tarif_konstruksi_dua": 3.669,
+     "tarif_konstruksi_tiga": 4.892
+    },
+    {
+     "code": 2814,
+     "name": "PLTD",
+     "tarif_konstruksi_satu": 1.882,
+     "tarif_konstruksi_dua": 2.822,
+     "tarif_konstruksi_tiga": 3.763
+    },
+    {
+     "code": 2815,
+     "name": "Other",
+     "tarif_konstruksi_satu": 3.293,
+     "tarif_konstruksi_dua": 4.939,
+     "tarif_konstruksi_tiga": 6.586
+    },
+    {
+     "name": "Nuclear power  stations",
+     "tarif_konstruksi_satu": 3.914
+    },
+    {
+     "name": "Overhead  power transmission  lines  and networks",
+     "tarif_konstruksi_satu": 2.164
+    },
+    {
+     "name": "Voltage  and  current transformer  stations, junction  installation   in the  open",
+     "tarif_konstruksi_satu": 2.446
+    },
+    {
+     "name": "Rubbish  incineration installations  for power generation  and  heating",
+     "tarif_konstruksi_satu": 3.462
+    },
+    {
+     "name": "Gas Works Flammable, filling services, including acethylene, oxygen,",
+     "tarif_konstruksi_satu": 2.728
+    },
+    {
+     "name": "nitrogen, argon, etc, non pipelines"
+    },
+    {
+     "name": "Waterworks, Pumping Stations, Sewage  Works, Ice  Rinks,  Water treatment plant  (WTP), WWTP)  (including Underground  Pipes)",
+     "tarif_konstruksi_satu": 0.554,
+     "tarif_konstruksi_dua": 0.831,
+     "tarif_konstruksi_tiga": 1.108
+    },
+    {
+     "name": "Transport  and  traffic"
+    },
+    {
+     "code": 2901,
+     "name": "Railways, LRT, MRT, Monorel, Cable cars (kereta gantung)",
+     "tarif_konstruksi_satu": 0.25,
+     "tarif_konstruksi_dua": 0.338,
+     "tarif_konstruksi_tiga": 0.425
+    },
+    {
+     "code": 2902,
+     "name": "Highways, bridges, airport runways",
+     "tarif_konstruksi_satu": 0.473,
+     "tarif_konstruksi_dua": 0.639,
+     "tarif_konstruksi_tiga": 0.805
+    },
+    {
+     "code": 2903,
+     "name": "Jetties  (dermaga)",
+     "tarif_konstruksi_satu": 0.31,
+     "tarif_konstruksi_dua": 0.419,
+     "tarif_konstruksi_tiga": 0.527
+    },
+    {
+     "code": 2904,
+     "name": "Aerial railways\/ropeways, funicular railways, chairlifts",
+     "tarif_konstruksi_satu": 2.354,
+     "tarif_konstruksi_dua": 3.178,
+     "tarif_konstruksi_tiga": 4.002
+    },
+    {
+     "code": 2905,
+     "name": "Airport : Hangars",
+     "tarif_konstruksi_satu": 0.869,
+     "tarif_konstruksi_dua": 1.174,
+     "tarif_konstruksi_tiga": 1.478
+    },
+    {
+     "code": 2906,
+     "name": "Airport : Workshops, spare parts depots",
+     "tarif_konstruksi_satu": 0.97,
+     "tarif_konstruksi_dua": 1.309,
+     "tarif_konstruksi_tiga": 1.648
+    },
+    {
+     "code": 2907,
+     "name": "Airport : Aircrafts",
+     "tarif_konstruksi_satu": 0.94,
+     "tarif_konstruksi_dua": 1.269,
+     "tarif_konstruksi_tiga": 1.598
+    },
+    {
+     "code": 2908,
+     "name": "Airport : General airport services",
+     "tarif_konstruksi_satu": 0.623,
+     "tarif_konstruksi_dua": 0.841,
+     "tarif_konstruksi_tiga": 1.059
+    },
+    {
+     "code": 2909,
+     "name": "Airport : Others",
+     "tarif_konstruksi_satu": 0.685,
+     "tarif_konstruksi_dua": 0.925,
+     "tarif_konstruksi_tiga": 1.165
+    },
+    {
+     "name": "Construction  firms"
+    },
+    {
+     "code": 2911,
+     "name": "Construction firm, road construction and construction sites",
+     "tarif_konstruksi_satu": 1.12,
+     "tarif_konstruksi_dua": 1.68,
+     "tarif_konstruksi_tiga": 2.24
+    },
+    {
+     "code": 2912,
+     "name": "Cranes, excavators, elevators, road building machines (excluding tar sprayers)",
+     "tarif_konstruksi_satu": 1.142,
+     "tarif_konstruksi_dua": 1.712,
+     "tarif_konstruksi_tiga": 2.283
+    },
+    {
+     "code": 2913,
+     "name": "Tar sprayers and road surfacing plants",
+     "tarif_konstruksi_satu": 1.376,
+     "tarif_konstruksi_dua": 2.064,
+     "tarif_konstruksi_tiga": 2.752
+    },
+    {
+     "code": 2914,
+     "name": "Others",
+     "tarif_konstruksi_satu": 1.494,
+     "tarif_konstruksi_dua": 2.241,
+     "tarif_konstruksi_tiga": 2.987
+    },
+    {
+     "code": 2915,
+     "name": "Welding Plants",
+     "tarif_konstruksi_satu": 2.263,
+     "tarif_konstruksi_dua": 3.394,
+     "tarif_konstruksi_tiga": 4.526
+    },
+    {
+     "name": "Mass  communication"
+    },
+    {
+     "code": 2921,
+     "name": "Film television and recording on magnetic tape studios",
+     "tarif_konstruksi_satu": 0.982,
+     "tarif_konstruksi_dua": 1.473,
+     "tarif_konstruksi_tiga": 1.963
+    },
+    {
+     "code": 2922,
+     "name": "Film reproduction (prints) and photo treatment",
+     "tarif_konstruksi_satu": 0.516,
+     "tarif_konstruksi_dua": 0.774,
+     "tarif_konstruksi_tiga": 1.032
+    },
+    {
+     "code": 2923,
+     "name": "Cinemas, assembly rooms and concert halls",
+     "tarif_konstruksi_satu": 0.602,
+     "tarif_konstruksi_dua": 0.903,
+     "tarif_konstruksi_tiga": 1.204
+    },
+    {
+     "code": 2924,
+     "name": "Theatres, variety theatres and circuses housed in permanent buildings",
+     "tarif_konstruksi_satu": 0.862,
+     "tarif_konstruksi_dua": 1.292,
+     "tarif_konstruksi_tiga": 1.723
+    },
+    {
+     "code": 2925,
+     "name": "Circuses with a big top, show and exhibition tents",
+     "tarif_konstruksi_satu": 9.6,
+     "tarif_konstruksi_dua": 14.4,
+     "tarif_konstruksi_tiga": 19.2
+    },
+    {
+     "code": 2926,
+     "name": "Others",
+     "tarif_konstruksi_satu": 1.893,
+     "tarif_konstruksi_dua": 2.839,
+     "tarif_konstruksi_tiga": 3.786
+    },
+    {
+     "code": 2927,
+     "name": "Radio broadcasting, television broadcasting & relay stations, transmission tower including microwave transmission tower and relay tower",
+     "tarif_konstruksi_satu": 0.59,
+     "tarif_konstruksi_dua": 0.885,
+     "tarif_konstruksi_tiga": 1.18
+    },
+    {
+     "code": 2928,
+     "name": "Sentral Telecommunication Otomat (STO) dan warung pos\/telekomunikasi (wartel)",
+     "tarif_konstruksi_satu": 0.645,
+     "tarif_konstruksi_dua": 0.968,
+     "tarif_konstruksi_tiga": 1.29
+    },
+    {
+     "code": 2929,
+     "name": "Telecommunication operator engaged in furnishing telephone voice and data communication including their telephone transmission such as optical fiber and microwave or satellite facilities",
+     "tarif_konstruksi_satu": 0.59,
+     "tarif_konstruksi_dua": 0.886,
+     "tarif_konstruksi_tiga": 1.181
+    },
+    {
+     "code": 29291,
+     "name": "Data center",
+     "tarif_konstruksi_satu": 0.538,
+     "tarif_konstruksi_dua": 0.806,
+     "tarif_konstruksi_tiga": 1.075
+    },
+    {
+     "name": "Trading  and  storage"
+    },
+    {
+     "code": 2930,
+     "name": "Drug Store (apotek)",
+     "tarif_konstruksi_satu": 0.889,
+     "tarif_konstruksi_dua": 1.334,
+     "tarif_konstruksi_tiga": 1.778
+    },
+    {
+     "code": "2931*",
+     "name": "Pasar Modern contoh: Department Stores, Supermarket and Shopping Centre"
+    },
+    {
+     "code": 29311,
+     "name": "Department stores, building risk area > 200m2. If below 200m2 go to 2934",
+     "tarif_konstruksi_satu": 1.028,
+     "tarif_konstruksi_dua": 1.541,
+     "tarif_konstruksi_tiga": 2.055
+    },
+    {
+     "code": 29312,
+     "name": "Supermarket, building risk area > 200m2. If below 200m2 go to 2933",
+     "tarif_konstruksi_satu": 0.76,
+     "tarif_konstruksi_dua": 1.139,
+     "tarif_konstruksi_tiga": 1.519
+    },
+    {
+     "code": "29313*",
+     "name": "Shopping mall\/center"
+    },
+    {
+     "name": "Grade A",
+     "tarif_konstruksi_satu": 0.893,
+     "tarif_konstruksi_dua": 1.34,
+     "tarif_konstruksi_tiga": 1.787
+    },
+    {
+     "name": "Grade B",
+     "tarif_konstruksi_satu": 2.234,
+     "tarif_konstruksi_dua": 3.35,
+     "tarif_konstruksi_tiga": 4.467
+    },
+    {
+     "code": 29314,
+     "name": "Grocery Store",
+     "tarif_konstruksi_satu": 0.646,
+     "tarif_konstruksi_dua": 0.968,
+     "tarif_konstruksi_tiga": 1.291
+    },
+    {
+     "code": 2932,
+     "name": "Mail Order Houses, online shopping",
+     "tarif_konstruksi_satu": 1.673,
+     "tarif_konstruksi_dua": 2.51,
+     "tarif_konstruksi_tiga": 3.346
+    },
+    {
+     "code": 2933,
+     "name": "Chain Stores, convenience store, grocery store, with building risk area <200m2",
+     "tarif_konstruksi_satu": 2.474,
+     "tarif_konstruksi_dua": 3.711,
+     "tarif_konstruksi_tiga": 4.948
+    },
+    {
+     "code": 2934,
+     "name": "Shops, non chain store",
+     "tarif_konstruksi_satu": 1.52,
+     "tarif_konstruksi_dua": 2.28,
+     "tarif_konstruksi_tiga": 3.04
+    },
+    {
+     "code": "2935*",
+     "name": "Pasar Risks (traditional market, konsorsium)",
+     "tarif_konstruksi_satu": 6,
+     "tarif_konstruksi_dua": 27,
+     "tarif_konstruksi_tiga": 36
+    },
+    {
+     "code": 2936,
+     "name": "Others",
+     "tarif_konstruksi_satu": 7.222,
+     "tarif_konstruksi_dua": 10.833,
+     "tarif_konstruksi_tiga": 14.444
+    },
+    {
+     "code": 2937,
+     "name": "Private and public warehouse"
+    },
+    {
+     "code": 29371,
+     "name": "Private Warehouses, dengan syarat sebagai berikut : 1. Gudang yang disewa oleh tertanggung secara langsung dari pemilik gudang atau pemilik bangunan\/tempat penimbunan 2. Gudang yang dimiliki oleh  tertanggung atau disewa oleh tertanggung tersebut pada no. 1 diatas yang secara khusus dipergunakan untuk menimbun barang-barang yang seluruhnya menjadi milik\/kepentingan",
+     "tarif_konstruksi_satu": 1.127,
+     "tarif_konstruksi_dua": 1.691,
+     "tarif_konstruksi_tiga": 2.255
+    },
+    {
+     "name": "tertanggung yang bersangkutan dan sama sekali tidak terdapat barangbarang milik\/kepentingan pihak lain, kecuali itu telah menjadi milik\/ kepentingan pembelinya, yang (karena sesuatu hal yang dapat dibenarkan\/lazim terjadi dalam transaksi jual beli) belum diambil oleh pembeli yang bersangkutan dan masih berada dalam gudang tersebut 3. Pengelolaan isi gudang tersebut pada no. 2 diatas dilaksanakan oleh dan menjadi tanggung jawab sepenuhnya dari tertanggung"
+    },
+    {
+     "code": 29378,
+     "name": "Public Warehouses, dengan syarat selain disebutkan di 29371",
+     "tarif_konstruksi_satu": 2.255,
+     "tarif_konstruksi_dua": 3.382,
+     "tarif_konstruksi_tiga": 4.509
+    },
+    {
+     "code": 2938,
+     "name": "Storage tanks"
+    },
+    {
+     "code": 29383,
+     "name": "Petrol \/ Diesel Fuel Stations",
+     "tarif_konstruksi_satu": 1.23,
+     "tarif_konstruksi_dua": 1.846,
+     "tarif_konstruksi_tiga": 2.461
+    },
+    {
+     "code": 29384,
+     "name": "Liquid Nature Gas (LNG) Stations for Automobiles",
+     "tarif_konstruksi_satu": 1.415,
+     "tarif_konstruksi_dua": 2.122,
+     "tarif_konstruksi_tiga": 2.83
+    },
+    {
+     "code": 29385,
+     "name": "Others",
+     "tarif_konstruksi_satu": 1.6,
+     "tarif_konstruksi_dua": 2.399,
+     "tarif_konstruksi_tiga": 3.199
+    },
+    {
+     "code": 2939,
+     "name": "Miscellaneous (open storage)"
+    },
+    {
+     "code": 29394,
+     "name": "Bonded Warehouses",
+     "tarif_konstruksi_satu": 2.004,
+     "tarif_konstruksi_dua": 3.006,
+     "tarif_konstruksi_tiga": 4.008
+    },
+    {
+     "code": 29395,
+     "name": "Show Rooms ( Permanent Show Rooms without Repair \/ Workshop ) for New Motor  Cars, Electronic Goods, Machinery, Office and Medical Equipment and the like New Motor Cars, Electronic Goods, Machinery, Office and Medical Equipment and the like",
+     "tarif_konstruksi_satu": 1.52,
+     "tarif_konstruksi_dua": 2.28,
+     "tarif_konstruksi_tiga": 3.04
+    },
+    {
+     "name": "Hotels, Entertainment, Sport, Services"
+    },
+    {
+     "code": 2941,
+     "name": "Hotels, motels,  inns and the like"
+    },
+    {
+     "code": 29411,
+     "name": "certified below 3 star classification",
+     "tarif_konstruksi_satu": 0.886,
+     "tarif_konstruksi_dua": 1.329,
+     "tarif_konstruksi_tiga": 1.772
+    },
+    {
+     "code": 29412,
+     "name": "certified as 3 star and above",
+     "tarif_konstruksi_satu": 0.483,
+     "tarif_konstruksi_dua": 0.725,
+     "tarif_konstruksi_tiga": 0.966
+    },
+    {
+     "code": 2942,
+     "name": "Night clubs, dance halls, ball rooms, discotheques, bars, billiards karaoke",
+     "tarif_konstruksi_satu": 10.574,
+     "tarif_konstruksi_dua": 15.861,
+     "tarif_konstruksi_tiga": 21.148
+    },
+    {
+     "code": 2943,
+     "name": "Swimming pools or complex of swimming pools, sports stadium, sport centre, fitness centre, gyms and the like, private (member only) club houses and golf club",
+     "tarif_konstruksi_satu": 0.563,
+     "tarif_konstruksi_dua": 0.845,
+     "tarif_konstruksi_tiga": 1.127
+    },
+    {
+     "name": "houses"
+    },
+    {
+     "code": 29431,
+     "name": "Swimming Pools or Complex of Swimming Pools not forming part of Recreation Centre or Hotel Complex such as waterpark",
+     "tarif_konstruksi_satu": 0.753,
+     "tarif_konstruksi_dua": 1.13,
+     "tarif_konstruksi_tiga": 1.506
+    },
+    {
+     "code": 29432,
+     "name": "Sport Stadium, Sport Centres, Fitness Centres, Gymns and the like",
+     "tarif_konstruksi_satu": 0.886,
+     "tarif_konstruksi_dua": 1.329,
+     "tarif_konstruksi_tiga": 1.772
+    },
+    {
+     "code": 29433,
+     "name": "Private ( member only ) Club House and Golf Club Houses",
+     "tarif_konstruksi_satu": 0.62,
+     "tarif_konstruksi_dua": 0.93,
+     "tarif_konstruksi_tiga": 1.24
+    },
+    {
+     "code": 2944,
+     "name": "Others",
+     "tarif_konstruksi_satu": 3.042,
+     "tarif_konstruksi_dua": 4.564,
+     "tarif_konstruksi_tiga": 6.085
+    },
+    {
+     "code": 2945,
+     "name": "Restaurants, eating and drinking places, (permanent building)",
+     "tarif_konstruksi_satu": 1.479,
+     "tarif_konstruksi_dua": 2.218,
+     "tarif_konstruksi_tiga": 2.958
+    },
+    {
+     "code": 2946,
+     "name": "Stalls, Huts ( Kedai ), Eating Places ( Warung Makan ), and the like (tenda, non permanent building)",
+     "tarif_konstruksi_satu": 2.278,
+     "tarif_konstruksi_dua": 3.418,
+     "tarif_konstruksi_tiga": 4.557
+    },
+    {
+     "code": 2947,
+     "name": "Beauty salon\/ Hair dresser\/ Barber shops",
+     "tarif_konstruksi_satu": 0.781,
+     "tarif_konstruksi_dua": 1.171,
+     "tarif_konstruksi_tiga": 1.562
+    },
+    {
+     "code": 2949,
+     "name": "Recreation areas and cultural centre",
+     "tarif_konstruksi_satu": 2.646,
+     "tarif_konstruksi_dua": 3.969,
+     "tarif_konstruksi_tiga": 5.292
+    },
+    {
+     "name": "The  caring  services"
+    },
+    {
+     "code": 2951,
+     "name": "Sanatorium, hospitals, doctor's consulting rooms, old people's and children's homes",
+     "tarif_konstruksi_satu": 0.378,
+     "tarif_konstruksi_dua": 0.51,
+     "tarif_konstruksi_tiga": 0.642
+    },
+    {
+     "code": 2952,
+     "name": "Religious facilities such as mosques, temples, churches, convents and the like",
+     "tarif_konstruksi_satu": 0.352,
+     "tarif_konstruksi_dua": 0.475,
+     "tarif_konstruksi_tiga": 0.598
+    },
+    {
+     "code": 2953,
+     "name": "Schools, universities and training colleges",
+     "tarif_konstruksi_satu": 0.386,
+     "tarif_konstruksi_dua": 0.521,
+     "tarif_konstruksi_tiga": 0.656
+    },
+    {
+     "code": 2954,
+     "name": "Museums",
+     "tarif_konstruksi_satu": 0.26,
+     "tarif_konstruksi_dua": 0.35,
+     "tarif_konstruksi_tiga": 0.441
+    },
+    {
+     "code": 2955,
+     "name": "Psychiatric clinics",
+     "tarif_konstruksi_satu": 0.853,
+     "tarif_konstruksi_dua": 1.152,
+     "tarif_konstruksi_tiga": 1.451
+    },
+    {
+     "name": "Motor  vehicle  repair shops, services  station and  pools"
+    },
+    {
+     "code": 2961,
+     "name": "Motor vehicle repair shops with facilities for body repair work (including welding\/ soldering and spray painting) and service station (parts replacement, replacing\/ topping up engine oil\/ brake fluid, lubrication and engine\/ body\/ chassis scrubbing\/ washing)",
+     "tarif_konstruksi_satu": 1.088,
+     "tarif_konstruksi_dua": 1.631,
+     "tarif_konstruksi_tiga": 2.175
+    },
+    {
+     "code": 2962,
+     "name": "Code 2961  and also operating a petrol\/diesel fuel station within the premises",
+     "tarif_konstruksi_satu": 2.091,
+     "tarif_konstruksi_dua": 3.137,
+     "tarif_konstruksi_tiga": 4.182
+    },
+    {
+     "code": 2963,
+     "name": "Motor vehicle service stations only without bodyrepair etc., (refer to code 2961)",
+     "tarif_konstruksi_satu": 0.95,
+     "tarif_konstruksi_dua": 1.425,
+     "tarif_konstruksi_tiga": 1.9
+    },
+    {
+     "code": 2964,
+     "name": "Motor vehicle pools without any body repair",
+     "tarif_konstruksi_satu": 0.981,
+     "tarif_konstruksi_dua": 1.472,
+     "tarif_konstruksi_tiga": 1.962
+    },
+    {
+     "name": "work\/service station facilities"
+    },
+    {
+     "code": 2965,
+     "name": "Motor vehicle pools with service station facilities as described under code 2961",
+     "tarif_konstruksi_satu": 0.998,
+     "tarif_konstruksi_dua": 1.497,
+     "tarif_konstruksi_tiga": 1.996
+    },
+    {
+     "code": 2966,
+     "name": "Motor vehicle pools with body repair work and service station facilities as described under code 2961",
+     "tarif_konstruksi_satu": 1.259,
+     "tarif_konstruksi_dua": 1.889,
+     "tarif_konstruksi_tiga": 2.518
+    },
+    {
+     "code": 2967,
+     "name": "Motor vehicle pools with a petrol\/diesel fuel station within the premises",
+     "tarif_konstruksi_satu": 2.153,
+     "tarif_konstruksi_dua": 3.229,
+     "tarif_konstruksi_tiga": 4.305
+    },
+    {
+     "code": 2968,
+     "name": "Motor vehicle pools with body repair work & service station facilities as described under code 2961 and also operating a petrol\/diesel fuel station within the premises",
+     "tarif_konstruksi_satu": 2.276,
+     "tarif_konstruksi_dua": 3.413,
+     "tarif_konstruksi_tiga": 4.551
+    },
+    {
+     "code": 2969,
+     "name": "Rust protection \/ paint protection  workshops",
+     "tarif_konstruksi_satu": 0.785,
+     "tarif_konstruksi_dua": 1.178,
+     "tarif_konstruksi_tiga": 1.57
+    },
+    {
+     "name": "Private  Building"
+    },
+    {
+     "code": 2971,
+     "name": "Apartments\/ condominiums, offices, multi-storeyed car parks not exceeding 6 storeys above ground level",
+     "tarif_konstruksi_satu": 0.368,
+     "tarif_konstruksi_dua": 0.497,
+     "tarif_konstruksi_tiga": 0.625
+    },
+    {
+     "code": 2972,
+     "name": "Apartments\/ condominiums, offices, multi-storeyed car parks exceeding 6 storeys up to 18 storeys above ground level",
+     "tarif_konstruksi_satu": 0.385,
+     "tarif_konstruksi_dua": 0.52,
+     "tarif_konstruksi_tiga": 0.655
+    },
+    {
+     "code": 2973,
+     "name": "Apartments\/ condominiums, offices, multi-storeyed car parks exceeding 18 storeys above ground level",
+     "tarif_konstruksi_satu": 0.376,
+     "tarif_konstruksi_dua": 0.507,
+     "tarif_konstruksi_tiga": 0.639
+    },
+    {
+     "code": 2974,
+     "name": "Convention halls and other multi purpose buildings (but excluding exhibition)",
+     "tarif_konstruksi_satu": 0.478,
+     "tarif_konstruksi_dua": 0.645,
+     "tarif_konstruksi_tiga": 0.812
+    },
+    {
+     "code": 2975,
+     "name": "Apartments\/ condominiums, offices, multi-storeyed car parks - exceeding 24 storeys above ground",
+     "tarif_konstruksi_satu": 0.455,
+     "tarif_konstruksi_dua": 0.614,
+     "tarif_konstruksi_tiga": 0.774
+    },
+    {
+     "code": 2976,
+     "name": "Dwelling houses not classified as shop houses (ruko) not exceeding 3 storeys",
+     "tarif_konstruksi_satu": 0.294,
+     "tarif_konstruksi_dua": 0.397,
+     "tarif_konstruksi_tiga": 0.499
+    },
+    {
+     "code": 29761,
+     "name": "Dwelling house for boarding house\/kos- kosan",
+     "tarif_konstruksi_satu": 0.478,
+     "tarif_konstruksi_dua": 0.645,
+     "tarif_konstruksi_tiga": 0.812
+    },
+    {
+     "code": 2977,
+     "name": "Dwelling houses buildings floating on the river\/sea shore (regardless of constructional class)",
+     "tarif_konstruksi_satu": 1.448,
+     "tarif_konstruksi_dua": 1.955,
+     "tarif_konstruksi_tiga": 2.462
+    },
+    {
+     "code": 2978,
+     "name": "Independent analytical laboratories",
+     "tarif_konstruksi_satu": 1.138,
+     "tarif_konstruksi_dua": 1.536,
+     "tarif_konstruksi_tiga": 1.935
+    },
+    {
+     "name": "Property  of public bodies"
+    },
+    {
+     "code": 2981,
+     "name": "Public buildings",
+     "tarif_konstruksi_satu": 0.593,
+     "tarif_konstruksi_dua": 0.8,
+     "tarif_konstruksi_tiga": 1.008
+    },
+    {
+     "code": 2982,
+     "name": "Police barracks and police stations",
+     "tarif_konstruksi_satu": 0.551,
+     "tarif_konstruksi_dua": 0.744,
+     "tarif_konstruksi_tiga": 0.937
+    },
+    {
+     "code": 2983,
+     "name": "Military Barracks",
+     "tarif_konstruksi_satu": 2.154,
+     "tarif_konstruksi_dua": 2.908,
+     "tarif_konstruksi_tiga": 3.662
+    },
+    {
+     "code": 2984,
+     "name": "Others",
+     "tarif_konstruksi_satu": 2.253,
+     "tarif_konstruksi_dua": 3.041,
+     "tarif_konstruksi_tiga": 3.83
+    },
+    {
+     "name": "Special covers  for building"
+    },
+    {
+     "code": 2991,
+     "name": "Buildings in course of construction (rate  to be applied againts Full Value of completed building)",
+     "tarif_konstruksi_satu": 0.585,
+     "tarif_konstruksi_dua": 0.878,
+     "tarif_konstruksi_tiga": 1.17
+    },
+    {
+     "code": 2992,
+     "name": "Rents"
+    },
+    {
+     "name": "Kina",
+     "tarif_konstruksi_satu": 4.3
+    },
+    {
+     "name": "Coklat",
+     "tarif_konstruksi_satu": 13.19
+    },
+    {
+     "name": "Kopi"
+    },
+    {
+     "code": 3031,
+     "name": "Kopi tanpa rumah pengeringan",
+     "tarif_konstruksi_satu": 2.54
+    },
+    {
+     "code": 3032,
+     "name": "Dengan rumah pengeringan",
+     "tarif_konstruksi_satu": 27.44
+    },
+    {
+     "name": "The",
+     "tarif_konstruksi_satu": 0.74
+    },
+    {
+     "name": "Minyak  sereh",
+     "tarif_konstruksi_satu": 4.65
+    },
+    {
+     "name": "Kapok  (dari  hasil buah)",
+     "tarif_konstruksi_satu": 6.67
+    },
+    {
+     "name": "Kelapa  dan  kopra"
+    },
+    {
+     "code": 3071,
+     "name": "Tanpa ekstraksi Minyak",
+     "tarif_konstruksi_satu": 2.91
+    },
+    {
+     "code": 3072,
+     "name": "Dengan ekstraksi Minyak",
+     "tarif_konstruksi_satu": 8.14
+    },
+    {
+     "code": 3073,
+     "name": "Gedung pengeringan dengan pengering buatan",
+     "tarif_konstruksi_satu": 35.66
+    },
+    {
+     "name": "Karet  (Gutta  percha)"
+    },
+    {
+     "code": 3081,
+     "name": "Gedung tidak termasuk rumah asap",
+     "tarif_konstruksi_satu": 3.39
+    },
+    {
+     "code": 3082,
+     "name": "Rumah Asap",
+     "tarif_konstruksi_satu": 7.69
+    },
+    {
+     "name": "Gula  bibit",
+     "tarif_konstruksi_satu": 3
+    },
+    {
+     "name": "Perkebunan  serat,serat campuran  dan  kapok yang  belum  terproses",
+     "tarif_konstruksi_satu": 6.2
+    },
+    {
+     "name": "Pabrik  tapioka  di perkebunan",
+     "tarif_konstruksi_satu": 5
+    },
+    {
+     "name": "Damar  dan  terpentin",
+     "tarif_konstruksi_satu": 7.55
+    },
+    {
+     "name": "Cengkeh  dan  rempah- rempah",
+     "tarif_konstruksi_satu": 6.215
+    },
+    {
+     "name": "Padi, tanpa pengerjaan termasuk  padi  di  tempat terbuka",
+     "tarif_konstruksi_satu": 6.2
+    },
+    {
+     "name": "Hortikultura,sayur- sayuran,kentang  dan tidak  ada  pengeringan",
+     "tarif_konstruksi_satu": 4.04
+    },
+    {
+     "name": "Kelapa  sawit",
+     "tarif_konstruksi_satu": 0.99
+    },
+    {
+     "name": "Tembakau",
+     "tarif_konstruksi_satu": 13.24
+    },
+    {
+     "name": "Gambir, barang-barang ditempat  terbuka",
+     "tarif_konstruksi_satu": 5.83
+    },
+    {
+     "name": "Bangunan  di  dalam lokasi  perkebunan  milik perorangan, selain proses produksi"
+    }
+   ]

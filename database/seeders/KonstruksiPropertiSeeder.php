@@ -16,20 +16,28 @@ class KonstruksiPropertiSeeder extends Seeder
     {
         $data = [
             [ 
-                "name" => "Kelas Konstruksi 1",
-                "zona_satu" => 0.76,
-                "zona_dua" => 0.79,
-                "zona_tiga" => 1.04,
+                "name" => "Kelas Konstruksi Industri Komersil Tingkat < 9",
+                "zona_satu" => 0.75,
+                "zona_dua" => 0.76,
+                "zona_tiga" => 1.00,
                 "zona_empat" => 1.43,
                 "zona_lima" => 1.90,
             ],
             [ 
-                "name" => "Kelas Konstruksi 2",
-                "zona_satu" => 0.80,
-                "zona_dua" => 1.00,
-                "zona_tiga" => 1.55,
-                "zona_empat" => 2.24,
-                "zona_lima" => 4.50,
+                "name" => "Kelas Konstruksi Industri Komersil Tingkat > 9",
+                "zona_satu" => 1.12,
+                "zona_dua" => 1.15,
+                "zona_tiga" => 1.22,
+                "zona_empat" => 1.53,
+                "zona_lima" => 2.00,
+            ],
+            [ 
+                "name" => "Kelas Konstruksi Dwelling House",
+                "zona_satu" => 0.76,
+                "zona_dua" => 0.79,
+                "zona_tiga" => 1.04,
+                "zona_empat" => 1.35,
+                "zona_lima" => 1.60,
             ],
         ];
 

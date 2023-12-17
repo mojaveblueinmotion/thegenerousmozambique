@@ -3,23 +3,14 @@
 namespace App\Models\Master\AsuransiProperti;
 
 use App\Models\Model;
-use App\Imports\Master\ExampleImport;
-use App\Models\Setting\Globals\TempFiles;
-use App\Models\Master\AsuransiProperti\SurroundingRisk;
 
-class Okupasi extends Model
+class KelasBangunan extends Model
 {
-    protected $table = 'ref_okupasi';
+    protected $table = 'ref_kelas_bangunan';
 
     protected $fillable = [
-        'code',
         'name',
         'description',
-        'status_judul',
-        'surrounding_risk_id',
-        'tarif_konstruksi_satu',
-        'tarif_konstruksi_dua',
-        'tarif_konstruksi_tiga',
     ];
 
     /*******************************
@@ -33,9 +24,6 @@ class Okupasi extends Model
     /*******************************
      ** RELATION
      *******************************/
-    public function surroundingRisk(){
-        return $this->belongsTo(SurroundingRisk::class, 'surrounding_risk_id');
-    }
 
     /*******************************
      ** SCOPE
@@ -98,7 +86,7 @@ class Okupasi extends Model
 
     public function saveLogNotify()
     {
-        $data = $this->year.' | '.$this->merk.' | '.$this->type;
+        $data = $this->name;
         $routes = request()->get('routes');
         switch (request()->route()->getName()) {
             case $routes.'.store':

@@ -279,6 +279,16 @@ return [
                         'url' => '/master/asuransi-properti/konstruksi-properti'
                     ],
                     [
+                        'name' => 'kelas-bangunan',
+                        'title' => 'Kelas Bangunan',
+                        'url' => '/master/asuransi-properti/kelas-bangunan'
+                    ],
+                    [
+                        'name' => 'surrounding-risk',
+                        'title' => 'Surrounding Risk',
+                        'url' => '/master/asuransi-properti/surrounding-risk'
+                    ],
+                    [
                         'name' => 'okupasi',
                         'title' => 'Okupasi',
                         'url' => '/master/asuransi-properti/okupasi'

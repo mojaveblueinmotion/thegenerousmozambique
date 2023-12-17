@@ -28,7 +28,7 @@ class PerlindunganPropertiSeeder extends Seeder
                 "name" => "Kebakaran"
             ],
             [ 
-                "name" => "Banjir, Angin Topan, Badai dan Kerusakan Akibat Air (FSTWD)"
+                "name" => "Others" // Banjir, Angin Topan, Badai dan Kerusakan Akibat Air (FSTWD)
             ],
             [ 
                 "name" => "Kerusuhan, Pemogokan, Pengrusakan harta benda akibat tindakan jahat serta Huru Hara (Riot,Strike,Malicious Damage,Civil Commotion /RSMDCC)"
