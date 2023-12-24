@@ -301,6 +301,24 @@ return [
                 ]
             ],
             [
+                'name' => 'asuransi-kontraktor',
+                'title' => 'Asuransi Kontraktor',
+                'url' => '',
+                'submenu' => [
+                    [
+                        'name' => 'subsoil',
+                        'title' => 'Subsoil',
+                        'url' => '/master/asuransi-kontraktor/subsoil'
+                    ],
+                    [
+                        'name' => 'item-kontraktor',
+                        'title' => 'Item Kontraktor',
+                        'url' => '/master/asuransi-kontraktor/item-kontraktor'
+                    ],
+                ]
+            ],
+
+            [
                 'name' => 'asuransi-mobil',
                 'title' => 'Asuransi Mobil',
                 'url' => '',

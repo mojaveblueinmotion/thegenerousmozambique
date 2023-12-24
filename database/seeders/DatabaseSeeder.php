@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Master\AsuransiKontraktor\ItemKontraktor;
 use App\Models\Master\AsuransiProperti\KonstruksiProperti;
 use App\Models\Master\AsuransiProperti\PerlindunganProperti;
 use App\Models\Master\DataAsuransi\IntervalPembayaran;
@@ -63,5 +64,9 @@ class DatabaseSeeder extends Seeder
         $this->call(AsuransiMotorSeeder::class);
         $this->call(SurroundingRiskSeeder::class);
         $this->call(KelasBangunanSeeder::class);
+
+        // Asuransi Kontraktor
+        $this->call(ItemKontraktorSeeder::class);
+        $this->call(SubsoilSeeder::class);
     }
 }

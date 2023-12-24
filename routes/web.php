@@ -480,6 +480,17 @@ Route::middleware('auth')
                                 }
                             );
 
+                        // ASURANSI KONTRAKTOR
+                        Route::namespace('AsuransiKontraktor')
+                        ->prefix('asuransi-kontraktor')
+                        ->name('asuransi-kontraktor.')
+                        ->group(
+                            function () {
+                                Route::grid('subsoil', 'SubsoilController');
+                                Route::grid('item-kontraktor', 'ItemKontraktorController');
+                            }
+                        );
+
                         // DATA ASURANSI
                         Route::namespace('DataAsuransi')
                             ->prefix('data-asuransi')

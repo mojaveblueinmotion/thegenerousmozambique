@@ -5,13 +5,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\Auth\AuthController;
 use App\Http\Controllers\Api\Auth\MasterController;
 use App\Http\Controllers\Api\Auth\MasterMotorController;
+use App\Http\Controllers\Setting\User\ProfileController;
 use App\Http\Controllers\Api\Auth\UserRegisterController;
 use App\Http\Controllers\Api\Asuransi\AsuransiMobilApiController;
 use App\Http\Controllers\Api\Asuransi\AsuransiMotorApiController;
 use App\Http\Controllers\Api\Asuransi\AsuransiPropertiApiController;
+use App\Http\Controllers\Api\Asuransi\AsuransiKontraktorApiController;
 use App\Http\Controllers\Api\Asuransi\AsuransiPerjalananApiController;
 use App\Http\Controllers\Api\Asuransi\AsuransiKendaraanLainnyaApiController;
-use App\Http\Controllers\Setting\User\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,6 +83,11 @@ Route::middleware(['jwt.verify'])->group( function () {
 
     // User
     Route::post('profile/change-password', [AuthController::class, 'updatePassword']);
+
+    // ASURANSI KONTRAKTOR
+    Route::post('agentAsuransiKontraktor', [AsuransiKontraktorApiController::class, 'agentAsuransiKontraktor']);
+    Route::post('agentPenawaranAsuransiKontraktor', [AsuransiKontraktorApiController::class, 'agentPenawaranAsuransiKontraktor']);
+
 });
 
 // Properti
@@ -142,4 +148,8 @@ Route::post('getPreviewHargaAsuransi', [AsuransiPropertiApiController::class, 'g
 Route::get('getPolisPropertiSpesifik', [AsuransiPropertiApiController::class, 'getPolisPropertiSpesifik']);
 Route::get('getAllPolisProperti', [AsuransiPropertiApiController::class, 'getAllPolisProperti']);
 
+
+// ASURANSI KONTRAKTOR
+Route::get('getItemKontraktor', [AsuransiKontraktorApiController::class, 'getItemKontraktor']);
+Route::get('getSubsoil', [AsuransiKontraktorApiController::class, 'getSubsoil']);
 
