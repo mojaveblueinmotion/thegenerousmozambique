@@ -87,7 +87,8 @@ Route::middleware(['jwt.verify'])->group( function () {
     // ASURANSI KONTRAKTOR
     Route::post('agentAsuransiKontraktor', [AsuransiKontraktorApiController::class, 'agentAsuransiKontraktor']);
     Route::post('agentPenawaranAsuransiKontraktor', [AsuransiKontraktorApiController::class, 'agentPenawaranAsuransiKontraktor']);
-
+    Route::get('getPolisKontraktorSpesifik', [AsuransiKontraktorApiController::class, 'getPolisKontraktorSpesifik']);
+    Route::get('getAllPolisKontraktor', [AsuransiKontraktorApiController::class, 'getAllPolisKontraktor']);
 });
 
 // Properti

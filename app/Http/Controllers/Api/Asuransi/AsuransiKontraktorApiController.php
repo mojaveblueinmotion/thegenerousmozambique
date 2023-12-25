@@ -65,7 +65,7 @@ class AsuransiKontraktorApiController extends Controller
                 'observed_earthquake' => 'required|integer',
                 'regulasi_struktur' => 'required|integer',
                 'standar_rancangan' => 'required|integer',
-                'subsoil_id' => 'required|numeric',
+                'subsoil_id' => 'required',
                 'patahan_geologi' => 'required|integer',
                 'perairan_terdekat' => 'required',
                 'jarak_perairan' => 'required',
@@ -243,6 +243,59 @@ class AsuransiKontraktorApiController extends Controller
                 'data' => $data,
             ]);
         }catch(Exception $e){
+            return response()->json([
+                'success' => false,
+                'message' => $e
+            ], 400);
+        }
+    }
+
+    public function getAllPolisKontraktor(Request $request){
+        try {
+            if (empty(auth()->user())) {
+                return response()->json([
+                    'success' => false,
+                    'message' => "User belum login!",
+                ], 400);
+            }
+            $data = PolisKontraktor::where('user_id', auth()->user()->id);
+
+            return response()->json([
+                'success' => true,
+                'data' => $data,
+            ]);
+        } catch (Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => $e
+            ], 400);
+        }
+    }
+    
+    public function getPolisKontraktorSpesifik(Request $request){
+        try {
+            $validator = Validator::make($request->all(), [
+                'id' => 'required',
+            ]);
+            
+            if ($validator->fails()) {
+                return response()->json([
+                    'success' => false,
+                    'errors' => $validator->errors(),
+                ], 400);
+            }
+            $data = PolisKontraktor::
+            with([
+                'subsoil',
+                'itemKontraktor',
+                'itemKontraktor.item',
+            ])->find($request->id);
+
+            return response()->json([
+                'success' => true,
+                'data' => $data,
+            ]);
+        } catch (Exception $e) {
             return response()->json([
                 'success' => false,
                 'message' => $e
