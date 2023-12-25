@@ -317,6 +317,18 @@ return [
                     ],
                 ]
             ],
+            [
+                'name' => 'asuransi-erection',
+                'title' => 'Asuransi Erection',
+                'url' => '',
+                'submenu' => [
+                    [
+                        'name' => 'item-erection',
+                        'title' => 'Item Erection',
+                        'url' => '/master/asuransi-erection/item-erection'
+                    ],
+                ]
+            ],
 
             [
                 'name' => 'asuransi-mobil',

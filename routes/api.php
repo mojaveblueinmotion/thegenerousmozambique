@@ -9,6 +9,7 @@ use App\Http\Controllers\Setting\User\ProfileController;
 use App\Http\Controllers\Api\Auth\UserRegisterController;
 use App\Http\Controllers\Api\Asuransi\AsuransiMobilApiController;
 use App\Http\Controllers\Api\Asuransi\AsuransiMotorApiController;
+use App\Http\Controllers\Api\Asuransi\AsuransiErectionApiController;
 use App\Http\Controllers\Api\Asuransi\AsuransiPropertiApiController;
 use App\Http\Controllers\Api\Asuransi\AsuransiKontraktorApiController;
 use App\Http\Controllers\Api\Asuransi\AsuransiPerjalananApiController;
@@ -89,6 +90,12 @@ Route::middleware(['jwt.verify'])->group( function () {
     Route::post('agentPenawaranAsuransiKontraktor', [AsuransiKontraktorApiController::class, 'agentPenawaranAsuransiKontraktor']);
     Route::get('getPolisKontraktorSpesifik', [AsuransiKontraktorApiController::class, 'getPolisKontraktorSpesifik']);
     Route::get('getAllPolisKontraktor', [AsuransiKontraktorApiController::class, 'getAllPolisKontraktor']);
+
+    // ASURANSI ERECTION
+    Route::post('agentAsuransiErection', [AsuransiErectionApiController::class, 'agentAsuransiErection']);
+    Route::post('agentPenawaranAsuransiErection', [AsuransiErectionApiController::class, 'agentPenawaranAsuransiErection']);
+    Route::get('getPolisErectionSpesifik', [AsuransiErectionApiController::class, 'getPolisErectionSpesifik']);
+    Route::get('getAllPolisErection', [AsuransiErectionApiController::class, 'getAllPolisErection']);
 });
 
 // Properti
@@ -153,4 +160,8 @@ Route::get('getAllPolisProperti', [AsuransiPropertiApiController::class, 'getAll
 // ASURANSI KONTRAKTOR
 Route::get('getItemKontraktor', [AsuransiKontraktorApiController::class, 'getItemKontraktor']);
 Route::get('getSubsoil', [AsuransiKontraktorApiController::class, 'getSubsoil']);
+
+
+// ASURANSI ERECTION
+Route::get('getItemErection', [AsuransiErectionApiController::class, 'getItemErection']);
 

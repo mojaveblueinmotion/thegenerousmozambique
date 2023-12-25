@@ -68,5 +68,8 @@ class DatabaseSeeder extends Seeder
         // Asuransi Kontraktor
         $this->call(ItemKontraktorSeeder::class);
         $this->call(SubsoilSeeder::class);
+
+        // Asuransi Erection
+        $this->call(ItemErectionSeeder::class);
     }
 }

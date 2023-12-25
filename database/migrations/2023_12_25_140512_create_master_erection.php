@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMasterKontraktor extends Migration
+class CreateMasterErection extends Migration
 {
     /**
      * Run the migrations.
@@ -15,17 +15,7 @@ class CreateMasterKontraktor extends Migration
     {
         
         Schema::create(
-            'ref_subsoil',
-            function (Blueprint $table) {
-                $table->id();
-                $table->text('name')->unique();
-                $table->text('description')->nullable();
-                $table->commonFields();
-            }
-        );
-
-        Schema::create(
-            'ref_item_kontraktor',
+            'ref_item_erection',
             function (Blueprint $table) {
                 $table->id();
                 $table->text('name')->unique();
@@ -43,7 +33,6 @@ class CreateMasterKontraktor extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ref_item_kontraktor');
-        Schema::dropIfExists('ref_subsoil');
+        Schema::dropIfExists('ref_item_erection');
     }
 }
