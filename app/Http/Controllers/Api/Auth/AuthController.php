@@ -16,6 +16,7 @@ use App\Models\AsuransiErection\PolisErection;
 use App\Models\AsuransiProperti\PolisProperti;
 use App\Models\AsuransiKendaraan\PolisKendaraan;
 use App\Models\AsuransiKontraktor\PolisKontraktor;
+use App\Models\AsuransiMarineHull\PolisMarineHull;
 use App\Models\AsuransiPerjalanan\PolisPerjalanan;
 use App\Models\Master\AsuransiMobil\AsuransiMobil;
 use App\Models\Master\AsuransiMotor\AsuransiMotor;
@@ -97,6 +98,13 @@ class AuthController extends BaseController
                                 'data' => PolisErection::where('agent_id', Auth::id())->orWhere('user_id', Auth::id())->get(),
                             ]);
                             break;
+                        case 'asuransiMarineHull':
+                            return response()->json([
+                                'success' => true,
+                                'message' => "Data Asuransi Marine Hull By User",
+                                'data' => PolisMarineHull::where('agent_id', Auth::id())->orWhere('user_id', Auth::id())->get(),
+                            ]);
+                            break;
                         case 'asuransi':
                             return response()->json([
                                 'success' => true,
@@ -105,7 +113,7 @@ class AuthController extends BaseController
                                 with([
                                     'asuransiMobil', 'asuransiMotor', 'asuransiProperti', 'asuransiPerjalanan',
                                     'asuransiAgentMobil', 'asuransiAgentMotor', 'asuransiAgentProperti', 'asuransiAgentPerjalanan',
-                                    'asuransiProperti.penutupanPolis', 'asuransiKontraktor', 'asuransiErection'
+                                    'asuransiProperti.penutupanPolis', 'asuransiKontraktor', 'asuransiErection', 'asuransiMarineHull'
                                     ])->select(['id'])->find(Auth::id()),
                             ]);
                             break;
@@ -119,7 +127,7 @@ class AuthController extends BaseController
                     'data' => User::with([
                         'asuransiMobil', 'asuransiMotor', 'asuransiProperti', 'asuransiPerjalanan',
                         'asuransiAgentMobil', 'asuransiAgentMotor', 'asuransiAgentProperti', 'asuransiAgentPerjalanan',
-                        'asuransiProperti.penutupanPolis', 'asuransiKontraktor', 'asuransiErection'
+                        'asuransiProperti.penutupanPolis', 'asuransiKontraktor', 'asuransiErection', 'asuransiMarineHull'
                         ])->find(Auth::id()),
                     'jaringan' => $totalAsuransi,
                 ]);
@@ -169,6 +177,13 @@ class AuthController extends BaseController
                                 'data' => PolisErection::where('user_id', Auth::id())->get(),
                             ]);
                             break;
+                        case 'asuransiMarineHull':
+                            return response()->json([
+                                'success' => true,
+                                'message' => "Data Asuransi Marine Hull By User",
+                                'data' => PolisMarineHull::where('user_id', Auth::id())->get(),
+                            ]);
+                            break;
                         case 'asuransi':
                             return response()->json([
                                 'success' => true,
@@ -177,7 +192,7 @@ class AuthController extends BaseController
                                 with([
                                     'asuransiMobil', 'asuransiMotor', 'asuransiProperti', 'asuransiPerjalanan',
                                     'asuransiAgentMobil', 'asuransiAgentMotor', 'asuransiAgentProperti', 'asuransiAgentPerjalanan',
-                                    'asuransiProperti.penutupanPolis','asuransiKontraktor', 'asuransiErection'
+                                    'asuransiProperti.penutupanPolis','asuransiKontraktor', 'asuransiErection', 'asuransiMarineHull'
                                     ])->select(['id'])->find(Auth::id()),
                             ]);
                             break;
@@ -189,7 +204,7 @@ class AuthController extends BaseController
                     'message' => "Data User",
                     'data' => User::with([
                         'asuransiMobil', 'asuransiMotor', 'asuransiProperti', 'asuransiPerjalanan',
-                        'asuransiProperti.penutupanPolis', 'asuransiKontraktor', 'asuransiErection'
+                        'asuransiProperti.penutupanPolis', 'asuransiKontraktor', 'asuransiErection', 'asuransiMarineHull'
                         ])->find(Auth::id())
                 ]);
             }

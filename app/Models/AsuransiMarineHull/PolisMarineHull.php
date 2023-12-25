@@ -1,16 +1,17 @@
 <?php
 
-namespace App\Models\AsuransiKontraktor;
+namespace App\Models\AsuransiMarineHull;
 
 use App\Models\Model;
 use Illuminate\Support\Carbon;
 use App\Models\Master\AsuransiKontraktor\Subsoil;
+use App\Models\AsuransiErection\PolisErectionItem;
 use App\Models\AsuransiKontraktor\PolisKontraktorItem;
 use App\Models\Master\AsuransiKontraktor\ItemKontraktor;
 
-class PolisKontraktor extends Model
+class PolisMarineHull extends Model
 {
-    protected $table = 'trans_polis_kontraktor';
+    protected $table = 'trans_polis_marine_hull';
 
     protected $fillable = [
         'no_asuransi',
@@ -19,73 +20,52 @@ class PolisKontraktor extends Model
         'agent_id',
         'user_id',
         'asuransi_id',
-        'judul_kontrak',
-        'lokasi_proyek',
-        'nama_prinsipal',
-        'alamat_prinsipal',
-        'nama_kontraktor',
-        'alamat_kontraktor',
-        'nama_subkontraktor',
-        'alamat_subkontraktor',
-        'nama_insinyur',
-        'alamat_insinyur',
-        'lebar_dimensi',
-        'tinggi_dimensi',
-        'kedalaman_dimensi',
-        'rentang_dimensi',
-        'jumlah_lantai',
+        'nama_lengkap',
+        'alamat',
+        'nama_kreditur',
+        'alamat_kreditur',
+        'detail_kepentingan',
+        'lokasi_yard',
+        'nilai_maks_yard',
+        'konstruksi_bangunan',
+        'deskripsi_keamanan',
+        'deskripsi_kebakaran',
+        'jenis_kapal_dibuat',
+        'keterangan_yard',
+        'status_subkontraktor',
+        'perlindungan_subkontraktor',
+        'jadwal_pembangunan',
+        'cara_peluncuran',
+        'tempat_uji',
+        'detail_transportasi',
+        'ketersediaan_survey',
+        'tanggal_awal',
+        'tanggal_akhir',
+        'jenis_kapal',
+        'perkiraan_nilai',
         'metode_konstruksi',
-        'jenis_pondasi',
-        'bahan_konstruksi',
-        'kontraktor_berpengalaman',
-        'awal_periode',
-        'lama_proses_konstruksi',
-        'tanggal_penyelesaian',
-        'periode_pemeliharaan',
-        'pekerjaan_subkontraktor',
-        'fire_explosion',
-        'flood_inundation',
-        'landslide_storm_cyclone',
-        'blasting_work',
-        'volcanic_tsunami',
-        'skala_mercalli',
-        'observed_earthquake',
-        'magnitude',
-        'regulasi_struktur',
-        'standar_rancangan',
-        'subsoil_id',
-        'patahan_geologi',
-        'perairan_terdekat',
-        'jarak_perairan',
-        'level_air',
-        'rata_rata_air',
-        'tingkat_tertinggi_air',
-        'tanggal_tercatat',
-        'musim_hujan_awal',
-        'musim_hujan_akhir',
-        'curah_hujan_perjam',
-        'curah_hujan_perhari',
-        'curah_hujan_perbulan',
-        'bahaya_badai',
-        'biaya_tambahan_lembur',
-        'batas_ganti_rugi_lembur',
-        'tanggung_jawab_pihak_ketiga',
-        'asuransi_terpisah_tpl',
-        'batas_ganti_rugi_pihak_ketiga',
-        'rincian_bangunan',
-        'status_struktur_bangunan',
-        'batas_ganti_rugi_struktur_bangunan',
+        'material_konstruksi',
+        'panjang',
+        'berat',
+        'status_penerimaan',
+        'keterangan_penerimaan',
+        'lama_perusahaan',
+        'tahun_pengalaman',
+        'kualifikasi_tim',
+        'status_klaim',
+        'jatuh_tempo',
+        'nama_perusahaan_asuransi',
+        'status_penolakan',
+        'keterangan_penolakan',
+        'deskripsi_survey',
         'status',
     ];
 
     protected $dates = [
         'tanggal',
-        'awal_periode',
-        'tanggal_penyelesaian',
-        'tanggal_tercatat',
-        'musim_hujan_awal',
-        'musim_hujan_akhir',
-
+        'tanggal_awal',
+        'tanggal_akhir',
+        'jatuh_tempo',
     ];
 
     /*******************************
@@ -97,31 +77,20 @@ class PolisKontraktor extends Model
         $this->attributes['tanggal'] = Carbon::createFromFormat('d/m/Y', $value);
     }
     
-    public function setAwalPeriodeAttribute($value)
+    public function setTanggalAwalAttribute($value)
     {
-        $this->attributes['awal_periode'] = Carbon::createFromFormat('d/m/Y', $value);
+        $this->attributes['tanggal_awal'] = Carbon::createFromFormat('d/m/Y', $value);
     }
     
-    public function setTanggalPenyelesaianAttribute($value)
+    public function setTanggalAkhirAttribute($value)
     {
-        $this->attributes['tanggal_penyelesaian'] = Carbon::createFromFormat('d/m/Y', $value);
-    }
-    
-    public function setTanggalTercatatAttribute($value)
-    {
-        $this->attributes['tanggal_tercatat'] = Carbon::createFromFormat('d/m/Y', $value);
-    }
-    
-    public function setMusimHujanAwalAttribute($value)
-    {
-        $this->attributes['musim_hujan_awal'] = Carbon::createFromFormat('d/m/Y', $value);
-    }
-    
-    public function setMusimHujanAkhirAttribute($value)
-    {
-        $this->attributes['musim_hujan_akhir'] = Carbon::createFromFormat('d/m/Y', $value);
+        $this->attributes['tanggal_akhir'] = Carbon::createFromFormat('d/m/Y', $value);
     }
      
+    public function setJatuhTempoAttribute($value)
+    {
+        $this->attributes['jatuh_tempo'] = Carbon::createFromFormat('d/m/Y', $value);
+    }
 
     /*******************************
      ** ACCESSOR
@@ -165,16 +134,7 @@ class PolisKontraktor extends Model
     /*******************************
      ** RELATION
      *******************************/
-    public function subsoil()
-    {
-        return $this->belongsTo(Subsoil::class, 'subsoil_id');
-    }
-
-    public function itemKontraktor()
-    {
-        return $this->hasMany(PolisKontraktorItem::class, 'polis_id');
-    }
-
+    
     /*******************************
      ** SCOPE
      *******************************/

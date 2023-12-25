@@ -20,9 +20,11 @@ use App\Models\Setting\Globals\Approval;
 use Illuminate\Notifications\Notifiable;
 use App\Models\Setting\Globals\TempFiles;
 use App\Models\Setting\Globals\Notification;
+use App\Models\AsuransiErection\PolisErection;
 use App\Models\AsuransiProperti\PolisProperti;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\AsuransiKontraktor\PolisKontraktor;
+use App\Models\AsuransiMarineHull\PolisMarineHull;
 use App\Models\AsuransiPerjalanan\PolisPerjalanan;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -164,7 +166,17 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->hasMany(PolisKontraktor::class, 'user_id');
     }
+
+    public function asuransiErection()
+    {
+        return $this->hasMany(PolisErection::class, 'user_id');
+    }
     
+    public function asuransiMarineHull()
+    {
+        return $this->hasMany(PolisMarineHull::class, 'user_id');
+    }
+
     public function asuransiPerjalanan()
     {
         return $this->hasMany(PolisPerjalanan::class, 'user_id');
