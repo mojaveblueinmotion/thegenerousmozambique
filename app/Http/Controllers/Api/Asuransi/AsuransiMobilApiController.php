@@ -53,7 +53,6 @@ class AsuransiMobilApiController extends BaseController
             }
             $record->no_asuransi = $noAsuransi->no_asuransi;
             $record->harga_asuransi = Self::hitungHargaAsuransiForPenawaran($tahun_kendaraan, $request->nilai_pertanggungan, $tahun_asuransi, $request->asuransi_id, $request->province_id);
-            // $record->tanggal_akhir_asuransi = $request->tanggal_akhir_asuransi;
             $record->no_max = $noAsuransi->no_max;
             $record->status = 'penawaran';
             $record->save();

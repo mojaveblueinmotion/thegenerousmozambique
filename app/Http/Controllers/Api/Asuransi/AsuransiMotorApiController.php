@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Models\Master\Geo\Province;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Setting\Globals\Files;
 use App\Models\AsuransiMotor\PolisMotor;
 use Illuminate\Support\Facades\Validator;
@@ -27,6 +28,9 @@ use App\Models\Master\AsuransiMotor\AsuransiPersentasiMotor;
 
 class AsuransiMotorApiController extends BaseController
 {
+
+
+
     public function agentAsuransiMotor(Request $request){
         try{
             $tanggal_akhir_asuransi = Carbon::createFromFormat('d/m/Y', $request->tanggal_akhir_asuransi);
@@ -38,12 +42,17 @@ class AsuransiMotorApiController extends BaseController
             $tahun_asuransi = $tanggal_akhir_asuransi->format('Y') - $tanggal->format('Y');
             $tahun_kendaraan = now()->format('Y') - $dataTahunKendaraan->tahun;
 
+            $roles = Auth::user()->roles[0]->id;
             $noAsuransi = PolisMotor::generateNoAsuransi();
             $record = new PolisMotor;   
             $record->fill($request->only($record->fillable));
+            if($roles == 3){
+                $record->user_id = Auth::id();
+            }else{
+                $record->agent_id = Auth::id();
+            }
             $record->no_asuransi = $noAsuransi->no_asuransi;
             $record->harga_asuransi = Self::hitungHargaAsuransiForPenawaran($tahun_kendaraan, $request->nilai_pertanggungan, $tahun_asuransi, $request->asuransi_id, $request->province_id);
-            // $record->tanggal_akhir_asuransi = $request->tanggal_akhir_asuransi;
             $record->no_max = $noAsuransi->no_max;
             $record->status = 'penawaran';
             $record->save();
@@ -361,7 +370,7 @@ class AsuransiMotorApiController extends BaseController
                         $sys_file = new Files;
                         $sys_file->target_id    = $record->id;
                         $sys_file->target_type  = PolisMotor::class;
-                        $sys_file->module       = 'asuransi.polis-mobil';
+                        $sys_file->module       = 'asuransi.polis-motor';
                         $sys_file->file_name    = $file->getClientOriginalName();
                         $sys_file->file_path    = $file->storeAs('files', $file_path, 'public');
                         // $temp->file_type = $file->extension();
@@ -405,7 +414,7 @@ class AsuransiMotorApiController extends BaseController
                     $sys_file = new Files;
                     $sys_file->target_id    = $record->id;
                     $sys_file->target_type  = PolisMotor::class;
-                    $sys_file->module       = 'asuransi.polis-mobil';
+                    $sys_file->module       = 'asuransi.polis-motor';
                     $sys_file->file_name    = $file->getClientOriginalName();
                     $sys_file->file_path    = $file->storeAs('files', $file_path, 'public');
                     // $temp->file_type = $file->extension();
