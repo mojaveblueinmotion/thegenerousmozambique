@@ -684,7 +684,7 @@ class AsuransiMotorApiController extends BaseController
             with([
                 'detailCek.merk',
                 'detailCek.tahun',
-                'detailCek.tipeMobil',
+                'detailCek.tipeMotor',
                 'detailCek.seri',
                 'detailCek.kodePlat',
                 'detailCek.tipeKendaraan',
