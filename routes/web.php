@@ -81,6 +81,7 @@ Route::middleware('auth')
                         Route::post('{search}/select-province', 'AjaxController@selectProvince')->name('select-province');
                         Route::post('{search}/select-technician', 'AjaxController@selectTechnician')->name('select-technician');
                         Route::post('{search}/select-user', 'AjaxController@selectUser')->name('select-user');
+                        Route::post('{search}/select-user', 'AjaxController@selectUser')->name('selectUser');
                         Route::post('{search}/select-nip', 'AjaxController@selectNip')->name('select-nip');
 
                         // For Province -> City
@@ -249,6 +250,14 @@ Route::middleware('auth')
                         'with' => ['submit', 'approval', 'print', 'history', 'tracking']
                     ]);
                 });
+            });
+
+            // CUSTOM MODULE
+            Route::namespace('CustomModule')->prefix('custom-module')->name('custom-module.')->group(function () {
+                // MODULE
+                Route::grid('module', 'ModuleController', [
+                    'with' => ['submit', 'approval', 'print', 'history', 'tracking']
+                ]);
             });
 
             // Master

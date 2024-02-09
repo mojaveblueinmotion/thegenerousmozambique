@@ -1,0 +1,117 @@
+{
+    "id": 1,
+    "module_title": "Nama Asuransi",
+    "body": [
+    {
+        "id": 1,
+        "heading": "Title of contract (if project consists of several sections specify section(s) to be insured)",
+        "data": [
+        {
+            "id": 1,
+            "type": "string",
+            "informationStatus": true,
+            "informationMsg": "Nama kontrakan adalah blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla blablablabla",
+            "key": "judul_kontrak",
+            "title": "Nama Kontrak",
+            "require": true,
+            "error": "Harap isi",
+            "information": ""
+        },
+        {
+            "id": 2,
+            "type": "string",
+            "informationStatus": false,
+            "informationMsg": null,
+            "key": "lokasi_proyek",
+            "title": "Lokasi Proyek",
+            "require": true,
+            "error": "Harap isi",
+            "information": ""
+        },
+        {
+            "id": 3,
+            "type": "multi",
+            "key": "kondisi_rumah_1",
+            "require": true,
+            "title": "Kondisi Rumah",
+            "data": [
+            {"value": "Beton", "label": "Beton"},
+            {"value": "Kayu", "label": "Kayu"},
+            {"value": "Baja", "label": "Baja"},
+            {"value": "Gerabah", "label": "Gerabah"}
+            ],
+            "error": "Harap isi"
+        }
+        ]
+    },
+    {
+        "id": 2,
+        "heading": "Nama dan alamat prinsipal",
+        "data": [
+        {
+            "id": 1,
+            "type": "date",
+            "key": "tanggal",
+            "require": true,
+            "title": "Tanggal",
+            "error": "mohon diisi"
+        },
+        {
+            "id": 2,
+            "type": "select",
+            "key": "kondisi_rumah",
+            "require": true,
+            "title": "Kondisi Rumah",
+            "data": [
+            {"value": "Beton", "label": "Beton"},
+            {"value": "Kayu", "label": "Kayu"},
+            {"value": "Baja", "label": "Baja"},
+            {"value": "Gerabah", "label": "Gerabah"}
+            ],
+            "error": "Harap isi"
+        },
+        {
+            "id": 3,
+            "type": "angka",
+            "require": false,
+            "key": "lamanya_pekerjaan",
+            "title": "Lamanya pekerjaan pendirian/konstruksi",
+            "error": "Harap isi"
+        },
+        {
+            "id": 4,
+            "type": "array",
+            "key": "lokasi_proyek_main_array",
+            "title": "Lokasi Proyek",
+            "data": [
+            {
+                "id": 1,
+                "type": "uang",
+                "require": true,
+                "key": "harga_kontrak",
+                "title": "Harga Kontrak",
+                "error": "Harap isi"
+            },
+            {
+                "id": 2,
+                "type": "uang",
+                "require": false,
+                "key": "harga_pertanggungan",
+                "title": "Harga Pertanggungan",
+                "error": "Harap isi"
+            }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "textarea",
+            "require": false,
+            "key": "keterangan",
+            "title": "Keterangan",
+            "error": "Harap isi"
+        }
+        ]
+    }
+    ]
+}
+  

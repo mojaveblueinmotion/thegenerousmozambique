@@ -46,6 +46,19 @@ return [
                 ],
         ],
     ],
+    [
+        'name' => 'custom-module',
+        'title' => 'Custom Asuransi',
+        'icon' => 'fa fa-plus',
+        'submenu' => [
+                [
+                    'name'  => 'custom-module.module',
+                    'perms' => 'custom-module.module',
+                    'title' => 'Custom Module',
+                    'url'   => '/custom-module/module',
+                ],
+        ],
+    ],
     // Admin Console
     [
         'section' => 'ADMIN KONSOL & MASTER',

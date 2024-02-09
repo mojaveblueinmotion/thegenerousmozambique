@@ -15,6 +15,7 @@ use App\Http\Controllers\Api\Asuransi\AsuransiKontraktorApiController;
 use App\Http\Controllers\Api\Asuransi\AsuransiMarineHullApiController;
 use App\Http\Controllers\Api\Asuransi\AsuransiPerjalananApiController;
 use App\Http\Controllers\Api\Asuransi\AsuransiKendaraanLainnyaApiController;
+use App\Http\Controllers\Api\CustomModule\ModuleApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -103,6 +104,13 @@ Route::middleware(['jwt.verify'])->group( function () {
      Route::post('agentPenawaranAsuransiMarineHull', [AsuransiMarineHullApiController::class, 'agentPenawaranAsuransiMarineHull']);
      Route::get('getPolisMarineHullSpesifik', [AsuransiMarineHullApiController::class, 'getPolisMarineHullSpesifik']);
      Route::get('getAllPolisMarineHull', [AsuransiMarineHullApiController::class, 'getAllPolisMarineHull']);
+
+
+    //  CUSTOM MODULE 
+    Route::get('module', [ModuleApiController::class, 'module']);
+    Route::get('moduleSpecific/{api}', [ModuleApiController::class, 'moduleSpecific']);
+    Route::get('getSpecificCustomData/{api}', [ModuleApiController::class, 'getSpecificCustomData']);
+    Route::post('moduleSpecific/{api}', [ModuleApiController::class, 'moduleSpecificPost']);
 });
 
 // Properti

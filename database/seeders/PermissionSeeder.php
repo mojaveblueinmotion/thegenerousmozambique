@@ -41,6 +41,12 @@ class PermissionSeeder extends Seeder
                 'action'        => ['view', 'create', 'edit', 'delete', 'approve'],
             ],
 
+            // CUSTOM MODULE
+            [
+                'name'          => 'custom-module.module',
+                'action'        => ['view', 'create', 'edit', 'delete', 'approve'],
+            ],
+
             /** ADMIN CONSOLE **/
             [
                 'name'          => 'master',
@@ -64,6 +70,7 @@ class PermissionSeeder extends Seeder
 
                     'asuransi.polis-mobil'      => ['view', 'create', 'edit', 'delete'],
                     'asuransi.polis-motor'      => ['view', 'create', 'edit', 'delete'],
+                    'custom-module.module'      => ['view', 'create', 'edit', 'delete'],
                 ],
             ],
             [

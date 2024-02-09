@@ -87,6 +87,14 @@ class MenuFlowSeeder extends Seeder
                     ],
                 ]
             ],
+            [
+                'module'   => 'custom-module',
+                'submenu'=> [
+                    [
+                        'module'   => 'custom-module.module',
+                    ],
+                ]
+            ],
             // [
             //     'module'    => 'change',
             //     'submenu'   => [
