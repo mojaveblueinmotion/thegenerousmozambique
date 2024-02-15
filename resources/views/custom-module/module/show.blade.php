@@ -75,13 +75,10 @@
 													<tr>
 														<th class="text-center width-40px" >#</th>
 														<th class="text-center">{{ __('Nama') }}</th>
-														<th class="text-center valign-top width-30px">
-															<button type="button" class="btn btn-sm btn-icon btn-circle btn-primary add-ext-part"><i class="fa fa-plus"></i></button>
-														</th>
 													</tr>
 												</thead>
 												<tbody>
-													@foreach ( $data as $i => $detail)
+													@foreach ( $data['body'] as $i => $detail)
 														<tr data-keys="{{ $i }} " id="trParent">
 															<td class="text-center width-40px no"> {{ $i }} </td>
 															<td class="parent-group text-left">
@@ -98,11 +95,6 @@
 																	</div>
 																</div>
 															</td>
-															<td class="text-center valign-top width-30px">
-																<button type="button" class="btn btn-sm btn-icon btn-circle btn-danger remove-ext-part">
-																	<i class="fa fa-trash"></i>
-																</button>
-															</td>
 														</tr>
 														<tr>
 															<td></td>
@@ -116,9 +108,6 @@
 																			<th class="text-center">{{ __('Kosong?') }}</th>
 																			<th class="text-center">{{ __('Judul') }}</th>
 																			<th class="text-center">{{ __('Information') }}</th>
-																			<th class="text-center valign-top width-30px">
-																				<button type="button" class="btn btn-sm btn-icon btn-circle btn-primary add-ext-part-details"><i class="fa fa-plus"></i></button>
-																			</th>
 																		</tr>
 																	</thead>
 																	<tbody>
@@ -160,11 +149,6 @@
 																			</td>
 																			<td class="text-left parent-group">
 																				<textarea disabled data-height="200" name="details[{{ $i }} ][{{ $j }}][information]" class="form-control" placeholder="{{ __('Informasi') }}">{{ $child['informationMsg'] }}</textarea>
-																			</td>
-																			<td class="text-center valign-top width-30px">
-																				<button type="button" class="btn btn-sm btn-icon btn-circle btn-danger remove-ext-part-details">
-																					<i class="fa fa-trash"></i>
-																				</button>
 																			</td>
 																		</tr>
 																		@endforeach

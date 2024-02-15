@@ -56,41 +56,39 @@ class Module extends Model
     {
         $this->beginTransaction();
         try {
-            $collection = collect($request->details)->map(function ($item, $moduleId) use ($request) {
-                return [
-                    'id' => $moduleId + 1,
-                    'module_title' => $request->title,
-                    'api' => strtolower(str_replace(' ', '-', $request->title)),
-                    'status' => $request->status,
-                    'body' => [
-                        [
-                            'id' => $item['title_number'],
-                            'heading' => $item['title'],
-                            'data' => collect($item)->except(['title', 'title_number'])->map(function ($subItem, $subId) use ($item) {
-                                return [
-                                    // 'id' => $subId + 1,
-                                    'id' => $subItem['numbering'],
-                                    'type' => $subItem['type'],
-                                    "informationMsg" => $subItem['information'],
-                                    "informationStatus" => $subItem['information'] ? true : false,
-                                    "key" => strtolower(str_replace(' ', '_', $subItem['title'])),
-                                    'title' => $subItem['title'],
-                                    'require' => $subItem['required'] === 'required',
-                                    'error' => "kolom " . $subItem['title'] ." mohon diisi"
-                                ];
-                            })->values()->all() // Use ->all() to convert the collection to a plain PHP array
-                        ]
-                    ]
-                ];
-            })->values();
+            $collection = [
+                'module_title' => $request->title,
+                'api' => strtolower(str_replace(' ', '-', $request->title)),
+                'status' => $request->status,
+                'body' => collect($request->details)->map(function ($item, $moduleId) use ($request) {
+                    return [
+                        'id' => $item['title_number'],
+                        'heading' => $item['title'],
+                        'data' => collect($item)->except(['title', 'title_number'])->map(function ($subItem, $subId) use ($item) {
+                            return [
+                                'id' => $subId + 1, // Corrected the id generation
+                                'type' => $subItem['type'],
+                                "informationMsg" => $subItem['information'],
+                                "informationStatus" => !empty($subItem['information']), // Check if 'information' is not empty
+                                "key" => strtolower(str_replace(' ', '_', $subItem['title'])),
+                                'title' => $subItem['title'],
+                                'require' => $subItem['required'] === 'required',
+                                'error' => "kolom " . $subItem['title'] ." mohon diisi"
+                            ];
+                        })->values()->all()
+                    ];
+                })->values()->all()
+            ];
 
-            // Output the collection
+
+            $collection = collect($collection); // Convert to Laravel Collection
             $json = $collection->toJson();
 
             $this->fill($request->only($this->fillable));
             $this->api = strtolower(str_replace(' ', '-', $request->title));
             $this->description = $request->description;
             $this->save();
+            $this->details()->delete();
             $detail = $this->details()->firstOrNew([
                 'module_id' => $this->id,
                 'data' => $json,

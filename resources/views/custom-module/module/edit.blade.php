@@ -84,18 +84,18 @@
 													</tr>
 												</thead>
 												<tbody>
-													@foreach ( $data as $i => $detail)
-														<tr data-keys="{{ $i }} " id="trParent">
-															<td class="text-center width-40px no"> {{ $i }} </td>
+													@foreach ( $data['body'] as $i => $detail)
+														<tr data-keys="{{ $i+1 }}" id="trParent">
+															<td class="text-center width-40px no">{{ $i+1 }}</td>
 															<td class="parent-group text-left">
 																<div class="input-group" style="display:flex;">
 																	<div class="parent-group" style="width:30%%;">
-																		<input type="text" name="details[{{ $i }}][title_number]"
+																		<input type="text" name="details[{{ $i+1 }}][title_number]"
 																		class="form-control" value="{{ $detail['id'] ?? '' }}"
 																		placeholder="{{ __('Penomoran') }}">
 																	</div>
 																	<div class="parent-group" style="width:80%;">
-																		<input type="text" name="details[{{ $i }}][title]"
+																		<input type="text" name="details[{{ $i+1 }}][title]"
 																		class="form-control" value="{{ $detail['heading'] ?? '' }}"
 																		placeholder="{{ __('Judul') }}">
 																	</div>
@@ -110,7 +110,7 @@
 														<tr>
 															<td></td>
 															<td>
-																<table data-keys="{{ $i }} " class="table table-bordered" id="detailsBody{{ $i }}">
+																<table data-keys="{{ $i+1 }}" class="table table-bordered" id="detailsBody{{ $i+1 }}">
 																	<thead>
 																		<tr>
 																			<th class="text-center width-80px">{{ __('No') }}</th>
@@ -125,16 +125,17 @@
 																		</tr>
 																	</thead>
 																	<tbody>
+																		{{-- @dd($detail) --}}
 																		@foreach ($detail['data'] as $j => $child)
-																		<tr data-parent="{{ $i }} " data-key="{{ $j }}">
+																		<tr data-parent="{{ $i+1 }}" data-key="{{ $j }}">
 																			<td class="text-left parent-group">
-																				<input type="text" name="details[{{ $i }} ][{{ $j }}][numbering]"
+																				<input type="text" name="details[{{ $i+1 }}][{{ $j }}][numbering]"
 																					class="form-control" value="{{ $child['id'] }}"
 																					placeholder="{{ __('No') }}">
 																			</td>
 																			<td class="text-left parent-group">
 																				<select class="form-control filter-control base-plugin--select2"
-																					name="details[{{ $i }} ][{{ $j }}][type]"
+																					name="details[{{ $i+1 }}][{{ $j }}][type]"
 																					data-placeholder="{{ __('Pilih Salah Satu') }}">
 																					<option value="">{{ __('Pilih Salah Satu') }}</option>
 																					<option @if($child['type'] == 'multiselect') selected @endif value="multiselect">Pilihan Multi</option>
@@ -147,22 +148,22 @@
 																				</select>
 																			</td>
 																			<td class="text-left parent-group">
-																				<textarea id="summernote-disabled" name="details[{{ $i }} ][{{ $j }}][value]" class="base-plugin--summernote-2" placeholder="{{ __('Data') }}"></textarea>
+																				<textarea id="summernote-disabled" name="details[{{ $i+1 }}][{{ $j }}][value]" class="base-plugin--summernote-2" placeholder="{{ __('Data') }}"></textarea>
 																			</td>
 																			<td class="text-left parent-group">
 																				<select class="form-control filter-control base-plugin--select2"
-																					name="details[{{ $i }} ][{{ $j }}][required]"
+																					name="details[{{ $i+1 }}][{{ $j }}][required]"
 																					data-placeholder="{{ __('Pilih Salah Satu') }}">
 																					<option value="">{{ __('Pilih Salah Satu') }}</option>
-																					<option @if($child['require'] == 'null') selected @endif value="false">Boleh Kosong</option>
-																					<option @if($child['require'] == 'required') selected @endif value="true">Wajib Diisi</option>
+																					<option @if($child['require'] == false) selected @endif value="false">Boleh Kosong</option>
+																					<option @if($child['require'] == true) selected @endif value="true">Wajib Diisi</option>
 																				</select>
 																			</td>
 																			<td class="text-left parent-group">
-																				<textarea data-height="200" name="details[{{ $i }} ][{{ $j }}][title]" class="form-control" placeholder="{{ __('Judul') }}">{{ $child['title'] }}</textarea>
+																				<textarea data-height="200" name="details[{{ $i+1 }}][{{ $j }}][title]" class="form-control" placeholder="{{ __('Judul') }}">{{ $child['title'] }}</textarea>
 																			</td>
 																			<td class="text-left parent-group">
-																				<textarea data-height="200" name="details[{{ $i }} ][{{ $j }}][information]" class="form-control" placeholder="{{ __('Informasi') }}">{{ $child['informationMsg'] }}</textarea>
+																				<textarea data-height="200" name="details[{{ $i+1 }}][{{ $j }}][information]" class="form-control" placeholder="{{ __('Informasi') }}">{{ $child['informationMsg'] }}</textarea>
 																			</td>
 																			<td class="text-center valign-top width-30px">
 																				<button type="button" class="btn btn-sm btn-icon btn-circle btn-danger remove-ext-part-details">

@@ -214,7 +214,7 @@ class ModuleSeeder extends Seeder
                       },
                       {
                         "id": 19,
-                        "type": "angka",
+                        "type": "integer",
                         "informationStatus": false,
                         "informationMsg": "",
                         "key": "lama_prapenyimpanan",
@@ -234,7 +234,7 @@ class ModuleSeeder extends Seeder
                       },
                       {
                         "id": 21,
-                        "type": "angka",
+                        "type": "integer",
                         "informationStatus": false,
                         "informationMsg": "",
                         "key": "lama_pekerjaan_pendirian_konstruksi",
@@ -244,7 +244,7 @@ class ModuleSeeder extends Seeder
                       },
                       {
                         "id": 22,
-                        "type": "angka",
+                        "type": "integer",
                         "informationStatus": false,
                         "informationMsg": "",
                         "key": "lama_pengujian",
@@ -446,7 +446,7 @@ class ModuleSeeder extends Seeder
                       },
                       {
                         "id": 34,
-                        "type": "angka",
+                        "type": "integer",
                         "informationStatus": false,
                         "informationMsg": "",
                         "key": "jarak_dari_lokasi",
@@ -534,7 +534,7 @@ class ModuleSeeder extends Seeder
                     "data": [
                       {
                         "id": 41,
-                        "type": "angka",
+                        "type": "integer",
                         "informationStatus": false,
                         "informationMsg": "",
                         "key": "curah_hujan_perjam",
@@ -544,7 +544,7 @@ class ModuleSeeder extends Seeder
                       },
                       {
                         "id": 42,
-                        "type": "angka",
+                        "type": "integer",
                         "informationStatus": false,
                         "informationMsg": "",
                         "key": "curah_hujan_perhari",
@@ -554,7 +554,7 @@ class ModuleSeeder extends Seeder
                       },
                       {
                         "id": 43,
-                        "type": "angka",
+                        "type": "integer",
                         "informationStatus": false,
                         "informationMsg": "",
                         "key": "curah_hujan_perbulan",
@@ -858,7 +858,7 @@ class ModuleSeeder extends Seeder
                       },
                       {
                         "id": 60,
-                        "type": "mata_uang",
+                        "type": "money",
                         "informationStatus": false,
                         "informationMsg": "",
                         "key": "jumlah_diasuransikan",
@@ -939,7 +939,7 @@ class ModuleSeeder extends Seeder
                       },
                       {
                         "id": 7,
-                        "type": "uang",
+                        "type": "money",
                         "informationStatus": false,
                         "informationMsg": "",
                         "key": "nilai_maks_yard",
@@ -1105,7 +1105,7 @@ class ModuleSeeder extends Seeder
                       },
                       {
                         "id": 23,
-                        "type": "uang",
+                        "type": "money",
                         "informationStatus": false,
                         "informationMsg": "",
                         "key": "perkiraan_nilai",
@@ -1141,7 +1141,7 @@ class ModuleSeeder extends Seeder
                     "data": [
                       {
                         "id": 26,
-                        "type": "angka",
+                        "type": "integer",
                         "informationStatus": false,
                         "informationMsg": "",
                         "key": "panjang",
@@ -1151,7 +1151,7 @@ class ModuleSeeder extends Seeder
                       },
                       {
                         "id": 27,
-                        "type": "angka",
+                        "type": "integer",
                         "informationStatus": false,
                         "informationMsg": "",
                         "key": "berat",
@@ -1191,7 +1191,7 @@ class ModuleSeeder extends Seeder
                       },
                       {
                         "id": 30,
-                        "type": "angka",
+                        "type": "integer",
                         "informationStatus": false,
                         "informationMsg": "",
                         "key": "lama_perusahaan",
@@ -1201,7 +1201,7 @@ class ModuleSeeder extends Seeder
                       },
                       {
                         "id": 31,
-                        "type": "angka",
+                        "type": "integer",
                         "informationStatus": false,
                         "informationMsg": "",
                         "key": "tahun_pengalaman",
@@ -1408,7 +1408,7 @@ class ModuleSeeder extends Seeder
                     "data": [
                       {
                         "id": 11,
-                        "type": "angka",
+                        "type": "integer",
                         "informationStatus": false,
                         "informationMsg": "",
                         "key": "lebar_dimensi",
@@ -1418,7 +1418,7 @@ class ModuleSeeder extends Seeder
                       },
                       {
                         "id": 12,
-                        "type": "angka",
+                        "type": "integer",
                         "informationStatus": false,
                         "informationMsg": "",
                         "key": "tinggi_dimensi",
@@ -1428,7 +1428,7 @@ class ModuleSeeder extends Seeder
                       },
                       {
                         "id": 13,
-                        "type": "angka",
+                        "type": "integer",
                         "informationStatus": false,
                         "informationMsg": "",
                         "key": "kedalaman_dimensi",
@@ -1438,7 +1438,7 @@ class ModuleSeeder extends Seeder
                       },
                       {
                         "id": 14,
-                        "type": "angka",
+                        "type": "integer",
                         "informationStatus": false,
                         "informationMsg": "",
                         "key": "rentang_dimensi",
@@ -1448,7 +1448,7 @@ class ModuleSeeder extends Seeder
                       },
                       {
                         "id": 15,
-                        "type": "angka",
+                        "type": "integer",
                         "informationStatus": false,
                         "informationMsg": "",
                         "key": "jumlah_lantai",
@@ -1468,7 +1468,7 @@ class ModuleSeeder extends Seeder
                       },
                       {
                         "id": 17,
-                        "type": "angka",
+                        "type": "integer",
                         "informationStatus": false,
                         "informationMsg": "",
                         "key": "jenis_pondasi",
@@ -1518,7 +1518,7 @@ class ModuleSeeder extends Seeder
                       },
                       {
                         "id": 21,
-                        "type": "angka",
+                        "type": "integer",
                         "informationStatus": false,
                         "informationMsg": "",
                         "key": "lama_proses_konstruksi",
@@ -1538,7 +1538,7 @@ class ModuleSeeder extends Seeder
                       },
                       {
                         "id": 23,
-                        "type": "angka",
+                        "type": "integer",
                         "informationStatus": false,
                         "informationMsg": "",
                         "key": "periode_pemeliharaan",
@@ -1700,7 +1700,7 @@ class ModuleSeeder extends Seeder
                       },
                       {
                         "id": 32,
-                        "type": "angka",
+                        "type": "integer",
                         "informationStatus": false,
                         "informationMsg": "",
                         "key": "magnitude",
@@ -1822,7 +1822,7 @@ class ModuleSeeder extends Seeder
                       },
                       {
                         "id": 38,
-                        "type": "angka",
+                        "type": "integer",
                         "informationStatus": false,
                         "informationMsg": "",
                         "key": "jarak_perairan",
@@ -1842,7 +1842,7 @@ class ModuleSeeder extends Seeder
                       },
                       {
                         "id": 40,
-                        "type": "angka",
+                        "type": "integer",
                         "informationStatus": false,
                         "informationMsg": "",
                         "key": "rata_rata_air",
@@ -1852,7 +1852,7 @@ class ModuleSeeder extends Seeder
                       },
                       {
                         "id": 41,
-                        "type": "angka",
+                        "type": "integer",
                         "informationStatus": false,
                         "informationMsg": "",
                         "key": "tingkat_tertinggi_air",
@@ -1898,7 +1898,7 @@ class ModuleSeeder extends Seeder
                       },
                       {
                         "id": 45,
-                        "type": "angka",
+                        "type": "integer",
                         "informationStatus": false,
                         "informationMsg": "",
                         "key": "curah_hujan_perjam",
@@ -1908,7 +1908,7 @@ class ModuleSeeder extends Seeder
                       },
                       {
                         "id": 46,
-                        "type": "angka",
+                        "type": "integer",
                         "informationStatus": false,
                         "informationMsg": "",
                         "key": "curah_hujan_perhari",
@@ -1918,7 +1918,7 @@ class ModuleSeeder extends Seeder
                       },
                       {
                         "id": 47,
-                        "type": "angka",
+                        "type": "integer",
                         "informationStatus": false,
                         "informationMsg": "",
                         "key": "curah_hujan_perbulan",
@@ -1972,7 +1972,7 @@ class ModuleSeeder extends Seeder
                       },
                       {
                         "id": 50,
-                        "type": "uang",
+                        "type": "money",
                         "informationStatus": false,
                         "informationMsg": "",
                         "key": "batas_ganti_rugi_lembur",
@@ -2022,7 +2022,7 @@ class ModuleSeeder extends Seeder
                       },
                       {
                         "id": 53,
-                        "type": "uang",
+                        "type": "money",
                         "informationStatus": false,
                         "informationMsg": "",
                         "key": "batas_ganti_rugi_pihak_ketiga",
@@ -2062,7 +2062,7 @@ class ModuleSeeder extends Seeder
                       },
                       {
                         "id": 56,
-                        "type": "uang",
+                        "type": "money",
                         "informationStatus": false,
                         "informationMsg": "",
                         "key": "batas_ganti_rugi_struktur_bangunan",
@@ -2085,7 +2085,8 @@ class ModuleSeeder extends Seeder
             $detail = $record->details()->firstOrNew([
                 'module_id' => $record->id,
             ]);
-            $detail->data = $val['body'];
+            $detail->data = json_encode($val);;
+            
             $detail->save();
         }
     }
