@@ -32,7 +32,7 @@ class ModuleApiController extends Controller
     public function moduleSpecific($api)
     {
         try{
-            $data = Module::with('details')->where('api', $api)->get();
+            $data = Module::with('details')->where('api', $api)->first();
     
             return response()->json([
                 'success' => true,
@@ -95,7 +95,25 @@ class ModuleApiController extends Controller
             $data = ModuleData::with('module')->where('user_id', auth()->user()->id)
                 ->whereHas('module', function ($q) use ($api){
                     $q->where('api', $api);
-                })->first();
+                })->get();
+            
+            return response()->json([
+                'success' => true,
+                'data' => $data,
+            ]);
+        }catch(Exception $e){
+            return response()->json([
+                'success' => false,
+                'message' => $e
+            ], 400);
+        }
+    }
+
+    public function getSpecificCustomDataById($idAsuransi)
+    {
+        try{
+            $data = ModuleData::with('module')->where('user_id', auth()->user()->id)
+                ->where('no_asuransi', $idAsuransi)->first();
             
             return response()->json([
                 'success' => true,

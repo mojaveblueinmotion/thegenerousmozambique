@@ -110,6 +110,7 @@ Route::middleware(['jwt.verify'])->group( function () {
     Route::get('module', [ModuleApiController::class, 'module']);
     Route::get('moduleSpecific/{api}', [ModuleApiController::class, 'moduleSpecific']);
     Route::get('getSpecificCustomData/{api}', [ModuleApiController::class, 'getSpecificCustomData']);
+    Route::get('getSpecificCustomDataById/{idAsuransi}', [ModuleApiController::class, 'getSpecificCustomDataById']);
     Route::post('moduleSpecific/{api}', [ModuleApiController::class, 'moduleSpecificPost']);
 });
 
