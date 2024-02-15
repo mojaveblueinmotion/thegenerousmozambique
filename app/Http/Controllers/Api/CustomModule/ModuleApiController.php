@@ -32,7 +32,7 @@ class ModuleApiController extends Controller
     public function moduleSpecific($api)
     {
         try{
-            $data = Module::with('details')->where('api', $api)->first();
+            $data = Module::with('details')->where('api', $api)->get();
     
             return response()->json([
                 'success' => true,
