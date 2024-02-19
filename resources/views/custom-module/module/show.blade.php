@@ -133,7 +133,7 @@
 																				</select>
 																			</td>
 																			<td class="text-left parent-group">
-																				<textarea disabled id="summernote-disabled" name="details[{{ $i }} ][{{ $j }}][value]" class="base-plugin--summernote-2" placeholder="{{ __('Data') }}"></textarea>
+																				<textarea disabled id="summernote-disabled" name="details[{{ $i }} ][{{ $j }}][value]" class="base-plugin--summernote-2" placeholder="{{ __('Data') }}">@foreach ($child['data'] as $value)<p >{{$value['value']}}</p >@endforeach</textarea>
 																			</td>
 																			<td class="text-left parent-group">
 																				<select disabled class="form-control filter-control base-plugin--select2"

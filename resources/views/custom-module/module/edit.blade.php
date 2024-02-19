@@ -127,6 +127,7 @@
 																	<tbody>
 																		{{-- @dd($detail) --}}
 																		@foreach ($detail['data'] as $j => $child)
+																		{{-- @dd($child['data']) --}}
 																		<tr data-parent="{{ $i+1 }}" data-key="{{ $j }}">
 																			<td class="text-left parent-group">
 																				<input type="text" name="details[{{ $i+1 }}][{{ $j }}][numbering]"
@@ -148,7 +149,7 @@
 																				</select>
 																			</td>
 																			<td class="text-left parent-group">
-																				<textarea id="summernote-disabled" name="details[{{ $i+1 }}][{{ $j }}][value]" class="base-plugin--summernote-2" placeholder="{{ __('Data') }}"></textarea>
+																				<textarea id="summernote-disabled" name="details[{{ $i+1 }}][{{ $j }}][value]" class="base-plugin--summernote-2" placeholder="{{ __('Data') }}">@foreach ($child['data'] as $value)<p >{{$value['value']}}</p >@endforeach</textarea>
 																			</td>
 																			<td class="text-left parent-group">
 																				<select class="form-control filter-control base-plugin--select2"

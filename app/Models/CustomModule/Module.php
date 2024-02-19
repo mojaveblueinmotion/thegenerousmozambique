@@ -3,6 +3,7 @@
 namespace App\Models\CustomModule;
 
 use App\Models\Model;
+use Illuminate\Support\Str;
 use Illuminate\Support\Collection;
 use App\Models\CustomModule\ModuleData;
 use App\Models\Master\DatabaseMobil\Seri;
@@ -65,12 +66,25 @@ class Module extends Model
                         'id' => $item['title_number'],
                         'heading' => $item['title'],
                         'data' => collect($item)->except(['title', 'title_number'])->map(function ($subItem, $subId) use ($item) {
+
+                            preg_match_all('/<p[^>]*>(.*?)<\/p>/', $subItem['value'], $matches);
+                            $contentArray = array_map('trim', $matches[1]);
+
+                            // Modify this part to structure the "data" array as required
+                            $data = collect($contentArray)->map(function ($value) {
+                                return [
+                                    'value' => $value,
+                                    'label' => $value,
+                                ];
+                            })->values()->all();
+
                             return [
                                 'id' => $subId + 1, // Corrected the id generation
                                 'type' => $subItem['type'],
                                 "informationMsg" => $subItem['information'],
                                 "informationStatus" => !empty($subItem['information']), // Check if 'information' is not empty
                                 "key" => strtolower(str_replace(' ', '_', $subItem['title'])),
+                                "data" => $data,
                                 'title' => $subItem['title'],
                                 'require' => $subItem['required'] === 'required',
                                 'error' => "kolom " . $subItem['title'] ." mohon diisi"
