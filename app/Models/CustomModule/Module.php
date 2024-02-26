@@ -85,6 +85,12 @@ class Module extends Model
                             ->values()
                             ->all();
 
+                            if($subItem['required'] == 'false'){
+                                $required = false;
+                            }else{
+                                $required = true;
+                            }
+
                             return [
                                 'id' => $subId + 1, // Corrected the id generation
                                 'type' => $subItem['type'],
@@ -93,7 +99,7 @@ class Module extends Model
                                 "key" => strtolower(str_replace(' ', '_', $subItem['title'])),
                                 "data" => $data,
                                 'title' => $subItem['title'],
-                                'require' => $subItem['required'],
+                                'require' => $required,
                                 'error' => "kolom " . $subItem['title'] ." mohon diisi"
                             ];
                         })->values()->all()
