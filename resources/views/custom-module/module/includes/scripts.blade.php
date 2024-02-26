@@ -84,8 +84,8 @@
                                     name="details[`+ keys + `][`+ key + `][required]"
                                     data-placeholder="{{ __('Pilih Salah Satu') }}">
                                     <option value="">{{ __('Pilih Salah Satu') }}</option>
-                                    <option value="null">Boleh Kosong</option>
-                                    <option value="required">Wajib Diisi</option>
+                                    <option value="false">Boleh Kosong</option>
+                                    <option value="true">Wajib Diisi</option>
                                 </select>
                             </td>
                             <td class="text-left parent-group">
@@ -169,8 +169,8 @@ var handleExtPartDetails = function () {
                         name="details[`+ keys + `][`+ key + `][required]"
                         data-placeholder="{{ __('Pilih Salah Satu') }}">
                         <option value="">{{ __('Pilih Salah Satu') }}</option>
-                        <option value="null">Boleh Kosong</option>
-                        <option value="required">Wajib Diisi</option>
+                        <option value="false">Boleh Kosong</option>
+                        <option value="true">Wajib Diisi</option>
                     </select>
                 </td>
                 <td class="text-left parent-group">

@@ -123,6 +123,10 @@ class ModuleController extends Controller
                         if ($record->checkAction('history', $this->perms)) {
                             $actions[] = 'type:history';
                         }
+                        
+                        if ($record->checkAction('delete', $this->perms)) {
+                            $actions[] = 'type:delete';
+                        }
                     return $this->makeButtonDropdown($actions, $record->id);
                 }
             )

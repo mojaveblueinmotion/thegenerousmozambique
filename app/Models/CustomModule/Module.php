@@ -66,17 +66,24 @@ class Module extends Model
                         'id' => $item['title_number'],
                         'heading' => $item['title'],
                         'data' => collect($item)->except(['title', 'title_number'])->map(function ($subItem, $subId) use ($item) {
-
+                            // preg_match_all('/<p\s*>\s*<\/p>/', $subItem['value'], $matches);
                             preg_match_all('/<p[^>]*>(.*?)<\/p>/', $subItem['value'], $matches);
-                            $contentArray = array_map('trim', $matches[1]);
-
+                            $cleanString = str_replace('<br>', '', $matches[1]);
+                            $contentArray = array_map('trim', $cleanString);
+                            // dd($cleanString);
                             // Modify this part to structure the "data" array as required
-                            $data = collect($contentArray)->map(function ($value) {
+                            $data = collect($contentArray)
+                            ->reject(function ($value) {
+                                return $value == "";
+                            })
+                            ->map(function ($value) {
                                 return [
                                     'value' => $value,
                                     'label' => $value,
                                 ];
-                            })->values()->all();
+                            })
+                            ->values()
+                            ->all();
 
                             return [
                                 'id' => $subId + 1, // Corrected the id generation
@@ -86,7 +93,7 @@ class Module extends Model
                                 "key" => strtolower(str_replace(' ', '_', $subItem['title'])),
                                 "data" => $data,
                                 'title' => $subItem['title'],
-                                'require' => $subItem['required'] === 'required',
+                                'require' => $subItem['required'],
                                 'error' => "kolom " . $subItem['title'] ." mohon diisi"
                             ];
                         })->values()->all()
