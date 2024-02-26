@@ -156,8 +156,8 @@
 																					name="details[{{ $i+1 }}][{{ $j }}][required]"
 																					data-placeholder="{{ __('Pilih Salah Satu') }}">
 																					<option value="">{{ __('Pilih Salah Satu') }}</option>
-																					<option @if($child['require'] == false) selected @endif value="false">Boleh Kosong</option>
-																					<option @if($child['require'] == true) selected @endif value="true">Wajib Diisi</option>
+																					<option @if($child['require'] == 'false') selected @endif value="false">Boleh Kosong</option>
+																					<option @if($child['require'] == 'true') selected @endif value="true">Wajib Diisi</option>
 																				</select>
 																			</td>
 																			<td class="text-left parent-group">
