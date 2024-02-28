@@ -69,7 +69,8 @@
                                     data-placeholder="{{ __('Pilih Salah Satu') }}">
                                     <option value="">{{ __('Pilih Salah Satu') }}</option>
                                     <option value="multiselect">Pilihan Multi</option>
-                                    <option value="date">Tanggal</option>
+                                    <option value="money">Uang</option>
+                                    <option value="select">Pilihan</option>
                                     <option value="select">Pilihan</option>
                                     <option value="integer">Angka</option>
                                     <option value="string">Teks Singkat</option>
@@ -155,6 +156,7 @@ var handleExtPartDetails = function () {
                         <option value="">{{ __('Pilih Salah Satu') }}</option>
                         <option value="multiselect">Pilihan Multi</option>
                         <option value="date">Tanggal</option>
+                        <option value="money">Uang</option>
                         <option value="select">Pilihan</option>
                         <option value="integer">Angka</option>
                         <option value="string">Teks Singkat</option>
