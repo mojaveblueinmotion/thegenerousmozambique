@@ -92,7 +92,7 @@ class Module extends Model
                             }
 
                             return [
-                                'id' => $subId + 1, // Corrected the id generation
+                                'id' => $subItem['numbering'], // Corrected the id generation
                                 'type' => $subItem['type'],
                                 "informationMsg" => $subItem['information'],
                                 "informationStatus" => !empty($subItem['information']), // Check if 'information' is not empty

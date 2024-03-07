@@ -10,8 +10,8 @@ class ModuleRequest extends FormRequest
     {
         $id = $this->record->id ?? 0;
         $rules = [
-            // 'title'        => 'required|string|max:255|unique:ref_faq,title,'.$id,
-            // 'status'        => 'required',
+            'title'        => 'required|string|max:255|unique:trans_custom_module,title,'.$id,
+            'status'        => 'required',
             // 'description'        => 'required',
             // 'details.*.type' => 'required',
             // 'details.*.required' => 'required',

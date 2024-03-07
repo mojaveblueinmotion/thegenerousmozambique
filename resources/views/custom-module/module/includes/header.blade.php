@@ -15,7 +15,7 @@
                     name="status"
                     data-placeholder="{{ __('Pilih Salah Satu') }}">
                     <option value="">{{ __('Pilih Salah Satu') }}</option>
-                    <option value="active">Aktif</option>
+                    <option selected value="active">Aktif</option>
                     <option value="nonactive">Nonaktif</option>
                 </select>
             </div>
